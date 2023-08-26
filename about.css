@@ -1,0 +1,19 @@
+.transparent-panel {
+    background-color: rgba(11, 10, 10, 0.5); /* Transparent white background */
+    padding: 20px;
+    border-radius: 10px;
+    max-width: 600px;
+    margin: 50px auto;
+    box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.2);
+  }
+  
+  h2 {
+    color: #f0ebeb;
+    font-size: 24px;
+  }
+  
+  p {
+    color: #eae1e1;
+    font-size: 16px;
+    line-height: 1.5;
+  }
