@@ -30,7 +30,7 @@
 						<span class="user-icon">
 							<img src="src/images/admin.png" width="50">
 						</span>
-						<span class="user-name">John Doe</span>
+						<span class="user-name">Log Out</span>
 					</a>
 					<div class="dropdown-menu dropdown-menu-right dropdown-menu-icon-list">
 						<a class="dropdown-item" href="#"><i class="dw dw-user1"></i> Profile</a>
@@ -134,12 +134,12 @@
 					<div class="row">
 						<div class="col-md-6 col-sm-12">
 							<div class="title">
-								<h4><i class="micon dw dw-hammer mtext"></i> Technicians</h4>
+								<h4><i class="micon dw dw-hammer mtext"></i> Repairs</h4>
 							</div>
 							<nav aria-label="breadcrumb" role="navigation">
 								<ol class="breadcrumb">
 									<li class="breadcrumb-item"><a href="index.html">Home</a></li>
-									<li class="breadcrumb-item active" aria-current="page">Technicians</li>
+									<li class="breadcrumb-item active" aria-current="page">Repair List</li>
 								</ol>
 							</nav>
 						</div>
@@ -155,16 +155,17 @@
 				<!-- Simple Datatable start -->
 				<div class="card-box mb-30">
 					<div class="pd-20">
-						<h4 class="text-blue h4">Technicians List</h4>
+						<h4 class="text-blue h4">Repair List</h4>
 					</div>
 					<div class="pb-20">
 						<table class="data-table table responsive">
 							<thead>
 								<tr>
-									<th>Technician Code</th>
-									<th>Profile</th>
-									<th>Full Name</th>
-									<th>Email</th>
+									<th>Repair Code</th>
+									<th>Client Code</th>
+									<th>Date created</th>
+									<th>Asstimated Date</th>
+									<th>Details</th>
 									<th>Contact</th>
 									<th>Specialization</th>
 									<th>Status</th>
@@ -174,9 +175,10 @@
 							<tbody>
 								<tr>
 									<td>123-456</td>
-									<td><img src="src/images/admin.png" width="50" style="border: 1px solid gray"></td>
-									<td>John Doe</td>
-									<td>john@gmail.com</td>
+									<td>234E</td>
+									<td>2023.09.02</td>
+									<td>2023.09.05</td>
+									<td>Battery Issue</td>
 									<td>09876543234</td>
 									<td>Specialization 1</td>
 									<td><span class="badge bg-success">Active</span></td>
@@ -194,10 +196,11 @@
 									</td>
 								</tr>
 								<tr>
-									<td>123-456</td>
-									<td><img src="src/images/admin.png" width="50" style="border: 1px solid gray"></td>
-									<td>Juan Dela Cruz</td>
-									<td>juan@gmail.com</td>
+									<td>123-456234</td>
+									<td>456S</td>
+									<td>2023.09.02</td>
+									<td>2023.09.07</td>
+									<td>Dispaly</td>
 									<td>09876543234</td>
 									<td>Specialization 2</td>
 									<td><span class="badge bg-danger">Deactivated</span></td>
@@ -230,29 +233,36 @@
 										<div class=" border-radius-10">
 											<div class="login-title"><br>
 												<div class="col-md-12 col-sm-12 mb-30">
-												<h2 class="text-center text-primary">Add Technician</h2>
+												<h2 class="text-center text-primary">Add Repair</h2>
 												</div>
 											<form>
 
 												<div class="input-group custom">
 												<div class="col-md-6 col-sm-12">
 													<div class="form-group">
-																<label>Technician Code</label>
+																<label>Repair Code</label>
 																<input class="form-control form-control-lg" type="text">
 															</div>
 												</div>
 												<div class="col-md-6 col-sm-12">
 													<div class="form-group">
-																<label>Technician Name</label>
+																<label>Client Code</label>
 																<input class="form-control form-control-lg" type="text">
 															</div>
 												</div>
 												<div class="col-md-6 col-sm-12">
 													<div class="form-group">
-																<label>Email</label>
+																<label>Date created</label>
 																<input class="form-control form-control-lg" type="text">
 															</div>
 												</div>
+												<div class="col-md-6 col-sm-12">
+													<div class="form-group">
+																<label>Astimated Date</label>
+																<input class="form-control form-control-lg" type="password">
+															</div>
+												</div>
+												
 												<div class="col-md-6 col-sm-12">
 													<div class="form-group">
 																<label>Contact</label>
@@ -261,29 +271,18 @@
 												</div>
 												<div class="col-md-12 col-sm-12">
 													<div class="form-group">
-																<label>Specialization Details</label>
+																<label>Details</label>
 																<input class="form-control form-control-lg" type="text">
 															</div>
 												</div>
 
 												<div class="col-md-6 col-sm-12">
 													<div class="form-group">
-																<label>Username</label>
+																<label>Specialization Details</label>
 																<input class="form-control form-control-lg" type="text">
 															</div>
 												</div>
-												<div class="col-md-6 col-sm-12">
-													<div class="form-group">
-																<label>Password</label>
-																<input class="form-control form-control-lg" type="password">
-															</div>
-												</div>
-												<div class="col-md-12 col-sm-12">
-													<div class="form-group">
-																<label>Profile</label>
-																<input class="form-control form-control-lg" type="file">
-															</div>
-												</div>
+												
 												<div class="col-md-12 col-sm-12">
 													<div class="form-group">
 																<input type="submit" class="btn btn-primary" value="Submit">
