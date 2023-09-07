@@ -1,3 +1,12 @@
+<?php session_start(); 
+
+if(!isset($_SESSION["systemUserID"])){
+	header("Location: ../login.php");
+}
+
+
+
+?>
 <!DOCTYPE html>
 <html>
 <head>
@@ -35,6 +44,9 @@
 					<div class="dropdown-menu dropdown-menu-right dropdown-menu-icon-list">
 						<a class="dropdown-item" href="#"><i class="dw dw-user1"></i> Profile</a>
 						<a class="dropdown-item" href="#"><i class="dw dw-settings2"></i> Setting</a>
+						<span><?php echo  $_SESSION["systemUserEmail"] ?></span><br>
+						<span><?php echo  $_SESSION["locationName"] ?></span><br>
+						
 						<hr>
 						<a class="dropdown-item" href="login.html"><i class="dw dw-logout"></i> Log Out</a>
 					</div>
@@ -62,7 +74,7 @@
 						</a>
 					</li>
 					<li>
-						<a href="clients.html" class="dropdown-toggle no-arrow">
+						<a href="clients.php" class="dropdown-toggle no-arrow">
 							<span class="micon dw dw-user"></span><span class="mtext">Client List</span>
 						</a>
 					</li>

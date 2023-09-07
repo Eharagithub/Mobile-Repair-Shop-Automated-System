@@ -19,7 +19,6 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
         $sql = "select * from systemuser where email= '" . $email . "' AND password='" . $password . "' ";
      
         $result = mysqli_query($data, $sql);
-        print_r($result->num_rows == 1);
 
         if ($result->num_rows == 1) {
 
@@ -27,6 +26,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
 
             print_r($row);
             $_SESSION["systemUserID"] = $row["empNo"];
+            $_SESSION["systemUserEmail"] = $row["email"];
 
             $sql = "select * from location where locid = " . $row["locid"];
             $result = mysqli_query($data, $sql);
@@ -35,7 +35,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
             $_SESSION["locationName"] = $row["name"];
 
 
-            header("Location: index.php"); // Redirect to a welcome page or dashboard
+            header("Location: dashboard/index.php"); // Redirect to a welcome page or dashboard
         } else {
             // Invalid login, display an error message
             echo "Invalid username or password.";
