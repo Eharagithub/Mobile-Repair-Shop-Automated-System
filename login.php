@@ -3,7 +3,7 @@
 $host = "localhost";
 $user = "root";
 $password = "";
-$db = "mobileShopDb";
+$db = "mobileShopdb";
 
 $data = mysqli_connect($host, $user, $password, $db);
 if ($data === false) {
