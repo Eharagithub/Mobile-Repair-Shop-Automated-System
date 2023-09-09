@@ -49,6 +49,7 @@ function getAllCustomers(){
 		"</td>" .
 	"</tr>";
 	}
+
 }
 
 ?>
@@ -118,7 +119,7 @@ function getAllCustomers(){
 						</a>
 					</li>
 					<li>
-						<a href="clients.html" class="dropdown-toggle no-arrow">
+						<a href="clients.php" class="dropdown-toggle no-arrow">
 							<span class="micon dw dw-user"></span><span class="mtext">Client List</span>
 						</a>
 					</li>
@@ -219,7 +220,7 @@ function getAllCustomers(){
 					<table class="data-table table responsive">
 						<thead>
 							<tr>
-								<th>Repair Code</th>
+								<th>NIC</th>
 								<th>Full Name</th>
 								<th>Address</th>
 								<th>Contact no.1</th>
@@ -255,7 +256,7 @@ function getAllCustomers(){
 								<div class="input-group custom">
 									<div class="col-md-6 col-sm-12">
 										<div class="form-group">
-											<label>Repair Code</label>
+											<label>NIC</label>
 											<input class="form-control form-control-lg" type="text">
 										</div>
 									</div>
