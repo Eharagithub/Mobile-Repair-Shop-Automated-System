@@ -72,8 +72,8 @@
 						</a>
 					</li>
 					<li>
-						<a href="services.html" class="dropdown-toggle no-arrow">
-							<span class="micon fa fa-handshake-o"></span><span class="mtext">Inquries</span>
+						<a href="device.php" class="dropdown-toggle no-arrow">
+							<span class="micon fa fa-handshake-o"></span><span class="mtext">Devices</span>
 						</a>
 					</li>
 					<h5>Maintaince</h5>

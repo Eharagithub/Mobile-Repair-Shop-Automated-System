@@ -124,13 +124,13 @@ function getAllCustomers(){
 						</a>
 					</li>
 					<li>
-						<a href="technician.html" class="dropdown-toggle no-arrow">
-							<span class="micon fa fa-wrench"></span><span class="mtext">Repair List</span>
+						<a href="technician.php" class="dropdown-toggle no-arrow">
+							<span class="micon fa fa-wrench"></span><span class="mtext">Technician List</span>
 						</a>
 					</li>
 					<li>
-						<a href="services.html" class="dropdown-toggle no-arrow">
-							<span class="micon fa fa-handshake-o"></span><span class="mtext">Inquries</span>
+						<a href="device.php" class="dropdown-toggle no-arrow">
+							<span class="micon fa fa-handshake-o"></span><span class="mtext">Devices</span>
 						</a>
 					</li>
 					<h5>Maintaince</h5>
