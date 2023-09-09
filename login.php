@@ -57,7 +57,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
 
 <body>
     <div class="login-box">
-        <h1>Login</h1>
+        <h1>Login..</h1>
         <form action="" method="POST">
             <p>Username</p>
             <input type="text" name="username" required>
