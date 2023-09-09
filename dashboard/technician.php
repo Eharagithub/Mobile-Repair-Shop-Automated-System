@@ -153,6 +153,50 @@
 					</div>
 				</div>
 				<!-- Simple Datatable start -->
+				<?php 
+
+					$host = "localhost";
+					$user = "root";
+					$password = "";
+					$db = "mobileShopDb";
+
+					$data = mysqli_connect($host, $user, $password, $db);
+
+
+
+
+					function getAlltechnician(){
+						global $data;
+						$sql = "select * from technician";
+						$result = mysqli_query($data, $sql);
+
+	
+
+					while ($row = mysqli_fetch_array($result)) {
+
+							echo "<tr>" . 
+							"<td>" . $row["empNo"] . "</td>";
+							echo"<td>" . $row["tname"] . "</td>";
+							echo"<td>" . $row["nic"] . "</td>";
+							echo"<td>" . $row["taddress"] . "</td>";
+							echo"<td>" . $row["phone"] . "</td>";
+							echo"<td>" . $row["email"] . "</td>";
+							echo"</tr>";
+							
+					}
+
+					}
+
+					?>
+				
+					<div>
+						<a href="#" data-toggle="modal" data-target="#view"> View</a>
+						<a href="#">Edit</a>
+						<a class="dropdown-item" href="#" data-toggle="modal" data-target="#delete">Delete</a>
+					</div> 
+
+					
+
 				<div class="card-box mb-30">
 					<div class="pd-20">
 						<h4 class="text-blue h4">Repair List</h4>
@@ -160,19 +204,22 @@
 					<div class="pb-20">
 						<table class="data-table table responsive">
 							<thead>
-								<tr>
-									<th>Repair Code</th>
-									<th>Client Code</th>
-									<th>Date created</th>
-									<th>Asstimated Date</th>
-									<th>Details</th>
-									<th>Contact</th>
-									<th>Specialization</th>
-									<th>Status</th>
-									<th class="datatable-nosort">Action</th>
-								</tr>
+							<tr>
+							<th>Technician ID</th>
+							<th>NIC</th>
+							<th>Full Name</th>
+							<th>Phone</th>
+							<th>Address</th>
+							<th>Email</th>
+							<th>Status</th>
+							<th>Action</th>
+						</tr>
+								
 							</thead>
 							<tbody>
+							<?php getAlltechnician(); ?>
+						</tbody>
+							<!--<tbody>
 								<tr>
 									<td>123-456</td>
 									<td>234E</td>
@@ -217,7 +264,7 @@
 										</div>
 									</td>
 								</tr>
-							</tbody>
+							</tbody> -->
 						</table>
 					</div>
 				</div>
@@ -235,51 +282,44 @@
 												<div class="col-md-12 col-sm-12 mb-30">
 												<h2 class="text-center text-primary">Add Repair</h2>
 												</div>
-											<form>
+											<form action="technician2.php" target="" method="POST" onsubmit="return checkpassword ()">
 
 												<div class="input-group custom">
 												<div class="col-md-6 col-sm-12">
 													<div class="form-group">
-																<label>Repair Code</label>
-																<input class="form-control form-control-lg" type="text">
+																<label>Employee Num</label>
+																<input class="form-control form-control-lg" type="text" name ="empNo">
 															</div>
 												</div>
 												<div class="col-md-6 col-sm-12">
 													<div class="form-group">
-																<label>Client Code</label>
-																<input class="form-control form-control-lg" type="text">
+																<label>NIC</label>
+																<input class="form-control form-control-lg" type="text" name ="nic">
 															</div>
 												</div>
 												<div class="col-md-6 col-sm-12">
 													<div class="form-group">
-																<label>Date created</label>
-																<input class="form-control form-control-lg" type="text">
+																<label>Name</label>
+																<input class="form-control form-control-lg" type="text" name ="tname">
 															</div>
 												</div>
 												<div class="col-md-6 col-sm-12">
 													<div class="form-group">
-																<label>Astimated Date</label>
-																<input class="form-control form-control-lg" type="password">
+																<label>Address</label>
+																<input class="form-control form-control-lg" type="text" name ="taddress">
 															</div>
 												</div>
 												
 												<div class="col-md-6 col-sm-12">
 													<div class="form-group">
 																<label>Contact</label>
-																<input class="form-control form-control-lg" type="text">
+																<input class="form-control form-control-lg" type="text" name ="phone">
 															</div>
 												</div>
 												<div class="col-md-12 col-sm-12">
 													<div class="form-group">
-																<label>Details</label>
-																<input class="form-control form-control-lg" type="text">
-															</div>
-												</div>
-
-												<div class="col-md-6 col-sm-12">
-													<div class="form-group">
-																<label>Specialization Details</label>
-																<input class="form-control form-control-lg" type="text">
+																<label>Email</label>
+																<input class="form-control form-control-lg" type="text" name ="email">
 															</div>
 												</div>
 												
