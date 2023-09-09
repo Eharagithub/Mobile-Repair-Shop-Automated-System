@@ -181,8 +181,8 @@
 
 							echo "<tr>" . 
 							"<td>" . $row["empNo"] . "</td>";
-							echo"<td>" . $row["dname"] . "</td>";
 							echo"<td>" . $row["nic"] . "</td>";
+							echo"<td>" . $row["dname"] . "</td>";
 							echo"<td>" . $row["daddress"] . "</td>";
 							echo"<td>" . $row["phone"] . "</td>";
 							echo"<td>" . $row["email"] . "</td>";
@@ -213,8 +213,8 @@
 							<th>Employee Id</th>
 							<th>NIC</th>
 							<th>Full Name</th>
-							<th>Phone</th>
 							<th>Address</th>
+							<th>Phone</th>
 							<th>Email</th>
 							<th>Status</th>
 							<th>Action</th>
