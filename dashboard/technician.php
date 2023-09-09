@@ -62,13 +62,13 @@
 						</a>
 					</li>
 					<li>
-						<a href="clients.html" class="dropdown-toggle no-arrow">
+						<a href="clients.php" class="dropdown-toggle no-arrow">
 							<span class="micon dw dw-user"></span><span class="mtext">Client List</span>
 						</a>
 					</li>
 					<li>
-						<a href="technician.html" class="dropdown-toggle no-arrow">
-							<span class="micon fa fa-wrench"></span><span class="mtext">Repair List</span>
+						<a href="technician.php" class="dropdown-toggle no-arrow">
+							<span class="micon fa fa-wrench"></span><span class="mtext">Technician List</span>
 						</a>
 					</li>
 					<li>
@@ -134,12 +134,12 @@
 					<div class="row">
 						<div class="col-md-6 col-sm-12">
 							<div class="title">
-								<h4><i class="micon dw dw-hammer mtext"></i> Repairs</h4>
+								<h4><i class="micon dw dw-hammer mtext"></i>Technicians</h4>
 							</div>
 							<nav aria-label="breadcrumb" role="navigation">
 								<ol class="breadcrumb">
 									<li class="breadcrumb-item"><a href="index.html">Home</a></li>
-									<li class="breadcrumb-item active" aria-current="page">Repair List</li>
+									<li class="breadcrumb-item active" aria-current="page">Technician List</li>
 								</ol>
 							</nav>
 						</div>
