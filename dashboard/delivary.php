@@ -76,9 +76,9 @@
 							<span class="micon fa fa-handshake-o"></span><span class="mtext">Devices</span>
 						</a>
 					</li>
-					<li>
-						<a href="delivary.php" class="dropdown-toggle no-arrow">
-							<span class="micon fa fa-handshake-o"></span><span class="mtext">Delivary</span>
+                    <li>
+						<a href="device.php" class="dropdown-toggle no-arrow">
+							<span class="micon fa fa-handshake-o"></span><span class="mtext">Delivary List</span>
 						</a>
 					</li>
 					<h5>Maintaince</h5>
@@ -139,12 +139,12 @@
 					<div class="row">
 						<div class="col-md-6 col-sm-12">
 							<div class="title">
-								<h4><i class="micon dw dw-hammer mtext"></i>Technicians</h4>
+								<h4><i class="micon dw dw-hammer mtext"></i>Delivary</h4>
 							</div>
 							<nav aria-label="breadcrumb" role="navigation">
 								<ol class="breadcrumb">
 									<li class="breadcrumb-item"><a href="index.html">Home</a></li>
-									<li class="breadcrumb-item active" aria-current="page">Technician List</li>
+									<li class="breadcrumb-item active" aria-current="page">Delivary List</li>
 								</ol>
 							</nav>
 						</div>
@@ -172,7 +172,7 @@
 
 					function getAlltechnician(){
 						global $data;
-						$sql = "select * from technician";
+						$sql = "select * from delivery";
 						$result = mysqli_query($data, $sql);
 
 	
@@ -181,9 +181,9 @@
 
 							echo "<tr>" . 
 							"<td>" . $row["empNo"] . "</td>";
-							echo"<td>" . $row["tname"] . "</td>";
+							echo"<td>" . $row["dname"] . "</td>";
 							echo"<td>" . $row["nic"] . "</td>";
-							echo"<td>" . $row["taddress"] . "</td>";
+							echo"<td>" . $row["daddress"] . "</td>";
 							echo"<td>" . $row["phone"] . "</td>";
 							echo"<td>" . $row["email"] . "</td>";
 							echo"</tr>";
@@ -204,13 +204,13 @@
 
 				<div class="card-box mb-30">
 					<div class="pd-20">
-						<h4 class="text-blue h4">Repair List</h4>
+						<h4 class="text-blue h4">Delivary List</h4>
 					</div>
 					<div class="pb-20">
 						<table class="data-table table responsive">
 							<thead>
 							<tr>
-							<th>Technician ID</th>
+							<th>Employee Id</th>
 							<th>NIC</th>
 							<th>Full Name</th>
 							<th>Phone</th>
@@ -285,9 +285,9 @@
 										<div class=" border-radius-10">
 											<div class="login-title"><br>
 												<div class="col-md-12 col-sm-12 mb-30">
-												<h2 class="text-center text-primary">Add Repair</h2>
+												<h2 class="text-center text-primary">Add Delivary</h2>
 												</div>
-											<form action="technician2.php" target="" method="POST" onsubmit="return checkpassword ()">
+											<form action="delivary2.php" target="" method="POST" onsubmit="return checkpassword ()">
 
 												<div class="input-group custom">
 												<div class="col-md-6 col-sm-12">
@@ -305,13 +305,13 @@
 												<div class="col-md-6 col-sm-12">
 													<div class="form-group">
 																<label>Name</label>
-																<input class="form-control form-control-lg" type="text" name ="tname">
+																<input class="form-control form-control-lg" type="text" name ="dname">
 															</div>
 												</div>
 												<div class="col-md-6 col-sm-12">
 													<div class="form-group">
 																<label>Address</label>
-																<input class="form-control form-control-lg" type="text" name ="taddress">
+																<input class="form-control form-control-lg" type="text" name ="daddress">
 															</div>
 												</div>
 												

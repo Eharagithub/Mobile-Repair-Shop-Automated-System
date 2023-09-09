@@ -133,6 +133,11 @@ function getAllCustomers(){
 							<span class="micon fa fa-handshake-o"></span><span class="mtext">Devices</span>
 						</a>
 					</li>
+					<li>
+						<a href="delivary.php" class="dropdown-toggle no-arrow">
+							<span class="micon fa fa-handshake-o"></span><span class="mtext">Delivary</span>
+						</a>
+					</li>
 					<h5>Maintaince</h5>
 					<li>
 						<a href="item-category.html" class="dropdown-toggle no-arrow">
