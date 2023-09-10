@@ -68,8 +68,8 @@ if(!isset($_SESSION["systemUserID"])){
 		<div class="menu-block customscroll">
 			<div class="sidebar-menu">
 				<ul id="accordion-menu">
-					<li>
-						<a href="index.html" class="dropdown-toggle no-arrow">
+				<li>
+						<a href="index.php" class="dropdown-toggle no-arrow">
 							<span class="micon dw dw-house"></span><span class="mtext">Dashboard</span>
 						</a>
 					</li>
@@ -79,23 +79,38 @@ if(!isset($_SESSION["systemUserID"])){
 						</a>
 					</li>
 					<li>
-						<a href="technician.html" class="dropdown-toggle no-arrow">
-							<span class="micon fa fa-wrench"></span><span class="mtext">Repair List</span>
+						<a href="technician.php" class="dropdown-toggle no-arrow">
+							<span class="micon fa fa-wrench"></span><span class="mtext">Technician List</span>
 						</a>
 					</li>
 					<li>
-						<a href="services.html" class="dropdown-toggle no-arrow">
-							<span class="micon fa fa-handshake-o"></span><span class="mtext">Services</span>
+						<a href="device.php" class="dropdown-toggle no-arrow">
+							<span class="micon fa fa-handshake-o"></span><span class="mtext">Devices</span>
+						</a>
+					</li>
+					<li>
+						<a href="delivary.php" class="dropdown-toggle no-arrow">
+							<span class="micon fa fa-handshake-o"></span><span class="mtext">Delivary</span>
+						</a>
+					</li>
+					<li>
+						<a href="location.php" class="dropdown-toggle no-arrow">
+							<span class="micon fa fa-handshake-o"></span><span class="mtext">Locations</span>
 						</a>
 					</li>
 					<h5>Maintaince</h5>
 					<li>
-						<a href="item-category.html" class="dropdown-toggle no-arrow">
+						<a href="workorder.php" class="dropdown-toggle no-arrow">
 							<span class="micon dw dw-file"></span><span class="mtext">Work order list</span>
 						</a>
 					</li>
 					<li>
-						<a href="items.html" class="dropdown-toggle no-arrow">
+						<a href="History.php" class="dropdown-toggle no-arrow">
+							<span class="micon dw dw-file"></span><span class="mtext">History</span>
+						</a>
+					</li>
+					<li>
+						<a href="user.php" class="dropdown-toggle no-arrow">
 							<span class="micon fa fa-cart-plus"></span><span class="mtext">Admin User List</span>
 						</a>
 					</li>
@@ -133,6 +148,7 @@ if(!isset($_SESSION["systemUserID"])){
 							<span class="micon fa fa-users"></span><span class="mtext">User Group</span>
 						</a>
 					</li>
+			
 				</ul>
 			</div>
 		</div>

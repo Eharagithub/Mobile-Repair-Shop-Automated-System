@@ -57,7 +57,7 @@
 			<div class="sidebar-menu">
 				<ul id="accordion-menu">
 					<li>
-						<a href="index.html" class="dropdown-toggle no-arrow">
+						<a href="index.php" class="dropdown-toggle no-arrow">
 							<span class="micon dw dw-house"></span><span class="mtext">Dashboard</span>
 						</a>
 					</li>
@@ -103,7 +103,7 @@
 						</a>
 					</li>
 					<li>
-						<a href="work-order.html" class="dropdown-toggle no-arrow">
+						<a href="user.php" class="dropdown-toggle no-arrow">
 							<span class="micon dw dw-shopping-basket"></span><span class="mtext">Work Order</span>
 						</a>
 					</li>
