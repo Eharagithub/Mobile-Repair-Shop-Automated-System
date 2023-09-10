@@ -30,8 +30,8 @@ a:hover{text-decoration:none}
     margin-top: 15px;
 }
 .section-header h2{
-    position:absolute;
-    top:47%;
+    position:relative;
+    top:20%;
     left:50%;
     transform: translate(-50%,-50%);
     
