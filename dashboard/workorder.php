@@ -86,14 +86,13 @@
 							<span class="micon fa fa-handshake-o"></span><span class="mtext">Locations</span>
 						</a>
 					</li>
-					
 					<h5>Maintaince</h5>
 					<li>
 						<a href="workorder.php" class="dropdown-toggle no-arrow">
 							<span class="micon dw dw-file"></span><span class="mtext">Work order list</span>
 						</a>
 					</li>
-					<li>
+                    <li>
 						<a href="History.php" class="dropdown-toggle no-arrow">
 							<span class="micon dw dw-file"></span><span class="mtext">History</span>
 						</a>
@@ -150,12 +149,12 @@
 					<div class="row">
 						<div class="col-md-6 col-sm-12">
 							<div class="title">
-								<h4><i class="micon dw dw-hammer mtext"></i>Devices</h4>
+								<h4><i class="micon dw dw-hammer mtext"></i>Work Order List</h4>
 							</div>
 							<nav aria-label="breadcrumb" role="navigation">
 								<ol class="breadcrumb">
 									<li class="breadcrumb-item"><a href="index.html">Home</a></li>
-									<li class="breadcrumb-item active" aria-current="page">Device List</li>
+									<li class="breadcrumb-item active" aria-current="page">Work order List</li>
 								</ol>
 							</nav>
 						</div>
@@ -181,9 +180,9 @@
 
 
 
-					function getAlldevice(){
+					function getAlljob(){
 						global $data;
-						$sql = "select * from device";
+						$sql = "select * from job";
 						$result = mysqli_query($data, $sql);
 
 	
@@ -191,11 +190,13 @@
 					while ($row = mysqli_fetch_array($result)) {
 
 							echo "<tr>" . 
-							"<td>" . $row["imiNumber"] . "</td>";
-							echo"<td>" . $row["brand"] . "</td>";
-							echo"<td>" . $row["model"] . "</td>";
-							echo"<td>" . $row["extra"] . "</td>";
-							echo"<td>" . $row["nic"] . "</td>";
+							"<td>" . $row["id"] . "</td>";
+							echo"<td>" . $row["isActive"] . "</td>";
+							echo"<td>" . $row["jobDate"] . "</td>";
+							echo"<td>" . $row["deliveryId"] . "</td>";
+							echo"<td>" . $row["systemuserId"] . "</td>";
+							echo"<td>" . $row["deviceId"] . "</td>";
+                            echo"<td>" . $row["technicianId"] . "</td>";
 							echo"</tr>";
 							
 					}
@@ -214,24 +215,25 @@
 
 				<div class="card-box mb-30">
 					<div class="pd-20">
-						<h4 class="text-blue h4">Device List</h4>
+						<h4 class="text-blue h4">Repair List</h4>
 					</div>
 					<div class="pb-20">
 						<table class="data-table table responsive">
 							<thead>
 							<tr>
-							<th>IMI Number</th>
-							<th>Brand</th>
-							<th>Model</th>
-							<th>Extra</th>
-							<th>NIC</th>
-							<th>Status</th>
+							<th>Order No</th>
+							<th>Is Active</th>
+							<th>Date</th>
+							<th>Delivary ID</th>
+							<th>User ID</th>
+							<th>Device ID</th>
+							<th>Technician ID</th>
 							<th>Action</th>
 						</tr>
 								
 							</thead>
 							<tbody>
-							<?php getAlldevice(); ?>
+							<?php getAlljob(); ?>
 						</tbody>
 							<!--<tbody>
 								<tr>
@@ -286,7 +288,7 @@
 		</div>
 	</div>
 
-				<!-- Add device Modal -->
+				<!-- Add Technician Modal -->
 					<div class="col-md-12 col-sm-12 mb-30">
 							<div class="modal fade" id="add_technician" tabindex="-1" role="dialog" aria-labelledby="myLargeModalLabel" aria-hidden="true">
 								<div class="modal-dialog modal-dialog-centered">
@@ -294,40 +296,52 @@
 										<div class=" border-radius-10">
 											<div class="login-title"><br>
 												<div class="col-md-12 col-sm-12 mb-30">
-												<h2 class="text-center text-primary">Add Device</h2>
+												<h2 class="text-center text-primary">Add Repair</h2>
 												</div>
-											<form action="device2.php" target="" method="POST" onsubmit="return checkpassword ()">
+											<form action="workorder2.php" target="" method="POST" onsubmit="return checkpassword ()">
 
 												<div class="input-group custom">
 												<div class="col-md-6 col-sm-12">
 													<div class="form-group">
-																<label>IMI Number</label>
-																<input class="form-control form-control-lg" type="text" name ="imiNumber">
+																<label>ORDER ID</label>
+																<input class="form-control form-control-lg" type="text" name ="id">
 															</div>
 												</div>
 												<div class="col-md-6 col-sm-12">
 													<div class="form-group">
-																<label>Brand</label>
-																<input class="form-control form-control-lg" type="text" name ="brand">
+																<label>Is Active</label>
+																<input class="form-control form-control-lg" type="text" name ="isActive">
 															</div>
 												</div>
 												<div class="col-md-6 col-sm-12">
 													<div class="form-group">
-																<label>Model</label>
-																<input class="form-control form-control-lg" type="text" name ="model">
+																<label>Job Date</label>
+																<input class="form-control form-control-lg" type="text" name ="jobDate">
 															</div>
 												</div>
 												<div class="col-md-6 col-sm-12">
 													<div class="form-group">
-																<label>Extra</label>
-																<input class="form-control form-control-lg" type="text" name ="extra">
+																<label>Delivary Id</label>
+																<input class="form-control form-control-lg" type="text" name ="deliveryId">
 															</div>
 												</div>
 												
 												<div class="col-md-6 col-sm-12">
 													<div class="form-group">
-																<label>NIC</label>
-																<input class="form-control form-control-lg" type="text" name ="nic">
+																<label>Technician Id</label>
+																<input class="form-control form-control-lg" type="text" name ="technicianId">
+															</div>
+												</div>
+												<div class="col-md-12 col-sm-12">
+													<div class="form-group">
+																<label>User Id</label>
+																<input class="form-control form-control-lg" type="text" name ="systemuserId">
+															</div>
+												</div>
+                                                <div class="col-md-12 col-sm-12">
+													<div class="form-group">
+																<label>Device Id</label>
+																<input class="form-control form-control-lg" type="text" name ="deviceId">
 															</div>
 												</div>
 												

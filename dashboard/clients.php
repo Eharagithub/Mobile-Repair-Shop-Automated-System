@@ -138,10 +138,20 @@ function getAllCustomers(){
 							<span class="micon fa fa-handshake-o"></span><span class="mtext">Delivary</span>
 						</a>
 					</li>
+					<li>
+						<a href="location.php" class="dropdown-toggle no-arrow">
+							<span class="micon fa fa-handshake-o"></span><span class="mtext">Locations</span>
+						</a>
+					</li>
 					<h5>Maintaince</h5>
 					<li>
-						<a href="item-category.html" class="dropdown-toggle no-arrow">
+						<a href="workorder.php" class="dropdown-toggle no-arrow">
 							<span class="micon dw dw-file"></span><span class="mtext">Work order list</span>
+						</a>
+					</li>
+					<li>
+						<a href="History.php" class="dropdown-toggle no-arrow">
+							<span class="micon dw dw-file"></span><span class="mtext">History</span>
 						</a>
 					</li>
 					<li>

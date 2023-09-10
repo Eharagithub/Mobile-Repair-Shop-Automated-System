@@ -81,10 +81,20 @@
 							<span class="micon fa fa-handshake-o"></span><span class="mtext">Delivary List</span>
 						</a>
 					</li>
+					<li>
+						<a href="location.php" class="dropdown-toggle no-arrow">
+							<span class="micon fa fa-handshake-o"></span><span class="mtext">Locations</span>
+						</a>
+					</li>
 					<h5>Maintaince</h5>
 					<li>
-						<a href="item-category.html" class="dropdown-toggle no-arrow">
+						<a href="workorder.php" class="dropdown-toggle no-arrow">
 							<span class="micon dw dw-file"></span><span class="mtext">Work order list</span>
+						</a>
+					</li>
+					<li>
+						<a href="History.php" class="dropdown-toggle no-arrow">
+							<span class="micon dw dw-file"></span><span class="mtext">History</span>
 						</a>
 					</li>
 					<li>
@@ -170,7 +180,7 @@
 
 
 
-					function getAlltechnician(){
+					function getAlldelivery(){
 						global $data;
 						$sql = "select * from delivery";
 						$result = mysqli_query($data, $sql);
@@ -222,7 +232,7 @@
 								
 							</thead>
 							<tbody>
-							<?php getAlltechnician(); ?>
+							<?php getAlldelivery(); ?>
 						</tbody>
 							<!--<tbody>
 								<tr>
@@ -277,7 +287,7 @@
 		</div>
 	</div>
 
-				<!-- Add Technician Modal -->
+				<!-- Add delivary Modal -->
 					<div class="col-md-12 col-sm-12 mb-30">
 							<div class="modal fade" id="add_technician" tabindex="-1" role="dialog" aria-labelledby="myLargeModalLabel" aria-hidden="true">
 								<div class="modal-dialog modal-dialog-centered">
