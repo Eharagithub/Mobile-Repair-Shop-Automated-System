@@ -36,7 +36,7 @@
 						<a class="dropdown-item" href="#"><i class="dw dw-user1"></i> Profile</a>
 						<a class="dropdown-item" href="#"><i class="dw dw-settings2"></i> Setting</a>
 						<hr>
-						<a class="dropdown-item" href="login.html"><i class="dw dw-logout"></i> Log Out</a>
+						<a class="dropdown-item" href="login.php"><i class="dw dw-logout"></i> Log Out</a>
 					</div>
 				</div>
 			</div>
@@ -57,17 +57,17 @@
 			<div class="sidebar-menu">
 				<ul id="accordion-menu">
 					<li>
-						<a href="customer.html" class="dropdown-toggle no-arrow">
+						<a href="customer.php" class="dropdown-toggle no-arrow">
 							<span class="micon dw dw-house"></span><span class="mtext">Dashboard</span>
 						</a>
 					</li>
 					<li>
-						<a href="customer-work-order.html" class="dropdown-toggle no-arrow">
+						<a href="customer-work-order.php" class="dropdown-toggle no-arrow">
 							<span class="micon fa fa-shopping-cart"></span><span class="mtext">Work Order Request</span>
 						</a>
 					</li>
 					<li>
-						<a href="work-order-status.html" class="dropdown-toggle no-arrow">
+						<a href="work-order-status.php" class="dropdown-toggle no-arrow">
 							<span class="micon dw dw-user"></span><span class="mtext">Work Order Status</span>
 						</a>
 					</li>

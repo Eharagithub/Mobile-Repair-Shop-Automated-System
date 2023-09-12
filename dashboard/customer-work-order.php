@@ -57,17 +57,17 @@
 			<div class="sidebar-menu">
 				<ul id="accordion-menu">
 					<li>
-						<a href="customer.html" class="dropdown-toggle no-arrow">
+						<a href="customer.php" class="dropdown-toggle no-arrow">
 							<span class="micon dw dw-house"></span><span class="mtext">Dashboard</span>
 						</a>
 					</li>
 					<li>
-						<a href="customer-work-order.html" class="dropdown-toggle no-arrow">
+						<a href="customer-work-order.php" class="dropdown-toggle no-arrow">
 							<span class="micon fa fa-shopping-cart"></span><span class="mtext">Work Order Request</span>
 						</a>
 					</li>
 					<li>
-						<a href="work-order-status.html" class="dropdown-toggle no-arrow">
+						<a href="work-order-status.php" class="dropdown-toggle no-arrow">
 							<span class="micon dw dw-user"></span><span class="mtext">Work Order Status</span>
 						</a>
 					</li>
