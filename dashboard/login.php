@@ -46,7 +46,7 @@ $buttons = [
     ],
     [
         "label" => "Delivery",
-        "href" => "delivery.php",
+        "href" => "deliverylogin.php",
         "icon" => "fa-truck",
         "active" => true,
     ],
