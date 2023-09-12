@@ -39,17 +39,38 @@ if(!isset($_SESSION["systemUserID"])){
 						<span class="user-icon">
 							<img src="src/images/admin.png" width="50">
 						</span>
+						<!--<span><?php echo  $_SESSION[""] ?></span><br>-->
 						<span class="user-name">User</span>
 					</a>
 					<div class="dropdown-menu dropdown-menu-right dropdown-menu-icon-list">
-						<a class="dropdown-item" href="#"><i class="dw dw-user1"></i> Profile</a>
-						<a class="dropdown-item" href="#"><i class="dw dw-settings2"></i> Setting</a>
-						<span><?php echo  $_SESSION["systemUserEmail"] ?></span><br>
-						<span><?php echo  $_SESSION["locationName"] ?></span><br>
-						
-						<hr>
-						<a class="dropdown-item" href="login.php"><i class="dw dw-logout"></i> Log Out</a>
-					</div>
+    <?php
+    // Style for user name labels
+    $labelStyle = 'font-weight: bold; margin-right: 5px;';
+    
+    // Style for user info spans
+    $infoStyle = 'margin-bottom: 10px;';
+    
+    // Style for the Log Out link
+    $logoutStyle = 'color: #456; text-decoration: none; display: block; padding: 5px 0;';
+    
+    echo '<div style="' . $infoStyle . '">
+              <span style="' . $labelStyle . '">User Email:</span>
+              <span>' . $_SESSION["systemUserEmail"] . '</span>
+          </div>';
+    
+    echo '<div style="' . $infoStyle . '">
+              <span style="' . $labelStyle . '">User Location:</span>
+              <span>' . $_SESSION["locationName"] . '</span>
+          </div>';
+    
+    echo '<hr>';
+    
+    echo '<a href="login.php" style="' . $logoutStyle . '">
+              <i class="dw dw-logout"></i> Log Out
+          </a>';
+    ?>
+</div>
+
 				</div>
 			</div>
 		</div>

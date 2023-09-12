@@ -35,7 +35,7 @@
 									</label>
 									<label class="btn">
 										<input type="radio" name="options" id="user">
-										<a href="customer.html">Technician</a>
+										<a href="customer.php">Technician</a>
 									</label>
 								</div>
 							</div>
