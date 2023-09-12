@@ -51,7 +51,7 @@ if(!isset($_SESSION["systemUserID"])){
     $infoStyle = 'margin-bottom: 10px;';
     
     // Style for the Log Out link
-    $logoutStyle = 'color: #456; text-decoration: none; display: block; padding: 5px 0;';
+    $logoutStyle = 'color: #333; text-decoration: none; display: block; padding: 5px 0;';
     
     echo '<div style="' . $infoStyle . '">
               <span style="' . $labelStyle . '">User Email:</span>
@@ -230,7 +230,7 @@ if(!isset($_SESSION["systemUserID"])){
 								<div class="font-14 text-secondary weight-500">Approved Repairs</div>
 							</div>
 							<div class="widget-icon">
-								<div class="icon" data-color="#09cc06"><i class="icon-copy fa fa-money" aria-hidden="true"></i></div>
+								 <div class="icon" data-color="#09cc06"><i class="fas fa-check" aria-hidden="true"></i></div>
 							</div>
 						</div>
 					</div>
@@ -243,7 +243,7 @@ if(!isset($_SESSION["systemUserID"])){
 								<div class="font-14 text-secondary weight-500">In Progress Repairs</div>
 							</div>
 							<div class="widget-icon">
-								<div class="icon" data-color="#09cc06"><i class="icon-copy fa fa-money" aria-hidden="true"></i></div>
+								<div class="icon" data-color="#09cc06"><i class="fas fa-wrench" aria-hidden="true"></i></div>
 							</div>
 						</div>
 					</div>

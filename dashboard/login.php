@@ -29,14 +29,47 @@
 						<form>
 							<div class="select-role">
 								<div class="btn-group btn-group-toggle" data-toggle="buttons">
-									<label class="btn active">
-										<input type="radio" name="options" id="admin">
-										<a href="index.php">Admin</a>
-									</label>
-									<label class="btn">
-										<input type="radio" name="options" id="user">
-										<a href="customer.php">Technician</a>
-									</label>
+								<?php
+// Define a PHP array to hold the button data
+$buttons = [
+    [
+        "label" => "Admin",
+        "href" => "index.php",
+        "icon" => "fa-user",
+        "active" => true,
+    ],
+    [
+        "label" => "Technician",
+        "href" => "customer.php",
+        "icon" => "fa-wrench",
+        "active" => false,
+    ],
+    [
+        "label" => "Delivery",
+        "href" => "delivery.php",
+        "icon" => "fa-truck",
+        "active" => true,
+    ],
+];
+
+// Loop through the buttons and generate HTML
+foreach ($buttons as $button) {
+    $label = $button["label"];
+    $href = $button["href"];
+    $icon = $button["icon"];
+    $active = $button["active"];
+
+    // Determine if the label should have the "active" class
+    $activeClass = $active ? 'active' : '';
+
+    echo '<label class="btn ' . $activeClass . '" style="display: inline-block; background-color: #eee; padding: 10px 20px; border-radius: 5px; margin-right: 10px; cursor: pointer;">
+              <input type="radio" name="options" id="' . strtolower($label) . '" style="display: none;">
+              <i class="fa ' . $icon . '" style="margin-right: 5px;"></i>
+              <a href="' . $href . '" style="text-decoration: none; color: inherit;">' . $label . '</a>
+          </label>';
+}
+?>
+
 								</div>
 							</div>
 							<div class="input-group custom">
