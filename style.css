@@ -270,15 +270,32 @@ header{
     justify-content: center;
   }
 
-  body {
+  /*body {
     margin: 0;
     padding: 0;
     font-family: Arial, sans-serif;
-    background-image: url('background.jpg'); /* Replace with your background image */
     background-size: cover;
   }
   
-
+  /*@keyframes changeBackground {
+    0%, 100% {
+        background-image: url(background.jpg);
+    }
+    16.66% {
+        background-image: url(aa.jpg);
+    }
+    33.33% {
+        background-image: url(bb.jpg);
+    }
+    50% {
+        background-image: url(4.jpg);
+    }
+    66.66% {
+        background-image: url(5.jpg);
+    }
+    83.33% {
+        background-image: url(6.jpg);
+    }*/
 
 
    
