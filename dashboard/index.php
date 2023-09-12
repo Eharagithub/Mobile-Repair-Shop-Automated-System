@@ -39,7 +39,7 @@ if(!isset($_SESSION["systemUserID"])){
 						<span class="user-icon">
 							<img src="src/images/admin.png" width="50">
 						</span>
-						/<span class="user-name">Log Out</span>
+						<span class="user-name">User</span>
 					</a>
 					<div class="dropdown-menu dropdown-menu-right dropdown-menu-icon-list">
 						<a class="dropdown-item" href="#"><i class="dw dw-user1"></i> Profile</a>
@@ -48,7 +48,7 @@ if(!isset($_SESSION["systemUserID"])){
 						<span><?php echo  $_SESSION["locationName"] ?></span><br>
 						
 						<hr>
-						<a class="dropdown-item" href="login.html"><i class="dw dw-logout"></i> Log Out</a>
+						<a class="dropdown-item" href="login.php"><i class="dw dw-logout"></i> Log Out</a>
 					</div>
 				</div>
 			</div>

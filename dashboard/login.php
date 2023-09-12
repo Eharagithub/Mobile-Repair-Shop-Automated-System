@@ -31,11 +31,11 @@
 								<div class="btn-group btn-group-toggle" data-toggle="buttons">
 									<label class="btn active">
 										<input type="radio" name="options" id="admin">
-										<a href="index.html">Admin</a>
+										<a href="index.php">Admin</a>
 									</label>
 									<label class="btn">
 										<input type="radio" name="options" id="user">
-										<a href="customer.html">Customer</a>
+										<a href="customer.html">Technician</a>
 									</label>
 								</div>
 							</div>
@@ -69,11 +69,11 @@
 											use code for form submit
 											<input class="btn btn-primary btn-lg btn-block" type="submit" value="Sign In">
 										-->
-										<a class="btn btn-primary btn-lg btn-block" href="index.html">Sign In</a>
+										<a class="btn btn-primary btn-lg btn-block" href="index.html">Login</a>
 									</div>
 									<div class="font-16 weight-600 pt-10 pb-10 text-center" data-color="#707373">OR</div>
 									<div class="input-group mb-0">
-										<a class="btn btn-outline-primary btn-lg btn-block" href="register.html">Register To Create Account</a>
+										<a class="btn btn-outline-primary btn-lg btn-block" href="">Go to Website</a>
 									</div>
 								</div>
 							</div>
