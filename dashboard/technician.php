@@ -86,7 +86,6 @@
 							<span class="micon fa fa-handshake-o"></span><span class="mtext">Locations</span>
 						</a>
 					</li>
-					<h5>Maintaince</h5>
 					<li>
 						<a href="workorder.php" class="dropdown-toggle no-arrow">
 							<span class="micon dw dw-file"></span><span class="mtext">Work order list</span>
@@ -214,7 +213,7 @@
 
 				<div class="card-box mb-30">
 					<div class="pd-20">
-						<h4 class="text-blue h4">Repair List</h4>
+						<h4 class="text-blue h4">Technician List</h4>
 					</div>
 					<div class="pb-20">
 						<table class="data-table table responsive">
@@ -295,7 +294,7 @@
 										<div class=" border-radius-10">
 											<div class="login-title"><br>
 												<div class="col-md-12 col-sm-12 mb-30">
-												<h2 class="text-center text-primary">Add Repair</h2>
+												<h2 class="text-center text-primary">Add Technician</h2>
 												</div>
 											<form action="technician2.php" target="" method="POST" onsubmit="return checkpassword ()">
 
