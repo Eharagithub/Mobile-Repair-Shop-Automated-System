@@ -30,7 +30,7 @@
 						<span class="user-icon">
 							<img src="src/images/admin.png" width="50">
 						</span>
-						<span class="user-name">John Doe</span>
+						<span class="user-name">Kamal</span>
 					</a>
 					<div class="dropdown-menu dropdown-menu-right dropdown-menu-icon-list">
 						<a class="dropdown-item" href="#"><i class="dw dw-user1"></i> Profile</a>
