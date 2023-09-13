@@ -220,6 +220,7 @@
 							echo"<td>" . $row["uaddress"] . "</td>";
 							echo"<td>" . $row["phone"] . "</td>";
 							echo"<td>" . $row["email"] . "</td>";
+							echo"<td>" . $row["type"] . "</td>";
 							echo"<td>" . $row["password"] . "</td>";
 							echo"<td>" . $row["locid"] . "</td>";
 							echo"</tr>";
@@ -252,6 +253,7 @@
 							<th>Address</th>
 							<th>Phone</th>
 							<th>Email</th>
+							<th>Type</th>
 							<th>Password</th>
 							<th>locid</th>
 							<th>Status</th>
@@ -363,6 +365,12 @@
 													<div class="form-group">
 																<label>Email</label>
 																<input class="form-control form-control-lg" type="text" name ="email">
+															</div>
+												</div>
+												<div class="col-md-12 col-sm-12">
+													<div class="form-group">
+																<label>Type</label>
+																<input class="form-control form-control-lg" type="text" name ="type">
 															</div>
 												</div>
 												<div class="col-md-12 col-sm-12">

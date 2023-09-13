@@ -215,7 +215,7 @@
 
 							echo "<tr>" . 
 							"<td>" . $row["id"] . "</td>";
-							echo"<td>" . $row["isActive"] . "</td>";
+							echo"<td>" . $row["amount"] . "</td>";
 							echo"<td>" . $row["jobDate"] . "</td>";
 							echo"<td>" . $row["deliveryId"] . "</td>";
 							echo"<td>" . $row["systemuserId"] . "</td>";
@@ -246,7 +246,7 @@
 							<thead>
 							<tr>
 							<th>Order No</th>
-							<th>Is Active</th>
+							<th>Amount</th>
 							<th>Date</th>
 							<th>Delivary ID</th>
 							<th>User ID</th>
@@ -334,7 +334,7 @@
 												<div class="col-md-6 col-sm-12">
 													<div class="form-group">
 																<label>Is Active</label>
-																<input class="form-control form-control-lg" type="text" name ="isActive">
+																<input class="form-control form-control-lg" type="text" name ="amount">
 															</div>
 												</div>
 												<div class="col-md-6 col-sm-12">
