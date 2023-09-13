@@ -302,38 +302,38 @@
 												<div class="col-md-6 col-sm-12">
 													<div class="form-group">
 																<label>Location Id</label>
-																<input class="form-control form-control-lg" type="text" name ="locid">
+																<input class="form-control form-control-lg" type="text" name ="locid" placeholder="Location ID" required>
 															</div>
 												</div>
 												<div class="col-md-6 col-sm-12">
 													<div class="form-group">
 																<label>Name</label>
-																<input class="form-control form-control-lg" type="text" name ="lname">
+																<input class="form-control form-control-lg" type="text" name ="lname" placeholder="Location Name" required>
 															</div>
 												</div>
 												<div class="col-md-6 col-sm-12">
 													<div class="form-group">
 																<label>Address</label>
-																<input class="form-control form-control-lg" type="text" name ="laddress">
+																<input class="form-control form-control-lg" type="text" name ="laddress" placeholder="Location Address" required>
 															</div>
 												</div>
 												<div class="col-md-6 col-sm-12">
 													<div class="form-group">
 																<label>Phone 01</label>
-																<input class="form-control form-control-lg" type="text" name ="phone1">
+																<input class="form-control form-control-lg" type="text" name ="phone1"pattern="[0-9]{10}" placeholder="0714782233" required>
 															</div>
 												</div>
 												
 												<div class="col-md-6 col-sm-12">
 													<div class="form-group">
 																<label>Phone 02</label>
-																<input class="form-control form-control-lg" type="text" name ="phone2">
+																<input class="form-control form-control-lg" type="text" name ="phone2"pattern="[0-9]{10}" placeholder="0714782233" required>
 															</div>
 												</div>
 												<div class="col-md-12 col-sm-12">
 													<div class="form-group">
 																<label>Email</label>
-																<input class="form-control form-control-lg" type="text" name ="email">
+																<input class="form-control form-control-lg" type="text" name ="email" placeholder="abc@gmail.com" Pattern="[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,3}" required>
 															</div>
 												</div>
 												

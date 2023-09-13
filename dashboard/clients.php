@@ -302,38 +302,38 @@
 												<div class="col-md-6 col-sm-12">
 													<div class="form-group">
 																<label>NIC</label>
-																<input class="form-control form-control-lg" type="text" name ="nic">
+																<input class="form-control form-control-lg" type="text" name ="nic"  pattern="[0-9]{12}" placeholder="200116404223" required>
 															</div>
 												</div>
 												<div class="col-md-6 col-sm-12">
 													<div class="form-group">
 																<label>Full Nmae</label>
-																<input class="form-control form-control-lg" type="text" name ="name">
+																<input class="form-control form-control-lg" type="text" name ="name" placeholder="Full Name" required>
 															</div>
 												</div>
 												<div class="col-md-6 col-sm-12">
 													<div class="form-group">
 																<label>Address</label>
-																<input class="form-control form-control-lg" type="text" name ="address">
+																<input class="form-control form-control-lg" type="text" name ="address"placeholder="Address" required>
 															</div>
 												</div>
 												<div class="col-md-6 col-sm-12">
 													<div class="form-group">
 																<label>Phone 01</label>
-																<input class="form-control form-control-lg" type="text" name ="phone1">
+																<input class="form-control form-control-lg" type="text" name ="phone1" pattern="[0-9]{10}" placeholder="0714782233" required>
 															</div>
 												</div>
 												
 												<div class="col-md-6 col-sm-12">
 													<div class="form-group">
 																<label>phone 02</label>
-																<input class="form-control form-control-lg" type="text" name ="phone2">
+																<input class="form-control form-control-lg" type="text" name ="phone2" pattern="[0-9]{10}" placeholder="0714782233" required>
 															</div>
 												</div>
 												<div class="col-md-12 col-sm-12">
 													<div class="form-group">
 																<label>Email</label>
-																<input class="form-control form-control-lg" type="text" name ="email">
+																<input class="form-control form-control-lg" type="text" name ="email" placeholder="abc@gmail.com" Pattern="[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,3}" required>
 															</div>
 												</div>
 												
@@ -343,6 +343,7 @@
 																<input type="submit" class="btn btn-danger" value="Cancel">
 															</div>
 												</div>
+												
 												</div>
 											</form>
 										</div>

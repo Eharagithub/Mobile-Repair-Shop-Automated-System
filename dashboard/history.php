@@ -302,38 +302,38 @@
 												<div class="col-md-6 col-sm-12">
 													<div class="form-group">
 																<label>ID</label>
-																<input class="form-control form-control-lg" type="text" name ="id">
+																<input class="form-control form-control-lg" type="text" name ="id" placeholder="ID" required>
 															</div>
 												</div>
 												<div class="col-md-6 col-sm-12">
 													<div class="form-group">
 																<label>Type</label>
-																<input class="form-control form-control-lg" type="text" name ="htype">
+																<input class="form-control form-control-lg" type="text" name ="htype" placeholder="Type" required>
 															</div>
 												</div>
 												<div class="col-md-6 col-sm-12">
 													<div class="form-group">
 																<label>Note</label>
-																<input class="form-control form-control-lg" type="text" name ="note">
+																<input class="form-control form-control-lg" type="text" name ="note" placeholder="Note" required>
 															</div>
 												</div>
 												<div class="col-md-6 col-sm-12">
 													<div class="form-group">
 																<label>Note Date</label>
-																<input class="form-control form-control-lg" type="text" name ="noteDate">
+																<input class="form-control form-control-lg" type="text" name ="noteDate" placeholder="Note Date" required>
 															</div>
 												</div>
 												
 												<div class="col-md-6 col-sm-12">
 													<div class="form-group">
 																<label>User Id</label>
-																<input class="form-control form-control-lg" type="text" name ="systemuserId">
+																<input class="form-control form-control-lg" type="text" name ="systemuserId" placeholder="User Id" required>
 															</div>
 												</div>
 												<div class="col-md-12 col-sm-12">
 													<div class="form-group">
 																<label>Job ID</label>
-																<input class="form-control form-control-lg" type="text" name ="jobid">
+																<input class="form-control form-control-lg" type="text" name ="jobid"placeholder="Job Id" required>
 															</div>
 												</div>
 												
