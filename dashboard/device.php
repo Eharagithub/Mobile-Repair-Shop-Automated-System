@@ -202,12 +202,12 @@
 
 					?>
 				
-					<div>
+		<!--			<div>
 						<a href="#" data-toggle="modal" data-target="#view"> View</a>
 						<a href="#">Edit</a>
 						<a class="dropdown-item" href="#" data-toggle="modal" data-target="#delete">Delete</a>
 					</div> 
-
+				-->
 					
 
 				<div class="card-box mb-30">
