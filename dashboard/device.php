@@ -300,32 +300,32 @@
 												<div class="col-md-6 col-sm-12">
 													<div class="form-group">
 																<label>IMI Number</label>
-																<input class="form-control form-control-lg" type="text" name ="imiNumber">
+																<input class="form-control form-control-lg" type="text" name ="imiNumber" placeholder="IMI Number" required>
 															</div>
 												</div>
 												<div class="col-md-6 col-sm-12">
 													<div class="form-group">
 																<label>Brand</label>
-																<input class="form-control form-control-lg" type="text" name ="brand">
+																<input class="form-control form-control-lg" type="text" name ="brand" placeholder="Brand" required>
 															</div>
 												</div>
 												<div class="col-md-6 col-sm-12">
 													<div class="form-group">
 																<label>Model</label>
-																<input class="form-control form-control-lg" type="text" name ="model">
+																<input class="form-control form-control-lg" type="text" name ="model" placeholder="Model" required>
 															</div>
 												</div>
 												<div class="col-md-6 col-sm-12">
 													<div class="form-group">
 																<label>Extra</label>
-																<input class="form-control form-control-lg" type="text" name ="extra">
+																<input class="form-control form-control-lg" type="text" name ="extra"placeholder="Extra" required>
 															</div>
 												</div>
 												
 												<div class="col-md-6 col-sm-12">
 													<div class="form-group">
 																<label>NIC</label>
-																<input class="form-control form-control-lg" type="text" name ="nic">
+																<input class="form-control form-control-lg" type="text" name ="nic" pattern="[0-9]{12}" placeholder="200116404223" required>
 															</div>
 												</div>
 												

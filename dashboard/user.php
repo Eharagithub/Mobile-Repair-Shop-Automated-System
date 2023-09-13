@@ -308,56 +308,56 @@
 												<div class="col-md-6 col-sm-12">
 													<div class="form-group">
 																<label>User Id</label>
-																<input class="form-control form-control-lg" type="text" name ="empNo">
+																<input class="form-control form-control-lg" type="text" name ="empNo" placeholder="User Id" required>
 															</div>
 												</div>
 												<div class="col-md-6 col-sm-12">
 													<div class="form-group">
 																<label>NIC</label>
-																<input class="form-control form-control-lg" type="text" name ="nic">
+																<input class="form-control form-control-lg" type="text" name ="nic" pattern="[0-9]{12}" placeholder="200116404223" required>
 															</div>
 												</div>
 												<div class="col-md-6 col-sm-12">
 													<div class="form-group">
 																<label>Name</label>
-																<input class="form-control form-control-lg" type="text" name ="uname">
+																<input class="form-control form-control-lg" type="text" name ="uname" placeholder="User Name" required>
 															</div>
 												</div>
 												<div class="col-md-6 col-sm-12">
 													<div class="form-group">
 																<label>Address</label>
-																<input class="form-control form-control-lg" type="text" name ="uaddress">
+																<input class="form-control form-control-lg" type="text" name ="uaddress" placeholder="User Address" required>
 															</div>
 												</div>
 												
 												<div class="col-md-6 col-sm-12">
 													<div class="form-group">
 																<label>Contact</label>
-																<input class="form-control form-control-lg" type="text" name ="phone">
+																<input class="form-control form-control-lg" type="text" name ="phone" pattern="[0-9]{10}" placeholder="0714782233" required>
 															</div>
 												</div>
 												<div class="col-md-12 col-sm-12">
 													<div class="form-group">
 																<label>Email</label>
-																<input class="form-control form-control-lg" type="text" name ="email">
+																<input class="form-control form-control-lg" type="text" name ="email" placeholder="abc@gmail.com" Pattern="[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,3}" required>
 															</div>
 												</div>
 												<div class="col-md-12 col-sm-12">
 													<div class="form-group">
 																<label>Type</label>
-																<input class="form-control form-control-lg" type="text" name ="type">
+																<input class="form-control form-control-lg" type="text" name ="type" placeholder="Type" required>
 															</div>
 												</div>
 												<div class="col-md-12 col-sm-12">
 													<div class="form-group">
 																<label>Password</label>
-																<input class="form-control form-control-lg" type="password" name ="password">
+																<input class="form-control form-control-lg" type="password" name ="password" placeholder="Password" required>
 															</div>
 												</div>
 												<div class="col-md-12 col-sm-12">
 													<div class="form-group">
 																<label>Location Id</label>
-																<input class="form-control form-control-lg" type="text" name ="locid">
+																<input class="form-control form-control-lg" type="text" name ="locid" placeholder="Location Id" required>
 															</div>
 												</div>
 												

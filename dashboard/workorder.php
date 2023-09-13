@@ -303,44 +303,44 @@
 												<div class="col-md-6 col-sm-12">
 													<div class="form-group">
 																<label>ORDER ID</label>
-																<input class="form-control form-control-lg" type="text" name ="id">
+																<input class="form-control form-control-lg" type="text" name ="id" placeholder="Order Id" required>
 															</div>
 												</div>
 												<div class="col-md-6 col-sm-12">
 													<div class="form-group">
-																<label>Is Active</label>
-																<input class="form-control form-control-lg" type="text" name ="amount">
+																<label>Amount</label>
+																<input class="form-control form-control-lg" type="text" name ="amount" placeholder="Amount" required>
 															</div>
 												</div>
 												<div class="col-md-6 col-sm-12">
 													<div class="form-group">
 																<label>Job Date</label>
-																<input class="form-control form-control-lg" type="text" name ="jobDate">
+																<input class="form-control form-control-lg" type="text" name ="jobDate" placeholder="Date" required>
 															</div>
 												</div>
 												<div class="col-md-6 col-sm-12">
 													<div class="form-group">
 																<label>Delivary Id</label>
-																<input class="form-control form-control-lg" type="text" name ="deliveryId">
+																<input class="form-control form-control-lg" type="text" name ="deliveryId" placeholder="Delivery Id" required>
 															</div>
 												</div>
 												
 												<div class="col-md-6 col-sm-12">
 													<div class="form-group">
 																<label>Technician Id</label>
-																<input class="form-control form-control-lg" type="text" name ="technicianId">
+																<input class="form-control form-control-lg" type="text" name ="technicianId" placeholder="Technician Id" required>
 															</div>
 												</div>
 												<div class="col-md-12 col-sm-12">
 													<div class="form-group">
 																<label>User Id</label>
-																<input class="form-control form-control-lg" type="text" name ="systemuserId">
+																<input class="form-control form-control-lg" type="text" name ="systemuserId" placeholder="User Id" required>
 															</div>
 												</div>
                                                 <div class="col-md-12 col-sm-12">
 													<div class="form-group">
 																<label>Device Id</label>
-																<input class="form-control form-control-lg" type="text" name ="deviceId">
+																<input class="form-control form-control-lg" type="text" name ="deviceId" placeholder="IMI Number" required>
 															</div>
 												</div>
 												
