@@ -29,14 +29,47 @@
 						<form>
 							<div class="select-role">
 								<div class="btn-group btn-group-toggle" data-toggle="buttons">
-									<label class="btn active">
-										<input type="radio" name="options" id="admin">
-										<a href="index.html">Admin</a>
-									</label>
-									<label class="btn">
-										<input type="radio" name="options" id="user">
-										<a href="customer.html">Customer</a>
-									</label>
+								<?php
+// Define a PHP array to hold the button data
+$buttons = [
+    [
+        "label" => "Admin",
+        "href" => "index.php",
+        "icon" => "fa-user",
+        "active" => true,
+    ],
+    [
+        "label" => "Technician",
+        "href" => "customer.php",
+        "icon" => "fa-wrench",
+        "active" => false,
+    ],
+    [
+        "label" => "Delivery",
+        "href" => "deliverylogin.php",
+        "icon" => "fa-truck",
+        "active" => true,
+    ],
+];
+
+// Loop through the buttons and generate HTML
+foreach ($buttons as $button) {
+    $label = $button["label"];
+    $href = $button["href"];
+    $icon = $button["icon"];
+    $active = $button["active"];
+
+    // Determine if the label should have the "active" class
+    $activeClass = $active ? 'active' : '';
+
+    echo '<label class="btn ' . $activeClass . '" style="display: inline-block; background-color: #eee; padding: 10px 20px; border-radius: 5px; margin-right: 10px; cursor: pointer;">
+              <input type="radio" name="options" id="' . strtolower($label) . '" style="display: none;">
+              <i class="fa ' . $icon . '" style="margin-right: 5px;"></i>
+              <a href="' . $href . '" style="text-decoration: none; color: inherit;">' . $label . '</a>
+          </label>';
+}
+?>
+
 								</div>
 							</div>
 							<div class="input-group custom">
@@ -69,11 +102,11 @@
 											use code for form submit
 											<input class="btn btn-primary btn-lg btn-block" type="submit" value="Sign In">
 										-->
-										<a class="btn btn-primary btn-lg btn-block" href="index.html">Sign In</a>
+										<a class="btn btn-primary btn-lg btn-block" href="index.html">Login</a>
 									</div>
 									<div class="font-16 weight-600 pt-10 pb-10 text-center" data-color="#707373">OR</div>
 									<div class="input-group mb-0">
-										<a class="btn btn-outline-primary btn-lg btn-block" href="register.html">Register To Create Account</a>
+										<a class="btn btn-outline-primary btn-lg btn-block" href="">Go to Website</a>
 									</div>
 								</div>
 							</div>

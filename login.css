@@ -49,6 +49,6 @@ body {
 }
 
 .login-box input[type="submit"]:hover {
-	background: #ffc107;
-	color: #000;
+	background: #854c36;
+	color: tomato;
 }

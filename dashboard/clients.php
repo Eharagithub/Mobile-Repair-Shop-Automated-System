@@ -322,7 +322,7 @@ function getAllCustomers(){
 									<div class="col-md-12 col-sm-12">
 										<div class="form-group">
 											<input type="submit" class="btn btn-primary" name="createCustomer" value="Submit">
-											<a href="#" class="btn btn-danger" data-backdrop="static" data-toggle="modal" data-target="#add_technician">
+											<a href="clients.php" class="btn btn-danger" data-backdrop="static" data-toggle="modal" data-target="#add_technician">
 												Cancel
 											</a>
 										</div>

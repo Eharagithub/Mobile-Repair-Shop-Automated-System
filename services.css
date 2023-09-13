@@ -51,21 +51,21 @@ a:hover{text-decoration:none}
     position: relative;
 }
 .service-bg-1{
-    background: url("1.jpg");
+    background-image: url("h-1.jpg");
     -webkit-background-size:cover ;
     background-size: cover;
     background-position:center;
 
 }
 .service-bg-2{
-    background: url("h-1.jpg");
+    background: url("cc.jpg");
     -webkit-background-size:cover ;
     background-size: cover;
     background-position:center;
 
 }
 .service-bg-3{
-    background: url("22.jpg");
+    background: url("dd.jpg");
     -webkit-background-size:cover ;
     background-size: cover;
     background-position:center;
