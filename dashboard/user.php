@@ -30,38 +30,14 @@
 						<span class="user-icon">
 							<img src="src/images/admin.png" width="50">
 						</span>
-						<!--<span><?php echo  $_SESSION[""] ?></span><br>-->
-						<span class="user-name">User</span>
+						<span class="user-name">Log Out</span>
 					</a>
 					<div class="dropdown-menu dropdown-menu-right dropdown-menu-icon-list">
-    <?php
-    // Style for user name labels
-    $labelStyle = 'font-weight: bold; margin-right: 5px;';
-    
-    // Style for user info spans
-    $infoStyle = 'margin-bottom: 10px;';
-    
-    // Style for the Log Out link
-    $logoutStyle = 'color: #333; text-decoration: none; display: block; padding: 5px 0;';
-    
-    echo '<div style="' . $infoStyle . '">
-              <span style="' . $labelStyle . '">User Email:</span>
-              <span>' . $_SESSION["systemUserEmail"] . '</span>
-          </div>';
-    
-    echo '<div style="' . $infoStyle . '">
-              <span style="' . $labelStyle . '">User Location:</span>
-              <span>' . $_SESSION["locationName"] . '</span>
-          </div>';
-    
-    echo '<hr>';
-    
-    echo '<a href="login.php" style="' . $logoutStyle . '">
-              <i class="dw dw-logout"></i> Log Out
-          </a>';
-    ?>
-</div>
-
+						<a class="dropdown-item" href="#"><i class="dw dw-user1"></i> Profile</a>
+						<a class="dropdown-item" href="#"><i class="dw dw-settings2"></i> Setting</a>
+						<hr>
+						<a class="dropdown-item" href="login.html"><i class="dw dw-logout"></i> Log Out</a>
+					</div>
 				</div>
 			</div>
 		</div>
@@ -80,7 +56,7 @@
 		<div class="menu-block customscroll">
 			<div class="sidebar-menu">
 				<ul id="accordion-menu">
-				<li>
+					<li>
 						<a href="index.php" class="dropdown-toggle no-arrow">
 							<span class="micon dw dw-house"></span><span class="mtext">Dashboard</span>
 						</a>
@@ -126,17 +102,17 @@
 						</a>
 					</li>
 					<li>
-						<a href="work-order.php" class="dropdown-toggle no-arrow">
+						<a href="work-order.html" class="dropdown-toggle no-arrow">
 							<span class="micon dw dw-shopping-basket"></span><span class="mtext">Work Order</span>
 						</a>
 					</li>
 					<li>
-						<a href="payment.php" class="dropdown-toggle no-arrow">
+						<a href="payment.html" class="dropdown-toggle no-arrow">
 							<span class="micon dw dw-money"></span><span class="mtext">Payment</span>
 						</a>
 					</li>
 					<li>
-						<a href="settings.php" class="dropdown-toggle no-arrow">
+						<a href="settings.html" class="dropdown-toggle no-arrow">
 							<span class="micon dw dw-settings2"></span><span class="mtext">Settings</span>
 						</a>
 					</li>
@@ -145,21 +121,20 @@
 							<span class="micon dw dw-bar-chart"></span><span class="mtext">reports</span>
 						</a>
 						<ul class="submenu">
-							<li><a href="bar.php">Bar Chart</a></li>
-							<li><a href="pie.php">Pie Chart</a></li>
+							<li><a href="bar.html">Bar Chart</a></li>
+							<li><a href="pie.html">Pie Chart</a></li>
 						</ul>
 					</li>
 					<li>
-						<a href="user.php" class="dropdown-toggle no-arrow">
+						<a href="user.html" class="dropdown-toggle no-arrow">
 							<span class="micon dw dw-user1"></span><span class="mtext">Users</span>
 						</a>
 					</li>
 					<li>
-						<a href="user-group.php" class="dropdown-toggle no-arrow">
+						<a href="user-group.html" class="dropdown-toggle no-arrow">
 							<span class="micon fa fa-users"></span><span class="mtext">User Group</span>
 						</a>
 					</li>
-			
 				</ul>
 			</div>
 		</div>
