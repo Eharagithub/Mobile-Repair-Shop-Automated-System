@@ -106,7 +106,7 @@ foreach ($buttons as $button) {
 									</div>
 									<div class="font-16 weight-600 pt-10 pb-10 text-center" data-color="#707373">OR</div>
 									<div class="input-group mb-0">
-										<a class="btn btn-outline-primary btn-lg btn-block" href="">Go to Website</a>
+										<a class="btn btn-outline-primary btn-lg btn-block" href="http://localhost/Mobile-Repair-Shop/index.php">Go to Website</a>
 									</div>
 								</div>
 							</div>

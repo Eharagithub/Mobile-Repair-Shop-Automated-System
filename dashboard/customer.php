@@ -30,7 +30,7 @@
 						<span class="user-icon">
 							<img src="src/images/admin.png" width="50">
 						</span>
-						<span class="user-name">John Doe</span>
+						<span class="user-name">Kasthuri</span>
 					</a>
 					<div class="dropdown-menu dropdown-menu-right dropdown-menu-icon-list">
 						<a class="dropdown-item" href="#"><i class="dw dw-user1"></i> Profile</a>
@@ -63,6 +63,16 @@
 					</li>
 					<li>
 						<a href="customer-work-order.php" class="dropdown-toggle no-arrow">
+							<span class="micon fa fa-shopping-cart"></span><span class="mtext">Work Order Request</span>
+						</a>
+					</li>
+					<li>
+						<a href="technician.php" class="dropdown-toggle no-arrow">
+							<span class="micon fa fa-shopping-cart"></span><span class="mtext">Work Order Request</span>
+						</a>
+					</li>
+					<li>
+						<a href="device.php" class="dropdown-toggle no-arrow">
 							<span class="micon fa fa-shopping-cart"></span><span class="mtext">Work Order Request</span>
 						</a>
 					</li>
