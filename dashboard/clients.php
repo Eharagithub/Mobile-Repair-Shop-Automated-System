@@ -270,7 +270,7 @@ if (isset($_REQUEST["createClient"])) {
 												<div class="col-md-12 col-sm-12">
 													<div class="form-group">
 																<input type="submit" class="btn btn-primary" value="Submit">
-																<input type="submit" class="btn btn-danger" value="Cancel">
+																<input type="reset" class="btn btn-danger" value="Cancel" data-backdrop="static" data-toggle="modal" data-target="#add_technician">
 															</div>
 												</div>
 												
