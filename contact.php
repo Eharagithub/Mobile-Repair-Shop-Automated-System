@@ -10,20 +10,14 @@
 
     
     </head>
-
+    <?php include_once("./Common/header.php") ?>
     <body>
     <form class="contact-form" method="post" action="send-email.php">
     <!-- Form content -->
-</form>
-<h1 class="contact-title">Contact</h1>
-By using a specific class or ID for the contact form and "Contact" text, you ensure that the styles from style.css only affect elements with those classes or IDs, and they won't interfere with other pages that don't use those specific classes or IDs.
+    </form>
+    <h1 class="contact-title">Contact</h1>
+    <p>By using a specific class or ID for the contact form and "Contact" text, you ensure that the styles from style.css only affect elements with those classes or IDs, and they won't interfere with other pages that don't use those specific classes or IDs.</p>
 
-
-
-
-
-
-           <?php include_once("./Common/header.php") ?>
         <h1>Contact</h1>
 
         <form method="post" action="send-email.php">

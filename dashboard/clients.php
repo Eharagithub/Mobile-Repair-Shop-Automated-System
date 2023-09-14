@@ -140,7 +140,7 @@ if (isset($_REQUEST["createClient"])) {
 
 							</thead>
 							<tbody>
-<<<<<<< Updated upstream
+
 							<?php getAllcustomer(); ?>
 							<td>
 										<div class="dropdown">
@@ -158,7 +158,6 @@ if (isset($_REQUEST["createClient"])) {
 							
 						</tbody>
 							
-=======
 								<?php getAllcustomer(); ?>
 							</tbody>
 							<!--<tbody>
