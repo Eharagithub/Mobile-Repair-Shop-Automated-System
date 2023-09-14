@@ -4,11 +4,11 @@ img{
     height: auto;
 }
 h1,h2,h3,h4,h5,h6{
-    margin: 0 0 15px;
+    margin: 0;
     font-weight: 700;
 
 }
-html,body{height: 100%}
+/*html,body{height: 100%}*/
 
 body{
     background: #ddd;
@@ -27,18 +27,37 @@ a:hover{text-decoration:none}
 .section-header{
     text-align: center;         /*tac*/
     margin-bottom: 30px;        /*mb30*/
-    margin-top: 15px;
+    margin-top: 5px;
 }
 .section-header h2{
-    position:relative;
-    top:20%;
-    left:50%;
-    transform: translate(-50%,-50%);
-    
+    background-color: rgba(11, 10, 10, 0.5); /* Transparent white background */
+    padding: 20px;
+    border-radius: 20px;
+    max-width: 500px;
+    margin: 0 auto;
+    box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.2);
+    color:bisque;
+    position: absolute;
+	top: 50%;
+	left: 50%;
+	transform: translate(-50%,-50%);
+    z-index: 2;  /*Place the h2 in front of the background */
 }
 
 .section-header p{
     font-size: 18px;
+    background-color: rgba(11, 10, 10, 0.5); /* Transparent white background */
+    padding: 20px;
+    border-radius: 10px;
+    color:bisque;
+    max-width: 600px;
+    margin: 0 auto;
+    box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.2);
+    position: absolute;
+	top: 50%;
+	left: 50%;
+	transform: translate(-50%,-50%);
+    z-index: 1; /* Place the h2 in front of the background */
 }
 
 .single-service{
@@ -51,7 +70,7 @@ a:hover{text-decoration:none}
     position: relative;
 }
 .service-bg-1{
-    background-image: url("h-1.jpg");
+    background: url("h-1.jpg");
     -webkit-background-size:cover ;
     background-size: cover;
     background-position:center;

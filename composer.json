@@ -1,0 +1,17 @@
+{
+    "name": "kanchana/mobile-repair-shop",
+    "autoload": {
+        "psr-4": {
+            "Kanchana\\MobileRepairShop\\": "src/"
+        }
+    },
+    "authors": [
+        {
+            "name": "PMKS RATHNAYAKA",
+            "email": "123926770+KanchanaSaranga@users.noreply.github.com"
+        }
+    ],
+    "require": {
+        "twilio/sdk": "^7.9"
+    }
+}

@@ -10,13 +10,13 @@
     position: absolute;
 	  top: 50%;
 	  left: 50%;
-	  transform: translate(-50%,-50%);
-	  
+	  transform: translate(-50%,-50%); 
   }
   
   h2 {
     color: #f0ebeb;
-    font-size: 24px;
+    font-size: 30px;
+    text-align: center;
   }
   
   p {
@@ -24,3 +24,6 @@
     font-size: 16px;
     line-height: 1.5;
   }
+  
+
+

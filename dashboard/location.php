@@ -30,38 +30,14 @@
 						<span class="user-icon">
 							<img src="src/images/admin.png" width="50">
 						</span>
-						<!--<span><?php echo  $_SESSION[""] ?></span><br>-->
-						<span class="user-name">User</span>
+						<span class="user-name">Log Out</span>
 					</a>
 					<div class="dropdown-menu dropdown-menu-right dropdown-menu-icon-list">
-    <?php
-    // Style for user name labels
-    $labelStyle = 'font-weight: bold; margin-right: 5px;';
-    
-    // Style for user info spans
-    $infoStyle = 'margin-bottom: 10px;';
-    
-    // Style for the Log Out link
-    $logoutStyle = 'color: #333; text-decoration: none; display: block; padding: 5px 0;';
-    
-    echo '<div style="' . $infoStyle . '">
-              <span style="' . $labelStyle . '">User Email:</span>
-              <span>' . $_SESSION["systemUserEmail"] . '</span>
-          </div>';
-    
-    echo '<div style="' . $infoStyle . '">
-              <span style="' . $labelStyle . '">User Location:</span>
-              <span>' . $_SESSION["locationName"] . '</span>
-          </div>';
-    
-    echo '<hr>';
-    
-    echo '<a href="login.php" style="' . $logoutStyle . '">
-              <i class="dw dw-logout"></i> Log Out
-          </a>';
-    ?>
-</div>
-
+						<a class="dropdown-item" href="#"><i class="dw dw-user1"></i> Profile</a>
+						<a class="dropdown-item" href="#"><i class="dw dw-settings2"></i> Setting</a>
+						<hr>
+						<a class="dropdown-item" href="login.html"><i class="dw dw-logout"></i> Log Out</a>
+					</div>
 				</div>
 			</div>
 		</div>
@@ -80,7 +56,7 @@
 		<div class="menu-block customscroll">
 			<div class="sidebar-menu">
 				<ul id="accordion-menu">
-				<li>
+					<li>
 						<a href="index.php" class="dropdown-toggle no-arrow">
 							<span class="micon dw dw-house"></span><span class="mtext">Dashboard</span>
 						</a>
@@ -100,12 +76,12 @@
 							<span class="micon fa fa-handshake-o"></span><span class="mtext">Devices</span>
 						</a>
 					</li>
-					<li>
-						<a href="delivary.php" class="dropdown-toggle no-arrow">
-							<span class="micon fa fa-handshake-o"></span><span class="mtext">Delivary</span>
+                    <li>
+						<a href="device.php" class="dropdown-toggle no-arrow">
+							<span class="micon fa fa-handshake-o"></span><span class="mtext">Delivary List</span>
 						</a>
 					</li>
-					<li>
+                    <li>
 						<a href="location.php" class="dropdown-toggle no-arrow">
 							<span class="micon fa fa-handshake-o"></span><span class="mtext">Locations</span>
 						</a>
@@ -115,7 +91,7 @@
 							<span class="micon dw dw-file"></span><span class="mtext">Work order list</span>
 						</a>
 					</li>
-					<li>
+                    <li>
 						<a href="History.php" class="dropdown-toggle no-arrow">
 							<span class="micon dw dw-file"></span><span class="mtext">History</span>
 						</a>
@@ -126,17 +102,17 @@
 						</a>
 					</li>
 					<li>
-						<a href="work-order.php" class="dropdown-toggle no-arrow">
+						<a href="work-order.html" class="dropdown-toggle no-arrow">
 							<span class="micon dw dw-shopping-basket"></span><span class="mtext">Work Order</span>
 						</a>
 					</li>
 					<li>
-						<a href="payment.php" class="dropdown-toggle no-arrow">
+						<a href="payment.html" class="dropdown-toggle no-arrow">
 							<span class="micon dw dw-money"></span><span class="mtext">Payment</span>
 						</a>
 					</li>
 					<li>
-						<a href="settings.php" class="dropdown-toggle no-arrow">
+						<a href="settings.html" class="dropdown-toggle no-arrow">
 							<span class="micon dw dw-settings2"></span><span class="mtext">Settings</span>
 						</a>
 					</li>
@@ -145,21 +121,20 @@
 							<span class="micon dw dw-bar-chart"></span><span class="mtext">reports</span>
 						</a>
 						<ul class="submenu">
-							<li><a href="bar.php">Bar Chart</a></li>
-							<li><a href="pie.php">Pie Chart</a></li>
+							<li><a href="bar.html">Bar Chart</a></li>
+							<li><a href="pie.html">Pie Chart</a></li>
 						</ul>
 					</li>
 					<li>
-						<a href="user.php" class="dropdown-toggle no-arrow">
+						<a href="user.html" class="dropdown-toggle no-arrow">
 							<span class="micon dw dw-user1"></span><span class="mtext">Users</span>
 						</a>
 					</li>
 					<li>
-						<a href="user-group.php" class="dropdown-toggle no-arrow">
+						<a href="user-group.html" class="dropdown-toggle no-arrow">
 							<span class="micon fa fa-users"></span><span class="mtext">User Group</span>
 						</a>
 					</li>
-			
 				</ul>
 			</div>
 		</div>
@@ -327,38 +302,38 @@
 												<div class="col-md-6 col-sm-12">
 													<div class="form-group">
 																<label>Location Id</label>
-																<input class="form-control form-control-lg" type="text" name ="locid">
+																<input class="form-control form-control-lg" type="text" name ="locid" placeholder="Location ID" required>
 															</div>
 												</div>
 												<div class="col-md-6 col-sm-12">
 													<div class="form-group">
 																<label>Name</label>
-																<input class="form-control form-control-lg" type="text" name ="lname">
+																<input class="form-control form-control-lg" type="text" name ="lname" placeholder="Location Name" required>
 															</div>
 												</div>
 												<div class="col-md-6 col-sm-12">
 													<div class="form-group">
 																<label>Address</label>
-																<input class="form-control form-control-lg" type="text" name ="laddress">
+																<input class="form-control form-control-lg" type="text" name ="laddress" placeholder="Location Address" required>
 															</div>
 												</div>
 												<div class="col-md-6 col-sm-12">
 													<div class="form-group">
 																<label>Phone 01</label>
-																<input class="form-control form-control-lg" type="text" name ="phone1">
+																<input class="form-control form-control-lg" type="text" name ="phone1"pattern="[0-9]{10}" placeholder="0714782233" required>
 															</div>
 												</div>
 												
 												<div class="col-md-6 col-sm-12">
 													<div class="form-group">
 																<label>Phone 02</label>
-																<input class="form-control form-control-lg" type="text" name ="phone2">
+																<input class="form-control form-control-lg" type="text" name ="phone2"pattern="[0-9]{10}" placeholder="0714782233" required>
 															</div>
 												</div>
 												<div class="col-md-12 col-sm-12">
 													<div class="form-group">
 																<label>Email</label>
-																<input class="form-control form-control-lg" type="text" name ="email">
+																<input class="form-control form-control-lg" type="text" name ="email" placeholder="abc@gmail.com" Pattern="[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,3}" required>
 															</div>
 												</div>
 												
