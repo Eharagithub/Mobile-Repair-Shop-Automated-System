@@ -18,7 +18,7 @@
                 <h1>Phone Repair Center</h1>
             </div>
             <div class ="button">
-                <a href="services.php" class="btn">View services</a>
+                <a href="Servicess.php" class="btn">View services</a>
                 <a href="about.php" class="btn">Catch our Specialists</a>
                 <a href="statusview.php" class="btn">View Status</a>
             </div>
@@ -175,7 +175,7 @@
 
     </div>
   </section>
-
+<!--
 
     <section>
     <div>

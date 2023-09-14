@@ -1,5 +1,35 @@
+<?php session_start(); ?>
+<?php
+
+if (isset($_REQUEST["createClient"])) {
+	$nic = $_POST['nic'];
+	$name = $_POST['name'];
+	$address = $_POST['address'];
+	$phone1 = $_POST['phone1'];
+	$phone2 = $_POST['phone2'];
+	$email = $_POST['email'];
+	/*$repassword= $_POST['repassword'];*/
+
+	//database connection
+	$conn = new mysqli('localhost', 'root', '', 'mobileshopdb');
+	if ($conn->connect_error) {
+		die('Connection Failed : ' . $conn->connect_error);
+	} else {
+		$stmt = $conn->prepare("INSERT INTO customer(nic,name,address,phone1,phone2,email)values(?,?,?,?,?,?)");
+		$stmt->bind_param("isssss", $nic, $name, $address, $phone1, $phone2, $email);
+		$stmt->execute();
+		echo "Yor Registration is Successfully....";
+		$stmt->close();
+		$conn->close();
+	}
+
+}
+
+
+?>
 <!DOCTYPE html>
 <html>
+
 <head>
 	<!-- Basic Page Info -->
 	<meta charset="utf-8">
@@ -9,7 +39,8 @@
 	<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
 
 	<!-- Google Font -->
-	<link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+	<link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap"
+		rel="stylesheet">
 	<!-- CSS -->
 	<link rel="stylesheet" type="text/css" href="vendors/styles/core.css">
 	<link rel="stylesheet" type="text/css" href="vendors/styles/icon-font.min.css">
@@ -18,128 +49,10 @@
 	<link rel="stylesheet" type="text/css" href="vendors/styles/style.css">
 
 </head>
-<body>
-	<div class="header">
-		<div class="header-left">
-			<div class="menu-icon dw dw-menu"></div>
-		</div>
-		<div class="header-right">
-			<div class="user-info-dropdown">
-				<div class="dropdown">
-					<a class="dropdown-toggle" href="#" role="button" data-toggle="dropdown">
-						<span class="user-icon">
-							<img src="src/images/admin.png" width="50">
-						</span>
-						<span class="user-name">Log Out</span>
-					</a>
-					<div class="dropdown-menu dropdown-menu-right dropdown-menu-icon-list">
-						<a class="dropdown-item" href="#"><i class="dw dw-user1"></i> Profile</a>
-						<a class="dropdown-item" href="#"><i class="dw dw-settings2"></i> Setting</a>
-						<hr>
-						<a class="dropdown-item" href="login.html"><i class="dw dw-logout"></i> Log Out</a>
-					</div>
-				</div>
-			</div>
-		</div>
-	</div>
 
-	<div class="left-side-bar">
-		<div class="brand-logo">
-			<a href="index.html">
-				<img src="src/images/logo.png" width="50px">
-				<h4 style="color: #f3f3f4;font-size: 20px;padding: 15px"> Repair Shop</h4>
-			</a>
-			<div class="close-sidebar" data-toggle="left-sidebar-close">
-				<i class="ion-close-round"></i>
-			</div>
-		</div>
-		<div class="menu-block customscroll">
-			<div class="sidebar-menu">
-				<ul id="accordion-menu">
-					<li>
-						<a href="index.php" class="dropdown-toggle no-arrow">
-							<span class="micon dw dw-house"></span><span class="mtext">Dashboard</span>
-						</a>
-					</li>
-					<li>
-						<a href="clients.php" class="dropdown-toggle no-arrow">
-							<span class="micon dw dw-user"></span><span class="mtext">Client List</span>
-						</a>
-					</li>
-					<li>
-						<a href="technician.php" class="dropdown-toggle no-arrow">
-							<span class="micon fa fa-wrench"></span><span class="mtext">Technician List</span>
-						</a>
-					</li>
-					<li>
-						<a href="device.php" class="dropdown-toggle no-arrow">
-							<span class="micon fa fa-handshake-o"></span><span class="mtext">Devices</span>
-						</a>
-					</li>
-					<li>
-						<a href="delivary.php" class="dropdown-toggle no-arrow">
-							<span class="micon fa fa-handshake-o"></span><span class="mtext">Delivary</span>
-						</a>
-					</li>
-					<li>
-						<a href="location.php" class="dropdown-toggle no-arrow">
-							<span class="micon fa fa-handshake-o"></span><span class="mtext">Locations</span>
-						</a>
-					</li>
-					<li>
-						<a href="workorder.php" class="dropdown-toggle no-arrow">
-							<span class="micon dw dw-file"></span><span class="mtext">Work order list</span>
-						</a>
-					</li>
-					<li>
-						<a href="History.php" class="dropdown-toggle no-arrow">
-							<span class="micon dw dw-file"></span><span class="mtext">History</span>
-						</a>
-					</li>
-					<li>
-						<a href="user.php" class="dropdown-toggle no-arrow">
-							<span class="micon fa fa-cart-plus"></span><span class="mtext">Admin User List</span>
-						</a>
-					</li>
-					<li>
-						<a href="work-order.html" class="dropdown-toggle no-arrow">
-							<span class="micon dw dw-shopping-basket"></span><span class="mtext">Work Order</span>
-						</a>
-					</li>
-					<li>
-						<a href="payment.html" class="dropdown-toggle no-arrow">
-							<span class="micon dw dw-money"></span><span class="mtext">Payment</span>
-						</a>
-					</li>
-					<li>
-						<a href="settings.html" class="dropdown-toggle no-arrow">
-							<span class="micon dw dw-settings2"></span><span class="mtext">Settings</span>
-						</a>
-					</li>
-					<li class="dropdown">
-						<a href="javascript:;" class="dropdown-toggle">
-							<span class="micon dw dw-bar-chart"></span><span class="mtext">reports</span>
-						</a>
-						<ul class="submenu">
-							<li><a href="bar.html">Bar Chart</a></li>
-							<li><a href="pie.html">Pie Chart</a></li>
-						</ul>
-					</li>
-					<li>
-						<a href="user.html" class="dropdown-toggle no-arrow">
-							<span class="micon dw dw-user1"></span><span class="mtext">Users</span>
-						</a>
-					</li>
-					<li>
-						<a href="user-group.html" class="dropdown-toggle no-arrow">
-							<span class="micon fa fa-users"></span><span class="mtext">User Group</span>
-						</a>
-					</li>
-				</ul>
-			</div>
-		</div>
-	</div>
-	<div class="mobile-menu-overlay"></div>
+<body>
+
+	<?php include_once("../Common/drower.php"); ?>
 
 	<div class="main-container">
 		<div class="pd-ltr-20 xs-pd-20-10">
@@ -159,7 +72,8 @@
 						</div>
 						<div class="col-md-6 col-sm-12 text-right">
 							<div class="dropdown">
-								<a href="#" class="btn btn-primary" data-backdrop="static" data-toggle="modal" data-target="#add_technician">
+								<a href="#" class="btn btn-primary" data-backdrop="static" data-toggle="modal"
+									data-target="#add_technician">
 									Add New
 								</a>
 							</div>
@@ -167,30 +81,32 @@
 					</div>
 				</div>
 				<!-- Simple Datatable start -->
-				<?php 
+				<?php
 
-					$host = "localhost";
-					$user = "root";
-					$password = "";
-					$db = "mobileShopDb";
+				$host = "localhost";
+				$user = "root";
+				$password = "";
+				$db = "mobileShopDb";
 
-					$data = mysqli_connect($host, $user, $password, $db);
-
-
+				$data = mysqli_connect($host, $user, $password, $db);
 
 
-					function getAllcustomer(){
-						global $data;
-						$sql = "select * from customer";
-						$result = mysqli_query($data, $sql);
 
-	
+
+				function getAllcustomer()
+				{
+					global $data;
+					$sql = "select * from customer";
+					$result = mysqli_query($data, $sql);
+
+
 
 					while ($row = mysqli_fetch_array($result)) {
 						
 
-							echo "<tr>" . 
+						echo "<tr>" .
 							"<td>" . $row["nic"] . "</td>";
+<<<<<<< Updated upstream
 							echo"<td>" . $row["name"] . "</td>";
 							echo"<td>" . $row["address"] . "</td>";
 							echo"<td>" . $row["phone1"] . "</td>";
@@ -205,6 +121,29 @@
 					}
 
 					?>	
+=======
+						echo "<td>" . $row["name"] . "</td>";
+						echo "<td>" . $row["address"] . "</td>";
+						echo "<td>" . $row["phone1"] . "</td>";
+						echo "<td>" . $row["phone2"] . "</td>";
+						echo "<td>" . $row["email"] . "</td>";
+						echo "</tr>";
+
+					}
+
+				}
+
+				?>
+
+				<!--				<div>
+						<a href="#" data-toggle="modal" data-target="#view"> View</a>
+						<a href="#">Edit</a>
+						<a class="dropdown-item" href="#" data-toggle="modal" data-target="#delete">Delete</a>
+					</div> 
+				-->
+
+
+>>>>>>> Stashed changes
 				<div class="card-box mb-30">
 					<div class="pd-20">
 						<h4 class="text-blue h4">Customer List</h4>
@@ -212,19 +151,20 @@
 					<div class="pb-20">
 						<table class="data-table table responsive">
 							<thead>
-							<tr>
-							<th>NIC</th>
-							<th>Full Name</th>
-							<th>Address</th>
-							<th>Phone 1</th>
-							<th>Phone 2</th>
-							<th>Email</th>
-							<th>Status</th>
-							<th>Action</th>
-						</tr>
-								
+								<tr>
+									<th>NIC</th>
+									<th>Full Name</th>
+									<th>Address</th>
+									<th>Phone 1</th>
+									<th>Phone 2</th>
+									<th>Email</th>
+									<th>Status</th>
+									<th>Action</th>
+								</tr>
+
 							</thead>
 							<tbody>
+<<<<<<< Updated upstream
 							<?php getAllcustomer(); ?>
 							<td>
 										<div class="dropdown">
@@ -242,13 +182,64 @@
 							
 						</tbody>
 							
+=======
+								<?php getAllcustomer(); ?>
+							</tbody>
+							<!--<tbody>
+								<tr>
+									<td>123-456</td>
+									<td>234E</td>
+									<td>2023.09.02</td>
+									<td>2023.09.05</td>
+									<td>Battery Issue</td>
+									<td>09876543234</td>
+									<td>Specialization 1</td>
+									<td><span class="badge bg-success">Active</span></td>
+									<td>
+										<div class="dropdown">
+											<a class="btn btn-link font-24 p-0 line-height-1 no-arrow dropdown-toggle" href="#" role="button" data-toggle="dropdown">
+												<i class="dw dw-more"></i>
+											</a>
+											<div class="dropdown-menu dropdown-menu-right dropdown-menu-icon-list">
+												<a class="dropdown-item" href="#" data-toggle="modal" data-target="#add_technician"><i class="dw dw-eye"></i> View</a>
+												<a class="dropdown-item" href="#" data-toggle="modal" data-target="#add_technician"><i class="dw dw-edit2"></i> Edit</a>
+												<a class="dropdown-item" href="#" data-toggle="modal" data-target="#delete"><i class="dw dw-delete-3"></i> Delete</a>
+											</div>
+										</div>
+									</td>
+								</tr>
+								<tr>
+									<td>123-456234</td>
+									<td>456S</td>
+									<td>2023.09.02</td>
+									<td>2023.09.07</td>
+									<td>Dispaly</td>
+									<td>09876543234</td>
+									<td>Specialization 2</td>
+									<td><span class="badge bg-danger">Deactivated</span></td>
+									<td>
+										<div class="dropdown">
+											<a class="btn btn-link font-24 p-0 line-height-1 no-arrow dropdown-toggle" href="#" role="button" data-toggle="dropdown">
+												<i class="dw dw-more"></i>
+											</a>
+											<div class="dropdown-menu dropdown-menu-right dropdown-menu-icon-list">
+												<a class="dropdown-item" href="#" data-toggle="modal" data-target="#add_technician"><i class="dw dw-eye"></i> View</a>
+												<a class="dropdown-item" href="#" data-toggle="modal" data-target="#add_technician"><i class="dw dw-edit2"></i> Edit</a>
+												<a class="dropdown-item" href="#" data-toggle="modal" data-target="#delete"><i class="dw dw-delete-3"></i> Delete</a>
+											</div>
+										</div>
+									</td>
+								</tr>
+							</tbody> -->
+>>>>>>> Stashed changes
 						</table>
 					</div>
 				</div>
 				<!-- Simple Datatable End -->
+			</div>
 		</div>
-	</div>
 
+<<<<<<< Updated upstream
 				<!-- Add customer Modal -->
 					<div class="col-md-12 col-sm-12 mb-30">
 							<div class="modal fade" id="add_technician" tabindex="-1" role="dialog" aria-labelledby="myLargeModalLabel" aria-hidden="true">
@@ -309,35 +300,101 @@
 												
 												</div>
 											</form>
+=======
+		<!-- Add customer Modal -->
+		<div class="col-md-12 col-sm-12 mb-30">
+			<div class="modal fade" id="add_technician" tabindex="-1" role="dialog" aria-labelledby="myLargeModalLabel"
+				aria-hidden="true">
+				<div class="modal-dialog modal-dialog-centered">
+					<div class="modal-content">
+						<div class=" border-radius-10">
+							<div class="login-title"><br>
+								<div class="col-md-12 col-sm-12 mb-30">
+									<h2 class="text-center text-primary">Add Repair</h2>
+								</div>
+								<form action="" target="" method="POST" onsubmit="return checkpassword ()">
+
+									<div class="input-group custom">
+										<div class="col-md-6 col-sm-12">
+											<div class="form-group">
+												<label>NIC</label>
+												<input class="form-control form-control-lg" type="text" name="nic">
+											</div>
+										</div>
+										<div class="col-md-6 col-sm-12">
+											<div class="form-group">
+												<label>Full Name</label>
+												<input class="form-control form-control-lg" type="text" name="name">
+											</div>
+										</div>
+										<div class="col-md-6 col-sm-12">
+											<div class="form-group">
+												<label>Address</label>
+												<input class="form-control form-control-lg" type="text" name="address">
+											</div>
+										</div>
+										<div class="col-md-6 col-sm-12">
+											<div class="form-group">
+												<label>Phone 01</label>
+												<input class="form-control form-control-lg" type="text" name="phone1">
+											</div>
+										</div>
+
+										<div class="col-md-6 col-sm-12">
+											<div class="form-group">
+												<label>phone 02</label>
+												<input class="form-control form-control-lg" type="text" name="phone2">
+											</div>
+										</div>
+										<div class="col-md-12 col-sm-12">
+											<div class="form-group">
+												<label>Email</label>
+												<input class="form-control form-control-lg" type="text" name="email">
+											</div>
+										</div>
+
+										<div class="col-md-12 col-sm-12">
+											<div class="form-group">
+												<input type="submit" class="btn btn-primary" name="createClient"
+													value="Submit">
+												<input type="submit" class="btn btn-danger" value="Cancel">
+											</div>
+>>>>>>> Stashed changes
 										</div>
 									</div>
-								</div>
+								</form>
 							</div>
 						</div>
-						<!-- Delete modal -->
-					<div class="col-md-4 col-sm-12 mb-30">
-							<div class="modal fade" id="delete" tabindex="-1" role="dialog" aria-labelledby="myLargeModalLabel" aria-hidden="true">
-								<div class="modal-dialog modal-sm modal-dialog-centered">
-									<div class="modal-content bg-danger text-white">
-										<div class="modal-body text-center">
-											<h3 class="text-white mb-15"><i class="fa fa-exclamation-triangle"></i> Alert</h3>
-											<p>Are you sure you want to delete this customer?</p>
-											<button type="button" class="btn btn-light" data-dismiss="modal">Yes</button>
-											<button type="button" class="btn btn-light" data-dismiss="modal">Cancel</button>
-										</div>
-									</div>
-								</div>
-							</div>
 					</div>
-	<!-- js -->
-	<script src="vendors/scripts/core.js"></script>
-	<script src="vendors/scripts/script.min.js"></script>
-	<script src="vendors/scripts/process.js"></script>
-	<script src="vendors/scripts/layout-settings.js"></script>
-	<script src="src/plugins/datatables/js/jquery.dataTables.min.js"></script>
-	<script src="src/plugins/datatables/js/dataTables.bootstrap4.min.js"></script>
-	<script src="src/plugins/datatables/js/dataTables.responsive.min.js"></script>
-	<script src="src/plugins/datatables/js/responsive.bootstrap4.min.js"></script>
-	<!-- Datatable Setting js -->
-	<script src="vendors/scripts/datatable-setting.js"></script></body>
+				</div>
+			</div>
+			<!-- Delete modal -->
+			<div class="col-md-4 col-sm-12 mb-30">
+				<div class="modal fade" id="delete" tabindex="-1" role="dialog" aria-labelledby="myLargeModalLabel"
+					aria-hidden="true">
+					<div class="modal-dialog modal-sm modal-dialog-centered">
+						<div class="modal-content bg-danger text-white">
+							<div class="modal-body text-center">
+								<h3 class="text-white mb-15"><i class="fa fa-exclamation-triangle"></i> Alert</h3>
+								<p>Are you sure you want to delete this customer?</p>
+								<button type="button" class="btn btn-light" data-dismiss="modal">Yes</button>
+								<button type="button" class="btn btn-light" data-dismiss="modal">Cancel</button>
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+			<!-- js -->
+			<script src="vendors/scripts/core.js"></script>
+			<script src="vendors/scripts/script.min.js"></script>
+			<script src="vendors/scripts/process.js"></script>
+			<script src="vendors/scripts/layout-settings.js"></script>
+			<script src="src/plugins/datatables/js/jquery.dataTables.min.js"></script>
+			<script src="src/plugins/datatables/js/dataTables.bootstrap4.min.js"></script>
+			<script src="src/plugins/datatables/js/dataTables.responsive.min.js"></script>
+			<script src="src/plugins/datatables/js/responsive.bootstrap4.min.js"></script>
+			<!-- Datatable Setting js -->
+			<script src="vendors/scripts/datatable-setting.js"></script>
+</body>
+
 </html>
