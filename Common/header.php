@@ -22,7 +22,7 @@
                 <a href="about.php" class="navbar__links">About Us </a> 
             </li>
             <li class="navbar__item">
-                <a href="services.php" class="navbar__links">Services</a> 
+                <a href="Servicess.php" class="navbar__links">Services</a> 
             </li>
             <li class="navbar__item">
                 <a href="contact.php" class="navbar__links">Contact Us </a> 
