@@ -106,7 +106,6 @@ if (isset($_REQUEST["createClient"])) {
 
 						echo "<tr>" .
 							"<td>" . $row["nic"] . "</td>";
-<<<<<<< Updated upstream
 							echo"<td>" . $row["name"] . "</td>";
 							echo"<td>" . $row["address"] . "</td>";
 							echo"<td>" . $row["phone1"] . "</td>";
@@ -121,29 +120,6 @@ if (isset($_REQUEST["createClient"])) {
 					}
 
 					?>	
-=======
-						echo "<td>" . $row["name"] . "</td>";
-						echo "<td>" . $row["address"] . "</td>";
-						echo "<td>" . $row["phone1"] . "</td>";
-						echo "<td>" . $row["phone2"] . "</td>";
-						echo "<td>" . $row["email"] . "</td>";
-						echo "</tr>";
-
-					}
-
-				}
-
-				?>
-
-				<!--				<div>
-						<a href="#" data-toggle="modal" data-target="#view"> View</a>
-						<a href="#">Edit</a>
-						<a class="dropdown-item" href="#" data-toggle="modal" data-target="#delete">Delete</a>
-					</div> 
-				-->
-
-
->>>>>>> Stashed changes
 				<div class="card-box mb-30">
 					<div class="pd-20">
 						<h4 class="text-blue h4">Customer List</h4>
