@@ -15,9 +15,7 @@
             <input type="text" id="phone" name="phone" required><br><br>
             
             <label for="message">Message:</label><br>
-            <textarea id="message" name="message" rows="4" cols="50" required>
-                Your service is done...
-            </textarea><br><br>
+            <textarea id="message" name="message" rows="4" cols="50" required></textarea><br><br>
             
             <input type="submit" value="Send SMS">
         </form>
