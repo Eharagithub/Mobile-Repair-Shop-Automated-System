@@ -257,7 +257,7 @@
 										<div class=" border-radius-10">
 											<div class="login-title"><br>
 												<div class="col-md-12 col-sm-12 mb-30">
-												<h2 class="text-center text-primary">Add Repair</h2>
+												<h2 class="text-center text-primary">Add Customer</h2>
 												</div>
 											<form action="client2.php" target="" method="POST" onsubmit="return checkpassword ()">
 
