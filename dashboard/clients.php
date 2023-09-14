@@ -152,7 +152,7 @@
 							</div>
 							<nav aria-label="breadcrumb" role="navigation">
 								<ol class="breadcrumb">
-									<li class="breadcrumb-item"><a href="index.html">Home</a></li>
+									<li class="breadcrumb-item"><a href="index.php">Home</a></li>
 									<li class="breadcrumb-item active" aria-current="page">Customer List</li>
 								</ol>
 							</nav>
@@ -307,7 +307,7 @@
 												</div>
 												<div class="col-md-6 col-sm-12">
 													<div class="form-group">
-																<label>Full Nmae</label>
+																<label>Full Name</label>
 																<input class="form-control form-control-lg" type="text" name ="name">
 															</div>
 												</div>
