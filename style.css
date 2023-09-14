@@ -7,14 +7,55 @@
 
 
 
-header{
-    background-image:linear-gradient(rgba(0,0,0,0.5),rgba(0,0,0,0.5),rgba(0,0,0,0.5)),url(pexels-pixabay-356056.jpg);
+/* Existing code... */
+
+/*header styles*/
+/* Existing code... */
+
+/*header styles*/
+header {
+    background-image: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)), url(pexels-pixabay-356056.jpg);
     height: 100vh;
     background-size: cover;
     background-position: center;
     min-height: 100px;
-    
-} 
+    position: relative; /* Add this */
+}
+
+/* Add styles for the service content */
+.service-content {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    z-index: 2; /* Place the content in front of the background */
+    background-color: rgba(255, 255, 255, 0.8); /* Adjust the background color and opacity as needed */
+    padding: 20px; /* Add padding for spacing */
+}
+
+/* Existing code... */
+ 
+/* Add styles for the contact form */
+ 
+    /* Your "Contact" text styles here */
+
+form {
+    max-width: 400px;
+    margin: 0 auto;
+    padding: 50px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    background-color: #f9f9f9;
+    position: absolute; /* Add this */
+    top: 50%; /* Center vertically */
+    left: 50%; /* Center horizontally */
+    transform: translate(-50%, -50%); /* Center the form */
+}
+
+/* Add styles for the form labels, inputs, and button as needed */
+
+/* Existing code... */
+
    
 /*Navigation bar styles*/
 
