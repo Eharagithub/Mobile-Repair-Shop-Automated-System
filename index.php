@@ -5,6 +5,9 @@
         <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet" >
         <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.5/font/bootstrap-icons.css">
         <link rel="stylesheet" href="style.css" >
+        <body background="pexels-pixabay-356056">
+    <!-- Your HTML content goes here -->
+</body>
     </head>
     <body>
     <?php include_once("./Common/header.php") ?>

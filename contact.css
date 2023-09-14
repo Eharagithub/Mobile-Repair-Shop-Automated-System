@@ -1,0 +1,55 @@
+/* Apply some basic styles to the form */
+form {
+    max-width: 400px;
+    margin: 0 auto;
+    padding: 20px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    background-color: #f9f9f9;
+}
+h1{
+    position: absolute; /* Position the "Contact" text absolutely within the header */
+    top: 20%; /* Adjust the top value as needed to position it correctly */
+    left: 50%;
+    transform: translateX(-50%); /* Center horizontally */
+    color: #fff; /* Set text color to white */
+    font-size: 36px; /* Adjust font size as needed */
+    z-index: 2; /* Ensure it's above the form */
+}
+
+/* Style form labels */
+label {
+    display: block;
+    margin-bottom: 5px;
+    font-weight: bold;
+}
+
+/* Style form inputs and textareas */
+input[type="text"],
+input[type="email"],
+textarea {
+    width: 100%;
+    padding: 10px;
+    margin-bottom: 15px;
+    border: 1px solid #ccc;
+    border-radius: 3px;
+    font-size: 16px;
+}
+
+/* Style the button */
+button {
+    display: block;
+    width: 100%;
+    padding: 10px;
+    background-color: #007bff;
+    color: #fff;
+    border: none;
+    border-radius: 3px;
+    font-size: 16px;
+    cursor: pointer;
+}
+
+/* Change button color on hover */
+button:hover {
+    background-color: #0056b3;
+}
