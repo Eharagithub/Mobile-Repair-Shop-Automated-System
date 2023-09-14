@@ -187,9 +187,10 @@ if(!isset($_SESSION["systemUserID"])){
 					<div class="card-box height-100-p widget-style3">
 						<div class="d-flex flex-wrap">
 							<div class="widget-data">
-								<div class="weight-700 font-24 text-dark">75</div>
+								<div class="weight-700 font-24 text-dark"></div>
 								<div class="font-14 text-secondary weight-500">Services</div>
 							</div>
+							
 							<div class="widget-icon">
 								<div class="icon" data-color="#00eccf"><i class="icon-copy fa fa-tasks"></i></div>
 							</div>
@@ -200,6 +201,7 @@ if(!isset($_SESSION["systemUserID"])){
 					<div class="card-box height-100-p widget-style3">
 						<div class="d-flex flex-wrap">
 							<div class="widget-data">
+							
 								<div class="weight-700 font-24 text-dark">221</div>
 								<div class="font-14 text-secondary weight-500">Total Client</div>
 							</div>
