@@ -315,7 +315,7 @@
 												<div class="col-md-6 col-sm-12">
 													<div class="form-group">
 																<label>Job Date</label>
-																<input class="form-control form-control-lg" type="text" name ="jobDate" placeholder="Date" required>
+																<input class="form-control form-control-lg" type="date" name ="jobDate" placeholder="Date" required>
 															</div>
 												</div>
 												<div class="col-md-6 col-sm-12">
