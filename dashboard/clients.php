@@ -1,7 +1,5 @@
 <?php session_start(); ?>
 <?php
-$conn = new mysqli('localhost', 'root', '', 'mobileshopdb');
-$selectedCientId = 0;
 
 if (isset($_REQUEST["createClient"])) {
 	$nic = $_POST['nic'];
@@ -13,7 +11,7 @@ if (isset($_REQUEST["createClient"])) {
 	/*$repassword= $_POST['repassword'];*/
 
 	//database connection
-	
+	$conn = new mysqli('localhost', 'root', '', 'mobileshopdb');
 	if ($conn->connect_error) {
 		die('Connection Failed : ' . $conn->connect_error);
 	} else {
@@ -23,54 +21,7 @@ if (isset($_REQUEST["createClient"])) {
 		echo "Yor Registration is Successfully....";
 		$stmt->close();
 	}
-}
 
-function getAllcustomer()
-{
-	global $conn;
-	$sql = "select * from customer";
-	$result = mysqli_query($conn, $sql);
-
-
-
-	while ($row = mysqli_fetch_array($result)) {
-
-
-		echo "<tr>";
-		echo 	"<td>" . $row["nic"] . "</td>";
-		echo 	"<td>" . $row["name"] . "</td>";
-		echo 	"<td>" . $row["address"] . "</td>";
-		echo 	"<td>" . $row["phone1"] . "</td>";
-		echo 	"<td>" . $row["phone2"] . "</td>";
-		echo 	"<td>" . $row["email"] . "</td>";
-
-		echo 	'<td>';
-		echo 		'<div class="dropdown" onclick="setSelectedCustomer('.$row["nic"].')';
-		echo 			'<a class="btn btn-link font-24 p-0 line-height-1 no-arrow dropdown-toggle" href="#.php?id=<?php echo $row[\'nic\']; ?>" role="button" data-toggle="dropdown">';
-		echo 				'<i class="dw dw-more"></i>';
-		echo 			'</a>';
-
-		echo 			'<div class="dropdown-menu dropdown-menu-right dropdown-menu-icon-list">';
-		echo 				'<a class="dropdown-item" href="#" data-toggle="modal" data-target="#view"><i class="dw dw-eye"></i> View</a>';
-		echo 				'<a class="dropdown-item" href="#"><i class="dw dw-edit2"></i> Edit</a>';
-		echo 				'<a class="dropdown-item" href="#" data-toggle="modal" data-target="#delete"><i class="dw dw-delete-3"></i> Delete</a>';
-		echo 			'</div>';
-		echo 		'</div>';
-		echo 	'</td>';
-		echo "</tr>";
-	}
-
-	function deleteClientById(){
-		global $conn;
-		global $selectedCientId;
-		$sql = "delete from customer where nic = '" . $selectedCientId . "'";
-		mysqli_query($conn, $sql);
-	}
-
-	function setSelectedCustomer($nic){
-		global $selectedCientId;
-		$selectedCientId = $nic;
-	}
 }
 
 
@@ -87,7 +38,8 @@ function getAllcustomer()
 	<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
 
 	<!-- Google Font -->
-	<link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+	<link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap"
+		rel="stylesheet">
 	<!-- CSS -->
 	<link rel="stylesheet" type="text/css" href="vendors/styles/core.css">
 	<link rel="stylesheet" type="text/css" href="vendors/styles/icon-font.min.css">
@@ -119,14 +71,54 @@ function getAllcustomer()
 						</div>
 						<div class="col-md-6 col-sm-12 text-right">
 							<div class="dropdown">
-								<a href="#" class="btn btn-primary" data-backdrop="static" data-toggle="modal" data-target="#add_technician">
+								<a href="#" class="btn btn-primary" data-backdrop="static" data-toggle="modal"
+									data-target="#add_technician">
 									Add New
 								</a>
 							</div>
 						</div>
 					</div>
 				</div>
+				<!-- Simple Datatable start -->
+				<?php
 
+				$host = "localhost";
+				$user = "root";
+				$password = "";
+				$db = "mobileShopDb";
+
+				$data = mysqli_connect($host, $user, $password, $db);
+
+
+
+
+				function getAllcustomer()
+				{
+					global $data;
+					$sql = "select * from customer";
+					$result = mysqli_query($data, $sql);
+
+
+
+					while ($row = mysqli_fetch_array($result)) {
+						
+
+						echo "<tr>" .
+							"<td>" . $row["nic"] . "</td>";
+							echo"<td>" . $row["name"] . "</td>";
+							echo"<td>" . $row["address"] . "</td>";
+							echo"<td>" . $row["phone1"] . "</td>";
+							echo"<td>" . $row["phone2"] . "</td>";
+							echo"<td>" . $row["email"] . "</td>";
+							
+							echo"</tr>";
+							
+							
+					}
+
+					}
+
+					?>	
 				<div class="card-box mb-30">
 					<div class="pd-20">
 						<h4 class="text-blue h4">Customer List</h4>
@@ -141,14 +133,79 @@ function getAllcustomer()
 									<th>Phone 1</th>
 									<th>Phone 2</th>
 									<th>Email</th>
+									<th>Status</th>
 									<th>Action</th>
 								</tr>
 
 							</thead>
 							<tbody>
+
+							<?php getAllcustomer(); ?>
+							<td>
+										<div class="dropdown">
+											<a class="btn btn-link font-24 p-0 line-height-1 no-arrow dropdown-toggle" href="#.php?id=<?php echo $row['nic']; ?>" role="button" data-toggle="dropdown">
+												<i class="dw dw-more"></i>
+											</a>
+
+											<div class="dropdown-menu dropdown-menu-right dropdown-menu-icon-list">
+												<a class="dropdown-item" href="#" data-toggle="modal" data-target="#view"><i class="dw dw-eye"></i> View</a>
+												<a class="dropdown-item" href="#"><i class="dw dw-edit2"></i> Edit</a>
+												<a class="dropdown-item" href="#" data-toggle="modal" data-target="#delete"><i class="dw dw-delete-3"></i> Delete</a>
+											</div>
+										</div>
+							</td>
+							
+						</tbody>
+							
 								<?php getAllcustomer(); ?>
 							</tbody>
-
+							<!--<tbody>
+								<tr>
+									<td>123-456</td>
+									<td>234E</td>
+									<td>2023.09.02</td>
+									<td>2023.09.05</td>
+									<td>Battery Issue</td>
+									<td>09876543234</td>
+									<td>Specialization 1</td>
+									<td><span class="badge bg-success">Active</span></td>
+									<td>
+										<div class="dropdown">
+											<a class="btn btn-link font-24 p-0 line-height-1 no-arrow dropdown-toggle" href="#" role="button" data-toggle="dropdown">
+												<i class="dw dw-more"></i>
+											</a>
+											<div class="dropdown-menu dropdown-menu-right dropdown-menu-icon-list">
+												<a class="dropdown-item" href="#" data-toggle="modal" data-target="#add_technician"><i class="dw dw-eye"></i> View</a>
+												<a class="dropdown-item" href="#" data-toggle="modal" data-target="#add_technician"><i class="dw dw-edit2"></i> Edit</a>
+												<a class="dropdown-item" href="#" data-toggle="modal" data-target="#delete"><i class="dw dw-delete-3"></i> Delete</a>
+											</div>
+										</div>
+									</td>
+								</tr>
+								<tr>
+									<td>123-456234</td>
+									<td>456S</td>
+									<td>2023.09.02</td>
+									<td>2023.09.07</td>
+									<td>Dispaly</td>
+									<td>09876543234</td>
+									<td>Specialization 2</td>
+									<td><span class="badge bg-danger">Deactivated</span></td>
+									<td>
+										<div class="dropdown">
+											<a class="btn btn-link font-24 p-0 line-height-1 no-arrow dropdown-toggle" href="#" role="button" data-toggle="dropdown">
+												<i class="dw dw-more"></i>
+											</a>
+											<div class="dropdown-menu dropdown-menu-right dropdown-menu-icon-list">
+												<a class="dropdown-item" href="#" data-toggle="modal" data-target="#add_technician"><i class="dw dw-eye"></i> View</a>
+												<a class="dropdown-item" href="#" data-toggle="modal" data-target="#add_technician"><i class="dw dw-edit2"></i> Edit</a>
+												<a class="dropdown-item" href="#" data-toggle="modal" data-target="#delete"><i class="dw dw-delete-3"></i> Delete</a>
+											</div>
+										</div>
+									</td>
+								</tr>
+							</tbody> -->
+>>>>>>> Stashed changes
 						</table>
 					</div>
 				</div>
@@ -156,9 +213,72 @@ function getAllcustomer()
 			</div>
 		</div>
 
+<<<<<<< Updated upstream
+				<!-- Add customer Modal -->
+					<div class="col-md-12 col-sm-12 mb-30">
+							<div class="modal fade" id="add_technician" tabindex="-1" role="dialog" aria-labelledby="myLargeModalLabel" aria-hidden="true">
+								<div class="modal-dialog modal-dialog-centered">
+									<div class="modal-content">
+										<div class=" border-radius-10">
+											<div class="login-title"><br>
+												<div class="col-md-12 col-sm-12 mb-30">
+												<h2 class="text-center text-primary">Add Customer</h2>
+												</div>
+											<form action="client2.php" target="" method="POST" onsubmit="return checkpassword ()">
+
+												<div class="input-group custom">
+												<div class="col-md-6 col-sm-12">
+													<div class="form-group">
+																<label>NIC</label>
+																<input class="form-control form-control-lg" type="text" name ="nic"  pattern="[0-9]{12}" placeholder="200116404223" required>
+															</div>
+												</div>
+												<div class="col-md-6 col-sm-12">
+													<div class="form-group">
+																<label>Full Nmae</label>
+																<input class="form-control form-control-lg" type="text" name ="name" placeholder="Full Name" required>
+															</div>
+												</div>
+												<div class="col-md-6 col-sm-12">
+													<div class="form-group">
+																<label>Address</label>
+																<input class="form-control form-control-lg" type="text" name ="address"placeholder="Address" required>
+															</div>
+												</div>
+												<div class="col-md-6 col-sm-12">
+													<div class="form-group">
+																<label>Phone 01</label>
+																<input class="form-control form-control-lg" type="text" name ="phone1" pattern="[0-9]{10}" placeholder="0714782233" required>
+															</div>
+												</div>
+												
+												<div class="col-md-6 col-sm-12">
+													<div class="form-group">
+																<label>phone 02</label>
+																<input class="form-control form-control-lg" type="text" name ="phone2" pattern="[0-9]{10}" placeholder="0714782233" required>
+															</div>
+												</div>
+												<div class="col-md-12 col-sm-12">
+													<div class="form-group">
+																<label>Email</label>
+																<input class="form-control form-control-lg" type="text" name ="email" placeholder="abc@gmail.com" Pattern="[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,3}" required>
+															</div>
+												</div>
+												
+												<div class="col-md-12 col-sm-12">
+													<div class="form-group">
+																<input type="submit" class="btn btn-primary" value="Submit">
+																<input type="reset" class="btn btn-danger" value="Cancel" data-backdrop="static" data-toggle="modal" data-target="#add_technician">
+															</div>
+												</div>
+												
+												</div>
+											</form>
+=======
 		<!-- Add customer Modal -->
 		<div class="col-md-12 col-sm-12 mb-30">
-			<div class="modal fade" id="add_technician" tabindex="-1" role="dialog" aria-labelledby="myLargeModalLabel" aria-hidden="true">
+			<div class="modal fade" id="add_technician" tabindex="-1" role="dialog" aria-labelledby="myLargeModalLabel"
+				aria-hidden="true">
 				<div class="modal-dialog modal-dialog-centered">
 					<div class="modal-content">
 						<div class=" border-radius-10">
@@ -209,9 +329,11 @@ function getAllcustomer()
 
 										<div class="col-md-12 col-sm-12">
 											<div class="form-group">
-												<input type="submit" class="btn btn-primary" name="createClient" value="Submit">
+												<input type="submit" class="btn btn-primary" name="createClient"
+													value="Submit">
 												<input type="submit" class="btn btn-danger" value="Cancel">
 											</div>
+>>>>>>> Stashed changes
 										</div>
 									</div>
 								</form>
@@ -222,13 +344,14 @@ function getAllcustomer()
 			</div>
 			<!-- Delete modal -->
 			<div class="col-md-4 col-sm-12 mb-30">
-				<div class="modal fade" id="delete" tabindex="-1" role="dialog" aria-labelledby="myLargeModalLabel" aria-hidden="true">
+				<div class="modal fade" id="delete" tabindex="-1" role="dialog" aria-labelledby="myLargeModalLabel"
+					aria-hidden="true">
 					<div class="modal-dialog modal-sm modal-dialog-centered">
 						<div class="modal-content bg-danger text-white">
 							<div class="modal-body text-center">
 								<h3 class="text-white mb-15"><i class="fa fa-exclamation-triangle"></i> Alert</h3>
 								<p>Are you sure you want to delete this customer?</p>
-								<button type="button" class="btn btn-light" data-dismiss="modal" onclick="deleteClientById()">Yes</button>
+								<button type="button" class="btn btn-light" data-dismiss="modal">Yes</button>
 								<button type="button" class="btn btn-light" data-dismiss="modal">Cancel</button>
 							</div>
 						</div>
