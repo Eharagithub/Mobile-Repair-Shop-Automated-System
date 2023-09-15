@@ -224,7 +224,7 @@ if (isset($_REQUEST["createClient"])) {
 												<div class="col-md-12 col-sm-12 mb-30">
 												<h2 class="text-center text-primary">Add Customer</h2>
 												</div>
-											<form action="client2.php" target="" method="POST" onsubmit="return checkpassword ()">
+											<form action="" target="" method="POST" onsubmit="return checkpassword ()">
 
 												<div class="input-group custom">
 												<div class="col-md-6 col-sm-12">
@@ -267,7 +267,7 @@ if (isset($_REQUEST["createClient"])) {
 												
 												<div class="col-md-12 col-sm-12">
 													<div class="form-group">
-																<input type="submit" class="btn btn-primary" value="Submit">
+																<input type="submit" class="btn btn-primary" value="Submit" name="createClient">
 																<input type="reset" class="btn btn-danger" value="Cancel" data-backdrop="static" data-toggle="modal" data-target="#add_technician">
 															</div>
 												</div>
