@@ -42,18 +42,16 @@ if (!isset($_SESSION["systemUserID"])) {
 			<div class="title pb-20">
 				<h2 class="h3 mb-0">Dashboard</h2>
 			</div>
-
 			<div class="row pb-10">
 				<div class="col-xl-3 col-lg-3 col-md-6 mb-20">
 					<div class="card-box height-100-p widget-style3">
 						<div class="d-flex flex-wrap">
 							<div class="widget-data">
-								<div class="weight-700 font-24 text-dark"></div>
-								<div class="font-14 text-secondary weight-500">Services</div>
+								<div class="weight-700 font-24 text-dark">15</div>
+								<div class="font-14 text-secondary weight-500">Sub Branches</div>
 							</div>
-							
 							<div class="widget-icon">
-								<div class="icon" data-color="#00eccf"><i class="icon-copy fa fa-tasks"></i></div>
+								<div class="icon" data-color="#17a2b8"><i class="icon-copy fa fa-tasks"></i></div>
 							</div>
 						</div>
 					</div>
@@ -70,7 +68,7 @@ if (!isset($_SESSION["systemUserID"])) {
 								<div class="font-14 text-secondary weight-500">Total Client</div>
 							</div>
 							<div class="widget-icon">
-								<div class="icon" data-color="#ff5b5b"><span class="micon fa fa-users"></span></div>
+								<div class="icon" data-color="#ffc107"><span class="micon fa fa-users"></span></div>
 							</div>
 						</div>
 					</div>
@@ -83,7 +81,7 @@ if (!isset($_SESSION["systemUserID"])) {
 								<div class="font-14 text-secondary weight-500">Pending Repairs</div>
 							</div>
 							<div class="widget-icon">
-								<div class="icon" data-color="#2c515b"><span class="micon fa fa-wrench"></span></div>
+								<div class="icon" data-color="#e83e8c"><span class="micon fa fa-wrench"></span></div>
 							</div>
 						</div>
 					</div>
@@ -92,11 +90,11 @@ if (!isset($_SESSION["systemUserID"])) {
 					<div class="card-box height-100-p widget-style3">
 						<div class="d-flex flex-wrap">
 							<div class="widget-data">
-								<div class="weight-700 font-24 text-dark">50,000.00</div>
+								<div class="weight-700 font-24 text-dark">0</div>
 								<div class="font-14 text-secondary weight-500">Approved Repairs</div>
 							</div>
 							<div class="widget-icon">
-								<div class="icon" data-color="#09cc06"><i class="micon fa fa-check" aria-hidden="true"></i>
+								<div class="icon" data-color="#fff"><i class="micon fa fa-check" aria-hidden="true"></i>
 								</div>
 							</div>
 						</div>
@@ -106,11 +104,11 @@ if (!isset($_SESSION["systemUserID"])) {
 					<div class="card-box height-100-p widget-style3">
 						<div class="d-flex flex-wrap">
 							<div class="widget-data">
-								<div class="weight-700 font-24 text-dark">50,000.00</div>
+								<div class="weight-700 font-24 text-dark">0</div>
 								<div class="font-14 text-secondary weight-500">In Progress Repairs</div>
 							</div>
 							<div class="widget-icon">
-								<div class="icon" data-color="#09cc06"><i class="micon fa fa-spinner" aria-hidden="true"></i>
+								<div class="icon" data-color="#28a745"><i class="micon fa fa-spinner" aria-hidden="true"></i>
 								</div>
 							</div>
 						</div>
@@ -120,11 +118,11 @@ if (!isset($_SESSION["systemUserID"])) {
 					<div class="card-box height-100-p widget-style3">
 						<div class="d-flex flex-wrap">
 							<div class="widget-data">
-								<div class="weight-700 font-24 text-dark">50,000.00</div>
+								<div class="weight-700 font-24 text-dark">0</div>
 								<div class="font-14 text-secondary weight-500">Checking Repairs</div>
 							</div>
 							<div class="widget-icon">
-								<div class="icon" data-color="#09cc06"><i class="micon fa fa-calendar-check-o" aria-hidden="true"></i></div>
+								<div class="icon" data-color="#6610f2"><i class="micon fa fa-calendar-check-o" aria-hidden="true"></i></div>
 							</div>
 						</div>
 					</div>
@@ -133,7 +131,7 @@ if (!isset($_SESSION["systemUserID"])) {
 					<div class="card-box height-100-p widget-style3">
 						<div class="d-flex flex-wrap">
 							<div class="widget-data">
-								<div class="weight-700 font-24 text-dark">50,000.00</div>
+								<div class="weight-700 font-24 text-dark">0</div>
 								<div class="font-14 text-secondary weight-500">Done Repairs</div>
 							</div>
 							<div class="widget-icon">
@@ -147,11 +145,11 @@ if (!isset($_SESSION["systemUserID"])) {
 					<div class="card-box height-100-p widget-style3">
 						<div class="d-flex flex-wrap">
 							<div class="widget-data">
-								<div class="weight-700 font-24 text-dark">50,000.00</div>
+								<div class="weight-700 font-24 text-dark">0</div>
 								<div class="font-14 text-secondary weight-500">Cancelled Repairs</div>
 							</div>
 							<div class="widget-icon">
-								<div class="icon" data-color="#09cc06"><i class="micon fa fa-times"
+								<div class="icon" data-color="#dc3545"><i class="micon fa fa-times"
 										aria-hidden="true"></i></div>
 							</div>
 						</div>

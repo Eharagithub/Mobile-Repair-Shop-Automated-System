@@ -20,22 +20,21 @@
                 <div class="dropdown-menu dropdown-menu-right dropdown-menu-icon-list">
                     <?php
 
-                    echo '<div style="margin-bottom: 10px;">
-              <span style="font-weight: bold; margin-right: 5px;">User Email:</span>
+                    echo '<div style="margin-bottom: 15px;">
+              <span style="font-weight: bold; margin-right: 8px;">User Email:</span>
               <span>' . $_SESSION["systemUserEmail"] . '</span>
           </div>';
 
-                    echo '<div style="margin-bottom: 10px;">
-              <span style="font-weight: bold; margin-right: 5px;">User Location:</span>
+                    echo '<div style="margin-bottom: 15px;">
+              <span style="font-weight: bold; margin-right: 8px;">User Location:</span>
               <span>' . $_SESSION["locationName"] . '</span>
           </div>';
 
                     echo '<hr>';
 
                     echo '<a href="login.php" style="color: #333; text-decoration: none; display: block; padding: 5px 0;">
-              <i class="dw dw-logout"></i> Log Out
-          </a>';
-                    ?>
+                      <i class="fa fa-search  ">  </i> Veiw </a>';
+               ?>
                 </div>
             </div>
         </div>
@@ -62,7 +61,7 @@
                 </li>
                 <li>
                     <a href="clients.php" class="dropdown-toggle no-arrow">
-                        <span class="micon dw dw-user"></span><span class="mtext">Client List</span>
+                        <span class="micon dw dw-user"></span><span class="mtext">Customer List</span>
                     </a>
                 </li>
                 <li>
@@ -71,32 +70,32 @@
                     </a>
                 </li>
                 <li>
-                    <a href="services.php" class="dropdown-toggle no-arrow">
+                    <a href="device.php" class="dropdown-toggle no-arrow">
                         <span class="micon fa fa-mobile"></span><span class="mtext">Devices</span>
                     </a>
                 </li>
                 <li>
-                    <a href="item-category.php" class="dropdown-toggle no-arrow">
+                    <a href="delivary.php" class="dropdown-toggle no-arrow">
                         <span class="micon fa fa-truck"></span><span class="mtext">Delivery</span>
                     </a>
                 </li>
                 <li>
-                    <a href="items.php" class="dropdown-toggle no-arrow">
+                    <a href="location.php" class="dropdown-toggle no-arrow">
                         <span class="micon fa fa-map-marker"></span><span class="mtext">Location</span>
                     </a>
                 </li>
                 <li>
-                    <a href="work-order.php" class="dropdown-toggle no-arrow">
+                    <a href="workorder.php" class="dropdown-toggle no-arrow">
                         <span class="micon dw dw-shopping-basket"></span><span class="mtext">Work Order List</span>
                     </a>
                 </li>
                 <li>
-                    <a href="work-order.php" class="dropdown-toggle no-arrow">
+                    <a href="history.php" class="dropdown-toggle no-arrow">
                         <span class="micon fa fa-history"></span><span class="mtext">History</span>
                     </a>
                 </li>
                 <li>
-                    <a href="work-order.php" class="dropdown-toggle no-arrow">
+                    <a href="user.php" class="dropdown-toggle no-arrow">
                         <span class="micon fa fa-users"></span><span class="mtext">Admin User List</span>
                     </a>
                 </li>

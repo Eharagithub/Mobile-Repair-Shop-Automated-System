@@ -19,127 +19,8 @@
 
 </head>
 <body>
-	<div class="header">
-		<div class="header-left">
-			<div class="menu-icon dw dw-menu"></div>
-		</div>
-		<div class="header-right">
-			<div class="user-info-dropdown">
-				<div class="dropdown">
-					<a class="dropdown-toggle" href="#" role="button" data-toggle="dropdown">
-						<span class="user-icon">
-							<img src="src/images/admin.png" width="50">
-						</span>
-						<span class="user-name">Log Out</span>
-					</a>
-					<div class="dropdown-menu dropdown-menu-right dropdown-menu-icon-list">
-						<a class="dropdown-item" href="#"><i class="dw dw-user1"></i> Profile</a>
-						<a class="dropdown-item" href="#"><i class="dw dw-settings2"></i> Setting</a>
-						<hr>
-						<a class="dropdown-item" href="login.html"><i class="dw dw-logout"></i> Log Out</a>
-					</div>
-				</div>
-			</div>
-		</div>
-	</div>
-
-	<div class="left-side-bar">
-		<div class="brand-logo">
-			<a href="index.html">
-				<img src="src/images/logo.png" width="50px">
-				<h4 style="color: #f3f3f4;font-size: 20px;padding: 15px"> Repair Shop</h4>
-			</a>
-			<div class="close-sidebar" data-toggle="left-sidebar-close">
-				<i class="ion-close-round"></i>
-			</div>
-		</div>
-		<div class="menu-block customscroll">
-			<div class="sidebar-menu">
-				<ul id="accordion-menu">
-					<li>
-						<a href="index.php" class="dropdown-toggle no-arrow">
-							<span class="micon dw dw-house"></span><span class="mtext">Dashboard</span>
-						</a>
-					</li>
-					<li>
-						<a href="clients.php" class="dropdown-toggle no-arrow">
-							<span class="micon dw dw-user"></span><span class="mtext">Client List</span>
-						</a>
-					</li>
-					<li>
-						<a href="technician.php" class="dropdown-toggle no-arrow">
-							<span class="micon fa fa-wrench"></span><span class="mtext">Technician List</span>
-						</a>
-					</li>
-					<li>
-						<a href="device.php" class="dropdown-toggle no-arrow">
-							<span class="micon fa fa-handshake-o"></span><span class="mtext">Devices</span>
-						</a>
-					</li>
-					<li>
-						<a href="delivary.php" class="dropdown-toggle no-arrow">
-							<span class="micon fa fa-handshake-o"></span><span class="mtext">Delivary</span>
-						</a>
-					</li>
-					<li>
-						<a href="location.php" class="dropdown-toggle no-arrow">
-							<span class="micon fa fa-handshake-o"></span><span class="mtext">Locations</span>
-						</a>
-					</li>
-					<li>
-						<a href="workorder.php" class="dropdown-toggle no-arrow">
-							<span class="micon dw dw-file"></span><span class="mtext">Work order list</span>
-						</a>
-					</li>
-					<li>
-						<a href="History.php" class="dropdown-toggle no-arrow">
-							<span class="micon dw dw-file"></span><span class="mtext">History</span>
-						</a>
-					</li>
-					<li>
-						<a href="user.php" class="dropdown-toggle no-arrow">
-							<span class="micon fa fa-cart-plus"></span><span class="mtext">Admin User List</span>
-						</a>
-					</li>
-					<li>
-						<a href="work-order.html" class="dropdown-toggle no-arrow">
-							<span class="micon dw dw-shopping-basket"></span><span class="mtext">Work Order</span>
-						</a>
-					</li>
-					<li>
-						<a href="payment.html" class="dropdown-toggle no-arrow">
-							<span class="micon dw dw-money"></span><span class="mtext">Payment</span>
-						</a>
-					</li>
-					<li>
-						<a href="settings.html" class="dropdown-toggle no-arrow">
-							<span class="micon dw dw-settings2"></span><span class="mtext">Settings</span>
-						</a>
-					</li>
-					<li class="dropdown">
-						<a href="javascript:;" class="dropdown-toggle">
-							<span class="micon dw dw-bar-chart"></span><span class="mtext">reports</span>
-						</a>
-						<ul class="submenu">
-							<li><a href="bar.html">Bar Chart</a></li>
-							<li><a href="pie.html">Pie Chart</a></li>
-						</ul>
-					</li>
-					<li>
-						<a href="user.html" class="dropdown-toggle no-arrow">
-							<span class="micon dw dw-user1"></span><span class="mtext">Users</span>
-						</a>
-					</li>
-					<li>
-						<a href="user-group.html" class="dropdown-toggle no-arrow">
-							<span class="micon fa fa-users"></span><span class="mtext">User Group</span>
-						</a>
-					</li>
-				</ul>
-			</div>
-		</div>
-	</div>
-	<div class="mobile-menu-overlay"></div>
+<?php include_once("../Common/drower.php"); ?>
+	
 
 	<div class="main-container">
 		<div class="pd-ltr-20 xs-pd-20-10">
@@ -195,7 +76,6 @@
 							echo"<td>" . $row["uaddress"] . "</td>";
 							echo"<td>" . $row["phone"] . "</td>";
 							echo"<td>" . $row["email"] . "</td>";
-							echo"<td>" . $row["type"] . "</td>";
 							echo"<td>" . $row["password"] . "</td>";
 							echo"<td>" . $row["locid"] . "</td>";
 							echo"</tr>";

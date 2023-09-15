@@ -22,7 +22,6 @@ if (isset($_REQUEST["createClient"])) {
 		$stmt->execute();
 		echo "Yor Registration is Successfully....";
 		$stmt->close();
-		$conn->close();
 	}
 }
 
@@ -109,7 +108,7 @@ function getAllcustomer()
 					<div class="row">
 						<div class="col-md-6 col-sm-12">
 							<div class="title">
-								<h4><i class="micon dw dw-hammer mtext"></i>Customers</h4>
+								<h4><i class="micon dw dw-user"></i>Customers</h4>
 							</div>
 							<nav aria-label="breadcrumb" role="navigation">
 								<ol class="breadcrumb">
@@ -165,7 +164,7 @@ function getAllcustomer()
 						<div class=" border-radius-10">
 							<div class="login-title"><br>
 								<div class="col-md-12 col-sm-12 mb-30">
-									<h2 class="text-center text-primary">Add Repair</h2>
+									<h2 class="text-center text-primary">Add Customer</h2>
 								</div>
 								<form action="" target="" method="POST" onsubmit="return checkpassword ()">
 

@@ -32,7 +32,7 @@
 					<div class="row">
 						<div class="col-md-6 col-sm-12">
 							<div class="title">
-								<h4><i class="micon dw dw-hammer mtext"></i>Technicians</h4>
+								<h4><i class="micon fa fa-wrench"></i>  Technicians</h4>
 							</div>
 							<nav aria-label="breadcrumb" role="navigation">
 								<ol class="breadcrumb">
@@ -186,6 +186,7 @@
 								<form action="technician2.php" target="" method="POST"
 									onsubmit="return checkpassword ()">
 
+<<<<<<< Updated upstream
 												<div class="input-group custom">
 												<div class="col-md-6 col-sm-12">
 													<div class="form-group">
@@ -233,6 +234,52 @@
 												</div>
 												</div>
 											</form>
+=======
+									<div class="input-group custom">
+										<div class="col-md-6 col-sm-12">
+											<div class="form-group">
+												<label>Employee Num</label>
+												<input class="form-control form-control-lg" type="text" name="empNo">
+											</div>
+										</div>
+										<div class="col-md-6 col-sm-12">
+											<div class="form-group">
+												<label>NIC</label>
+												<input class="form-control form-control-lg" type="text" name="nic">
+											</div>
+										</div>
+										<div class="col-md-6 col-sm-12">
+											<div class="form-group">
+												<label>Name</label>
+												<input class="form-control form-control-lg" type="text" name="tname">
+											</div>
+										</div>
+										<div class="col-md-6 col-sm-12">
+											<div class="form-group">
+												<label>Address</label>
+												<input class="form-control form-control-lg" type="text" name="taddress">
+											</div>
+										</div>
+
+										<div class="col-md-6 col-sm-12">
+											<div class="form-group">
+												<label>Contact</label>
+												<input class="form-control form-control-lg" type="text" name="phone">
+											</div>
+										</div>
+										<div class="col-md-12 col-sm-12">
+											<div class="form-group">
+												<label>Email</label>
+												<input class="form-control form-control-lg" type="text" name="email">
+											</div>
+										</div>
+
+										<div class="col-md-12 col-sm-12">
+											<div class="form-group">
+												<input type="submit" class="btn btn-primary" value="Submit">
+												<input type="submit" class="btn btn-danger" value="Cancel">
+											</div>
+>>>>>>> Stashed changes
 										</div>
 									</div>
 								</form>

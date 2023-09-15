@@ -33,21 +33,15 @@
 // Define a PHP array to hold the button data
 $buttons = [
     [
-        "label" => "Admin",
+        "label" => "Admin - Head Office",
         "href" => "index.php",
         "icon" => "fa-user",
         "active" => true,
     ],
     [
-        "label" => "Technician",
-        "href" => "customer.php",
-        "icon" => "fa-wrench",
-        "active" => false,
-    ],
-    [
-        "label" => "Delivery",
+        "label" => "Sub Office",
         "href" => "deliverylogin.php",
-        "icon" => "fa-truck",
+        "icon" => "fa fa-users",
         "active" => true,
     ],
 ];
@@ -86,13 +80,10 @@ foreach ($buttons as $button) {
 							</div>
 							<div class="row pb-30">
 								<div class="col-6">
-									<div class="custom-control custom-checkbox">
-										<input type="checkbox" class="custom-control-input" id="customCheck1">
-										<label class="custom-control-label" for="customCheck1">Remember</label>
-									</div>
+									
 								</div>
 								<div class="col-6">
-									<div class="forgot-password"><a href="forgot-password.html">Forgot Password</a></div>
+									<div class="forgot-password"><a href="forgot-password.php"></a></div>
 								</div>
 							</div>
 							<div class="row">
@@ -102,7 +93,7 @@ foreach ($buttons as $button) {
 											use code for form submit
 											<input class="btn btn-primary btn-lg btn-block" type="submit" value="Sign In">
 										-->
-										<a class="btn btn-primary btn-lg btn-block" href="index.html">Login</a>
+										<a class="btn btn-primary btn-lg btn-block" href="index.php">Login</a>
 									</div>
 									<div class="font-16 weight-600 pt-10 pb-10 text-center" data-color="#707373">OR</div>
 									<div class="input-group mb-0">
