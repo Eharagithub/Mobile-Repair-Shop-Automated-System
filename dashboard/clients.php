@@ -18,7 +18,7 @@ if (isset($_REQUEST["createClient"])) {
 		$stmt = $conn->prepare("INSERT INTO customer(nic,name,address,phone1,phone2,email)values(?,?,?,?,?,?)");
 		$stmt->bind_param("isssss", $nic, $name, $address, $phone1, $phone2, $email);
 		$stmt->execute();
-		echo "Yor Registration is Successfully....";
+		echo "Your Registration is Successfully....";
 		$stmt->close();
 	}
 
