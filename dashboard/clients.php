@@ -205,7 +205,6 @@ if (isset($_REQUEST["createClient"])) {
 									</td>
 								</tr>
 							</tbody> -->
->>>>>>> Stashed changes
 						</table>
 					</div>
 				</div>
@@ -213,7 +212,6 @@ if (isset($_REQUEST["createClient"])) {
 			</div>
 		</div>
 
-<<<<<<< Updated upstream
 				<!-- Add customer Modal -->
 					<div class="col-md-12 col-sm-12 mb-30">
 							<div class="modal fade" id="add_technician" tabindex="-1" role="dialog" aria-labelledby="myLargeModalLabel" aria-hidden="true">
@@ -274,66 +272,6 @@ if (isset($_REQUEST["createClient"])) {
 												
 												</div>
 											</form>
-=======
-		<!-- Add customer Modal -->
-		<div class="col-md-12 col-sm-12 mb-30">
-			<div class="modal fade" id="add_technician" tabindex="-1" role="dialog" aria-labelledby="myLargeModalLabel"
-				aria-hidden="true">
-				<div class="modal-dialog modal-dialog-centered">
-					<div class="modal-content">
-						<div class=" border-radius-10">
-							<div class="login-title"><br>
-								<div class="col-md-12 col-sm-12 mb-30">
-									<h2 class="text-center text-primary">Add Customer</h2>
-								</div>
-								<form action="" target="" method="POST" onsubmit="return checkpassword ()">
-
-									<div class="input-group custom">
-										<div class="col-md-6 col-sm-12">
-											<div class="form-group">
-												<label>NIC</label>
-												<input class="form-control form-control-lg" type="text" name="nic">
-											</div>
-										</div>
-										<div class="col-md-6 col-sm-12">
-											<div class="form-group">
-												<label>Full Name</label>
-												<input class="form-control form-control-lg" type="text" name="name">
-											</div>
-										</div>
-										<div class="col-md-6 col-sm-12">
-											<div class="form-group">
-												<label>Address</label>
-												<input class="form-control form-control-lg" type="text" name="address">
-											</div>
-										</div>
-										<div class="col-md-6 col-sm-12">
-											<div class="form-group">
-												<label>Phone 01</label>
-												<input class="form-control form-control-lg" type="text" name="phone1">
-											</div>
-										</div>
-
-										<div class="col-md-6 col-sm-12">
-											<div class="form-group">
-												<label>phone 02</label>
-												<input class="form-control form-control-lg" type="text" name="phone2">
-											</div>
-										</div>
-										<div class="col-md-12 col-sm-12">
-											<div class="form-group">
-												<label>Email</label>
-												<input class="form-control form-control-lg" type="text" name="email">
-											</div>
-										</div>
-
-										<div class="col-md-12 col-sm-12">
-											<div class="form-group">
-												<input type="submit" class="btn btn-primary" name="createClient"
-													value="Submit">
-												<input type="submit" class="btn btn-danger" value="Cancel">
-											</div>
->>>>>>> Stashed changes
 										</div>
 									</div>
 								</form>
