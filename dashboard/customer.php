@@ -116,7 +116,7 @@
 								<div class="font-14 text-secondary weight-500">Services</div>
 							</div>
 							<div class="widget-icon">
-								<div class="icon" data-color="#fff"><i class="icon-copy fa fa-handshake-o" aria-hidden="true"></i></div>
+								<div class="icon" data-color="#09cc06"><i class="icon-copy fa fa-handshake-o" aria-hidden="true"></i></div>
 							</div>
 						</div>
 					</div>
