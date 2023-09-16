@@ -19,63 +19,8 @@
 
 </head>
 <body>
-	<div class="header">
-		<div class="header-left">
-			<div class="menu-icon dw dw-menu"></div>
-		</div>
-		<div class="header-right">
-			<div class="user-info-dropdown">
-				<div class="dropdown">
-					<a class="dropdown-toggle" href="#" role="button" data-toggle="dropdown">
-						<span class="user-icon">
-							<img src="src/images/admin.png" width="50">
-						</span>
-						<span class="user-name">John Doe</span>
-					</a>
-					<div class="dropdown-menu dropdown-menu-right dropdown-menu-icon-list">
-						<a class="dropdown-item" href="#"><i class="dw dw-user1"></i> Profile</a>
-						<a class="dropdown-item" href="#"><i class="dw dw-settings2"></i> Setting</a>
-						<hr>
-						<a class="dropdown-item" href="login.php"><i class="dw dw-logout"></i> Log Out</a>
-					</div>
-				</div>
-			</div>
-		</div>
-	</div>
-
-	<div class="left-side-bar">
-		<div class="brand-logo">
-			<a href="index.html">
-				<img src="src/images/logo.png" width="50px">
-				<h4 style="color: #f3f3f4;font-size: 20px;padding: 15px"> Repair Shop</h4>
-			</a>
-			<div class="close-sidebar" data-toggle="left-sidebar-close">
-				<i class="ion-close-round"></i>
-			</div>
-		</div>
-		<div class="menu-block customscroll">
-			<div class="sidebar-menu">
-				<ul id="accordion-menu">
-					<li>
-						<a href="customer.php" class="dropdown-toggle no-arrow">
-							<span class="micon dw dw-house"></span><span class="mtext">Dashboard</span>
-						</a>
-					</li>
-					<li>
-						<a href="customer-work-order.php" class="dropdown-toggle no-arrow">
-							<span class="micon fa fa-shopping-cart"></span><span class="mtext">Work Order Request</span>
-						</a>
-					</li>
-					<li>
-						<a href="work-order-status.php" class="dropdown-toggle no-arrow">
-							<span class="micon dw dw-user"></span><span class="mtext">Work Order Status</span>
-						</a>
-					</li>
-				</ul>
-			</div>
-		</div>
-	</div>
-	<div class="mobile-menu-overlay"></div>
+<?php include_once("../Common/drower.php"); ?>
+	
 
 	<div class="main-container">
 		<div class="pd-ltr-20 xs-pd-20-10">

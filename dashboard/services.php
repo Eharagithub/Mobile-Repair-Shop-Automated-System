@@ -30,16 +30,13 @@
 						<span class="user-icon">
 							<img src="src/images/admin.png" width="50">
 						</span>
-<<<<<<< HEAD
-<<<<<<< HEAD
+
 						<span class="user-name">Kamal</span>
-=======
 						<!--<span><?php echo  $_SESSION[""] ?></span><br>-->
 						<span class="user-name">User</span>
->>>>>>> 00595bcaf95b08381de7460fae6e34dd1921cde2
-=======
+
 						<span class="user-name">John Doe</span>
->>>>>>> fc2d4f8fde3acab9b2906a0b9ae291d2866d989c
+
 					</a>
 					<div class="dropdown-menu dropdown-menu-right dropdown-menu-icon-list">
 						<a class="dropdown-item" href="#"><i class="dw dw-user1"></i> Profile</a>

@@ -24,7 +24,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
 
             $row = mysqli_fetch_array($result);
 
-            print_r($row);
+
             $_SESSION["systemUserID"] = $row["empNo"];
             $_SESSION["systemUserEmail"] = $row["email"];
 
@@ -32,7 +32,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
             $result = mysqli_query($data, $sql);
             $row = mysqli_fetch_array($result);
             $_SESSION["locationId"] = $row["locid"];
-            $_SESSION["locationName"] = $row["name"];
+            $_SESSION["locationName"] = $row["lname"];
 
 
             header("Location: dashboard/index.php"); // Redirect to a welcome page or dashboard
