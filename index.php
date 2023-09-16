@@ -5,9 +5,6 @@
         <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet" >
         <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.5/font/bootstrap-icons.css">
         <link rel="stylesheet" href="style.css" >
-        <body background="pexels-pixabay-356056">
-    <!-- Your HTML content goes here -->
-</body>
     </head>
     <body>
     <?php include_once("./Common/header.php") ?>
@@ -193,7 +190,7 @@
       <div class="row g-4">
         <div class="col-lg-3 col-md-6">
           <h5 class="text-uppercase font-weight-bold mb-4">dsdfds</h5>
-          <p>duu jsdv dinvi vibdi isnnv jsdninvds jnodsns dnna njdsvsonfdovo nvsdnono onisdon</p>
+          <p>We have been stationed & repairing on our location for 23 years. We have the repairing experience of more than thousands of phones from our inception.</p>
           <a href="#"><i class="bi bi-facebook text-dark mx-1 lead"></i></a>
               <a href="#"><i class="bi bi-twitter text-dark mx-1 lead"></i></a>
               <a href="#"><i class="bi bi-linkedin text-dark mx-1 lead"></i></a>
@@ -202,12 +199,11 @@
         <div class="col-lg-2 col-md-2 mx-auto">
           <h5 class="text-uppercase font-weight-bold mb-4">Services</h5>
           <ul class="list-unstyled">
-            <li class="mb-1"><a href="#">Web Design</a></li>
-            <li class="mb-1"><a href="#">Web Dewelopmenr</a></li>
-            <li class="mb-1"><a href="#">Graphic Design</a></li>
-            <li class="mb-1"><a href="#">Software Design</a></li>
-            <li class="mb-1"><a href="#">Web Application</a></li>
-            <li class="mb-1"><a href="#">E-Commerce</a></li>
+            <li class="mb-1"><a href="#">Hardware Repaires</a></li>
+            <li class="mb-1"><a href="#">Software Repaires</a></li>
+            <li class="mb-1"><a href="#">Accessories</a></li>
+            <li class="mb-1"><a href="#">Other</a></li>
+             
           </ul>
 
         </div>
@@ -231,7 +227,7 @@
 
           </p>
           <p class="d-flex align-item-center">
-            <i class="bi bi-envelope text-primary mx-2 lead"></i>dnjsjkl@gmail.com
+            <i class="bi bi-envelope text-primary mx-2 lead"></i>Kasthurimobile@gmail.com
 
           </p>  
           
@@ -252,7 +248,7 @@
   <footer class="p-3 bg-dark text-white text-center position-relative">
     <div class="container">
       <p class="mb-0">
-        Copyright &copy; 2022 Wp$gopM@rt
+        Team &copy; No 1
 
       </p>
       <a href="#" class="position-absolute bottom-0 end-0 p-5">

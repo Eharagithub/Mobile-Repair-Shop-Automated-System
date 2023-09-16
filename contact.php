@@ -42,7 +42,7 @@ By using a specific class or ID for the contact form and "Contact" text, you ens
             <br>
 
             <button>
-                Sent
+                Send
             </button>
 
 
