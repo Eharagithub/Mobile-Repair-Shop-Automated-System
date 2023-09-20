@@ -235,7 +235,7 @@ if (isset($_REQUEST["createClient"])) {
 												</div>
 												<div class="col-md-6 col-sm-12">
 													<div class="form-group">
-																<label>Full Nmae</label>
+																<label>Full Name</label>
 																<input class="form-control form-control-lg" type="text" name ="name" placeholder="Full Name" required>
 															</div>
 												</div>
