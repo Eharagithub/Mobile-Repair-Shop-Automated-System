@@ -1,3 +1,31 @@
+<?php session_start(); ?>
+<?php
+
+if (isset($_REQUEST["createhistory"])) {
+	$id= $_POST['id'];
+	$htype= $_POST['htype'];
+	$note= $_POST['note'];
+	$noteDate= $_POST['noteDate'];
+	$systemuserId= $_POST['systemuserId'];
+	$jobid= $_POST['jobid'];
+	/*$repassword= $_POST['repassword'];*/
+
+	//database connection
+	$conn = new mysqli('localhost', 'root', '', 'mobileshopdb');
+	if ($conn->connect_error) {
+		die('Connection Failed : ' . $conn->connect_error);
+	} else {
+		$stmt = $conn->prepare("INSERT INTO history(id,htype,note,noteDate,systemuserId,jobid)values(?,?,?,?,?,?)");
+		$stmt->bind_param("issdii",$id,$htype,$note,$noteDate,$systemuserId,$jobid);
+		$stmt->execute();
+		echo "Your Registration is Successfully..";
+
+
+		$stmt->close();
+	}
+
+}
+?>
 <!DOCTYPE html>
 <html>
 <head>
@@ -123,7 +151,7 @@
 												<div class="col-md-12 col-sm-12 mb-30">
 												<h2 class="text-center text-primary">Add History</h2>
 												</div>
-											<form action="history2.php" target="" method="POST" onsubmit="return checkpassword ()">
+											<form action="" target="" method="POST" onsubmit="return checkpassword ()">
 
 												<div class="input-group custom">
 												<div class="col-md-6 col-sm-12">
@@ -166,8 +194,8 @@
 												
 												<div class="col-md-12 col-sm-12">
 													<div class="form-group">
-																<input type="submit" class="btn btn-primary" value="Submit">
-																<input type="submit" class="btn btn-danger" value="Cancel">
+																<input type="submit" class="btn btn-primary" value="Submit" name="createhistory">
+																<input type="reset" class="btn btn-danger" value="Cancel" data-backdrop="static" data-toggle="modal" data-target="#add_technician">
 															</div>
 												</div>
 												</div>

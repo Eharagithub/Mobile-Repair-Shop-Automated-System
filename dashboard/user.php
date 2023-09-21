@@ -1,3 +1,34 @@
+<?php session_start(); ?>
+<?php
+
+if (isset($_REQUEST["createuser"])) {
+	$empNo= $_POST['empNo'];
+	$nic= $_POST['nic'];
+	$uname= $_POST['uname'];
+	$uaddress= $_POST['uaddress'];
+	$phone= $_POST['phone'];
+	$email= $_POST['email'];
+	$type= $_POST['type'];
+    $password= $_POST['password'];
+    $locid= $_POST['locid'];
+	/*$repassword= $_POST['repassword'];*/
+
+	//database connection
+	$conn = new mysqli('localhost', 'root', '', 'mobileshopdb');
+	if ($conn->connect_error) {
+		die('Connection Failed : ' . $conn->connect_error);
+	} else {
+		$stmt = $conn->prepare("INSERT INTO systemuser(empNo,nic,uname,uaddress,phone,email,type,password,locid)values(?,?,?,?,?,?,?,?,?)");
+		$stmt->bind_param("isssssssi",$empNo,$nic,$uname,$uaddress,$phone,$email,$type,$password,$locid);
+		$stmt->execute();
+		echo "Your Registration is Successfully..";
+
+
+		$stmt->close();
+	}
+
+}
+?>
 <!DOCTYPE html>
 <html>
 <head>
@@ -84,15 +115,7 @@
 
 					}
 
-					?>
-				
-		<!--			<div>
-						<a href="#" data-toggle="modal" data-target="#view"> View</a>
-						<a href="#">Edit</a>
-						<a class="dropdown-item" href="#" data-toggle="modal" data-target="#delete">Delete</a>
-					</div> 
-
-				-->			
+					?>		
 
 				<div class="card-box mb-30">
 					<div class="pd-20">
@@ -119,52 +142,7 @@
 							<tbody>
 							<?php getAllusers(); ?>
 						</tbody>
-							<!--<tbody>
-								<tr>
-									<td>123-456</td>
-									<td>234E</td>
-									<td>2023.09.02</td>
-									<td>2023.09.05</td>
-									<td>Battery Issue</td>
-									<td>09876543234</td>
-									<td>Specialization 1</td>
-									<td><span class="badge bg-success">Active</span></td>
-									<td>
-										<div class="dropdown">
-											<a class="btn btn-link font-24 p-0 line-height-1 no-arrow dropdown-toggle" href="#" role="button" data-toggle="dropdown">
-												<i class="dw dw-more"></i>
-											</a>
-											<div class="dropdown-menu dropdown-menu-right dropdown-menu-icon-list">
-												<a class="dropdown-item" href="#" data-toggle="modal" data-target="#add_technician"><i class="dw dw-eye"></i> View</a>
-												<a class="dropdown-item" href="#" data-toggle="modal" data-target="#add_technician"><i class="dw dw-edit2"></i> Edit</a>
-												<a class="dropdown-item" href="#" data-toggle="modal" data-target="#delete"><i class="dw dw-delete-3"></i> Delete</a>
-											</div>
-										</div>
-									</td>
-								</tr>
-								<tr>
-									<td>123-456234</td>
-									<td>456S</td>
-									<td>2023.09.02</td>
-									<td>2023.09.07</td>
-									<td>Dispaly</td>
-									<td>09876543234</td>
-									<td>Specialization 2</td>
-									<td><span class="badge bg-danger">Deactivated</span></td>
-									<td>
-										<div class="dropdown">
-											<a class="btn btn-link font-24 p-0 line-height-1 no-arrow dropdown-toggle" href="#" role="button" data-toggle="dropdown">
-												<i class="dw dw-more"></i>
-											</a>
-											<div class="dropdown-menu dropdown-menu-right dropdown-menu-icon-list">
-												<a class="dropdown-item" href="#" data-toggle="modal" data-target="#add_technician"><i class="dw dw-eye"></i> View</a>
-												<a class="dropdown-item" href="#" data-toggle="modal" data-target="#add_technician"><i class="dw dw-edit2"></i> Edit</a>
-												<a class="dropdown-item" href="#" data-toggle="modal" data-target="#delete"><i class="dw dw-delete-3"></i> Delete</a>
-											</div>
-										</div>
-									</td>
-								</tr>
-							</tbody> -->
+	
 						</table>
 					</div>
 				</div>
@@ -241,10 +219,11 @@
 															</div>
 												</div>
 												
+												
 												<div class="col-md-12 col-sm-12">
 													<div class="form-group">
-																<input type="submit" class="btn btn-primary" value="Submit">
-																<input type="submit" class="btn btn-danger" value="Cancel">
+																<input type="submit" class="btn btn-primary" value="Submit" name="createuser">
+																<input type="reset" class="btn btn-danger" value="Cancel" data-backdrop="static" data-toggle="modal" data-target="#add_technician">
 															</div>
 												</div>
 												</div>

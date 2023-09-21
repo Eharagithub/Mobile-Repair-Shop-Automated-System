@@ -1,4 +1,31 @@
 <?php session_start(); ?>
+<?php
+
+if (isset($_REQUEST["createtechnician"])) {
+	$empNo= $_POST['empNo'];
+	$nic= $_POST['nic'];
+	$tname= $_POST['tname'];
+	$taddress= $_POST['taddress'];
+	$phone= $_POST['phone'];
+	$email= $_POST['email'];
+	/*$repassword= $_POST['repassword'];*/
+
+	//database connection
+	$conn = new mysqli('localhost', 'root', '', 'mobileshopdb');
+	if ($conn->connect_error) {
+		die('Connection Failed : ' . $conn->connect_error);
+	} else {
+		$stmt = $conn->prepare("INSERT INTO technician(empNo,nic,tname,taddress,phone,email)values(?,?,?,?,?,?)");
+		$stmt->bind_param("isssss",$empNo,$nic,$tname,$taddress,$phone,$email);
+		$stmt->execute();
+		echo "Your Registration is Successfully..";
+
+
+		$stmt->close();
+	}
+
+}
+?>
 <!DOCTYPE html>
 <html>
 
@@ -89,14 +116,6 @@
 
 				?>
 
-				<!--			<div>
-						<a href="#" data-toggle="modal" data-target="#view"> View</a>
-						<a href="#">Edit</a>
-						<a class="dropdown-item" href="#" data-toggle="modal" data-target="#delete">Delete</a>
-					</div> 
-
-				-->
-
 				<div class="card-box mb-30">
 					<div class="pd-20">
 						<h4 class="text-blue h4">Technician List</h4>
@@ -119,52 +138,7 @@
 							<tbody>
 								<?php getAlltechnician(); ?>
 							</tbody>
-							<!--<tbody>
-								<tr>
-									<td>123-456</td>
-									<td>234E</td>
-									<td>2023.09.02</td>
-									<td>2023.09.05</td>
-									<td>Battery Issue</td>
-									<td>09876543234</td>
-									<td>Specialization 1</td>
-									<td><span class="badge bg-success">Active</span></td>
-									<td>
-										<div class="dropdown">
-											<a class="btn btn-link font-24 p-0 line-height-1 no-arrow dropdown-toggle" href="#" role="button" data-toggle="dropdown">
-												<i class="dw dw-more"></i>
-											</a>
-											<div class="dropdown-menu dropdown-menu-right dropdown-menu-icon-list">
-												<a class="dropdown-item" href="#" data-toggle="modal" data-target="#add_technician"><i class="dw dw-eye"></i> View</a>
-												<a class="dropdown-item" href="#" data-toggle="modal" data-target="#add_technician"><i class="dw dw-edit2"></i> Edit</a>
-												<a class="dropdown-item" href="#" data-toggle="modal" data-target="#delete"><i class="dw dw-delete-3"></i> Delete</a>
-											</div>
-										</div>
-									</td>
-								</tr>
-								<tr>
-									<td>123-456234</td>
-									<td>456S</td>
-									<td>2023.09.02</td>
-									<td>2023.09.07</td>
-									<td>Dispaly</td>
-									<td>09876543234</td>
-									<td>Specialization 2</td>
-									<td><span class="badge bg-danger">Deactivated</span></td>
-									<td>
-										<div class="dropdown">
-											<a class="btn btn-link font-24 p-0 line-height-1 no-arrow dropdown-toggle" href="#" role="button" data-toggle="dropdown">
-												<i class="dw dw-more"></i>
-											</a>
-											<div class="dropdown-menu dropdown-menu-right dropdown-menu-icon-list">
-												<a class="dropdown-item" href="#" data-toggle="modal" data-target="#add_technician"><i class="dw dw-eye"></i> View</a>
-												<a class="dropdown-item" href="#" data-toggle="modal" data-target="#add_technician"><i class="dw dw-edit2"></i> Edit</a>
-												<a class="dropdown-item" href="#" data-toggle="modal" data-target="#delete"><i class="dw dw-delete-3"></i> Delete</a>
-											</div>
-										</div>
-									</td>
-								</tr>
-							</tbody> -->
+							
 						</table>
 					</div>
 				</div>
@@ -183,7 +157,7 @@
 								<div class="col-md-12 col-sm-12 mb-30">
 									<h2 class="text-center text-primary">Add Technician</h2>
 								</div>
-								<form action="technician2.php" target="" method="POST"
+								<form action="" target="" method="POST"
 									onsubmit="return checkpassword ()">
 
 												<div class="input-group custom">
@@ -227,8 +201,8 @@
 												
 												<div class="col-md-12 col-sm-12">
 													<div class="form-group">
-																<input type="submit" class="btn btn-primary" value="Submit">
-																<input type="submit" class="btn btn-danger" value="Cancel">
+																<input type="submit" class="btn btn-primary" value="Submit" name="createtechnician">
+																<input type="reset" class="btn btn-danger" value="Cancel" data-backdrop="static" data-toggle="modal" data-target="#add_technician">
 															</div>
 												</div>
 												</div>
