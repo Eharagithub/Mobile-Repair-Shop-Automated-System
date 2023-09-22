@@ -109,8 +109,32 @@ if (isset($_REQUEST["createuser"])) {
 							echo"<td>" . $row["email"] . "</td>";
 							echo"<td>" . $row["password"] . "</td>";
 							echo"<td>" . $row["locid"] . "</td>";
+							echo 	'<td>';
+							echo 		'<div class="dropdown" onclick="setSelectedCustomer('.$row["nic"].')';
+							echo 			'<a class="btn btn-link font-24 p-0 line-height-1 no-arrow dropdown-toggle" href="#.php?id=<?php echo $row[\'nic\']; ?>" role="button" data-toggle="dropdown">';
+							echo 				'<i class="dw dw-more"></i>';
+							echo 			'</a>';
+
+							echo 			'<div class="dropdown-menu dropdown-menu-right dropdown-menu-icon-list">';
+							echo 				'<a class="dropdown-item" href="#" data-toggle="modal" data-target="#view"><i class="dw dw-eye"></i> View</a>';
+							echo 				'<a class="dropdown-item" href="#"><i class="dw dw-edit2"></i> Edit</a>';
+							echo 				'<a class="dropdown-item" href="#" data-toggle="modal" data-target="#delete"><i class="dw dw-delete-3"></i> Delete</a>';
+							echo 			'</div>';
+		 							
 							echo"</tr>";
 							
+							
+					}
+					function deleteClientById(){
+						global $conn;
+						global $selectedCientId;
+						$sql = "delete from customer where nic = '" . $selectedCientId . "'";
+						mysqli_query($conn, $sql);
+					}
+				
+					function setSelectedCustomer($nic){
+						global $selectedCientId;
+						$selectedCientId = $nic;
 					}
 
 					}
@@ -134,7 +158,6 @@ if (isset($_REQUEST["createuser"])) {
 							<th>Type</th>
 							<th>Password</th>
 							<th>locid</th>
-							<th>Status</th>
 							<th>Action</th>
 						</tr>
 								

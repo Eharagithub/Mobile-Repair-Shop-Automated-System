@@ -17,7 +17,7 @@ if (isset($_REQUEST["createjob"])) {
 		die('Connection Failed : ' . $conn->connect_error);
 	} else {
 		$stmt = $conn->prepare("INSERT INTO job(id,amount,jobDate,deliveryId,technicianId,systemuserId,deviceId)values(?,?,?,?,?,?,?)");
-		$stmt->bind_param("isdiiis",$id,$amount,$jobDate,$deliveryId,$technicianId,$systemuserId,$deviceId);
+		$stmt->bind_param("issiiis",$id,$amount,$jobDate,$deliveryId,$technicianId,$systemuserId,$deviceId);
 		$stmt->execute();
 		echo "Your Registration is Successfully..";
 
@@ -103,8 +103,32 @@ if (isset($_REQUEST["createjob"])) {
 							echo"<td>" . $row["systemuserId"] . "</td>";
 							echo"<td>" . $row["deviceId"] . "</td>";
                             echo"<td>" . $row["technicianId"] . "</td>";
+							echo 	'<td>';
+							echo 		'<div class="dropdown" onclick="setSelectedCustomer('.$row["id"].')';
+							echo 			'<a class="btn btn-link font-24 p-0 line-height-1 no-arrow dropdown-toggle" href="#.php?id=<?php echo $row[\'nic\']; ?>" role="button" data-toggle="dropdown">';
+							echo 				'<i class="dw dw-more"></i>';
+							echo 			'</a>';
+
+							echo 			'<div class="dropdown-menu dropdown-menu-right dropdown-menu-icon-list">';
+							echo 				'<a class="dropdown-item" href="#" data-toggle="modal" data-target="#view"><i class="dw dw-eye"></i> View</a>';
+							echo 				'<a class="dropdown-item" href="#"><i class="dw dw-edit2"></i> Edit</a>';
+							echo 				'<a class="dropdown-item" href="#" data-toggle="modal" data-target="#delete"><i class="dw dw-delete-3"></i> Delete</a>';
+							echo 			'</div>';
+		 							
 							echo"</tr>";
 							
+							
+					}
+					function deleteClientById(){
+						global $conn;
+						global $selectedCientId;
+						$sql = "delete from customer where nic = '" . $selectedCientId . "'";
+						mysqli_query($conn, $sql);
+					}
+				
+					function setSelectedCustomer($nic){
+						global $selectedCientId;
+						$selectedCientId = $nic;
 					}
 
 					}

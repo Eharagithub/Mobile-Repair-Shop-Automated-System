@@ -103,8 +103,32 @@ if (isset($_REQUEST["createlocation"])) {
 							echo"<td>" . $row["phone1"] . "</td>";
 							echo"<td>" . $row["phone2"] . "</td>";
 							echo"<td>" . $row["email"] . "</td>";
+							echo 	'<td>';
+							echo 		'<div class="dropdown" onclick="setSelectedlocation('.$row["locid"].')';
+							echo 			'<a class="btn btn-link font-24 p-0 line-height-1 no-arrow dropdown-toggle" href="#.php?id=<?php echo $row[\'nic\']; ?>" role="button" data-toggle="dropdown">';
+							echo 				'<i class="dw dw-more"></i>';
+							echo 			'</a>';
+
+							echo 			'<div class="dropdown-menu dropdown-menu-right dropdown-menu-icon-list">';
+							echo 				'<a class="dropdown-item" href="#" data-toggle="modal" data-target="#view"><i class="dw dw-eye"></i> View</a>';
+							echo 				'<a class="dropdown-item" href="#"><i class="dw dw-edit2"></i> Edit</a>';
+							echo 				'<a class="dropdown-item" href="#" data-toggle="modal" data-target="#delete"><i class="dw dw-delete-3"></i> Delete</a>';
+							echo 			'</div>';
+		 							
 							echo"</tr>";
 							
+							
+					}
+					function deleteClientById(){
+						global $conn;
+						global $selectedCientId;
+						$sql = "delete from customer where nic = '" . $selectedCientId . "'";
+						mysqli_query($conn, $sql);
+					}
+				
+					function setSelectedlocation($locid){
+						global $selectedCientId;
+						$selectedlocation = $locid;
 					}
 
 					}
@@ -125,7 +149,6 @@ if (isset($_REQUEST["createlocation"])) {
 							<th>Phone 01</th>
 							<th>Phone 02</th>
 							<th>Email</th>
-							<th>Status</th>
 							<th>Action</th>
 						</tr>
 								

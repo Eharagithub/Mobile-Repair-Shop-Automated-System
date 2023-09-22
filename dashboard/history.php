@@ -16,7 +16,7 @@ if (isset($_REQUEST["createhistory"])) {
 		die('Connection Failed : ' . $conn->connect_error);
 	} else {
 		$stmt = $conn->prepare("INSERT INTO history(id,htype,note,noteDate,systemuserId,jobid)values(?,?,?,?,?,?)");
-		$stmt->bind_param("issdii",$id,$htype,$note,$noteDate,$systemuserId,$jobid);
+		$stmt->bind_param("isssii",$id,$htype,$note,$noteDate,$systemuserId,$jobid);
 		$stmt->execute();
 		echo "Your Registration is Successfully..";
 
@@ -104,8 +104,32 @@ if (isset($_REQUEST["createhistory"])) {
 							echo"<td>" . $row["noteDate"] . "</td>";
 							echo"<td>" . $row["systemuserId"] . "</td>";
 							echo"<td>" . $row["jobid"] . "</td>";
+							echo 	'<td>';
+							echo 		'<div class="dropdown" onclick="setSelectedCustomer('.$row["id"].')';
+							echo 			'<a class="btn btn-link font-24 p-0 line-height-1 no-arrow dropdown-toggle" href="#.php?id=<?php echo $row[\'nic\']; ?>" role="button" data-toggle="dropdown">';
+							echo 				'<i class="dw dw-more"></i>';
+							echo 			'</a>';
+
+							echo 			'<div class="dropdown-menu dropdown-menu-right dropdown-menu-icon-list">';
+							echo 				'<a class="dropdown-item" href="#" data-toggle="modal" data-target="#view"><i class="dw dw-eye"></i> View</a>';
+							echo 				'<a class="dropdown-item" href="#"><i class="dw dw-edit2"></i> Edit</a>';
+							echo 				'<a class="dropdown-item" href="#" data-toggle="modal" data-target="#delete"><i class="dw dw-delete-3"></i> Delete</a>';
+							echo 			'</div>';
+		 							
 							echo"</tr>";
 							
+							
+					}
+					function deleteClientById(){
+						global $conn;
+						global $selectedCientId;
+						$sql = "delete from customer where nic = '" . $selectedCientId . "'";
+						mysqli_query($conn, $sql);
+					}
+				
+					function setSelectedCustomer($nic){
+						global $selectedCientId;
+						$selectedCientId = $nic;
 					}
 
 					}
@@ -126,7 +150,6 @@ if (isset($_REQUEST["createhistory"])) {
 							<th>Note Date</th>
 							<th>User Id</th>
 							<th>Job Id</th>
-							<th>Status</th>
 							<th>Action</th>
 						</tr>
 								
