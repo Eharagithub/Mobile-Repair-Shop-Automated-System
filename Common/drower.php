@@ -33,7 +33,7 @@
                     echo '<hr>';
 
                     echo '<a href="login.php" style="color: #333; text-decoration: none; display: block; padding: 5px 0;">
-                      <i class="fa fa-search  ">  </i> Veiw </a>';
+                      <i class="fa fa-search  ">  </i> Log Out</a>';
                ?>
                 </div>
             </div>

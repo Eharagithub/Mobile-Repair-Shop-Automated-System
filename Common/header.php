@@ -34,7 +34,7 @@
                 <a href="contact.php" class="navbar__links">Contact Us </a> 
             </li>
             <li class="navbar__btn">
-                <a href="login.php" class="admin">Admin Login </a> 
+                <a href="login.php" class="admin">Login </a> 
             </li>
         </ul>
     </div>
