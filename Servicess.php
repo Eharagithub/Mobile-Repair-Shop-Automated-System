@@ -17,8 +17,11 @@
 </head>
 
 <body>
+
     <header>
-        <?php include_once("./Common/header.php") ?> </header>
+        <?php include_once("./Common/header.php") ?> 
+    </header>
+    
 
     <section class="transparent-panel">
         <h2>Our Services</h2><br>

@@ -27,17 +27,17 @@ try {
     $mail->Host       = 'smtp.gmail.com';                     //Set the SMTP server to send through
     $mail->SMTPAuth   = true;                                   //Enable SMTP authentication
     $mail->Username   = 'kanchanasaranga33@gmail.com';                     //SMTP username
-    $mail->Password   = 'masuroixamkxmnbw';                               //SMTP password
+    $mail->Password   = 'jjmdybxtghrffmzs';                               //SMTP password
     $mail->SMTPSecure = PHPMailer::ENCRYPTION_SMTPS;            //Enable implicit TLS encryption
     $mail->Port       = 465;                                    //TCP port to connect to; use 587 if you have set `SMTPSecure = PHPMailer::ENCRYPTION_STARTTLS`
 
     //Recipients
-    $mail->setFrom('kanchanasaranga33@gmail.com', 'Kanchana');
-    $mail->addAddress($email, 'From User');     //Add a recipient
+    $mail->setFrom('kanchanasaranga33@gmail.com', 'server');
+    $mail->addAddress('kanchanasaranga11@gmail.com', 'admin');     //Add a recipient
     
     //$mail->addAddress('ellen@example.com');               //Name is optional
-    //$mail->addReplyTo('info@example.com', 'Information');
-    //$mail->addCC('cc@example.com');
+    $mail->addReplyTo($email, 'user');
+    $mail->addCC($email);
     //$mail->addBCC('bcc@example.com');
 
     //Attachments
@@ -46,12 +46,13 @@ try {
 
     //Content
     $mail->isHTML(true);                                  //Set email format to HTML
-    $mail->Subject = 'Here is the subject';
-    $mail->Body    = 'This is the HTML message body <b>in bold!</b>';
-    $mail->AltBody = 'This is the body in plain text for non-HTML mail clients';
+    $mail->Subject = $subject;
+    $mail->Body    = $message;
+     
 
     $mail->send();
     echo 'Message has been sent';
+    header("Location: contact.php");
 } catch (Exception $e) {
     echo "Message could not be sent. Mailer Error: {$mail->ErrorInfo}";
 }

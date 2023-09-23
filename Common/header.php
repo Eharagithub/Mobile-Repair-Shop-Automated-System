@@ -1,7 +1,13 @@
-
-
 <header>
+
 <section class>
+<style>
+        /* Add this CSS to change the navbar background color to black */
+        .navbar-toggler.bg-dark {
+             
+            background-color: rgba(0, 0, 0, 0.7);
+        }
+    </style>
 <nav class="navbar navbar-expand-lg navbar-toggler bg-dark py-4 text-white">
     <div class="navbar__container">
         <div class="navbar__logo" style="width: 50px; height: 50px;">
@@ -34,8 +40,5 @@
     </div>
 </nav>
 </section>
-
 <script src="app.js"></script>
 </header>
-
- 
