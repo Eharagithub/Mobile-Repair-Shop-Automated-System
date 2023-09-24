@@ -3,62 +3,18 @@
     <head>
         <title>Contact</title>
         <meta charset="UTF-8">
-         
-    
-        <link rel="stylesheet" href="style.css" >
+        <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet">
+        <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.5/font/bootstrap-icons.css">
+        <link rel="stylesheet" type="text/css" href="./dashboard/vendors/styles/icon-font.min.css">
+        <link rel="stylesheet" href="style.css">
         <link rel="stylesheet" href="contact.css" >
-
-        <header>
-
-            <section class>
-            <style>
-                    /* Add this CSS to change the navbar background color to black */
-                    .navbar-toggler.bg-dark {
-                         
-                        background-color: rgba(0, 0, 0, 0.7);
-                    }
-                </style>
-            <nav class="navbar navbar-expand-lg navbar-toggler bg-dark py-4 text-white">
-                <div class="navbar__container">
-                    <div class="navbar__logo" style="width: 50px; height: 50px;">
-                        <img src="new.jpg" alt="Kasthuri Mobile solutions" max-width="20" max-height="50">
-                    </div>
-                    
-                    <div class="navbar__toggle" id="mobile-menu">
-                        <span class="bar"></span>
-                        <span class="bar"></span>
-                        <span class="bar"></span>
-                        <span class="bar"></span>
-                    </div>
-                    <ul class="navbar__menu">
-                        <li class="navbar__item">
-                           <a href="index.php" class="navbar__links" >Home </a> 
-                        </li>
-                        <li class="navbar__item">
-                            <a href="about.php" class="navbar__links">About Us </a> 
-                        </li>
-                        <li class="navbar__item">
-                            <a href="Servicess.php" class="navbar__links">Services</a> 
-                        </li>
-                        <li class="navbar__item">
-                            <a href="contact.php" class="navbar__links">Contact Us </a> 
-                        </li>
-                        <li class="navbar__btn">
-                            <a href="login.php" class="admin">Admin Login </a> 
-                        </li>
-                    </ul>
-                </div>
-            </nav>
-            </section>
-            <script src="app.js"></script>
-            </header>
-   
-    
     </head>
-    
- 
-    
+   
     <body>
+    <header>
+        <?php include_once("./Common/header.php") ?> 
+    </header>
+
     <form class="contact-form" method="post" action="send-email.php">
     <!-- Form content -->
     </form>

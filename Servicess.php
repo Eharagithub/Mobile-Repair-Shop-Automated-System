@@ -31,44 +31,156 @@
             to our fullest extent. Our skilled technicians have
             taken even the most difficult chip-level based
             repairs and excelled at it.<br>
-            We are Specialized for following Software Repairs</p>
+            We are Specialized for following Software Repairs & Hardware Repairs.</p>
     </section>
 
+    <h4>We are Specialized for following Software Repairs</h4>
     <div class="container mt-5">
         <div class="row">
-            <div class="col-md-4">
-                <div class="single-service">
-                    <div class="service-bg service-bg-1">
-                        <h2>Hardware Repairs</h2>
-                    </div>
-                    <div class="service-text">
-                        <p style="color:#333">Hardware repairs for a mobile phone involve fixing physical components or replacing malfunctioning parts. These repairs can be more complex and may require technical expertise and specialized tools. Here are some common hardware problems that can occur with mobile phones and potential solutions:</p>
-                        <a href="" class="btn-area">Read More<i class="fa fa-long-arrow-right"></i></a>
-                    </div>
-                </div>
-            </div>
-            <div class="col-md-4">
-                <div class="single-service">
-                    <div class="service-bg service-bg-2">
-                        <h2>Softdware Repairs</h2>
-                    </div>
-                    <div class="service-text">
-                        <p style="color:#333">Software repairs for a mobile phone typically involve troubleshooting and resolving issues related to the device's operating system and software applications. Here are some common software problems that can occur on mobile phones and the steps to repair them:</p>
-                        <a href="" class="btn-area">Read More</a><i class="fa fa-long-arrow-right" aria-hidden="true"></i>
+        <div class="col-md-4">
+                    <div class="single-service" >
+                        <div class="service-bg service-bg-1">
+                            <h2>Diagnosing Of Issues</h2>
+                        </div>
+                        <div class="service-text">
+                            <P>Diagnosing of errors for better use</p>
+                            <H6>The cost associate is 2500LKR</H6>
+                            <a href="" class="btn-area">Read More</a>
+                        </div>
                     </div>
                 </div>
-            </div>
-            <div class="col-md-4">
-                <div class="single-service">
-                    <div class="service-bg service-bg-3">
-                        <h2>Other</h2>
-                    </div>
-                    <div class="service-text">
-                        <p style="color:#333">At our shop, we understand that your mobile device is not just a gadget; it's an essential part of your daily life. That's why we're dedicated to providing you with a wide range of high-quality mobile accessories to enhance and protect your devices.</p>
-                        <a href="" class="btn-area">Read More<i class="fa fa-long-arrow-right"> </i></a>
+                <div class="col-md-4">
+                    <div class="single-service" >
+                        <div class="service-bg service-bg-2">
+                            <h2>Software Installation</h2>
+                        </div>
+                        <div class="service-text">
+                            <p>Insertion of softwares for all devices</p>
+                            <H6>The cost associate is 2500LKR</H6>
+                            <a href="" class="btn-area">Read More</a>
+                        </div>
                     </div>
                 </div>
-            </div>
+                <div class="col-md-4">
+                    <div class="single-service" >
+                        <div class="service-bg service-bg-3">
+                            <h2>Phone Setting</h2>
+                        </div>
+                        <div class="service-text">
+                            <p>Setting up the phone for proper usage</p>
+                            <H6>The cost associate is 2500LKR</H6>
+                            <a href="" class="btn-area">Read More</a>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-4">
+                    <div class="single-service" >
+                        <div class="service-bg service-bg-4">
+                            <h2>Phone Unlock</h2>
+                        </div>
+                        <div class="service-text">
+                            <p>Unlocking of accidentally locked phones</p>
+                            <H6>The cost associate is 2500LKR</H6>
+                            <a href="" class="btn-area">Read More</a>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-4">
+                    <div class="single-service" >
+                        <div class="service-bg service-bg-5">
+                            <h2>App Installation</h2>
+                        </div>
+                        <div class="service-text">
+                            <p>Installing of Apps for anyone in requirement</p>
+                            <H6>The cost associate is 2500LKR</H6>
+                            <a href="" class="btn-area">Read More</a>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-4">
+                    <div class="single-service" >
+                        <div class="service-bg service-bg-6">
+                            <h2>Storage Clearancesk</h2>
+                        </div>
+                        <div class="service-text">
+                            <p>Clearing of unwanted storage or transfe</p>
+                            <H6>The cost associate is 2500LKR</H6>
+                            <a href="" class="btn-area">Read More</a>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-4">
+                    <div class="single-service" >
+                        <div class="service-bg service-bg-7">
+                            <h2>Software updations</h2>
+                        </div>
+                        <div class="service-text">
+                            <p>Updating of software for better use</p>
+                            <H6>The cost associate is 2500LKR</H6>
+                            <a href="" class="btn-area">Read More</a>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-4">
+                    <div class="single-service" >
+                        <div class="service-bg service-bg-8">
+                            <h2>Virus Clearing</h2>
+                        </div>
+                        <div class="service-text">
+                            <p>Cleaning of phone virus</p>
+                            <H6>The cost associate is 2500LKR</H6>
+                            <a href="" class="btn-area">Read More</a>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-4">
+                    <div class="single-service" >
+                        <div class="service-bg service-bg-9">
+                            <h2>Data Backup</h2>
+                        </div>
+                        <div class="service-text">
+                            <p>Backing up or transfers</p>
+                            <H6>The cost associate is 2500LKR</H6>
+                            <a href="" class="btn-area">Read More</a>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-4">
+                    <div class="single-service" >
+                        <div class="service-bg service-bg-10">
+                            <h2>Phone Slow Issues</h2>
+                        </div>
+                        <div class="service-text">
+                            <p>Rectifying the issues or re-installations</p>
+                            <H6>The cost associate is 2500LKR</H6>
+                            <a href="" class="btn-area">Read More</a>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-4">
+                    <div class="single-service" >
+                        <div class="service-bg service-bg-11">
+                            <h2>Apps Crashing Issues</h2>
+                        </div>
+                        <div class="service-text">
+                            <p>Rectifying the crash issues or re-install</p>
+                            <H6>The cost associate is 2500LKR</H6>
+                            <a href="" class="btn-area">Read More</a>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-4">
+                    <div class="single-service" >
+                        <div class="service-bg service-bg-12">
+                            <h2>Other Issues</h2>
+                        </div>
+                        <div class="service-text">
+                            <p>All other software issues to be rectified</p>
+                            <H6>The cost associate is 2500LKR</H6>
+                            <a href="" class="btn-area">Read More</a>
+                        </div>
+                    </div>
+                </div>
         </div>
     </div>
 

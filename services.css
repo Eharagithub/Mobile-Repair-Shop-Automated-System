@@ -24,15 +24,12 @@ a{
 }
 a:hover{text-decoration:none}
 
-
-
-
-.section-header{
+.section-transparent-panel{
     text-align: center;         /*tac*/
     margin-bottom: 30px;        /*mb30*/
     margin-top: 5px;
 }
-.section-header h2{
+.section-transparent-panel h2{
     background-color: rgba(11, 10, 10, 0.5); /* Transparent white background */
     padding: 20px;
     border-radius: 20px;
@@ -47,12 +44,12 @@ a:hover{text-decoration:none}
     z-index: 2;  /*Place the h2 in front of the background */
 }
 
-.section-header p{
+.section-transparent-panel p{
     font-size: 18px;
     background-color: rgba(11, 10, 10, 0.5); /* Transparent white background */
     padding: 20px;
     border-radius: 10px;
-    color:bisque;
+    color:rgb(183, 180, 180);
     max-width: 600px;
     margin: 0 auto;
     box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.2);
@@ -61,33 +58,106 @@ a:hover{text-decoration:none}
 	left: 50%;
 	transform: translate(-50%,-50%);
     z-index: 1; /* Place the h2 in front of the background */
+    
+}
+h4{
+    
+    padding: 10px;
+    max-width: 800px;
+    margin: 0 auto;
+    color:rgb(13, 13, 13);
+	top: 80%;
+	left: 50%;
+    text-align: center;
+    margin-top: 15px;
 }
 
 .single-service{
     border: 1px solid #ebebeb;
     text-align: center;
     background: #fff;
+    margin-top: 15px;
 }
 .service-bg{
     height: 200px;
     position: relative;
 }
 .service-bg-1{
-    background: url("h-1.jpg");
+    background: url("img1.jpg");
     -webkit-background-size:cover ;
     background-size: cover;
     background-position:center;
 
 }
 .service-bg-2{
-    background: url("cc.jpg");
+    background: url("img2.jpg");
     -webkit-background-size:cover ;
     background-size: cover;
     background-position:center;
 
 }
 .service-bg-3{
-    background: url("dd.jpg");
+    background: url("img3.jpg");
+    -webkit-background-size:cover ;
+    background-size: cover;
+    background-position:center;
+}
+.service-bg-4{
+    background: url("img4.jpg");
+    -webkit-background-size:cover ;
+    background-size: cover;
+    background-position:center;
+
+}
+.service-bg-5{
+    background: url("img5.jpg");
+    -webkit-background-size:cover ;
+    background-size: cover;
+    background-position:center;
+
+}
+.service-bg-6{
+    background: url("img6.jpg");
+    -webkit-background-size:cover ;
+    background-size: cover;
+    background-position:center;
+}
+.service-bg-7{
+    background: url("img7.png");
+    -webkit-background-size:cover ;
+    background-size: cover;
+    background-position:center;
+
+}
+.service-bg-8{
+    background: url("img8.jpg");
+    -webkit-background-size:cover ;
+    background-size: cover;
+    background-position:center;
+
+}
+.service-bg-9{
+    background: url("img9.jpg");
+    -webkit-background-size:cover ;
+    background-size: cover;
+    background-position:center;
+}
+.service-bg-10{
+    background: url("img10.png");
+    -webkit-background-size:cover ;
+    background-size: cover;
+    background-position:center;
+
+}
+.service-bg-11{
+    background: url("img11.jpg");
+    -webkit-background-size:cover ;
+    background-size: cover;
+    background-position:center;
+
+}
+.service-bg-12{
+    background: url("img12.jpg");
     -webkit-background-size:cover ;
     background-size: cover;
     background-position:center;
@@ -123,13 +193,22 @@ a:hover{text-decoration:none}
     margin: 0;
     line-height: 1.8;
 }
+.service-text p{
+    color: #333;
+}
 .btn-area{
     display: inline-block;
-    color: #333;
     font-size: 17px;
     font-weight: 700;
-    margin-top: 30px;
+    margin-top: 20px;
     text-transform: capitalize;
+    color: #fff;
+    padding: 5px;
+    left:8%;
+    width:40%;
+    margin: 0;
+    bottom: -25px;
+    border-radius: 10px;
 
 }
 
