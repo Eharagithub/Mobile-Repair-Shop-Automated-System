@@ -25,6 +25,14 @@
         </div>
       </form>
     </div>
+    <script>
+    $(function(){
+        $('#check_status').submit(function(e){
+            e.preventDefault()
+            location.href="./?page=view_status&"+$(this).serialize();
+        })
+    })
+</script>
 
   </body>
 </html>
