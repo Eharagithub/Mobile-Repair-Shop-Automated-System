@@ -61,7 +61,7 @@ a:hover{text-decoration:none}
     
 }
 h4{
-    
+
     padding: 10px;
     max-width: 800px;
     margin: 0 auto;
@@ -83,81 +83,81 @@ h4{
     position: relative;
 }
 .service-bg-1{
-    background: url("img1.jpg");
+    background: url("https://phonerepairs.lk/wp-content/uploads/2020/11/3.jpg");
     -webkit-background-size:cover ;
     background-size: cover;
     background-position:center;
 
 }
 .service-bg-2{
-    background: url("img2.jpg");
+    background: url("https://phonerepairs.lk/wp-content/uploads/2020/11/2.jpg");
     -webkit-background-size:cover ;
     background-size: cover;
     background-position:center;
 
 }
 .service-bg-3{
-    background: url("img3.jpg");
+    background: url("https://phonerepairs.lk/wp-content/uploads/2020/11/3.jpg");
     -webkit-background-size:cover ;
     background-size: cover;
     background-position:center;
 }
 .service-bg-4{
-    background: url("img4.jpg");
+    background: url("https://phonerepairs.lk/wp-content/uploads/2020/11/4.jpg");
     -webkit-background-size:cover ;
     background-size: cover;
     background-position:center;
 
 }
 .service-bg-5{
-    background: url("img5.jpg");
+    background: url("https://phonerepairs.lk/wp-content/uploads/2020/11/5.jpg");
     -webkit-background-size:cover ;
     background-size: cover;
     background-position:center;
 
 }
 .service-bg-6{
-    background: url("img6.jpg");
+    background: url("https://phonerepairs.lk/wp-content/uploads/2020/11/7.jpg");
     -webkit-background-size:cover ;
     background-size: cover;
     background-position:center;
 }
 .service-bg-7{
-    background: url("img7.png");
+    background: url("https://phonerepairs.lk/wp-content/uploads/2020/11/10.png");
     -webkit-background-size:cover ;
     background-size: cover;
     background-position:center;
 
 }
 .service-bg-8{
-    background: url("img8.jpg");
+    background: url("data:image/jpeg;base64,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");
     -webkit-background-size:cover ;
     background-size: cover;
     background-position:center;
 
 }
 .service-bg-9{
-    background: url("img9.jpg");
+    background: url("https://phonerepairs.lk/wp-content/uploads/2020/11/12.jpg");
     -webkit-background-size:cover ;
     background-size: cover;
     background-position:center;
 }
 .service-bg-10{
-    background: url("img10.png");
+    background: url("https://phonerepairs.lk/wp-content/uploads/2020/11/8.jpeg");
     -webkit-background-size:cover ;
     background-size: cover;
     background-position:center;
 
 }
 .service-bg-11{
-    background: url("img11.jpg");
+    background: url("https://phonerepairs.lk/wp-content/uploads/2020/11/6.png");
     -webkit-background-size:cover ;
     background-size: cover;
     background-position:center;
 
 }
 .service-bg-12{
-    background: url("img12.jpg");
+    background: url("https://phonerepairs.lk/wp-content/uploads/2020/11/9.jpg");
     -webkit-background-size:cover ;
     background-size: cover;
     background-position:center;

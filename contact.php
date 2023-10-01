@@ -13,29 +13,27 @@
     <header>
         <?php include_once("./Common/header.php") ?> 
     </header>
-    <h1 class="contact-title">Touch Us</h1> 
-    <div class="contact-container">
+    <div>
+        <h1 class="contact-title">Get Touch With Us</h1> 
         
-        <form class="contact-form" method="post" action="send-email.php">
+    </div>
+    <form class="contact-form" method="post" action="send-email.php">
          
             <!-- Form inputs go here -->
        
-            <label for="name">Name</label>
+            <label for="name">Name :</label>
             <input type="text" name="name" id="name" required>
 
-            <label for="email">Email</label>
+            <label for="email">Email :</label>
             <input type="email" name="email" id="email" required>
 
-            <label for="subject">Subject</label>
+            <label for="subject">Subject :</label>
             <input type="text" name="subject" id="subject" required>
 
-            <label for="message">Message</label>
+            <label for="message">Message :</label>
             <textarea name="message" id="message" required></textarea>
 
-            <button type="submit">Send</button>
-        </form>
-    </div>
-
-    
+            <center><button type="submit">Send</button></center>
+    </form>
 </body>
 </html>
