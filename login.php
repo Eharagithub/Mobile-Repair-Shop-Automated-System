@@ -53,6 +53,15 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
 <head>
     <title>Transparent Login</title>
     <link rel="stylesheet" type="text/css" href="login.css">
+
+    <script type="text/javascript">
+        function msg(){
+            alert("Enter the correct username or Password");
+        }
+        function forget(){
+            alert("Please reset your password");
+        }
+    </script>
 </head>
 
 <body>
@@ -63,8 +72,8 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
             <input type="text" name="username" required>
             <p>Password</p>
             <input type="password" name="password" required>
-            <input type="submit" name="" value="Login">
-            <a href="#">Forgot Password</a>
+            <input type="submit" name="click" onclick="msg()" value="Login">
+            <a href="#"  onclick="forget()">Forgot Password</a>
         </form>
     </div>
 </body>

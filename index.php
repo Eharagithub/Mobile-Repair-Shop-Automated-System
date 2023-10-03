@@ -1,12 +1,13 @@
 <!DOCTYPE html>
 <html lang="en">
-    <head>
+  <head>
         <title>Sample</title>
         <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet" >
         <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.5/font/bootstrap-icons.css">
         <link rel="stylesheet" href="style.css" >
-    </head>
-    <body>
+  </head>
+  <body>
+
     <header>
         <?php include_once("./Common/header.php") ?> 
     </header>
@@ -40,7 +41,7 @@
               <p class="card-text">
                  Repaired by our expert technicians who are well experienced
               </p>
-              <a href="#" class="btn btn-primary">
+              <a href="Servicess.php" class="btn btn-primary">
                 Read more
               </a>
             </div>
@@ -57,10 +58,10 @@
                   
               </div>
               <h3 class="card-title mb-3">
-                On time delivery
+                On Time Delivery
               </h3>
               <p class="card-text">
-                we will repair your device perfectly and on time for delivery
+                We will repair your device perfectly and on time for delivery
               </p>
               <a href="#" class="btn btn-primary">
                 Read more
@@ -78,10 +79,10 @@
                   
               </div>
               <h3 class="card-title mb-3">
-                Premium parts
+                Premium Parts
               </h3>
               <p class="card-text">
-                we use only original quality parts for your device
+                We use only original quality parts for your device
               </p>
               <a href="#" class="btn btn-primary">
                 Read more
@@ -101,6 +102,7 @@
               <h3 class="card-title mb-3">
                 Our Experience
               </h3>
+              <BR>
               <p class="card-text">
                 We have been same location & Market for 5 years
               </p>
@@ -182,7 +184,7 @@
           </p>
         </div>
     </section>
-  <!-- end learn section -->
+  <!--end learn section -->
 
 
   <footer id="Contact" class="page-footer p-5 text-md-left">

@@ -1,7 +1,7 @@
 body {
 	background: url('pexels-pixabay-356056.jpg') no-repeat center center fixed;
 	background-size: cover;
-	font-family: Arial, sans-serif;
+	font-family: sans-serif;
 }
 
 .login-box {
@@ -20,11 +20,17 @@ body {
 	color: #000;
 	margin-bottom: 30px;
 }
+.login-box h1:hover {
+	color: tomato;
+}
 
 .login-box form p {
 	margin: 0;
 	padding: 0;
 	font-weight: bold;
+}
+.login-box p:hover {
+	color: tomato;
 }
 
 .login-box input[type="text"], .login-box input[type="password"] {
@@ -44,11 +50,17 @@ body {
 	background: #000;
 	color: #fff;
 	font-size: 18px;
-	border-radius: 20px;
+	border-radius: 10px;
 	cursor: pointer;
+	padding: 7px;
 }
 
 .login-box input[type="submit"]:hover {
-	background: #854c36;
 	color: tomato;
+}
+.login-box a{
+	color: tomato;
+}
+.login-box a:hover {
+	color: rgb(111, 88, 4);
 }

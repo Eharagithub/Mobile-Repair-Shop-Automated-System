@@ -5,13 +5,6 @@
     font-family: century;
 }
 
-
-
-/* Existing code... */
-
-/*header styles*/
-/* Existing code... */
-
 /*header styles*/
 header {
     background-image: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)), url(pexels-pixabay-356056.jpg);
@@ -32,12 +25,8 @@ header {
     background-color: rgba(255, 255, 255, 0.8); /* Adjust the background color and opacity as needed */
     padding: 20px; /* Add padding for spacing */
 }
-
-/* Existing code... */
  
-/* Add styles for the contact form */
- 
-    /* Your "Contact" text styles here */
+ /* Your "Contact" text styles here */
 
 form {
     max-width: 400px;
@@ -52,9 +41,6 @@ form {
     transform: translate(-50%, -50%); /* Center the form */
 }
 
-/* Add styles for the form labels, inputs, and button as needed */
-
-/* Existing code... */
 
    
 /*Navigation bar styles*/
@@ -265,6 +251,7 @@ form {
     }
 
 }
+
 /*body part*/
 .main{
     max-width: 1200px;
@@ -295,10 +282,10 @@ form {
 }
 .btn{
     border:1px solid #fff;
-    padding:5px 20px;
+    padding:5px 9px;
     color:#fff;
     transition:0.5 ease;
-    font-size: 18px;
+    font-size: 15px;
     text-decoration: none;
 }
 .btn:hover{
