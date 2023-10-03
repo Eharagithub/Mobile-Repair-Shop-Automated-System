@@ -69,10 +69,14 @@
                         <span class="micon fa fa-cogs"></span><span class="mtext">Repair List</span>
                     </a>
                 </li>
-                
                 <li>
                     <a href="device.php" class="dropdown-toggle no-arrow">
                         <span class="micon fa fa-mobile"></span><span class="mtext">Devices</span>
+                    </a>
+                </li>
+                <li>
+                    <a href="services.php" class="dropdown-toggle no-arrow">
+                        <span class="micon dw dw-money"></span><span class="mtext">Services</span>
                     </a>
                 </li>
                 <li>
@@ -90,25 +94,9 @@
                         <span class="micon fa fa-map-marker"></span><span class="mtext">Location</span>
                     </a>
                 </li>
-               
-                <li>
-                    <a href="history.php" class="dropdown-toggle no-arrow">
-                        <span class="micon fa fa-history"></span><span class="mtext">History</span>
-                    </a>
-                </li>
-                <li>
-                    <a href="user.php" class="dropdown-toggle no-arrow">
-                        <span class="micon fa fa-users"></span><span class="mtext">Admin User List</span>
-                    </a>
-                </li>
                 <li>
                     <a href="work-order.php" class="dropdown-toggle no-arrow">
                         <span class="micon fa fa-commenting"></span><span class="mtext">Inquiries</span>
-                    </a>
-                </li>
-                <li>
-                    <a href="services.php" class="dropdown-toggle no-arrow">
-                        <span class="micon dw dw-money"></span><span class="mtext">Services</span>
                     </a>
                 </li>
                 <li>
@@ -117,8 +105,8 @@
                     </a>
                 </li>
                 <li>
-                    <a href="settings.php" class="dropdown-toggle no-arrow">
-                        <span class="micon dw dw-settings2"></span><span class="mtext">Settings</span>
+                    <a href="history.php" class="dropdown-toggle no-arrow">
+                        <span class="micon fa fa-history"></span><span class="mtext">History</span>
                     </a>
                 </li>
                 <li class="dropdown">
@@ -136,8 +124,8 @@
                     </a>
                 </li>
                 <li>
-                    <a href="user-group.php" class="dropdown-toggle no-arrow">
-                        <span class="micon fa fa-users"></span><span class="mtext">User Group</span>
+                    <a href="settings.php" class="dropdown-toggle no-arrow">
+                        <span class="micon dw dw-settings2"></span><span class="mtext">Settings</span>
                     </a>
                 </li>
             </ul>
