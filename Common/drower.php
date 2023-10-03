@@ -65,10 +65,11 @@
                     </a>
                 </li>
                 <li>
-                    <a href="technician.php" class="dropdown-toggle no-arrow">
-                        <span class="micon fa fa-wrench"></span><span class="mtext">Technician</span>
+                    <a href="repair.php" class="dropdown-toggle no-arrow">
+                        <span class="micon fa fa-cogs"></span><span class="mtext">Repair List</span>
                     </a>
                 </li>
+                
                 <li>
                     <a href="device.php" class="dropdown-toggle no-arrow">
                         <span class="micon fa fa-mobile"></span><span class="mtext">Devices</span>
@@ -80,15 +81,16 @@
                     </a>
                 </li>
                 <li>
+                    <a href="technician.php" class="dropdown-toggle no-arrow">
+                        <span class="micon fa fa-wrench"></span><span class="mtext">Technician</span>
+                    </a>
+                </li>
+                <li>
                     <a href="location.php" class="dropdown-toggle no-arrow">
                         <span class="micon fa fa-map-marker"></span><span class="mtext">Location</span>
                     </a>
                 </li>
-                <li>
-                    <a href="workorder.php" class="dropdown-toggle no-arrow">
-                        <span class="micon dw dw-shopping-basket"></span><span class="mtext">Work Order List</span>
-                    </a>
-                </li>
+               
                 <li>
                     <a href="history.php" class="dropdown-toggle no-arrow">
                         <span class="micon fa fa-history"></span><span class="mtext">History</span>

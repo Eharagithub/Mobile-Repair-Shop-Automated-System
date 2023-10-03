@@ -57,12 +57,12 @@ if (isset($_REQUEST["createjob"])) {
 					<div class="row">
 						<div class="col-md-6 col-sm-12">
 							<div class="title">
-								<h4><i class="micon dw dw-hammer mtext"></i>Work Order List</h4>
+								<h4><i class="micon fa fa-cogs">  </i>    Repair List</h4>
 							</div>
 							<nav aria-label="breadcrumb" role="navigation">
 								<ol class="breadcrumb">
 									<li class="breadcrumb-item"><a href="index.html">Home</a></li>
-									<li class="breadcrumb-item active" aria-current="page">Work order List</li>
+									<li class="breadcrumb-item active" aria-current="page">Repair List</li>
 								</ol>
 							</nav>
 						</div>
@@ -97,7 +97,6 @@ if (isset($_REQUEST["createjob"])) {
 
 							echo "<tr>" . 
 							"<td>" . $row["id"] . "</td>";
-							echo"<td>" . $row["amount"] . "</td>";
 							echo"<td>" . $row["jobDate"] . "</td>";
 							echo"<td>" . $row["deliveryId"] . "</td>";
 							echo"<td>" . $row["systemuserId"] . "</td>";
@@ -143,19 +142,19 @@ if (isset($_REQUEST["createjob"])) {
 						<table class="data-table table responsive">
 							<thead>
 							<tr>
-							<th>Order No</th>
-							<th>Amount</th>
-							<th>Date</th>
-							<th>Delivary ID</th>
-							<th>User ID</th>
-							<th>Device ID</th>
+							<th>#</th>
+							<th>Date Created</th>
+							<th>Code</th>
+							<th>Client</th>
 							<th>Technician ID</th>
+							<th>Status</th>
 							<th>Action</th>
 						</tr>
 								
 							</thead>
 							<tbody>
 							<?php getAlljob(); ?>
+							
 						</tbody>
 
 						</table>
@@ -184,12 +183,7 @@ if (isset($_REQUEST["createjob"])) {
 																<input class="form-control form-control-lg" type="text" name ="id" placeholder="Order Id" required>
 															</div>
 												</div>
-												<div class="col-md-6 col-sm-12">
-													<div class="form-group">
-																<label>Amount</label>
-																<input class="form-control form-control-lg" type="text" name ="amount" placeholder="Amount" required>
-															</div>
-												</div>
+												
 												<div class="col-md-6 col-sm-12">
 													<div class="form-group">
 																<label>Job Date</label>
@@ -243,7 +237,7 @@ if (isset($_REQUEST["createjob"])) {
 									<div class="modal-content bg-danger text-white">
 										<div class="modal-body text-center">
 											<h3 class="text-white mb-15"><i class="fa fa-exclamation-triangle"></i> Alert</h3>
-											<p>Are you sure you want to delete this Technician?</p>
+											<p>Are you sure you want to delete this Repair?</p>
 											<button type="button" class="btn btn-light" data-dismiss="modal">Yes</button>
 											<button type="button" class="btn btn-light" data-dismiss="modal">Cancel</button>
 										</div>
