@@ -1,12 +1,12 @@
 <?php session_start(); ?>
 <?php
 
-if (isset($_REQUEST["createClient"])) {
-	$nic = $_POST['nic'];
-	$name = $_POST['name'];
-	$address = $_POST['address'];
-	$phone1 = $_POST['phone1'];
-	$phone2 = $_POST['phone2'];
+if (isset($_REQUEST["createService"])) {
+	$sid = $_POST['sid'];
+	$service = $_POST['service'];
+	$description = $_POST['description'];
+	$cost= $_POST['cost'];
+	$date = $_POST['date'];
 	$email = $_POST['email'];
 	/*$repassword= $_POST['repassword'];*/
 
@@ -15,8 +15,8 @@ if (isset($_REQUEST["createClient"])) {
 	if ($conn->connect_error) {
 		die('Connection Failed : ' . $conn->connect_error);
 	} else {
-		$stmt = $conn->prepare("INSERT INTO customer(nic,name,address,phone1,phone2,email)values(?,?,?,?,?,?)");
-		$stmt->bind_param("isssss", $nic, $name, $address, $phone1, $phone2, $email);
+		$stmt = $conn->prepare("INSERT INTO customer(sid,service,description,cost,date)values(?,?,?,?,?)");
+		$stmt->bind_param("issis", $sid, $service, $description, $cost, $date);
 		$stmt->execute();
 		echo "Your Registration is Successfully..";
 
@@ -93,10 +93,10 @@ if (isset($_REQUEST["createClient"])) {
 
 
 
-				function getAllcustomer()
+				function getAllservices()
 				{
 					global $data;
-					$sql = "select * from customer";
+					$sql = "select * from services";
 					$result = mysqli_query($data, $sql);
 
 
@@ -105,14 +105,14 @@ if (isset($_REQUEST["createClient"])) {
 						
 
 						echo "<tr>" .
-							"<td>" . $row["nic"] . "</td>";
-							echo"<td>" . $row["name"] . "</td>";
-							echo"<td>" . $row["address"] . "</td>";
-							echo"<td>" . $row["phone1"] . "</td>";
+							"<td>" . $row["sid"] . "</td>";
+							echo"<td>" . $row["service"] . "</td>";
+							echo"<td>" . $row["description"] . "</td>";
+							echo"<td>" . $row["cost"] . "</td>";
 							echo"<td>" . $row["phone2"] . "</td>";
-							echo"<td>" . $row["email"] . "</td>";
+							echo"<td>" . $row["date"] . "</td>";
 							echo 	'<td>';
-							echo 		'<div class="dropdown" onclick="setSelectedCustomer('.$row["nic"].')';
+							echo 		'<div class="dropdown" onclick="setSelectedCustomer('.$row["sid"].')';
 							echo 			'<a class="btn btn-link font-24 p-0 line-height-1 no-arrow dropdown-toggle" href="#.php?id=<?php echo $row[\'nic\']; ?>" role="button" data-toggle="dropdown">';
 							echo 				'<i class="dw dw-more"></i>';
 							echo 			'</a>';
@@ -144,25 +144,24 @@ if (isset($_REQUEST["createClient"])) {
 					?>	
 				<div class="card-box mb-30">
 					<div class="pd-20">
-						<h4 class="text-blue h4">Customer List</h4>
+						<h4 class="text-blue h4">Services List</h4>
 					</div>
 					<div class="pb-20">
 						<table class="data-table table responsive">
 							<thead>
 								<tr>
-									<th>NIC</th>
-									<th>Full Name</th>
-									<th>Address</th>
-									<th>Phone 1</th>
-									<th>Phone 2</th>
-									<th>Email</th>
+									<th>ID</th>
+									<th>Service</th>
+									<th>Description</th>
+									<th>Cost</th>
+									<th>date</th>
 									<th>Action</th>
 								</tr>
 
 							</thead>
 							<tbody>
 
-							<?php getAllcustomer(); ?>
+							<?php getAllservices(); ?>
 							
 						</tbody>
 	
@@ -181,52 +180,47 @@ if (isset($_REQUEST["createClient"])) {
 										<div class=" border-radius-10">
 											<div class="login-title"><br>
 												<div class="col-md-12 col-sm-12 mb-30">
-												<h2 class="text-center text-primary">Add Customer</h2>
+												<h2 class="text-center text-primary">Add Service</h2>
 												</div>
 											<form action="" target="" method="POST" onsubmit="return checkpassword ()">
 
 												<div class="input-group custom">
 												<div class="col-md-6 col-sm-12">
 													<div class="form-group">
-																<label>NIC</label>
-																<input class="form-control form-control-lg" type="text" name ="nic"  pattern="[0-9]{12}" placeholder="200116404223" required>
+																<label>ID</label>
+																<input class="form-control form-control-lg" type="text" name ="sid" required>
 															</div>
 												</div>
 												<div class="col-md-6 col-sm-12">
 													<div class="form-group">
-																<label>Full Name</label>
-																<input class="form-control form-control-lg" type="text" name ="name" placeholder="Full Name" required>
+																<label>Service</label>
+																<input class="form-control form-control-lg" type="text" name ="service" placeholder="service" required>
 															</div>
 												</div>
 												<div class="col-md-6 col-sm-12">
 													<div class="form-group">
-																<label>Address</label>
-																<input class="form-control form-control-lg" type="text" name ="address"placeholder="Address" required>
+																<label>Description</label>
+																<input class="form-control form-control-lg" type="text" name ="description"placeholder="Description" required>
 															</div>
 												</div>
 												<div class="col-md-6 col-sm-12">
 													<div class="form-group">
-																<label>Phone 01</label>
-																<input class="form-control form-control-lg" type="text" name ="phone1" pattern="[0-9]{10}" placeholder="0714782233" required>
+																<label>cost</label>
+																<input class="form-control form-control-lg" type="text" name ="cost" placeholder="Cost" required>
 															</div>
 												</div>
 												
 												<div class="col-md-6 col-sm-12">
 													<div class="form-group">
-																<label>phone 02</label>
-																<input class="form-control form-control-lg" type="text" name ="phone2" pattern="[0-9]{10}" placeholder="0714782233" required>
-															</div>
-												</div>
-												<div class="col-md-12 col-sm-12">
-													<div class="form-group">
-																<label>Email</label>
-																<input class="form-control form-control-lg" type="text" name ="email" placeholder="abc@gmail.com" Pattern="[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,3}" required>
+																<label>Date</label>
+																<input class="form-control form-control-lg" type="date" name ="date" required>
 															</div>
 												</div>
 												
+												
 												<div class="col-md-12 col-sm-12">
 													<div class="form-group">
-																<input type="submit" class="btn btn-primary" value="Submit" name="createClient">
+																<input type="submit" class="btn btn-primary" value="Submit" name="createService">
 																<input type="reset" class="btn btn-danger" value="Cancel" data-backdrop="static" data-toggle="modal" data-target="#add_technician">
 															</div>
 												</div>

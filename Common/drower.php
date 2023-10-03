@@ -107,6 +107,11 @@
                     </a>
                 </li>
                 <li>
+                    <a href="services.php" class="dropdown-toggle no-arrow">
+                        <span class="micon dw dw-money"></span><span class="mtext">Services</span>
+                    </a>
+                </li>
+                <li>
                     <a href="payment.php" class="dropdown-toggle no-arrow">
                         <span class="micon dw dw-money"></span><span class="mtext">Payment</span>
                     </a>
