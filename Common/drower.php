@@ -65,7 +65,7 @@
                     </a>
                 </li>
                 <li>
-                    <a href="repair.php" class="dropdown-toggle no-arrow">
+                    <a href="workorder.php" class="dropdown-toggle no-arrow">
                         <span class="micon fa fa-cogs"></span><span class="mtext">Repair List</span>
                     </a>
                 </li>

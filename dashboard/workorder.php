@@ -3,10 +3,10 @@
 
 if (isset($_REQUEST["createjob"])) {
 	$id= $_POST['id'];
-	$amount= $_POST['amount'];
+	$nic= $_POST['nic'];
 	$jobDate= $_POST['jobDate'];
 	$deliveryId= $_POST['deliveryId'];
-	$technicianId= $_POST['technicianId'];
+	$locid= $_POST['locid'];
 	$systemuserId= $_POST['systemuserId'];
     $deviceId= $_POST['deviceId'];
 	/*$repassword= $_POST['repassword'];*/
@@ -16,8 +16,8 @@ if (isset($_REQUEST["createjob"])) {
 	if ($conn->connect_error) {
 		die('Connection Failed : ' . $conn->connect_error);
 	} else {
-		$stmt = $conn->prepare("INSERT INTO job(id,amount,jobDate,deliveryId,technicianId,systemuserId,deviceId)values(?,?,?,?,?,?,?)");
-		$stmt->bind_param("issiiis",$id,$amount,$jobDate,$deliveryId,$technicianId,$systemuserId,$deviceId);
+		$stmt = $conn->prepare("INSERT INTO job(id,nic,jobDate,deliveryId,locid,systemuserId,deviceId)values(?,?,?,?,?,?,?)");
+		$stmt->bind_param("iisiiis",$id,$nic,$jobDate,$deliveryId,$locid,$systemuserId,$deviceId);
 		$stmt->execute();
 		echo "Your Registration is Successfully..";
 
@@ -57,7 +57,7 @@ if (isset($_REQUEST["createjob"])) {
 					<div class="row">
 						<div class="col-md-6 col-sm-12">
 							<div class="title">
-								<h4><i class="micon fa fa-cogs">  </i>    Repair List</h4>
+								<h4><i class="micon fa fa-cogs">  </i>Repair List</h4>
 							</div>
 							<nav aria-label="breadcrumb" role="navigation">
 								<ol class="breadcrumb">
@@ -98,10 +98,11 @@ if (isset($_REQUEST["createjob"])) {
 							echo "<tr>" . 
 							"<td>" . $row["id"] . "</td>";
 							echo"<td>" . $row["jobDate"] . "</td>";
+							echo"<td>" . $row["nic"] . "</td>";
 							echo"<td>" . $row["deliveryId"] . "</td>";
 							echo"<td>" . $row["systemuserId"] . "</td>";
 							echo"<td>" . $row["deviceId"] . "</td>";
-                            echo"<td>" . $row["technicianId"] . "</td>";
+                            echo"<td>" . $row["locid"] . "</td>";
 							echo 	'<td>';
 							echo 		'<div class="dropdown" onclick="setSelectedCustomer('.$row["id"].')';
 							echo 			'<a class="btn btn-link font-24 p-0 line-height-1 no-arrow dropdown-toggle" href="#.php?id=<?php echo $row[\'nic\']; ?>" role="button" data-toggle="dropdown">';
@@ -142,19 +143,19 @@ if (isset($_REQUEST["createjob"])) {
 						<table class="data-table table responsive">
 							<thead>
 							<tr>
-							<th>#</th>
-							<th>Date Created</th>
-							<th>Code</th>
-							<th>Client</th>
-							<th>Technician ID</th>
-							<th>Status</th>
+							<th>Order No</th>
+							<th>Date</th>
+							<th>Customer NIC</th>
+							<th>Delivary ID</th>
+							<th>User ID</th>
+							<th>Device ID</th>
+							<th>Location ID</th>
 							<th>Action</th>
 						</tr>
 								
 							</thead>
 							<tbody>
 							<?php getAlljob(); ?>
-							
 						</tbody>
 
 						</table>
@@ -183,6 +184,12 @@ if (isset($_REQUEST["createjob"])) {
 																<input class="form-control form-control-lg" type="text" name ="id" placeholder="Order Id" required>
 															</div>
 												</div>
+												<div class="col-md-6 col-sm-12">
+													<div class="form-group">
+																<label>Customer NIC</label>
+																<input class="form-control form-control-lg" type="text" name ="nic" placeholder="Order Id" required>
+															</div>
+												</div>
 												
 												<div class="col-md-6 col-sm-12">
 													<div class="form-group">
@@ -199,8 +206,8 @@ if (isset($_REQUEST["createjob"])) {
 												
 												<div class="col-md-6 col-sm-12">
 													<div class="form-group">
-																<label>Technician Id</label>
-																<input class="form-control form-control-lg" type="text" name ="technicianId" placeholder="Technician Id" required>
+																<label>Location Id</label>
+																<input class="form-control form-control-lg" type="text" name ="locid" placeholder="Location Id" required>
 															</div>
 												</div>
 												<div class="col-md-12 col-sm-12">
@@ -237,7 +244,7 @@ if (isset($_REQUEST["createjob"])) {
 									<div class="modal-content bg-danger text-white">
 										<div class="modal-body text-center">
 											<h3 class="text-white mb-15"><i class="fa fa-exclamation-triangle"></i> Alert</h3>
-											<p>Are you sure you want to delete this Repair?</p>
+											<p>Are you sure you want to delete this Technician?</p>
 											<button type="button" class="btn btn-light" data-dismiss="modal">Yes</button>
 											<button type="button" class="btn btn-light" data-dismiss="modal">Cancel</button>
 										</div>
