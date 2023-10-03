@@ -78,7 +78,7 @@ if (!isset($_SESSION["systemUserID"])) {
 						<div class="d-flex flex-wrap">
 							<div class="widget-data">
 								<div class="weight-700 font-24 text-dark">10</div>
-								<div class="font-14 text-secondary weight-500">Total Devices</div>
+								<div class="font-14 text-secondary weight-500">Total devices</div>
 							</div>
 							<div class="widget-icon">
 								<div class="icon" data-color="#e83e8c"><span class="micon fa fa-wrench"></span></div>
@@ -91,7 +91,7 @@ if (!isset($_SESSION["systemUserID"])) {
 						<div class="d-flex flex-wrap">
 							<div class="widget-data">
 								<div class="weight-700 font-24 text-dark">0</div>
-								<div class="font-14 text-secondary weight-500">Total Services</div>
+								<div class="font-14 text-secondary weight-500">Total services</div>
 							</div>
 							<div class="widget-icon">
 								<div class="icon" data-color="#fff"><i class="micon fa fa-check" aria-hidden="true"></i>
@@ -100,6 +100,7 @@ if (!isset($_SESSION["systemUserID"])) {
 						</div>
 					</div>
 				</div>
+			
 				<div class="col-xl-3 col-lg-3 col-md-6 mb-20">
 					<div class="card-box height-100-p widget-style3">
 						<div class="d-flex flex-wrap">
@@ -108,8 +109,7 @@ if (!isset($_SESSION["systemUserID"])) {
 								<div class="font-14 text-secondary weight-500">Checking Repairs</div>
 							</div>
 							<div class="widget-icon">
-								<div class="icon" data-color="#28a745"><i class="micon fa fa-spinner" aria-hidden="true"></i>
-								</div>
+								<div class="icon" data-color="#6610f2"><i class="micon fa fa-calendar-check-o" aria-hidden="true"></i></div>
 							</div>
 						</div>
 					</div>
@@ -122,11 +122,13 @@ if (!isset($_SESSION["systemUserID"])) {
 								<div class="font-14 text-secondary weight-500">Done Repairs</div>
 							</div>
 							<div class="widget-icon">
-								<div class="icon" data-color="#6610f2"><i class="micon fa fa-calendar-check-o" aria-hidden="true"></i></div>
+								<div class="icon" data-color="#09cc06"><i class="micon fa fa-check-square-o"
+										aria-hidden="true"></i></div>
 							</div>
 						</div>
 					</div>
 				
+				</div>
 			</div>
 		</div>
 	</div>
