@@ -76,7 +76,7 @@
                 </li>
                 <li>
                     <a href="services.php" class="dropdown-toggle no-arrow">
-                        <span class="micon dw dw-money"></span><span class="mtext">Services</span>
+                        <span class="micon fa fa-calendar-check-o"></span><span class="mtext">Services</span>
                     </a>
                 </li>
                 <li>
