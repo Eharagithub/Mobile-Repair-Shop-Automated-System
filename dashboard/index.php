@@ -69,7 +69,7 @@ if (!isset($_SESSION["systemUserID"])) {
 									echo $conn->query("SELECT * FROM customer")->num_rows;
 									?>
 								</div>
-								<div class="font-14 text-secondary weight-500">Total Client</div>
+								<div class="font-14 text-secondary weight-500">Total Customers</div>
 							</div>
 							<div class="widget-icon">
 								<div class="icon" data-color="#ffc107"><span class="micon fa fa-users"></span></div>
@@ -81,8 +81,12 @@ if (!isset($_SESSION["systemUserID"])) {
 					<div class="card-box height-100-p widget-style3">
 						<div class="d-flex flex-wrap">
 							<div class="widget-data">
-								<div class="weight-700 font-24 text-dark">10</div>
-								<div class="font-14 text-secondary weight-500">Pending Repairs</div>
+								<div class="weight-700 font-24 text-dark">
+								<?php
+									echo $conn->query("SELECT * FROM delivery")->num_rows;
+									?>
+								</div>
+								<div class="font-14 text-secondary weight-500">Total Currier Services</div>
 							</div>
 							<div class="widget-icon">
 								<div class="icon" data-color="#e83e8c"><span class="micon fa fa-wrench"></span></div>
@@ -94,8 +98,12 @@ if (!isset($_SESSION["systemUserID"])) {
 					<div class="card-box height-100-p widget-style3">
 						<div class="d-flex flex-wrap">
 							<div class="widget-data">
-								<div class="weight-700 font-24 text-dark">0</div>
-								<div class="font-14 text-secondary weight-500">Approved Repairs</div>
+								<div class="weight-700 font-24 text-dark">
+								<?php
+									echo $conn->query("SELECT * FROM device")->num_rows;
+									?>
+								</div>
+								<div class="font-14 text-secondary weight-500">Total Devices</div>
 							</div>
 							<div class="widget-icon">
 								<div class="icon" data-color="#fff"><i class="micon fa fa-check" aria-hidden="true"></i>
@@ -108,21 +116,11 @@ if (!isset($_SESSION["systemUserID"])) {
 					<div class="card-box height-100-p widget-style3">
 						<div class="d-flex flex-wrap">
 							<div class="widget-data">
-								<div class="weight-700 font-24 text-dark">0</div>
-								<div class="font-14 text-secondary weight-500">In Progress Repairs</div>
-							</div>
-							<div class="widget-icon">
-								<div class="icon" data-color="#28a745"><i class="micon fa fa-spinner" aria-hidden="true"></i>
+								<div class="weight-700 font-24 text-dark">
+								<?php
+									echo $conn->query("SELECT * FROM job")->num_rows;
+									?>
 								</div>
-							</div>
-						</div>
-					</div>
-				</div>
-				<div class="col-xl-3 col-lg-3 col-md-6 mb-20">
-					<div class="card-box height-100-p widget-style3">
-						<div class="d-flex flex-wrap">
-							<div class="widget-data">
-								<div class="weight-700 font-24 text-dark">0</div>
 								<div class="font-14 text-secondary weight-500">Checking Repairs</div>
 							</div>
 							<div class="widget-icon">
@@ -135,7 +133,11 @@ if (!isset($_SESSION["systemUserID"])) {
 					<div class="card-box height-100-p widget-style3">
 						<div class="d-flex flex-wrap">
 							<div class="widget-data">
-								<div class="weight-700 font-24 text-dark">0</div>
+								<div class="weight-700 font-24 text-dark">
+								<?php
+									echo $conn->query("SELECT * FROM jobstatus")->num_rows;
+									?>
+								</div>
 								<div class="font-14 text-secondary weight-500">Done Repairs</div>
 							</div>
 							<div class="widget-icon">
@@ -145,20 +147,7 @@ if (!isset($_SESSION["systemUserID"])) {
 						</div>
 					</div>
 				</div>
-				<div class="col-xl-3 col-lg-3 col-md-6 mb-20">
-					<div class="card-box height-100-p widget-style3">
-						<div class="d-flex flex-wrap">
-							<div class="widget-data">
-								<div class="weight-700 font-24 text-dark">0</div>
-								<div class="font-14 text-secondary weight-500">Cancelled Repairs</div>
-							</div>
-							<div class="widget-icon">
-								<div class="icon" data-color="#dc3545"><i class="micon fa fa-times"
-										aria-hidden="true"></i></div>
-							</div>
-						</div>
-					</div>
-				</div>
+				
 			</div>
 		</div>
 	</div>

@@ -81,7 +81,11 @@ if (!isset($_SESSION["systemUserID"])) {
 					<div class="card-box height-100-p widget-style3">
 						<div class="d-flex flex-wrap">
 							<div class="widget-data">
-								<div class="weight-700 font-24 text-dark">10</div>
+								<div class="weight-700 font-24 text-dark">
+								<?php
+									echo $conn->query("SELECT * FROM device")->num_rows;
+									?>
+								</div>
 								<div class="font-14 text-secondary weight-500">Total devices</div>
 							</div>
 							<div class="widget-icon">
@@ -94,7 +98,11 @@ if (!isset($_SESSION["systemUserID"])) {
 					<div class="card-box height-100-p widget-style3">
 						<div class="d-flex flex-wrap">
 							<div class="widget-data">
-								<div class="weight-700 font-24 text-dark">0</div>
+								<div class="weight-700 font-24 text-dark">
+								<?php
+									echo $conn->query("SELECT * FROM services")->num_rows;
+									?>
+								</div>
 								<div class="font-14 text-secondary weight-500">Total services</div>
 							</div>
 							<div class="widget-icon">
@@ -109,7 +117,11 @@ if (!isset($_SESSION["systemUserID"])) {
 					<div class="card-box height-100-p widget-style3">
 						<div class="d-flex flex-wrap">
 							<div class="widget-data">
-								<div class="weight-700 font-24 text-dark">0</div>
+								<div class="weight-700 font-24 text-dark">
+								<?php
+									echo $conn->query("SELECT * FROM job")->num_rows;
+									?>
+								</div>
 								<div class="font-14 text-secondary weight-500">Checking Repairs</div>
 							</div>
 							<div class="widget-icon">
@@ -122,7 +134,11 @@ if (!isset($_SESSION["systemUserID"])) {
 					<div class="card-box height-100-p widget-style3">
 						<div class="d-flex flex-wrap">
 							<div class="widget-data">
-								<div class="weight-700 font-24 text-dark">0</div>
+								<div class="weight-700 font-24 text-dark">
+								<?php
+									echo $conn->query("SELECT * FROM jobstatus")->num_rows;
+									?>
+								</div>
 								<div class="font-14 text-secondary weight-500">Done Repairs</div>
 							</div>
 							<div class="widget-icon">
