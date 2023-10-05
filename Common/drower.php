@@ -109,6 +109,11 @@
                         <span class="micon fa fa-history"></span><span class="mtext">History</span>
                     </a>
                 </li>
+                <li>
+                    <a href="stockitem.php" class="dropdown-toggle no-arrow">
+                        <span class="micon fa fa-history"></span><span class="mtext">Stock Item</span>
+                    </a>
+                </li>
                 <li class="dropdown">
                     <a href="javascript:;" class="dropdown-toggle">
                         <span class="micon dw dw-bar-chart"></span><span class="mtext">reports</span>
