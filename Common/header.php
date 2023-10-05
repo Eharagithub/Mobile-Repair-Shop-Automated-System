@@ -30,9 +30,9 @@
             <li class="navbar__btn">
                 <a href="" class="admin">Login </a> 
                 <ul class ="dropdown">
-                    <li><a href="login.php">Admin Login</a></li>
-                    <li><a href="login.php">Sub-Office Login</a></li>
-                    <li><a href="login.php">Technician Login</a></li>
+                    <li><a href="http://localhost/Mobile-Repair-Shop/dashboard/index.php">Admin Login</a></li>
+                    <li><a href="http://localhost/Mobile-Repair-Shop/suboffice/index.php">Sub-Office Login</a></li>
+                    <li><a href="http://localhost/Mobile-Repair-Shop/technician/index.php">Technician Login</a></li>
                 </ul>
             </li>
         </ul>
