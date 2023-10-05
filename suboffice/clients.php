@@ -65,7 +65,7 @@ if (isset($_REQUEST["createClient"])) {
 							</div>
 							<nav aria-label="breadcrumb" role="navigation">
 								<ol class="breadcrumb">
-									<li class="breadcrumb-item"><a href="index1.php">Home</a></li>
+									<li class="breadcrumb-item"><a href="index.php">Home</a></li>
 									<li class="breadcrumb-item active" aria-current="page">Customer List</li>
 								</ol>
 							</nav>
