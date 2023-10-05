@@ -1,0 +1,19 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Send SMS</title>
+    <link rel="stylesheet" type="text/css" href="style.css">
+</head>
+<body>
+    <div class="container">
+        <h2>Send SMS</h2>
+        <form method="POST" action="send_sms.php">
+            <label for="phone">Phone Number:</label>
+            <input type="text" name="phone" id="phone" required><br>
+            <label for="message">Message:</label>
+            <textarea name="message" id="message" required></textarea><br>
+            <input type="submit" value="Send SMS">
+        </form>
+    </div>
+</body>
+</html>
