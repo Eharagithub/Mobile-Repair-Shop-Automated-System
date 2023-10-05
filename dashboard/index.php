@@ -47,7 +47,11 @@ if (!isset($_SESSION["systemUserID"])) {
 					<div class="card-box height-100-p widget-style3">
 						<div class="d-flex flex-wrap">
 							<div class="widget-data">
-								<div class="weight-700 font-24 text-dark">15</div>
+								<div class="weight-700 font-24 text-dark">
+								<?php
+									echo $conn->query("SELECT * FROM location")->num_rows;
+									?>
+									</div>
 								<div class="font-14 text-secondary weight-500">Sub Branches</div>
 							</div>
 							<div class="widget-icon">
