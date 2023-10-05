@@ -1,7 +1,7 @@
 <?php session_start(); ?>
 <?php
 
-if (isset($_REQUEST["createrepair_materials"])) {
+if (isset($_REQUEST["createstockitem"])) {
 	$itemCode = $_POST['itemCode'];
 	$name = $_POST['name'];
 	$stock = $_POST['stock'];
@@ -14,7 +14,7 @@ if (isset($_REQUEST["createrepair_materials"])) {
 	if ($conn->connect_error) {
 		die('Connection Failed : ' . $conn->connect_error);
 	} else {
-		$stmt = $conn->prepare("INSERT INTO repair_materials( itemCode,name,stock,cost,sellingPrice)values(?,?,?,?,?)");
+		$stmt = $conn->prepare("INSERT INTO stockitem( itemCode,name,stock,cost,sellingPrice)values(?,?,?,?,?)");
 		$stmt->bind_param("ssidd", $itemCode,$name,$stock,$cost,$sellingPrice);
 		$stmt->execute();
 		echo "Your Registration is Successfully..";
@@ -92,10 +92,10 @@ if (isset($_REQUEST["createrepair_materials"])) {
 
 
 
-				function getAllrepair_materials()
+				function getAllstockitem()
 				{
 					global $data;
-					$sql = "select * from repair_materials";
+					$sql = "select * from stockitem";
 					$result = mysqli_query($data, $sql);
 
 
@@ -158,7 +158,7 @@ if (isset($_REQUEST["createrepair_materials"])) {
 							</thead>
 							<tbody>
 
-							<?php getAllrepair_materials(); ?>
+							<?php getAllstockitem(); ?>
 							
 						</tbody>
 	
