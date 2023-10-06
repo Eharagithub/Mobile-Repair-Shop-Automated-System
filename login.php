@@ -27,12 +27,15 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
 
             $_SESSION["systemUserID"] = $row["empNo"];
             $_SESSION["systemUserEmail"] = $row["email"];
+            
+            $_SESSION["systemUserName"] = $row["uname"];
+            $_SESSION["systemUserType"] = $row["type"];
 
             $sql = "select * from location where locid = " . $row["locid"];
             $result = mysqli_query($data, $sql);
             $row = mysqli_fetch_array($result);
-            $_SESSION["locationId"] = $row["locid"];
-            $_SESSION["locationName"] = $row["lname"];
+            $_SESSION["systemUserLocId"] = $row["locid"];
+            $_SESSION["systemUserLocName"] = $row["lname"];
 
 
             header("Location: dashboard/index.php"); // Redirect to a welcome page or dashboard
