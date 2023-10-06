@@ -4,8 +4,10 @@
 
 <nav class="navbar navbar-expand-lg navbar-toggler bg-dark py-4 text-white">
     <div class="navbar__container">
+
         <div class="navbar__logo" style="width: 50px; height: 100px; display: flex; justify-content: center; align-items: center;">
             <img src="new.jpg" alt="Kasthuri Mobile solutions" style="max-width: 100%; max-height: 100%;">
+
         </div>
         
         <div class="navbar__toggle" id="mobile-menu">
