@@ -58,7 +58,7 @@
             <button type="submit">Send SMS</button>
         </form>
     </div>
-</body>
+</body> 
 </html>
 
 

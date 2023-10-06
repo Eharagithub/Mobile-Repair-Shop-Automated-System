@@ -4,8 +4,10 @@
 
 <nav class="navbar navbar-expand-lg navbar-toggler bg-dark py-4 text-white">
     <div class="navbar__container">
+
         <div class="navbar__logo" style="width: 50px; height: 100px; display: flex; justify-content: center; align-items: center;">
             <img src="new.jpg" alt="Kasthuri Mobile solutions" style="max-width: 100%; max-height: 100%;">
+
         </div>
         
         <div class="navbar__toggle" id="mobile-menu">
@@ -30,7 +32,7 @@
             <li class="navbar__btn">
                 <a href="" class="admin">Login </a> 
                 <ul class ="dropdown">
-                    <li><a href="http://localhost/Mobile-Repair-Shop/dashboard/index.php">Admin Login</a></li>
+                    <li><a href="login.php">Admin Login</a></li>
                     <li><a href="http://localhost/Mobile-Repair-Shop/suboffice/index.php">Sub-Office Login</a></li>
                     <li><a href="http://localhost/Mobile-Repair-Shop/technician/index.php">Technician Login</a></li>
                 </ul>
