@@ -64,53 +64,73 @@
                     </a>
                 </li>
                 <?php } ?>
+
                 <?php if (($_SESSION["systemUserType"] == "ADMIN") || $_SESSION["systemUserType"] == "BR"|| $_SESSION["systemUserType"] == "TECH") { ?>
-                    <a href="clients.php" class="dropdown-toggle no-arrow">
-                        <span class="micon dw dw-user"></span><span class="mtext">Customer List</span>
+                <li><a href="clients.php" class="dropdown-toggle no-arrow">
+                        <span class="micon dw dw-user"></span><span class="mtext">Customers</span>
                     </a>
+                </li>
                 <?php } ?>
-                <?php if (($_SESSION["systemUserType"] == "ADMIN") || $_SESSION["systemUserType"] == "BR"|| $_SESSION["systemUserType"] == "TECH") { ?>
-                    <a href="services.php" class="dropdown-toggle no-arrow">
-                        <span class="micon fa fa-calendar-check-o"></span><span class="mtext">Services</span>
+
+                <?php if (($_SESSION["systemUserType"] == "ADMIN") ) { ?>
+                    <li>
+                    <a href="technician.php" class="dropdown-toggle no-arrow">
+                        <span class="micon fa fa-wrench"></span><span class="mtext">Technicians</span>
                     </a>
+                </li>
                 <?php } ?>
+
                 <?php if (($_SESSION["systemUserType"] == "ADMIN") ) { ?>
                     <li>
                         <a href="delivary.php" class="dropdown-toggle no-arrow">
-                            <span class="micon fa fa-truck"></span><span class="mtext">Delivery</span>
+<<<<<<< HEAD
+                            <span class="micon fa fa-truck"></span><span class="mtext">Courier Service</span>
+=======
+                            <span class="micon fa fa-truck"></span><span class="mtext">Curier Servives</span>
+>>>>>>> fb84373c31c667646015ad31542f091cf1288351
                         </a>
                     </li>
                 <?php } ?>
-                <?php if (($_SESSION["systemUserType"] == "ADMIN") || $_SESSION["systemUserType"] == "BR"|| $_SESSION["systemUserType"] == "TECH") { ?>
-                    <a href="workorder.php" class="dropdown-toggle no-arrow">
-                        <span class="micon fa fa-cogs"></span><span class="mtext">Repair List</span>
-                    </a>
 
-                <?php } ?>
                 <?php if (($_SESSION["systemUserType"] == "ADMIN") ) { ?>
                     <li>
+                    <a href="location.php" class="dropdown-toggle no-arrow">
+                        <span class="micon fa fa-map-marker"></span><span class="mtext">Sub Offices</span>
+                    </a>
+                </li>
+                <?php } ?>
 
-            
+                <?php if (($_SESSION["systemUserType"] == "ADMIN") || $_SESSION["systemUserType"] == "BR"|| $_SESSION["systemUserType"] == "TECH") { ?>
+                    <li><a href="workorder.php" class="dropdown-toggle no-arrow">
+                        <span class="micon fa fa-cogs"></span><span class="mtext">Repair List</span>
+                    </a>
+                </li>
+                <?php } ?>
+
+                <?php if (($_SESSION["systemUserType"] == "ADMIN") || $_SESSION["systemUserType"] == "BR"|| $_SESSION["systemUserType"] == "TECH") { ?>
+                    <li><a href="services.php" class="dropdown-toggle no-arrow">
+                        <span class="micon fa fa-calendar-check-o"></span><span class="mtext">Services</span>
+                    </a></li>
+                <?php } ?>
+
+                <?php if (($_SESSION["systemUserType"] == "ADMIN") || $_SESSION["systemUserType"] == "TECH") { ?>
+                    <li>
                     <a href="stockitem.php" class="dropdown-toggle no-arrow">
                         <span class="micon fa fa-history"></span><span class="mtext">Stock Item</span>
                     </a>
                 </li>
                 <?php } ?>
+
                 <?php if (($_SESSION["systemUserType"] == "ADMIN") ) { ?>
                     <li>
                     <a href="history.php" class="dropdown-toggle no-arrow">
                         <span class="micon fa fa-history"></span><span class="mtext">History</span>
                     </a>
-                </li>
-                   
+                </li> 
                 <?php } ?>
-                <?php if (($_SESSION["systemUserType"] == "ADMIN") ) { ?>
-                    <li>
-                    <a href="location.php" class="dropdown-toggle no-arrow">
-                        <span class="micon fa fa-map-marker"></span><span class="mtext">Location</span>
-                    </a>
-                </li>
-                <?php } ?>
+
+                
+
                 <?php if (($_SESSION["systemUserType"] == "ADMIN") ) { ?>
                     <li>
                     <a href="user.php" class="dropdown-toggle no-arrow">
@@ -118,13 +138,23 @@
                     </a>
                 </li>
                 <?php } ?>
+
                 <?php if (($_SESSION["systemUserType"] == "ADMIN") ) { ?>
                     <li>
-                    <a href="technician.php" class="dropdown-toggle no-arrow">
-                        <span class="micon fa fa-wrench"></span><span class="mtext">Technician</span>
+                    <a href="inquiries.php" class="dropdown-toggle no-arrow">
+                        <span class="micon fa fa-commenting"></span><span class="mtext">Inquiries</span>
                     </a>
                 </li>
                 <?php } ?>
+
+                <?php if (($_SESSION["systemUserType"] == "TECH")) { ?>
+                    <li>
+                    <a href="status.php" class="dropdown-toggle no-arrow">
+                        <span class="micon dw dw-house"></span><span class="mtext">Customer Status</span>
+                    </a>
+                </li>
+                <?php } ?>
+
                 <?php if (($_SESSION["systemUserType"] == "ADMIN") ) { ?>
                     <li class="dropdown">
                     <a href="javascript:;" class="dropdown-toggle">
@@ -136,6 +166,7 @@
                     </ul>
                 </li>
                  <?php } ?>
+
                  <?php if (($_SESSION["systemUserType"] == "ADMIN") ) { ?>
                     <li>
                     <a href="settings.php" class="dropdown-toggle no-arrow">
@@ -143,20 +174,9 @@
                     </a>
                 </li>
                 <?php } ?>
-                <?php if (($_SESSION["systemUserType"] == "ADMIN") ) { ?>
-                    <li>
-                    <a href="inquiries.php" class="dropdown-toggle no-arrow">
-                        <span class="micon fa fa-commenting"></span><span class="mtext">Inquiries</span>
-                    </a>
-                </li>
-                <?php } ?>
-                <?php if (($_SESSION["systemUserType"] == "TECH")) { ?>
-                    <li>
-                    <a href="status.php" class="dropdown-toggle no-arrow">
-                        <span class="micon dw dw-house"></span><span class="mtext">Customer Status</span>
-                    </a>
-                </li>
-                <?php } ?>
+
+              
+               
 
 
             </ul>

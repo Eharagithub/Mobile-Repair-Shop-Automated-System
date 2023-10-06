@@ -86,12 +86,14 @@ if (isset($_GET['serviceId'])) {
 							</nav>
 						</div>
 						<div class="col-md-6 col-sm-12 text-right">
-							<!--<div class="dropdown">
+						<?php if ($_SESSION["systemUserType"] == "TECH") { ?>
+							<div class="dropdown">
 								<a href="#" class="btn btn-primary" data-backdrop="static" data-toggle="modal"
 									data-target="#add_technician">
 									Add New
 								</a>
-							</div> -->
+							</div> 
+							<?php } ?>
 						</div>
 					</div>
 				</div>
@@ -196,7 +198,7 @@ if (isset($_GET['serviceId'])) {
 			</div>
 		</div>
 
-				<!-- Add customer Modal 
+				<!-- Add customer Modal -->
 				<div class="col-md-12 col-sm-12 mb-30">
 							<div class="modal fade" id="add_technician" tabindex="-1" role="dialog" aria-labelledby="myLargeModalLabel" aria-hidden="true">
 								<div class="modal-dialog modal-dialog-centered">
@@ -255,7 +257,7 @@ if (isset($_GET['serviceId'])) {
 									</div>
 								</div>
 							</div>
-				</div> -->
+				</div> 
 			
 
 			<!-- View Service Modal -->

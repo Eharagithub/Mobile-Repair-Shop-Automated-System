@@ -6,6 +6,7 @@ if (isset($_REQUEST["createstockitem"])) {
 	$name = $_POST['name'];
 	$stock = $_POST['stock'];
 	$cost= $_POST['cost'];
+	$unit= $_POST['unit'];
 	$sellingPrice = $_POST['sellingPrice'];
 	
 
@@ -14,8 +15,8 @@ if (isset($_REQUEST["createstockitem"])) {
 	if ($conn->connect_error) {
 		die('Connection Failed : ' . $conn->connect_error);
 	} else {
-		$stmt = $conn->prepare("INSERT INTO stockitem(itemCode,name,stock,cost,sellingPrice)values(?,?,?,?,?)");
-		$stmt->bind_param("ssidd", $itemCode,$name,$stock,$cost,$sellingPrice);
+		$stmt = $conn->prepare("INSERT INTO item(itemCode,name,stock,cost,unit,sellingPrice)values(?,?,?,?,?,?)");
+		$stmt->bind_param("ssiisi", $itemCode,$name,$stock,$cost,$unit,$sellingPrice);
 		$stmt->execute();
 		echo "Your Registration is Successfully..";
 
@@ -87,11 +88,13 @@ if (isset($_GET['itemCode'])) {
 						</div>
 						<div class="col-md-6 col-sm-12 text-right">
 							<div class="dropdown">
+							<?php if ($_SESSION["systemUserType"] == "ADMIN" || $_SESSION["systemUserType"] == "TECH") { ?>
 								<a href="#" class="btn btn-primary" data-backdrop="static" data-toggle="modal"
 									data-target="#add_technician">
 									Add New
 								</a>
 							</div> 
+							<?php } ?>
 						</div>
 					</div>
 				</div>
@@ -112,7 +115,7 @@ if (isset($_GET['itemCode'])) {
 				function getAllstockitem()
 				{
 					global $data;
-					$sql = "select * from stockitem";
+					$sql = "select * from item";
 					$result = mysqli_query($data, $sql);
 
 
@@ -125,6 +128,7 @@ if (isset($_GET['itemCode'])) {
 							echo"<td>" . $row["name"] . "</td>";
 							echo"<td>" . $row["stock"] . "</td>";
 							echo"<td>" . $row["cost"] . "</td>";
+							echo"<td>" . $row["unit"] . "</td>";
 							echo"<td>" . $row["sellingPrice"] . "</td>";
 							echo 	'<td>';
 							echo 		'<div class="dropdown" onclick="setSelectedstockitem('.$row["itemCode"].')';
@@ -178,6 +182,7 @@ if (isset($_GET['itemCode'])) {
 									<th>Mterial Name</th>
 									<th>In Stock</th>
 									<th>Cost</th>
+									<th>Unit</th>
 									<th>Selling Price</th>
 									<th>Action</th>
 								</tr>
@@ -232,6 +237,12 @@ if (isset($_GET['itemCode'])) {
 														<div class="form-group">
 															<label>Cost</label>
 															<input class="form-control form-control-lg" type="text" name ="cost" placeholder="Cost" required>
+														</div>
+													</div>
+													<div class="col-md-6 col-sm-12">
+														<div class="form-group">
+															<label>Unit</label>
+															<input class="form-control form-control-lg" type="text" name ="unit" placeholder="Unit" required>
 														</div>
 													</div>
 												
