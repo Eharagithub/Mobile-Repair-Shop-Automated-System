@@ -171,7 +171,7 @@ if (isset($_REQUEST["createClient"])) {
 			</div>
 		</div>
 
-		<!-- Add customer Modal 
+		<!-- Add customer Modal--> 
 					<div class="col-md-12 col-sm-12 mb-30">
 							<div class="modal fade" id="add_technician" tabindex="-1" role="dialog" aria-labelledby="myLargeModalLabel" aria-hidden="true">
 								<div class="modal-dialog modal-dialog-centered">
@@ -239,7 +239,7 @@ if (isset($_REQUEST["createClient"])) {
 					</div>
 				</div>
 			</div>
-			--> <!-- Delete modal -->
+			 <!-- Delete modal -->
 		<div class="col-md-4 col-sm-12 mb-30">
 			<div class="modal fade" id="delete" tabindex="-1" role="dialog" aria-labelledby="myLargeModalLabel" aria-hidden="true">
 				<div class="modal-dialog modal-sm modal-dialog-centered">

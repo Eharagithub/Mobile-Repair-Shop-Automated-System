@@ -67,11 +67,13 @@ if (isset($_REQUEST["createdevice"])) {
 							</nav>
 						</div>
 						<div class="col-md-6 col-sm-12 text-right">
-							<!--<div class="dropdown">
+						<?php if ($_SESSION["systemUserType"] == "BR") { ?>
+							<div class="dropdown">
 								<a href="#" class="btn btn-primary" data-backdrop="static" data-toggle="modal" data-target="#add_technician">
 									Add New
 								</a>
-							</div> -->
+							</div> 
+							<?php } ?>
 						</div>
 					</div>
 				</div>
@@ -163,7 +165,7 @@ if (isset($_REQUEST["createdevice"])) {
 		</div>
 	</div>
 
-				<!-- Add device Modal 
+				<!-- Add device Modal--> 
 					<div class="col-md-12 col-sm-12 mb-30">
 							<div class="modal fade" id="add_technician" tabindex="-1" role="dialog" aria-labelledby="myLargeModalLabel" aria-hidden="true">
 								<div class="modal-dialog modal-dialog-centered">
@@ -222,7 +224,7 @@ if (isset($_REQUEST["createdevice"])) {
 									</div>
 								</div>
 							</div>
-						</div>-->
+						</div>
 						<!-- Delete modal -->
 					<div class="col-md-4 col-sm-12 mb-30">
 							<div class="modal fade" id="delete" tabindex="-1" role="dialog" aria-labelledby="myLargeModalLabel" aria-hidden="true">
