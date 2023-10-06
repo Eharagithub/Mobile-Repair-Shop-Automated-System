@@ -35,7 +35,7 @@
                     ?>
 
                     <form action="../dashboard/index.php" method="post">
-                        <input type="submit" name="logout" style="color: #333; text-decoration: none; display: block; padding: 5px 0;"><i class="fa fa-search "></i>Log Out</a></button>
+                        <input type="submit" value ="Log out"name="logout" style="color: #333; text-decoration: none; display: block; padding: 5px 0;"><i class="fa fa-search "></i></a></button>
                     </form>
                 </div>
             </div>
@@ -103,6 +103,15 @@
                     </a>
                 </li>
                 <?php } ?>
+
+                <?php if (($_SESSION["systemUserType"] == "ADMIN") || $_SESSION["systemUserType"] == "BR"|| $_SESSION["systemUserType"] == "TECH") { ?>
+                    <li>
+                    <a href="device.php" class="dropdown-toggle no-arrow">
+                        <span class="micon fa fa-mobile"></span><span class="mtext">Devices</span>
+                    </a>
+                </li>
+                <?php } ?>
+
 
                 <?php if (($_SESSION["systemUserType"] == "ADMIN") || $_SESSION["systemUserType"] == "BR"|| $_SESSION["systemUserType"] == "TECH") { ?>
                     <li><a href="services.php" class="dropdown-toggle no-arrow">
