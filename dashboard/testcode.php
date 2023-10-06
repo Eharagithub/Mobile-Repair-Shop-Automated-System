@@ -221,7 +221,7 @@
     </div>
 </div>
 
-<!--
+
 <div class="content py-3">
     <div class="card card-outline card-dark rounded-0">
         <div class="card-header rounded-0">
@@ -338,7 +338,7 @@
             </div>
         </div>
     </div>
-</div> -->
+</div> 
 
 			
 	<!-- js -->

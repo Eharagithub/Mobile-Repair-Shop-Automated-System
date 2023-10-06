@@ -27,7 +27,7 @@
                 <div class="row">
                     <div class="col-md-6 col-sm-12">
                         <div class="title">
-                            <h4><i class="micon dw dw-shopping-basket mtext"></i> List of Inquiries</h4>
+                            <h4><i class="micon fa fa-commenting"></i> Inquiries</h4>
                         </div>
                         <nav aria-label="breadcrumb" role="navigation">
                             <ol class="breadcrumb">

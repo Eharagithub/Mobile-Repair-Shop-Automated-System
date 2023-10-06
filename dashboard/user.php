@@ -60,7 +60,7 @@ if (isset($_REQUEST["createuser"])) {
 					<div class="row">
 						<div class="col-md-6 col-sm-12">
 							<div class="title">
-								<h4><i class="micon dw dw-hammer mtext"></i>Admin User</h4>
+								<h4><i class="micon dw dw-user1"></i>  Users</h4>
 							</div>
 							<nav aria-label="breadcrumb" role="navigation">
 								<ol class="breadcrumb">
