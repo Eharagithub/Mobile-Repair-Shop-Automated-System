@@ -8,7 +8,7 @@ if (isset($_REQUEST["createStatus"])) {
 	$nic= $_POST['nic'];
 	$status = $_POST['status'];
 	$remarks = $_POST['remarks'];
-    $code = $_POST['code'];
+    $jobserviceid = $_POST['jobserviceid'];
     $date = $_POST['date'];
 	/*$repassword= $_POST['repassword'];*/
 
@@ -17,8 +17,8 @@ if (isset($_REQUEST["createStatus"])) {
 	if ($conn->connect_error) {
 		die('Connection Failed : ' . $conn->connect_error);
 	} else {
-		$stmt = $conn->prepare("INSERT INTO jobservice(jobid,serviceid,amount,nic,status,remarks,code,date)values(?,?,?,?,?)");
-		$stmt->bind_param("issis", $jobid, $serviceid, $amount, $nic, $status,$remarks,$code,$date);
+		$stmt = $conn->prepare("INSERT INTO jobservice(jobid,serviceid,amount,nic,status,remarks,jobserviceid,date)values(?,?,?,?,?)");
+		$stmt->bind_param("issis", $jobid, $serviceid, $amount, $nic, $status,$remarks,$jobserviceid,$date);
 		$stmt->execute();
 		echo "Your Registration is Successfully..";
 
@@ -73,12 +73,14 @@ if (isset($_REQUEST["createStatus"])) {
 							</nav>
 						</div>
 						<div class="col-md-6 col-sm-12 text-right">
+						<?php if ($_SESSION["systemUserType"] == "TECH") { ?>
 							<div class="dropdown">
 								<a href="#" class="btn btn-primary" data-backdrop="static" data-toggle="modal"
 									data-target="#add_technician">
 									Add New
 								</a>
 							</div>
+							<?php } ?>
 						</div>
 					</div>
 				</div>
@@ -108,15 +110,15 @@ if (isset($_REQUEST["createStatus"])) {
 
 						echo "<tr>" .
 							"<td>" . $row["jobid"] . "</td>";
+							echo"<td>" . $row["jobserviceid"] . "</td>";
 							echo"<td>" . $row["serviceid"] . "</td>";
 							echo"<td>" . $row["amount"] . "</td>";
 							echo"<td>" . $row["nic"] . "</td>";
 							echo"<td>" . $row["status"] . "</td>";
 							echo"<td>" . $row["remarks"] . "</td>";
-                            echo"<td>" . $row["code"] . "</td>";
                             echo"<td>" . $row["date"] . "</td>";
 							echo 	'<td>';
-							echo 		'<div class="dropdown" onclick="setSelectedCustomer('.$row["jobid"].')';
+							echo 		'<div class="dropdown" onclick="setSelectedCustomer('.$row["jobserviceid"].')';
 							echo 			'<a class="btn btn-link font-24 p-0 line-height-1 no-arrow dropdown-toggle" href="#.php?id=<?php echo $row[\'nic\']; ?>" role="button" data-toggle="dropdown">';
 							echo 				'<i class="dw dw-more"></i>';
 							echo 			'</a>';
@@ -154,13 +156,13 @@ if (isset($_REQUEST["createStatus"])) {
 						<table class="data-table table responsive">
 							<thead>
 								<tr>
+								<th>jobserviceid</th>
 									<th>JobId</th>
 									<th>Service Id</th>
 									<th>amount</th>
 									<th>Customer NIC</th>
 									<th>Status</th>
                                     <th>Remarks</th>
-                                    <th>Code</th>
                                     <th>Date</th>
 									<th>Action</th>
 								</tr>
@@ -192,6 +194,12 @@ if (isset($_REQUEST["createStatus"])) {
 											<form action="" target="" method="POST" onsubmit="return checkpassword ()">
 
 												<div class="input-group custom">
+												<div class="col-md-6 col-sm-12">
+													<div class="form-group">
+																<label>Code</label>
+																<input class="form-control form-control-lg" type="text" name ="jobserviceid" required>
+															</div>
+												</div>
 												<div class="col-md-6 col-sm-12">
 													<div class="form-group">
 																<label>Job ID</label>
@@ -226,12 +234,6 @@ if (isset($_REQUEST["createStatus"])) {
 													<div class="form-group">
 																<label>Remarks</label>
 																<input class="form-control form-control-lg" type="text" name ="remarks" required>
-															</div>
-												</div>
-												<div class="col-md-6 col-sm-12">
-													<div class="form-group">
-																<label>Code</label>
-																<input class="form-control form-control-lg" type="text" name ="code" required>
 															</div>
 												</div>
                                                 <div class="col-md-6 col-sm-12">
