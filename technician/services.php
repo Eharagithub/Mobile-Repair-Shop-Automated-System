@@ -7,7 +7,8 @@ if (isset($_REQUEST["createService"])) {
 	$description = $_POST['description'];
 	$cost= $_POST['cost'];
 	$date = $_POST['date'];
-	
+	/*$email = $_POST['email'];
+	/*$repassword= $_POST['repassword'];*/
 
 	//database connection
 	$conn = new mysqli('localhost', 'root', '', 'mobileshopdb');
