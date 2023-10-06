@@ -48,42 +48,42 @@
 					<div class="pb-20">
 						<table class="data-table table responsive">
 							<thead>
-								<tr>
-									<th>Code</th>
-									<th>Request</th>
-									<th>Service Name</th>
-									<th>Amount</th>
-									<th>Customer</th>
-									<th>Technician</th>
-									<th>Completion Date</th>
-									<th>Status</th>
-									<th class="datatable-nosort">Action</th>
-								</tr>
+							<tr>
+						<th>#</th>
+						<th>Inquirer</th>
+						<th>Email</th>
+						<th>Message</th>
+						<th>Status</th>
+						<th>Action</th>
+					</tr>
+				
 							</thead>
 							<tbody>
-								<tr>
-									<td>123-456</td>
-									<td>05-27-2021</td>
-									<td>Service name</td>
-									<td><span class="badge bg-warning">1,250.00</span></td>
-									<td>Juan Dela Cruz</td>
-									<td>John Doe</td>
-									<td>05-30-2021</td>
-									<td><span class="badge bg-info">Pending</span></td>
-									<td>
-										<div class="dropdown">
-											<a class="btn btn-link font-24 p-0 line-height-1 no-arrow dropdown-toggle" href="#" role="button" data-toggle="dropdown">
-												<i class="dw dw-more"></i>
-											</a>
-											<div class="dropdown-menu dropdown-menu-right dropdown-menu-icon-list">
-												<a class="dropdown-item" href="#"><i class="dw dw-eye"></i> View</a>
-												<a class="dropdown-item" href="#" data-toggle="modal" data-target="#add_technician"><i class="dw dw-edit2"></i> Edit</a>
-												<a class="dropdown-item" href="#" data-toggle="modal" data-target="#delete"><i class="dw dw-delete-3"></i> Delete</a>
-											</div>
-										</div>
-									</td>
-								</tr>
-							</tbody>
+							<tr>
+							<td class="text-center"> ?></td>
+							<td> </td>
+							<td></td>
+							<td </td>
+							<td class="text-center">
+								
+									<span class="badge badge-pill badge-success">Read</span>
+								
+								<span class="badge badge-pill badge-primary">Unread</span>
+								
+							</td>
+							<td align="center">
+								 <button type="button" class="btn btn-flat btn-default btn-sm dropdown-toggle dropdown-icon" data-toggle="dropdown">
+				                  		Action
+				                    <span class="sr-only">Toggle Dropdown</span>
+				                  </button>
+				                  <div class="dropdown-menu" role="menu">
+				                    <a class="dropdown-item view_details" href="javascript:void(0)" data-id=""><span class="fa fa-eye text-dark"></span> View</a>
+				                    <div class="dropdown-divider"></div>
+				                    <a class="dropdown-item delete_data" href="javascript:void(0)" data-id=""><span class="fa fa-trash text-danger"></span> Delete</a>
+				                  </div>
+							</td>
+						</tr>
+							
 						</table>
 					</div>
 				</div>
