@@ -59,12 +59,12 @@ if (isset($_REQUEST["createdelivary"])) {
 					<div class="row">
 						<div class="col-md-6 col-sm-12">
 							<div class="title">
-								<h4><i class="micon fa fa-truck"></i>  Delivary</h4>
+								<h4><i class="micon fa fa-truck"></i>  Courier Service</h4>
 							</div>
 							<nav aria-label="breadcrumb" role="navigation">
 								<ol class="breadcrumb">
 									<li class="breadcrumb-item"><a href="index.php">Home</a></li>
-									<li class="breadcrumb-item active" aria-current="page">Delivary List</li>
+									<li class="breadcrumb-item active" aria-current="page">Courier Details List </li>
 								</ol>
 							</nav>
 						</div>
@@ -143,7 +143,7 @@ if (isset($_REQUEST["createdelivary"])) {
 				
 				<div class="card-box mb-30">
 					<div class="pd-20">
-						<h4 class="text-blue h4">Delivary List</h4>
+						<h4 class="text-blue h4">Courier Details List</h4>
 					</div>
 					<div class="pb-20">
 						<table class="data-table table responsive">
@@ -177,7 +177,7 @@ if (isset($_REQUEST["createdelivary"])) {
 										<div class=" border-radius-10">
 											<div class="login-title"><br>
 												<div class="col-md-12 col-sm-12 mb-30">
-												<h2 class="text-center text-primary">Add Delivary</h2>
+												<h2 class="text-center text-primary">Courier Details List</h2>
 												</div>
 											<form action="" target="" method="POST" onsubmit="return checkpassword ()">
 

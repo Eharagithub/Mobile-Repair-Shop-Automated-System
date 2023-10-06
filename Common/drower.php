@@ -83,7 +83,8 @@
                 <?php if (($_SESSION["systemUserType"] == "ADMIN") ) { ?>
                     <li>
                         <a href="delivary.php" class="dropdown-toggle no-arrow">
-                            <span class="micon fa fa-truck"></span><span class="mtext">Curier Servives</span>
+        <span class="micon fa fa-truck"></span><span class="mtext">Courier Service</span>
+
                         </a>
                     </li>
                 <?php } ?>
@@ -107,14 +108,6 @@
                     <li><a href="services.php" class="dropdown-toggle no-arrow">
                         <span class="micon fa fa-calendar-check-o"></span><span class="mtext">Services</span>
                     </a></li>
-                <?php } ?>
-
-                <?php if (($_SESSION["systemUserType"] == "ADMIN") || $_SESSION["systemUserType"] == "BR"|| $_SESSION["systemUserType"] == "TECH") { ?>
-                    <li>
-                    <a href="device.php" class="dropdown-toggle no-arrow">
-                        <span class="micon fa fa-mobile"></span><span class="mtext">Devices</span>
-                    </a>
-                </li>
                 <?php } ?>
 
                 <?php if (($_SESSION["systemUserType"] == "ADMIN") || $_SESSION["systemUserType"] == "TECH") { ?>
