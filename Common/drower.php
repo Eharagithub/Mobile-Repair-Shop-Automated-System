@@ -60,14 +60,14 @@
                 <?php if (($_SESSION["systemUserType"] == "ADMIN") || $_SESSION["systemUserType"] == "BR"|| $_SESSION["systemUserType"] == "TECH") { ?>
                     <li>
                     <a href="index.php" class="dropdown-toggle no-arrow">
-                        <span class="micon dw dw-house"></span><span class="mtext">Dashboard</span>
+                        <span class="micon fa fa-home"></span><span class="mtext">Dashboard</span>
                     </a>
                 </li>
                 <?php } ?>
 
                 <?php if (($_SESSION["systemUserType"] == "ADMIN") || $_SESSION["systemUserType"] == "BR"|| $_SESSION["systemUserType"] == "TECH") { ?>
                 <li><a href="clients.php" class="dropdown-toggle no-arrow">
-                        <span class="micon dw dw-user"></span><span class="mtext">Customers</span>
+                        <span class="micon fa fa-user"></span><span class="mtext">Customers</span>
                     </a>
                 </li>
                 <?php } ?>
@@ -99,7 +99,7 @@
 
                 <?php if (($_SESSION["systemUserType"] == "ADMIN") || $_SESSION["systemUserType"] == "BR"|| $_SESSION["systemUserType"] == "TECH") { ?>
                     <li><a href="workorder.php" class="dropdown-toggle no-arrow">
-                        <span class="micon fa fa-cogs"></span><span class="mtext">Repair List</span>
+                        <span class="micon fa fa-cogs"></span><span class="mtext">  Workorder List</span>
                     </a>
                 </li>
                 <?php } ?>
@@ -107,7 +107,7 @@
                 <?php if (($_SESSION["systemUserType"] == "ADMIN") || $_SESSION["systemUserType"] == "BR"|| $_SESSION["systemUserType"] == "TECH") { ?>
                     <li>
                     <a href="device.php" class="dropdown-toggle no-arrow">
-                        <span class="micon fa fa-mobile"></span><span class="mtext">Devices</span>
+                        <span class="micon fa fa-mobile"></span><span class="mtext">  Devices</span>
                     </a>
                 </li>
                 <?php } ?>
@@ -115,14 +115,14 @@
 
                 <?php if (($_SESSION["systemUserType"] == "ADMIN") || $_SESSION["systemUserType"] == "BR"|| $_SESSION["systemUserType"] == "TECH") { ?>
                     <li><a href="services.php" class="dropdown-toggle no-arrow">
-                        <span class="micon fa fa-calendar-check-o"></span><span class="mtext">Services</span>
+                        <span class="micon fa fa-calendar-check-o"></span><span class="mtext">  Services</span>
                     </a></li>
                 <?php } ?>
 
                 <?php if (($_SESSION["systemUserType"] == "ADMIN") || $_SESSION["systemUserType"] == "TECH") { ?>
                     <li>
                     <a href="stockitem.php" class="dropdown-toggle no-arrow">
-                        <span class="micon fa fa-history"></span><span class="mtext">Stock Item</span>
+                        <span class="micon fa fa-archive"></span><span class="mtext">  Stock Item</span>
                     </a>
                 </li>
                 <?php } ?>
@@ -130,7 +130,7 @@
                 <?php if (($_SESSION["systemUserType"] == "ADMIN") ) { ?>
                     <li>
                     <a href="history.php" class="dropdown-toggle no-arrow">
-                        <span class="micon fa fa-history"></span><span class="mtext">History</span>
+                        <span class="micon fa fa-history"></span><span class="mtext">  History</span>
                     </a>
                 </li> 
                 <?php } ?>
@@ -140,7 +140,7 @@
                 <?php if (($_SESSION["systemUserType"] == "ADMIN") ) { ?>
                     <li>
                     <a href="user.php" class="dropdown-toggle no-arrow">
-                        <span class="micon dw dw-user1"></span><span class="mtext">Users</span>
+                        <span class="micon dw dw-user1"></span><span class="mtext">  Users</span>
                     </a>
                 </li>
                 <?php } ?>
@@ -148,7 +148,7 @@
                 <?php if (($_SESSION["systemUserType"] == "TECH")) { ?>
                     <li>
                     <a href="status.php" class="dropdown-toggle no-arrow">
-                        <span class="micon dw dw-house"></span><span class="mtext">Customer Status</span>
+                        <span class="micon dw dw-house"></span><span class="mtext">  Customer Status</span>
                     </a>
                 </li>
                 <?php } ?>
@@ -156,7 +156,7 @@
                 <?php if (($_SESSION["systemUserType"] == "ADMIN") ) { ?>
                     <li class="dropdown">
                     <a href="javascript:;" class="dropdown-toggle">
-                        <span class="micon dw dw-bar-chart"></span><span class="mtext">reports</span>
+                        <span class="micon dw dw-bar-chart"></span><span class="mtext">  reports</span>
                     </a>
                     <ul class="submenu">
                         <li><a href="bar.php">Bar Chart</a></li>
@@ -168,7 +168,7 @@
                  <?php if (($_SESSION["systemUserType"] == "ADMIN") ) { ?>
                     <li>
                     <a href="inquiries.php" class="dropdown-toggle no-arrow">
-                        <span class="micon fa fa-commenting"></span><span class="mtext">Inquiries</span>
+                        <span class="micon fa fa-commenting"></span><span class="mtext">  Inquiries</span>
                     </a>
                 </li>
                 <?php } ?>
@@ -176,7 +176,7 @@
                  <?php if (($_SESSION["systemUserType"] == "ADMIN") ) { ?>
                     <li>
                     <a href="settings.php" class="dropdown-toggle no-arrow">
-                        <span class="micon dw dw-settings2"></span><span class="mtext">Settings</span>
+                        <span class="micon dw dw-settings2"></span><span class="mtext">  Settings</span>
                     </a>
                 </li>
                 <?php } ?>
