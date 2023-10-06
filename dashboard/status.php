@@ -73,12 +73,14 @@ if (isset($_REQUEST["createStatus"])) {
 							</nav>
 						</div>
 						<div class="col-md-6 col-sm-12 text-right">
+						<?php if ($_SESSION["systemUserType"] == "TECH") { ?>
 							<div class="dropdown">
 								<a href="#" class="btn btn-primary" data-backdrop="static" data-toggle="modal"
 									data-target="#add_technician">
 									Add New
 								</a>
 							</div>
+							<?php } ?>
 						</div>
 					</div>
 				</div>
