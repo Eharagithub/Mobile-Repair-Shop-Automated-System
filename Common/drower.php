@@ -145,14 +145,6 @@
                 </li>
                 <?php } ?>
 
-                <?php if (($_SESSION["systemUserType"] == "ADMIN") ) { ?>
-                    <li>
-                    <a href="inquiries.php" class="dropdown-toggle no-arrow">
-                        <span class="micon fa fa-commenting"></span><span class="mtext">Inquiries</span>
-                    </a>
-                </li>
-                <?php } ?>
-
                 <?php if (($_SESSION["systemUserType"] == "TECH")) { ?>
                     <li>
                     <a href="status.php" class="dropdown-toggle no-arrow">
@@ -175,11 +167,20 @@
 
                  <?php if (($_SESSION["systemUserType"] == "ADMIN") ) { ?>
                     <li>
+                    <a href="inquiries.php" class="dropdown-toggle no-arrow">
+                        <span class="micon fa fa-commenting"></span><span class="mtext">Inquiries</span>
+                    </a>
+                </li>
+                <?php } ?>
+
+                 <?php if (($_SESSION["systemUserType"] == "ADMIN") ) { ?>
+                    <li>
                     <a href="settings.php" class="dropdown-toggle no-arrow">
                         <span class="micon dw dw-settings2"></span><span class="mtext">Settings</span>
                     </a>
                 </li>
                 <?php } ?>
+
 
               
                
