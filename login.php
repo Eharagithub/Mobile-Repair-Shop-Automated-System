@@ -58,9 +58,9 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
     <link rel="stylesheet" type="text/css" href="login.css">
 
     <script type="text/javascript">
-        function msg(){
+        /*function msg(){
             alert("Enter the correct username or Password");
-        }
+        }*/
         function forget(){
             alert("Please reset your password");
         }

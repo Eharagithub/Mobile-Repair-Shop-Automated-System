@@ -83,11 +83,8 @@
                 <?php if (($_SESSION["systemUserType"] == "ADMIN") ) { ?>
                     <li>
                         <a href="delivary.php" class="dropdown-toggle no-arrow">
-<<<<<<< HEAD
-                            <span class="micon fa fa-truck"></span><span class="mtext">Courier Service</span>
-=======
-                            <span class="micon fa fa-truck"></span><span class="mtext">Curier Servives</span>
->>>>>>> fb84373c31c667646015ad31542f091cf1288351
+        <span class="micon fa fa-truck"></span><span class="mtext">Courier Service</span>
+
                         </a>
                     </li>
                 <?php } ?>
