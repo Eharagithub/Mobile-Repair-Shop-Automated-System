@@ -93,10 +93,11 @@ form {
     align-items: center;
     margin-right: 20px;
     margin-top: 60px;
+    width: 500px;
 }
 
 .navbar__logo img {
-    width: 140px;
+    width: 500px;
     height: auto;
 }
 .navbar__menu{
@@ -136,34 +137,102 @@ form {
     transition: all 0.3s ease;
 }
 /*admin login*/
-.navbar__btn{
-    display:flex;
-    display: block;
-    justify-content: center;
-    align-items: center;
-    padding:5px;
-    width:100%;
-    transition: cubic-bezier(0.075, 0.82, 0.165, 1);
-}
-
-.admin{
+.navbar__btn {
     display: flex;
     justify-content: center;
     align-items: center;
-    text-decoration: none;
-    padding: 10px 20px;
-    height: 100%;
+    padding: 5px;
     width: 100%;
+    position: relative; /* Add position relative to make dropdown positioning relative to this element */
+}
+
+.admin {
+    text-decoration: none;
+    padding: 10px 20px 10px 30px; /* Added more padding to the right (30px) */
     border: none;
     outline: none;
     border-radius: 4px;
     background: #f77062;
+    border: 1px solid #ccc;
     color: #fff;
+    cursor: pointer; /* Add cursor pointer for better user experience */
 }
-.admin:hover{
+
+.admin:hover {
     background-color: #fff;
     color: black;
 }
+
+/* Style the dropdown menu */
+.dropdown {
+    position: absolute;
+    top: 100%; /* Position the dropdown below the login button */
+    left: 30px;
+    display: none; /* Hide the dropdown by default */
+    list-style: none;
+    padding: 0;
+    background-color:#f77062;
+    border: 1px solid #ccc;
+    /*border-radius: 5px;*/
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
+    width: 200px;
+}
+
+
+/* Style the dropdown list items */
+.dropdown li {
+    padding: 15px 15px 30px 18px;
+    background:#f77062;
+    border-bottom: 1px solid #f5f3f3; /* Add a border at the bottom of each li */
+    transition: background-color 0.3s, color 0.3s; /* Add smooth transition on hover */
+    width: 200px;
+}
+
+/* Change background and text color on hover */
+.dropdown li:hover {
+    background-color: #f6f3f3;
+    color: white;
+    border-color: transparent; /* Hide the border on hover */
+    transform: scale(1.05); /* Scale the item slightly on hover */
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2); /* Add a subtle shadow on hover */
+    cursor: pointer;
+}
+
+/* Add some additional styles to make it more creative */
+.dropdown li:first-child {
+    border-top-left-radius: 5px;
+    border-top-right-radius: 5px;
+}
+
+.dropdown li:last-child {
+    border-bottom-left-radius: 5px;
+    border-bottom-right-radius: 5px;
+}
+
+/* Add a hover effect to the first and last list items */
+.dropdown li:first-child:hover {
+    border-top-left-radius: 10px;
+    border-top-right-radius: 10px;
+}
+
+.dropdown li:last-child:hover {
+    border-bottom-left-radius: 10px;
+    border-bottom-right-radius: 10px;
+}
+
+
+/* Style the dropdown links */
+.dropdown a {
+    text-decoration: none;
+    color: #333;
+    display: block;
+}
+
+/* Show the dropdown when hovering over the login button */
+.navbar__btn:hover .dropdown {
+    display: block;
+}
+
 
 /*restore down*/
 @media screen and (max-width:960px) {

@@ -61,17 +61,17 @@ if (isset($_REQUEST["createdevice"])) {
 							</div>
 							<nav aria-label="breadcrumb" role="navigation">
 								<ol class="breadcrumb">
-									<li class="breadcrumb-item"><a href="index.html">Home</a></li>
+									<li class="breadcrumb-item"><a href="index.php">Home</a></li>
 									<li class="breadcrumb-item active" aria-current="page">Device List</li>
 								</ol>
 							</nav>
 						</div>
 						<div class="col-md-6 col-sm-12 text-right">
-							<div class="dropdown">
+							<!--<div class="dropdown">
 								<a href="#" class="btn btn-primary" data-backdrop="static" data-toggle="modal" data-target="#add_technician">
 									Add New
 								</a>
-							</div>
+							</div> -->
 						</div>
 					</div>
 				</div>
@@ -163,7 +163,7 @@ if (isset($_REQUEST["createdevice"])) {
 		</div>
 	</div>
 
-				<!-- Add device Modal -->
+				<!-- Add device Modal 
 					<div class="col-md-12 col-sm-12 mb-30">
 							<div class="modal fade" id="add_technician" tabindex="-1" role="dialog" aria-labelledby="myLargeModalLabel" aria-hidden="true">
 								<div class="modal-dialog modal-dialog-centered">
@@ -222,7 +222,7 @@ if (isset($_REQUEST["createdevice"])) {
 									</div>
 								</div>
 							</div>
-						</div>
+						</div>-->
 						<!-- Delete modal -->
 					<div class="col-md-4 col-sm-12 mb-30">
 							<div class="modal fade" id="delete" tabindex="-1" role="dialog" aria-labelledby="myLargeModalLabel" aria-hidden="true">
