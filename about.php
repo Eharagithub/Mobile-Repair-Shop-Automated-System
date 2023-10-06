@@ -36,6 +36,7 @@
 	  top: 50%;
 	  left: 50%;
 	  transform: translate(-50%,-50%); 
+    width:1500px;
   }
   
   h2 {
@@ -49,6 +50,11 @@
     font-size: 16px;
     line-height: 1.5;
   }
+
+  .card-body .text-center .p-51{
+    padding: 15rem;
+
+  }
   
     </style>
 
@@ -60,70 +66,71 @@
   
  
  <!-- start interaction section -->
-<section class="p-5 bg-dark" id="interaction">
+<section class="p-5 bg-dark" style="background:#eae1e1;"  id="interaction" style="background:#eae1e1;">
   <div class="container py-5">
-    <h2 class="text-center text-white">Our Instructions</h2>
-    <p class="lead text-center text-white mb-5">
-      asdduj jdkv kjdcj jdjk jjfi ieif nju nfjjkkdj jkndkk kjnfdk kjdkfn jdnk nddkj
-    </p>
+    <h2 class="text-center text-white">Our Specialists</h2>
+    <p class="lead text-center text-white mb-5">Feel free to catch our specialists and get a beter job for your mobile phone. </p>
+     
     <div class="row justify-content-center">
       <div class="col-md-6 col-lg-3">
         <div class="card bg-light">
-          <div class="card-body text-center p-5">
+          <div class="card-body text-center p-51">
             <img src="im5.jpg" class="card-img-top rounded-circle mb-3" alt="John Doe">
-            <h3 class="card-title mb-3">John Doe</h3>
-            <p class="card-text">
-              bjhjksd hdh cbjdjh jcbdjsbc cjbdsd jkbdsa jbjbj ksbjcjabc
+            <h3 class="card-title mb-3">Owner Of the Shop</h3>
+            <p class="card-text"style="color:black;">
+              Suresh Ariyawansha
             </p>
-            <a href="#"><i class="bi bi-facebook text-dark mx-1 lead"></i></a>
-            <a href="#"><i class="bi bi-twitter text-dark mx-1 lead"></i></a>
-            <a href="#"><i class="bi bi-linkedin text-dark mx-1 lead"></i></a>
-            <a href="#"><i class="bi bi-instagram text-dark mx-1 lead"></i></a>
+     
+            
+            <a href="https://www.facebook.com/Kasthuri mobile solutions"><i class="bi bi-facebook text-dark mx-1 lead"></i></a>
+            <a href="https://twitter.com/Kasthuri mobile solutions"><i class="bi bi-twitter text-dark mx-1 lead"></i></a>
+            <a href="https://www.linkedin.com/Kasthuri mobile solutions"><i class="bi bi-linkedin text-dark mx-1 lead"></i></a>
+            <a href="https://www.instagram.com/Kasthuri mobile solutions"><i class="bi bi-instagram text-dark mx-1 lead"></i></a>
           </div>
         </div>
       </div>
       <div class="col-md-6 col-lg-3">
         <div class="card bg-light">
-          <div class="card-body text-center p-5">
+          <div class="card-body text-center p-51">
             <img src="im5.jpg" class="card-img-top rounded-circle mb-3" alt="John Doe">
-            <h3 class="card-title mb-3">John Doe</h3>
-            <p class="card-text">
-              bjhjksd hdh cbjdjh jcbdjsbc cjbdsd jkbdsa jbjbj ksbjcjabc
+            <h3 class="card-title mb-3">Hardware Specialist</h3>
+            <p class="card-text" style="color:black;">
+               Kanchana Saranga
             </p>
-            <a href="#"><i class="bi bi-facebook text-dark mx-1 lead"></i></a>
-            <a href="#"><i class="bi bi-twitter text-dark mx-1 lead"></i></a>
-            <a href="#"><i class="bi bi-linkedin text-dark mx-1 lead"></i></a>
-            <a href="#"><i class="bi bi-instagram text-dark mx-1 lead"></i></a>
+            <a href="https://www.facebook.com/Kasthuri mobile solutions"><i class="bi bi-facebook text-dark mx-1 lead"></i></a>
+            <a href="https://twitter.com/Kasthuri mobile solutions"><i class="bi bi-twitter text-dark mx-1 lead"></i></a>
+            <a href="https://www.linkedin.com/Kasthuri mobile solutions"><i class="bi bi-linkedin text-dark mx-1 lead"></i></a>
+            <a href="https://www.instagram.com/Kasthuri mobile solutions"><i class="bi bi-instagram text-dark mx-1 lead"></i></a>
           </div>
         </div>
       </div>
       <div class="col-md-6 col-lg-3">
         <div class="card bg-light">
-          <div class="card-body text-center p-5">
+          <div class="card-body text-center p-51">
             <img src="im5.jpg" class="card-img-top rounded-circle mb-3" alt="John Doe">
-            <h3 class="card-title mb-3">John Doe</h3>
-            <p class="card-text">
-              bjhjksd hdh cbjdjh jcbdjsbc cjbdsd jkbdsa jbjbj ksbjcjabc
+            <h3 class="card-title mb-3">Software Specialist</h3>
+            <p class="card-text"style="color:black;">
+              Lakna Ekanayeka
             </p>
-            <a href="#"><i class="bi bi-facebook text-dark mx-1 lead"></i></a>
-            <a href="#"><i class="bi bi-twitter text-dark mx-1 lead"></i></a>
-            <a href="#"><i class="bi bi-linkedin text-dark mx-1 lead"></i></a>
-            <a href="#"><i class="bi bi-instagram text-dark mx-1 lead"></i></a>
+            <a href="https://www.facebook.com/Kasthuri mobile solutions"><i class="bi bi-facebook text-dark mx-1 lead"></i></a>
+            <a href="https://twitter.com/Kasthuri mobile solutions"><i class="bi bi-twitter text-dark mx-1 lead"></i></a>
+            <a href="https://www.linkedin.com/Kasthuri mobile solutions"><i class="bi bi-linkedin text-dark mx-1 lead"></i></a>
+            <a href="https://www.instagram.com/Kasthuri mobile solutions"><i class="bi bi-instagram text-dark mx-1 lead"></i></a>
           </div>
         </div>
       </div>
       <div class="col-md-6 col-lg-3">
         <div class="card bg-light">
-          <div class="card-body text-center p-5">
+          <div class="card-body text-center p-51">
             <img src="im5.jpg" class="card-img-top rounded-circle mb-3" alt="John Doe">
-            <h3 class="card-title mb-3">John Doe</h3>
-            <p class="card-text">
-              bjhjksd hdh cbjdjh jcbdjsbc cjbdsd jkbdsa jbjbj ksbjcjabc
+            <h3 class="card-title mb-3">Our Delivery Partner </h3>
+            <p class="card-text"style="color:black;">
+                PickUp Point
             </p>
-            <a href="#"><i class="bi bi-facebook text-dark mx-1 lead"></i></a>
-            <a href="#"><i class="bi bi-twitter text-dark mx-1 lead"></i></a>
-            <a href="#"><i class="bi bi-linkedin text-dark mx-1 lead"></i></a>
-            <a href="#"><i class="bi bi-instagram text-dark mx-1 lead"></i></a>
+            <a href="https://www.facebook.com/Kasthuri mobile solutions"><i class="bi bi-facebook text-dark mx-1 lead"></i></a>
+            <a href="https://twitter.com/Kasthuri mobile solutions"><i class="bi bi-twitter text-dark mx-1 lead"></i></a>
+            <a href="https://www.linkedin.com/Kasthuri mobile solutions"><i class="bi bi-linkedin text-dark mx-1 lead"></i></a>
+            <a href="https://www.instagram.com/Kasthuri mobile solutions"><i class="bi bi-instagram text-dark mx-1 lead"></i></a>
           </div>
         </div>
       </div>
@@ -139,7 +146,4 @@
 
 <!-- end instruction section -->
 
-
-
-        </html>
         
