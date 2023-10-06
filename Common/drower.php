@@ -145,7 +145,7 @@
                 <?php } ?>
                 <?php if (($_SESSION["systemUserType"] == "ADMIN") ) { ?>
                     <li>
-                    <a href="work-order.php" class="dropdown-toggle no-arrow">
+                    <a href="inquiries.php" class="dropdown-toggle no-arrow">
                         <span class="micon fa fa-commenting"></span><span class="mtext">Inquiries</span>
                     </a>
                 </li>
