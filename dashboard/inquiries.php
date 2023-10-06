@@ -58,8 +58,8 @@
                         <tbody>
                         <tr>
                             <td class="text-center"></td>
-                            <td>John Doe</td>
-                            <td>john@example.com</td>
+                            <td>Kanchana Saranga</td>
+                            <td>kanchanasaranga11@gmail.com</td>
                             <td>This is the inquiry message.</td>
                             <td class="text-center">
                                 <span class="badge badge-pill badge-success">Read</span>
