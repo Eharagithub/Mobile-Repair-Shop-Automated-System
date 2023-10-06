@@ -198,7 +198,7 @@ form {
     cursor: pointer;
 }
 
-/* Add some additional styles to make it more creative */
+/* Add some additional styles to make it more creative 
 .dropdown li:first-child {
     border-top-left-radius: 5px;
     border-top-right-radius: 5px;
@@ -209,7 +209,7 @@ form {
     border-bottom-right-radius: 5px;
 }
 
-/* Add a hover effect to the first and last list items */
+/* Add a hover effect to the first and last list items 
 .dropdown li:first-child:hover {
     border-top-left-radius: 10px;
     border-top-right-radius: 10px;
@@ -221,14 +221,14 @@ form {
 }
 
 
-/* Style the dropdown links */
+/* Style the dropdown links 
 .dropdown a {
     text-decoration: none;
     color: #333;
     display: block;
 }
 
-/* Show the dropdown when hovering over the login button */
+/* Show the dropdown when hovering over the login button 
 .navbar__btn:hover .dropdown {
     display: block;
 }
