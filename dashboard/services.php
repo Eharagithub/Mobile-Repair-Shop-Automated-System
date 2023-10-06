@@ -306,7 +306,7 @@ if (isset($_GET['serviceId'])) {
         					<input type="text" class="form-control" id="editServiceCost" name="editServiceCost">
 						</div>
     				
-						</form>
+					</form>
 
            			</div>
             		<div class="modal-footer">

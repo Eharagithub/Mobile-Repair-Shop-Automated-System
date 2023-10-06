@@ -76,6 +76,11 @@
                     </a>
                 </li>
                 <li>
+                    <a href="stockitem.php" class="dropdown-toggle no-arrow">
+                        <span class="micon fa fa-history"></span><span class="mtext">Stock Item</span>
+                    </a>
+                </li>
+                <li>
                     <a href="services.php" class="dropdown-toggle no-arrow">
                         <span class="micon dw dw-money"></span><span class="mtext">Services</span>
                     </a>

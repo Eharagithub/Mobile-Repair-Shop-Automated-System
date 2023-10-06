@@ -85,9 +85,12 @@
                     <a href="workorder.php" class="dropdown-toggle no-arrow">
                         <span class="micon fa fa-cogs"></span><span class="mtext">Repair List</span>
                     </a>
+
                 <?php } ?>
                 <?php if (($_SESSION["systemUserType"] == "ADMIN") ) { ?>
                     <li>
+
+            
                     <a href="stockitem.php" class="dropdown-toggle no-arrow">
                         <span class="micon fa fa-history"></span><span class="mtext">Stock Item</span>
                     </a>
