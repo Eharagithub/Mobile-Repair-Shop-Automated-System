@@ -66,7 +66,7 @@ if (isset($_GET['itemCode'])) {
 
 <body>
 	<!--drawer -->
-	<?php include_once("../Common/drower.php"); ?>
+	<?php include_once("../Common/drower2.php"); ?>
 
 	<!--top tab-->
 	<div class="main-container">
