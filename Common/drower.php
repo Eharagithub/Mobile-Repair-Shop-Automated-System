@@ -109,6 +109,14 @@
                     </a></li>
                 <?php } ?>
 
+                <?php if (($_SESSION["systemUserType"] == "ADMIN") || $_SESSION["systemUserType"] == "BR"|| $_SESSION["systemUserType"] == "TECH") { ?>
+                    <li>
+                    <a href="device.php" class="dropdown-toggle no-arrow">
+                        <span class="micon fa fa-mobile"></span><span class="mtext">Devices</span>
+                    </a>
+                </li>
+                <?php } ?>
+
                 <?php if (($_SESSION["systemUserType"] == "ADMIN") || $_SESSION["systemUserType"] == "TECH") { ?>
                     <li>
                     <a href="stockitem.php" class="dropdown-toggle no-arrow">
