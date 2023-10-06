@@ -136,7 +136,7 @@ if (isset($_GET['itemCode'])) {
 							echo 				'<a class="dropdown-item" href="#" onclick="viewstockitem(\'' . $row['itemCode'] . '\', \'' . $row['name'] . '\')">
 													<i class="dw dw-eye"></i> View </a>';
 											//Drop down for edit the row		
-							echo 		        '<a class="dropdown-item" href="#" onclick="editstockitem(\'' . $row['name'] . '\', \'' . $row['stock'] . '\', \'' . $row['cost'] . '\',\'' . $row['sellingPrice'] . '\')">
+							echo 		        '<a class="dropdown-item" href="#" onclick="editstockitem(\'' . $row['itemCode'] . '\',\'' . $row['name'] . '\', \'' . $row['stock'] . '\', \'' . $row['cost'] . '\',\'' . $row['sellingPrice'] . '\')">
 													<i class="dw dw-edit"></i> Edit</a>';
 											//Drop down for delete the row
 							echo 				'<a class="dropdown-item delete-stockitem" href="#" data-stockitem-id="' . $row['itemCode'] . '">
@@ -282,7 +282,7 @@ if (isset($_GET['itemCode'])) {
 			</div>
 
 			<!-- Edit Service Modal -->
-			<div class="modal fade" id="editServiceModal" tabindex="-1" role="dialog" aria-labelledby="editServiceModalLabel" aria-hidden="true">
+			<div class="modal fade" id="editstockitem" tabindex="-1" role="dialog" aria-labelledby="editServiceModalLabel" aria-hidden="true">
     			<div class="modal-dialog" role="document">
         			<div class="modal-content">
             			<div class="modal-header">
@@ -293,22 +293,22 @@ if (isset($_GET['itemCode'])) {
             			</div>
             		<div class="modal-body">
                 	<!-- Edit service form fields go here -->
-					<form id="editServiceForm" method="POST" action="stockItemm.php">
+					<form id="editstockform" method="POST" action="stockitem.php">
 
-    					<input type="hidden" id="editServiceId" name="editServiceId" value="">
+    					<input type="hidden" id="edititemCode" name="edititemCode" value="">
     					<div class="form-group">
-        					<label for="editServiceName">Material Type</label>
-       				 		<input type="text" class="form-control" id="editServiceName" name="editServiceName">
+        					<label for="editStockName">Material Type</label>
+       				 		<input type="text" class="form-control" id="editStockName" name="editStockName">
     					</div>
 
     					<div class="form-group">
-        					<label for="editServiceCost">Cost</label>
-        					<input type="text" class="form-control" id="editServiceCost" name="editServiceCost">
+        					<label for="editStockCost">Cost</label>
+        					<input type="text" class="form-control" id="editStockCost" name="editStockCost">
 						</div>
 
 						<div class="form-group">
-        					<label for="editServiceCost">Selling Price</label>
-        					<input type="text" class="form-control" id="editServiceCost" name="editServiceCost">
+        					<label for="editStockCost">Selling Price</label>
+        					<input type="text" class="form-control" id="editStockCost" name="editStockCost">
 						</div>
     				
 						</form>
@@ -374,7 +374,7 @@ if (isset($_GET['itemCode'])) {
 
 			<!--edit function-->
 			<script>
-    			function editstockitem(serviceId, name, stock, cost, sellingPrice) {
+    			function editstockitem(itemCode, name, stock, cost, sellingPrice) {
         		// Populate the edit modal form fields with the data from the selected row
         		document.getElementById("edititemCode").value = itemCode;
         		document.getElementById("editname").value = name;
