@@ -7,7 +7,6 @@ if (isset($_REQUEST["createService"])) {
 	$description = $_POST['description'];
 	$cost= $_POST['cost'];
 	$date = $_POST['date'];
-	$email = $_POST['email'];
 	/*$repassword= $_POST['repassword'];*/
 
 	//database connection
@@ -15,7 +14,7 @@ if (isset($_REQUEST["createService"])) {
 	if ($conn->connect_error) {
 		die('Connection Failed : ' . $conn->connect_error);
 	} else {
-		$stmt = $conn->prepare("INSERT INTO customer(sid,service,description,cost,date)values(?,?,?,?,?)");
+		$stmt = $conn->prepare("INSERT INTO services(sid,service,description,cost,date)values(?,?,?,?,?)");
 		$stmt->bind_param("issis", $sid, $service, $description, $cost, $date);
 		$stmt->execute();
 		echo "Your Registration is Successfully..";
@@ -109,7 +108,6 @@ if (isset($_REQUEST["createService"])) {
 							echo"<td>" . $row["service"] . "</td>";
 							echo"<td>" . $row["description"] . "</td>";
 							echo"<td>" . $row["cost"] . "</td>";
-							echo"<td>" . $row["phone2"] . "</td>";
 							echo"<td>" . $row["date"] . "</td>";
 							echo 	'<td>';
 							echo 		'<div class="dropdown" onclick="setSelectedCustomer('.$row["sid"].')';
