@@ -11,7 +11,7 @@
 <nav class="navbar navbar-expand-lg navbar-toggler bg-dark py-4 text-white">
     <div class="navbar__container">
         <div class="navbar__logo" style="width: 50px; height: 50px;">
-            <img src="new.jpg" alt="Kasthuri Mobile solutions" max-width="20" max-height="50">
+        <img src="new.jpg" alt="Kasthuri Mobile solutions" max-width="20" max-height="50">
         </div>
         
         <div class="navbar__toggle" id="mobile-menu">
