@@ -17,26 +17,36 @@
                         <hr>
                         <a class="dropdown-item" href="login.php"><i class="dw dw-logout"></i> Log Out</a>
                     </div> -->
-                <div class="dropdown-menu dropdown-menu-right dropdown-menu-icon-list">
-                    <?php
+                    <div class="dropdown-menu dropdown-menu-right dropdown-menu-icon-list" style="max-width: 220px; background-color: #fff; border: 1px solid #ccc; border-radius: 5px; box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1); padding: 10px;">
 
-                    echo '<div style="margin-bottom: 15px;">
-              <span style="font-weight: bold; margin-right: 8px;">User Email:</span>
-              <span>' . $_SESSION["systemUserEmail"] . '</span>
-          </div>';
+    <?php
+    echo '<div class="user-info" style="margin-bottom: 15px;">
+        <span style="font-weight: bold; margin-right: 8px;"><i class="fa fa-envelope"></i> User Email:</span>
+        <span>' . $_SESSION["systemUserEmail"] . '</span>
+    </div>';
 
-                    echo '<div style="margin-bottom: 15px;">
-              <span style="font-weight: bold; margin-right: 8px;">User Location:</span>
-              <span>' . $_SESSION["systemUserLocName"] . '</span>
-          </div>';
+    echo '<div class="user-info" style="margin-bottom: 15px;">
+        <span style="font-weight: bold; margin-right: 8px;"><i class="fa fa-map-marker"></i> User Location:</span>
+        <span>' . $_SESSION["systemUserLocName"] . '</span>
+    </div>';
+    ?>
 
-                    echo '<hr>';
+    <hr style="border-top: 1px solid #ccc; margin-top: 15px; margin-bottom: 15px;">
 
-                    ?>
+    <form action="../dashboard/index.php" method="post">
+        <button type="submit" name="logout" style="color: #fff; text-decoration: none; display: block; padding: 10px 20px; background-color: #343a40; border: none; border-radius: 5px; cursor: pointer; font-size: 16px; text-align: center; text-decoration: none; transition: background-color 0.3s, color 0.3s;">
+            <i class="fa fa-sign-out"></i> Log out
+        </button>
+    </form>
+</div>
 
-                    <form action="../dashboard/index.php" method="post">
-                        <input type="submit" value ="Log out"name="logout" style="color: #333; text-decoration: none; display: block; padding: 5px 0;"><i class="fa fa-search "></i></a></button>
-                    </form>
+
+
+
+
+
+
+
                 </div>
             </div>
         </div>
