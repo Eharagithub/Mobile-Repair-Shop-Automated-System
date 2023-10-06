@@ -64,16 +64,20 @@
                     </a>
                 </li>
                 <?php } ?>
+
                 <?php if (($_SESSION["systemUserType"] == "ADMIN") || $_SESSION["systemUserType"] == "BR"|| $_SESSION["systemUserType"] == "TECH") { ?>
-                    <a href="clients.php" class="dropdown-toggle no-arrow">
+                <li><a href="clients.php" class="dropdown-toggle no-arrow">
                         <span class="micon dw dw-user"></span><span class="mtext">Customer List</span>
                     </a>
+                </li>
                 <?php } ?>
+                
                 <?php if (($_SESSION["systemUserType"] == "ADMIN") || $_SESSION["systemUserType"] == "BR"|| $_SESSION["systemUserType"] == "TECH") { ?>
-                    <a href="services.php" class="dropdown-toggle no-arrow">
+                    <li><a href="services.php" class="dropdown-toggle no-arrow">
                         <span class="micon fa fa-calendar-check-o"></span><span class="mtext">Services</span>
-                    </a>
+                    </a></li>
                 <?php } ?>
+
                 <?php if (($_SESSION["systemUserType"] == "ADMIN") ) { ?>
                     <li>
                         <a href="delivary.php" class="dropdown-toggle no-arrow">
@@ -81,29 +85,30 @@
                         </a>
                     </li>
                 <?php } ?>
+
                 <?php if (($_SESSION["systemUserType"] == "ADMIN") || $_SESSION["systemUserType"] == "BR"|| $_SESSION["systemUserType"] == "TECH") { ?>
-                    <a href="workorder.php" class="dropdown-toggle no-arrow">
+                    <li><a href="workorder.php" class="dropdown-toggle no-arrow">
                         <span class="micon fa fa-cogs"></span><span class="mtext">Repair List</span>
                     </a>
-
+                </li>
                 <?php } ?>
-                <?php if (($_SESSION["systemUserType"] == "ADMIN") ) { ?>
-                    <li>
 
-            
+                <?php if (($_SESSION["systemUserType"] == "ADMIN") || $_SESSION["systemUserType"] == "TECH") { ?>
+                    <li>
                     <a href="stockitem.php" class="dropdown-toggle no-arrow">
                         <span class="micon fa fa-history"></span><span class="mtext">Stock Item</span>
                     </a>
                 </li>
                 <?php } ?>
+
                 <?php if (($_SESSION["systemUserType"] == "ADMIN") ) { ?>
                     <li>
                     <a href="history.php" class="dropdown-toggle no-arrow">
                         <span class="micon fa fa-history"></span><span class="mtext">History</span>
                     </a>
-                </li>
-                   
+                </li> 
                 <?php } ?>
+
                 <?php if (($_SESSION["systemUserType"] == "ADMIN") ) { ?>
                     <li>
                     <a href="location.php" class="dropdown-toggle no-arrow">
@@ -111,6 +116,7 @@
                     </a>
                 </li>
                 <?php } ?>
+
                 <?php if (($_SESSION["systemUserType"] == "ADMIN") ) { ?>
                     <li>
                     <a href="user.php" class="dropdown-toggle no-arrow">
@@ -118,6 +124,7 @@
                     </a>
                 </li>
                 <?php } ?>
+
                 <?php if (($_SESSION["systemUserType"] == "ADMIN") ) { ?>
                     <li>
                     <a href="technician.php" class="dropdown-toggle no-arrow">
@@ -125,6 +132,7 @@
                     </a>
                 </li>
                 <?php } ?>
+
                 <?php if (($_SESSION["systemUserType"] == "ADMIN") ) { ?>
                     <li class="dropdown">
                     <a href="javascript:;" class="dropdown-toggle">
@@ -136,6 +144,7 @@
                     </ul>
                 </li>
                  <?php } ?>
+
                  <?php if (($_SESSION["systemUserType"] == "ADMIN") ) { ?>
                     <li>
                     <a href="settings.php" class="dropdown-toggle no-arrow">
@@ -143,6 +152,7 @@
                     </a>
                 </li>
                 <?php } ?>
+
                 <?php if (($_SESSION["systemUserType"] == "ADMIN") ) { ?>
                     <li>
                     <a href="inquiries.php" class="dropdown-toggle no-arrow">
@@ -150,6 +160,7 @@
                     </a>
                 </li>
                 <?php } ?>
+                
                 <?php if (($_SESSION["systemUserType"] == "TECH")) { ?>
                     <li>
                     <a href="status.php" class="dropdown-toggle no-arrow">
