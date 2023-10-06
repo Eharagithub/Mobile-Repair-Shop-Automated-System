@@ -1,9 +1,41 @@
 <?php
 
-$name = $_POST["name"];
+ 
+
+$servername = "localhost";
+$username = "root";
+$password = "";
+$dbname = "mobileshopdb";
+
+$name = $_POST["fullname"];
 $email = $_POST["email"];
-$subject = $_POST["subject"];
 $message = $_POST["message"];
+
+
+
+	//Connection object
+	$conn = new mysqli($servername, $username ,$password, $dbname);
+	$sql="INSERT INTO inquries(fullname,email,Message) VALUES('$name','$email','$message')";
+	$result = mysqli_query($conn,$sql);
+
+
+
+		if($result){
+			
+			
+			//header('Location: ../Index.html'); 
+				
+				echo "<script> 
+					window.alert(\"Thank You for Contact us. We will inform you as soon as possible\");
+					window.location.replace(\"../contact.php\");
+	 			 </script>";
+			
+
+		}
+
+
+	$conn->close();
+
 
  
 
