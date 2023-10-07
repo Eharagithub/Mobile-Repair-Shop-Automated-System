@@ -186,7 +186,7 @@
     <div class="container py-5">
       <div class="row g-4">
         <div class="col-lg-3 col-md-6">
-          <h5 class="text-uppercase font-weight-bold mb-4">dsdfds</h5>
+          <h5 class="text-uppercase font-weight-bold mb-4">About</h5>
           <p>We have been stationed & repairing on our location for 23 years. We have the repairing experience of more than thousands of phones from our inception.</p>
           <a href="#"><i class="bi bi-facebook text-dark mx-1 lead"></i></a>
               <a href="#"><i class="bi bi-twitter text-dark mx-1 lead"></i></a>
@@ -210,8 +210,6 @@
             <li class="mb-1"><a href="#">Home</a></li>
             <li class="mb-1"><a href="#">About</a></li>
             <li class="mb-1"><a href="#">Services</a></li>
-            <li class="mb-1"><a href="#">Portfolio</a></li>
-            <li class="mb-1"><a href="#">Pages</a></li>
             <li class="mb-1"><a href="#">Contact</a></li>
           </ul>
 
