@@ -5,13 +5,6 @@ if (isset($_REQUEST["logout"])) {
 }
 
 $conn = new mysqli('localhost', 'root', '', 'mobileshopdb');
-
-if (!isset($_SESSION["systemUserID"])) {
-	header("Location: ../login.php");
-}
-
-
-
 ?>
 <!DOCTYPE html>
 <html>
