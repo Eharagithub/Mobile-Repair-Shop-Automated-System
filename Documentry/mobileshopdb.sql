@@ -164,14 +164,12 @@ CREATE TABLE jobservice (
   FOREIGN KEY (serviceid) REFERENCES services (sid)
 );
 
-CREATE TABLE jobserviceitem (
+CREATE TABLE jobitem (
   jobserviceitemid int NOT NULL AUTO_INCREMENT,
-  jobservicesId int NOT NULL,
   itemId varchar(255) NOT NULL,
   qty int NOT NULL,
   price float(10) NOT NULL,
   PRIMARY KEY (jobserviceitemid),
-  FOREIGN KEY (jobservicesId) REFERENCES jobservice (jobserviceid),
   FOREIGN KEY (itemId) REFERENCES item (itemCode)
 );
 

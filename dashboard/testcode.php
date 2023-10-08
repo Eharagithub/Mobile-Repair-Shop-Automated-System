@@ -1,36 +1,26 @@
 <?php
+$service_list = [];
+$material_list = [];
 
+$host = "localhost";
+$user = "root";
+$password = "";
+$db = "mobileshopdb";
 
-if (isset($_REQUEST["id"])) {
+$data = mysqli_connect($host, $user, $password, $db);
 
-    $id = $_REQUEST["id"];
-
-    $host = "localhost";
-    $user = "root";
-    $password = "";
-    $db = "mobileshopdb";
-
-    $data = mysqli_connect($host, $user, $password, $db);
-
-    if ($data === false) {
-        die("connection error");
-    }
-
-
-    $sql = "SELECT * FROM device JOIN job ON device.imiNumber = job.deviceId where job.id = " . $id;
-    $result = mysqli_query($data, $sql);
-
-    if ($result->num_rows == 1) {
-
-        $row = mysqli_fetch_array($result);
-        $imiNumber =  $row["imiNumber"];
-
-    } else{
-        header('Location: ../index.html'); 
-    }
-} else {
-    header('Location: ../index.html'); 
+if ($data === false) {
+    die("connection error");
 }
+
+
+$sql = "SELECT * FROM services";
+$result = mysqli_query($data, $sql);
+$service_list = mysqli_fetch_all($result, MYSQLI_ASSOC);
+
+$sql = "SELECT * FROM item";
+$result = mysqli_query($data, $sql);
+$material_list = mysqli_fetch_all($result, MYSQLI_ASSOC);
 
 ?>
 
@@ -69,6 +59,9 @@ if (isset($_REQUEST["id"])) {
                         <div class="col-md-6 col-sm-12">
                             <div class="title">
                                 <h4><i class="micon fa fa-cogs"> </i>Repair List</h4>
+                                <pre>
+                                    <?php print_r($material_list); ?>
+                                </pre>
                             </div>
                             <nav aria-label="breadcrumb" role="navigation">
                                 <ol class="breadcrumb">
@@ -90,7 +83,7 @@ if (isset($_REQUEST["id"])) {
 
                 <div class="card-box mb-30">
                     <div class="pd-20">
-                        <h4 class="text-blue h4">Repair List : <?php echo $imiNumber; ?></h4>
+                        <h4 class="text-blue h4">Repair List</h4>
                     </div>
                     <div class="pb-20">
                         <table class="data-table table responsive">
@@ -125,14 +118,12 @@ if (isset($_REQUEST["id"])) {
                             </div>
                             <div class="card-body rounded-0">
                                 <div class="container-fluid">
-                                    <form action="" id="entry-form">
-                                        <input type="hidden" name="id" value="">
+                                    <form action="#" id="entry-form">
                                         <fieldset>
                                             <div class="row">
                                                 <div class="form-group col-md-8">
                                                     <select name="client_id" id="client_id" class="form-control form-control-sm form-control-border select2" data-placeholder="Please Select Client Here">
                                                         <option value="" disabled></option>
-
                                                     </select>
                                                     <small class="text-muted px-4">Client Name</small>
                                                 </div>
@@ -144,7 +135,12 @@ if (isset($_REQUEST["id"])) {
                                                         <div class="row">
                                                             <div class="form-group col-md-9">
                                                                 <select id="service" class="form-control form-control-sm form-control-border select2" data-placeholder="Please Select Service Here">
-                                                                    <option value="" disabled selected></option>
+                                                                    <?php
+                                                                    foreach ($service_list as $service) {
+                                                                        echo '<option value="' . $service["sid"] . '" selected>' . $service["service"] . '</option>';
+                                                                    }
+                                                                    ?>
+
                                                                 </select>
                                                                 <small class="text-muted px-4">Service</small>
                                                             </div>
@@ -180,12 +176,20 @@ if (isset($_REQUEST["id"])) {
                                                         <legend class="text-muted border-bottom">Materials</legend>
                                                         <div class="row">
                                                             <div class="form-group col-md-9">
-                                                                <input type="text" id="material" class="form-control form-control-sm form-control-border">
-                                                                <small class="text-muted px-4">Material Name</small>
+                                                                <select id="material" class="form-control form-control-sm form-control-border select2" data-placeholder="Please Select Service Here">
+                                                                    <?php
+                                                                    foreach ($material_list as $item) {
+                                                                        echo '<option value="' . $item["itemCode"] . '" selected>' . $item["name"] . '</option>';
+                                                                    }
+                                                                    ?>
+
+                                                                </select>
+                                                                <small class="text-muted px-4">materials</small>
                                                             </div>
+
                                                             <div class="col-md-3">
-                                                                <input type="number" step="any" id="mcost" class="form-control form-control-sm form-control-border text-right" value="0.00">
-                                                                <small class="text-muted px-4">Cost</small>
+                                                                <input type="text" id="mcost" class="form-control form-control-sm form-control-border text-right" value="0.00" disabled>
+                                                                <small class="text-muted px-4">Fee</small>
                                                             </div>
                                                         </div>
                                                         <div class="row">
@@ -202,8 +206,8 @@ if (isset($_REQUEST["id"])) {
                                                             <thead>
                                                                 <tr class='bg-gradient-dark text-light'>
                                                                     <th class="text-center py-1"></th>
-                                                                    <th class="text-center py-1">Material Name</th>
-                                                                    <th class="text-center py-1">Cost</th>
+                                                                    <th class="text-center py-1">Service</th>
+                                                                    <th class="text-center py-1">Fee</th>
                                                                 </tr>
                                                             </thead>
                                                             <tbody></tbody>
@@ -262,123 +266,8 @@ if (isset($_REQUEST["id"])) {
                 </div>
 
 
-                <div class="content py-3">
-                    <div class="card card-outline card-dark rounded-0">
-                        <div class="card-header rounded-0">
-                            <h5 class="card-title text-primary">Repair Details</h5>
-                        </div>
-                        <div class="card-body">
-                            <div class="container-fluid">
-                                <div id="outprint">
-                                    <fieldset>
-                                        <div class="row">
-                                            <div class="col-12">
-                                                <table class="table table-bordered border-info">
-                                                    <colgroup>
-                                                        <col width="30%">
-                                                        <col width="70%">
-                                                    </colgroup>
-                                                    <tr>
-                                                        <th class="text-muted text-white bg-gradient-dark px-2 py-1">Code</th>
-                                                        <td></td>
-                                                    </tr>
-                                                    <tr>
-                                                        <th class="text-muted text-white bg-gradient-dark px-2 py-1">Client Name</th>
-                                                        <td></td>
-                                                    </tr>
-                                                </table>
-                                            </div>
-                                        </div>
-                                        <div class="row">
-                                            <div class="col-md-6">
-                                                <fieldset>
-                                                    <legend class="text-muted border-bottom">Services</legend>
-                                                    <table class="table table-stripped table-bordered" data-placeholder='true' id="service_list">
-                                                        <colgroup>
-                                                            <col width="70%">
-                                                            <col width="30%">
-                                                        </colgroup>
-                                                        <thead>
-                                                            <tr class='bg-gradient-dark text-light'>
-                                                                <th class="text-center py-1">Service</th>
-                                                                <th class="text-center py-1">Fee</th>
-                                                            </tr>
-                                                        </thead>
-                                                        <tbody>
 
-                                                            <tr>
-                                                                <td class="py-1 px-2"></td>
-                                                                <td class="py-1 px-2 text-right"></td>
-                                                            </tr>
 
-                                                        </tbody>
-                                                    </table>
-                                                </fieldset>
-                                            </div>
-                                            <div class="col-md-6">
-                                                <fieldset>
-                                                    <legend class="text-muted border-bottom">Materials</legend>
-                                                    <table class="table table-stripped table-bordered" data-placeholder='true' id="material_list">
-                                                        <colgroup>
-                                                            <col width="70%">
-                                                            <col width="30%">
-                                                        </colgroup>
-                                                        <thead>
-                                                            <tr class='bg-gradient-dark text-light'>
-                                                                <th class="text-center py-1">Material Name</th>
-                                                                <th class="text-center py-1">Cost</th>
-                                                            </tr>
-                                                        </thead>
-                                                        <tbody>
-
-                                                            <tr>
-                                                                <td class="py-1 px-2"></td>
-                                                                <td class="py-1 px-2 text-right"></td>
-                                                            </tr>
-
-                                                        </tbody>
-                                                    </table>
-                                                </fieldset>
-                                            </div>
-                                        </div>
-                                        <div class="row mt-3">
-                                            <div class="form-group col-md-12">
-                                                <h3><b>Total Payable Amount: <span id="total_amount" class="pl-3"></span></b></h3>
-                                            </div>
-                                        </div>
-                                        <div class="row">
-                                            <div class="form-group col-md-12">
-                                                <small class="text-muted px-2">Remarks</small><br>
-                                                <p></p>
-                                            </div>
-                                        </div>
-                                        <div class="row">
-                                            <div class="form-group col-md-4">
-                                                <small class="text-muted px-2">Payment Status</small><br>
-
-                                                <span class="rounded-pill badge badge-success ml-4">Paid</span>
-
-                                                <span class="rounded-pill badge badge-dark bg-gradiend-dark ml-4">Unpaid</span>
-
-                                            </div>
-                                            <div class="form-group col-md-4">
-                                                <small class="text-muted px-2">Status</small><br>
-
-                                            </div>
-                                        </div>
-                                    </fieldset>
-                                </div>
-
-                                <hr>
-                                <div class="rounded-0 text-center mt-3">
-                                    <a class="btn btn-sm btn-primary btn-flat" href="./?page=repairs/manage_repair&id="><i class="fa fa-edit"></i> Edit</a>
-                                    <button class="btn btn-sm btn-danger btn-flat" type="button" id="delete_data"><i class="fa fa-trash"></i> Delete</button>
-                                    <a class="btn btn-light border btn-flat btn-sm" href="./?page=repairs"><i class="fa fa-angle-left"></i> Back to List</a>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
 
 
                 <!-- js -->
@@ -392,6 +281,110 @@ if (isset($_REQUEST["id"])) {
                 <script src="src/plugins/datatables/js/responsive.bootstrap4.min.js"></script>
                 <!-- Datatable Setting js -->
                 <script src="vendors/scripts/datatable-setting.js"></script>
+
+
+                <script>
+                    function removeService(id) {
+                        $("#service-" + id).remove();
+                        calc_total();
+                    }
+
+                    function removeMaterial(id) {
+                        $("#material-" + id).remove();
+                        calc_total();
+                    }
+
+
+
+                    function calc_total() {
+                        var total = 0;
+                        $("#service_list tbody tr").each(function() {
+                            var feeText = $(this).find("td:last").text().trim();
+                            // Remove commas and parse as a float
+                            var fee = parseFloat(feeText.replace(/,/g, ""));
+                            // Add to the total
+                            total += fee;
+                        });
+                        $("#material_list tbody tr").each(function() {
+                            var feeText = $(this).find("td:last").text().trim();
+                            // Remove commas and parse as a float
+                            var fee = parseFloat(feeText.replace(/,/g, ""));
+                            // Add to the total
+                            total += fee;
+                        });
+                        $('#total_amount').text(parseFloat(total).toLocaleString('en-US', {
+                            style: "decimal",
+                            maximumFractionDigits: 2,
+                            minimumFractionDigits: 2
+                        }))
+                        $('input[name="total_amount"]').val(parseFloat(total))
+                    }
+
+                    function add_service(id, name, fee = '') {
+
+                        var tr = $('<tr id="service-' + id + '">')
+                        tr.append('<td class="px-2 py-1 text-center"><button class="btn btn-remove btn-rounded btn-sm btn-danger" onclick="removeService(' + id + ')"><i class="fa fa-trash"></i></button></td>')
+                        tr.attr('data-id', id)
+                        tr.append("<td class='px-2 py-1'>" + name + "</td>")
+
+                        var service_list = <?php echo json_encode($service_list); ?>;
+                        var service = service_list.find(e => e['sid'] == id)
+                        fee = service["cost"];
+                        tr.append("<td class='px-2 py-1 text-right'>" + (parseFloat(fee).toLocaleString('en-US', {
+                            style: 'decimal',
+                            maximumFractionFigits: 2,
+                            minimumFractionDigits: 2
+                        })) + "</td>")
+
+
+                        $('#service_list tbody').append(tr)
+                        calc_total()
+
+                    }
+
+                    function add_material(id, cost) {
+                        var tr = $('<tr id="material-' + id + '">')
+                        tr.append('<td class="px-2 py-1 text-center"><button class="btn btn-remove btn-rounded btn-sm btn-danger" onclick="removeMaterial(' + id + ')"><i class="fa fa-trash"></i></button></td>')
+                        tr.attr('data-id', id)
+                        tr.append("<td class='px-2 py-1'>" + id + "</td>")
+
+                        var material_list = <?php echo json_encode($material_list); ?>;
+                        var material = material_list.find(e => e['itemCode'] == id)
+                        fee = material["sellingPrice"];
+
+
+                        tr.append("<td class='px-2 py-1 text-right'>" + (parseFloat(fee).toLocaleString('en-US', {
+                            style: 'decimal',
+                            maximumFractionFigits: 2,
+                            minimumFractionDigits: 2
+                        })) + "</td>")
+                        $('#material_list tbody').append(tr)
+                        calc_total()
+                    }
+
+                    $(function() {
+                        $('#add_service').click(function() {
+                            var id = $('#service').val()
+                            var service = "Service"
+                            if ($('#service_list tbody tr[data-id="' + id + '"]').length > 0) {
+                                alert(" Service already listed.", 'warning')
+                                return false;
+                            }
+                            add_service(id, service)
+
+                        })
+                        $('#add_material').click(function() {
+                            var id = $('#material').val()
+                            var cost = $('#mcost').val()
+
+                            if ($('#material_list tbody tr[data-id="' + id + '"]').length > 0) {
+                                alert("Material already listed.", 'warning')
+                                return false;
+                            }
+                            add_material(id, cost)
+                        })
+                    })
+                </script>
 </body>
 
 </html>
