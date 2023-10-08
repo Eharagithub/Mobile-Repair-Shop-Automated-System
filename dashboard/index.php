@@ -5,13 +5,6 @@ if (isset($_REQUEST["logout"])) {
 }
 
 $conn = new mysqli('localhost', 'root', '', 'mobileshopdb');
-
-if (!isset($_SESSION["systemUserID"])) {
-	header("Location: ../login.php");
-}
-
-
-
 ?>
 <!DOCTYPE html>
 <html>
@@ -93,7 +86,7 @@ if (!isset($_SESSION["systemUserID"])) {
 								<div class="font-14 text-secondary weight-500">Total Currier Services</div>
 							</div>
 							<div class="widget-icon">
-								<div class="icon" data-color="#e83e8c"><span class="micon fa fa-wrench"></span></div>
+								<div class="icon" data-color="#e83e8c"><span class="micon fa fa-truck"></span></div>
 							</div>
 						</div>
 					</div>
@@ -110,7 +103,7 @@ if (!isset($_SESSION["systemUserID"])) {
 								<div class="font-14 text-secondary weight-500">Total Devices</div>
 							</div>
 							<div class="widget-icon">
-								<div class="icon" data-color="#fff"><i class="micon fa fa-check" aria-hidden="true"></i>
+								<div class="icon" data-color="#fff"><i class="micon fa fa-mobile" aria-hidden="true"></i>
 								</div>
 							</div>
 						</div>
@@ -128,7 +121,7 @@ if (!isset($_SESSION["systemUserID"])) {
 								<div class="font-14 text-secondary weight-500">Checking Repairs</div>
 							</div>
 							<div class="widget-icon">
-								<div class="icon" data-color="#6610f2"><i class="micon fa fa-calendar-check-o" aria-hidden="true"></i></div>
+								<div class="icon" data-color="#6610f2"><i class="micon fa fa-spinner" aria-hidden="true"></i></div>
 							</div>
 						</div>
 					</div>

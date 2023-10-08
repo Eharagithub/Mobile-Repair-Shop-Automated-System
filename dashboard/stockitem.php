@@ -77,7 +77,7 @@ if (isset($_GET['itemCode'])) {
 					<div class="row">
 						<div class="col-md-6 col-sm-12">
 							<div class="title">
-								<h4><i class="micon dw dw-user"></i>Stock Item</h4>
+								<h4><i class="micon fa fa-archive"></i>  Stock Item</h4>
 							</div>
 							<nav aria-label="breadcrumb" role="navigation">
 								<ol class="breadcrumb">
