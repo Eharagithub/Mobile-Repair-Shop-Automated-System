@@ -30,8 +30,6 @@ $material_list = mysqli_fetch_all($result, MYSQLI_ASSOC);
 
 ?>
 
-
-
 <!DOCTYPE html>
 <html>
 
@@ -202,17 +200,17 @@ $material_list = mysqli_fetch_all($result, MYSQLI_ASSOC);
                                                                     }
                                                                     ?>
                                                                     </select>
-                                                                    <small class="text-muted">  Materials</small>
+                                                                    <small class="text-muted px-4">  Materials</small>
                                                                 </div>
 
                                                                 <div class="form-group col-md-3">
-                                                                    <input type="text" id="mcost" class="form-control form-control-sm form-control-border text-right" value="0" style="padding: 10px;" disabled>
-                                                                    <small class="text-muted">Quantity</small>
+                                                                    <input type="text" id="unit" class="form-control form-control-sm form-control-border text-right" value="0.00" style="padding: 10px;" disabled>
+                                                                    <small class="text-muted px-4">Quantity</small>
                                                                 </div>
 
                                                                 <div class="form-group col-md-2">
                                                                     <input type="text" id="mcost" class="form-control form-control-sm form-control-border text-right" value="0.00" disabled>
-                                                                    <small class="text-muted">Fee</small>
+                                                                    <small class="text-muted px-4">Fee</small>
                                                                 </div>
                                                             </div>
                                                         </div>
@@ -227,12 +225,14 @@ $material_list = mysqli_fetch_all($result, MYSQLI_ASSOC);
                                                                 <col width="10%">
                                                                 <col width="65%">
                                                                 <col width="25%">
+                                                                
                                                             </colgroup>
                                                             <thead>
                                                                 <tr class='bg-gradient-dark text-light'>
                                                                     <th class="text-center py-1"></th>
-                                                                    <th class="text-center py-1">Service</th>
-                                                                    <th class="text-center py-1">Fee</th>
+                                                                    <th class="text-center py-1">Material</th>
+                                                                    <th class="text-center py-1">Quantity</th>
+                                                                    <th class="text-center py-1">Cost</th>
                                                                 </tr>
                                                             </thead>
                                                             <tbody></tbody>
@@ -374,11 +374,11 @@ $material_list = mysqli_fetch_all($result, MYSQLI_ASSOC);
                     }
 
                     //remove  added materials
-                    function add_material(id, cost) {
+                    function add_material(id,name, cost='') {
                         var tr = $('<tr id="material-' + id + '">')
                         tr.append('<td class="px-2 py-1 text-center"><button class="btn btn-remove btn-rounded btn-sm btn-danger" onclick="removeMaterial(' + id + ')"><i class="fa fa-trash"></i></button></td>')
                         tr.attr('data-id', id)
-                        tr.append("<td class='px-2 py-1'>" + id + "</td>")
+                        tr.append("<td class='px-2 py-1'>" + name + "</td>")
 
                         var material_list = <?php echo json_encode($material_list); ?>;
                         var material = material_list.find(e => e['itemCode'] == id)
@@ -393,6 +393,7 @@ $material_list = mysqli_fetch_all($result, MYSQLI_ASSOC);
                         $('#material_list tbody').append(tr)
                         calc_total()
                     }
+
 
                     $(function() {
                         //Add services
@@ -409,17 +410,17 @@ $material_list = mysqli_fetch_all($result, MYSQLI_ASSOC);
                         });
 
                         //Add materials
-                         $('#add_material').click(function() {
+                        $('#add_material').click(function() {
                             var id = $('#material').val();
-                            var materialName = $('#material option:selected').text(); // Get the selected option's text (material name)
-                            var cost = $('#mcost').val();
+                            var name = $('#material option:selected').text(); // Get the selected option's text (material name)
+                            //var cost = $('#mcost').val();
 
                             if ($('#material_list tbody tr[data-id="' + id + '"]').length > 0) {
                                 alert("Material already listed.", 'warning');
                                 return false;
                             }
 
-                            add_material(id, materialName, cost); // Add the material name to the list
+                            add_material(id, name); // Add the material name to the list
                         });
 
 
