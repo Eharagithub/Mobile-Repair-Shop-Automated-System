@@ -43,6 +43,8 @@
     color: #f0ebeb;
     font-size: 30px;
     text-align: center;
+    font-family:'Times New Roman', Times, serif;
+    font-weight: 700;
   }
   
   p {
@@ -55,6 +57,55 @@
     padding: 15rem;
 
   }
+  .card:hover {
+    background: #fff;
+    transition: .9s;
+    color:tomato;
+
+  }
+  /* Apply the hover effect to the Facebook icon */
+    a[href="https://www.facebook.com/Kasthuri mobile solutions"] i.bi-facebook {
+    color: #000; /* Default color (e.g., black) */
+    transition: color 0.3s; /* Smooth color transition over 0.3 seconds */
+  }
+
+  /* Add !important to ensure the style is applied */
+  a[href="https://www.facebook.com/Kasthuri mobile solutions"] i.bi-facebook:hover {
+    color: tomato !important; /* New color on hover  */
+  }
+
+  /* Apply the hover effect to the Twitter icon */
+    a[href="https://twitter.com/Kasthuri mobile solutions"] i.bi-twitter {
+    color: #000; /* Default color (e.g., black) */
+    transition: color 0.3s; /* Smooth color transition over 0.3 seconds */
+  }
+
+  /* Add !important to ensure the style is applied */
+  a[href="https://twitter.com/Kasthuri mobile solutions"] i.bi-twitter:hover {
+    color: tomato !important; /* New color on hover  */
+  }
+
+   /* Apply the hover effect to the linked in icon */
+   a[href="https://www.linkedin.com/Kasthuri mobile solutions"] i.bi-linkedin {
+    color: #000; /* Default color (e.g., black) */
+    transition: color 0.3s; /* Smooth color transition over 0.3 seconds */
+  }
+
+  /* Add !important to ensure the style is applied */
+  a[href="https://www.linkedin.com/Kasthuri mobile solutions"] i.bi-linkedin:hover {
+    color: tomato !important; /* New color on hover  */
+  }
+
+     /* Apply the hover effect to the inster icon */
+     a[href="https://www.instagram.com/Kasthuri mobile solutions"] i.bi-instagram {
+    color: #000; /* Default color (e.g., black) */
+    transition: color 0.3s; /* Smooth color transition over 0.3 seconds */
+  }
+
+  /* Add !important to ensure the style is applied */
+  a[href="https://www.instagram.com/Kasthuri mobile solutions"] i.bi-instagram:hover {
+    color: tomato !important; /* New color on hover  */
+  }
   
     </style>
 
@@ -66,14 +117,14 @@
   
  
  <!-- start interaction section -->
-<section class="p-5 bg-dark" style="background:#eae1e1;"  id="interaction" style="background:#eae1e1;">
+<section class="p-5 bg-#ddd" id="interaction">
   <div class="container py-5">
-    <h2 class="text-center text-white">Our Specialists</h2>
-    <p class="lead text-center text-white mb-5">Feel free to catch our specialists and get a beter job for your mobile phone. </p>
+    <h2 class="text-center text-black"style="color:black;">Our Specialists</h2>
+    <p class="lead text-center text-black mb-5" style="color:black;">Feel free to catch our specialists and get a beter job for your mobile phone. </p>
      
     <div class="row justify-content-center">
       <div class="col-md-6 col-lg-3">
-        <div class="card bg-light">
+        <div class="card" style="background-color: #e3e2e1;">
           <div class="card-body text-center p-51">
             <img src="im5.jpg" class="card-img-top rounded-circle mb-3" alt="John Doe">
             <h3 class="card-title mb-3">Owner Of the Shop</h3>
@@ -90,7 +141,7 @@
         </div>
       </div>
       <div class="col-md-6 col-lg-3">
-        <div class="card bg-light">
+        <div class="card" style="background-color: #e3e2e1;">
           <div class="card-body text-center p-51">
             <img src="im5.jpg" class="card-img-top rounded-circle mb-3" alt="John Doe">
             <h3 class="card-title mb-3">Hardware Specialist</h3>
@@ -105,7 +156,7 @@
         </div>
       </div>
       <div class="col-md-6 col-lg-3">
-        <div class="card bg-light">
+        <div class="card" style="background-color: #e3e2e1;">
           <div class="card-body text-center p-51">
             <img src="im5.jpg" class="card-img-top rounded-circle mb-3" alt="John Doe">
             <h3 class="card-title mb-3">Software Specialist</h3>
@@ -120,7 +171,7 @@
         </div>
       </div>
       <div class="col-md-6 col-lg-3">
-        <div class="card bg-light">
+        <div class="card" style="background-color: #e3e2e1;">
           <div class="card-body text-center p-51">
             <img src="im5.jpg" class="card-img-top rounded-circle mb-3" alt="John Doe">
             <h3 class="card-title mb-3">Our Delivery Partner </h3>

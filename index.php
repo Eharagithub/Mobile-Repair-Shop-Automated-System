@@ -42,7 +42,7 @@
               <p class="card-text">
                  Repaired by our expert technicians who are well experienced
               </p>
-              <a href="Servicess.php" class="btn btn-primary">
+              <a href="Servicess.php" class="custom-button">
                 Read more
               </a>
             </div>
@@ -64,7 +64,7 @@
               <p class="card-text">
                 We will repair your device perfectly and on time for delivery
               </p>
-              <a href="#" class="btn btn-primary">
+              <a href="Servicess.php" class="custom-button">
                 Read more
               </a>
             </div>
@@ -85,7 +85,7 @@
               <p class="card-text">
                 We use only original quality parts for your device
               </p>
-              <a href="#" class="btn btn-primary">
+              <a href="Servicess.php" class="custom-button">
                 Read more
               </a>
             </div>
@@ -107,7 +107,7 @@
               <p class="card-text">
                 We have been same location & Market for 5 years
               </p>
-              <a href="#" class="btn btn-primary">
+              <a href="Servicess.php" class="custom-button">
                 Read more
               </a>
             </div>
@@ -135,7 +135,7 @@
           <h1>Your Data is <span class="text-warning"> 100 % Safe</span> With Us</h1>
           <p>The biggest worry in giving a phone to repair is whether my phone date will be accessed or lost .At phonerepairs.lk we make sure your data inside the phone is safe & won’t be accessed.</p>
           
-          <a href="#" class="btn btn-primary mt-3"><i class="bi bi-chevron-right"></i>Read More</a>
+          <a href="#" class="custom-button mt-3"><i class="bi bi-chevron-right"></i>Read More</a>
         </div>
 
       </div>
