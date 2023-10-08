@@ -1,7 +1,10 @@
 <?php
+$customer_list=[];
 $service_list = [];
 $material_list = [];
 
+
+//made database connection
 $host = "localhost";
 $user = "root";
 $password = "";
@@ -12,7 +15,9 @@ $data = mysqli_connect($host, $user, $password, $db);
 if ($data === false) {
     die("connection error");
 }
-
+$sql = "SELECT * FROM customer";
+$result = mysqli_query($data, $sql);
+$customer_list = mysqli_fetch_all($result, MYSQLI_ASSOC);
 
 $sql = "SELECT * FROM services";
 $result = mysqli_query($data, $sql);
@@ -21,6 +26,7 @@ $service_list = mysqli_fetch_all($result, MYSQLI_ASSOC);
 $sql = "SELECT * FROM item";
 $result = mysqli_query($data, $sql);
 $material_list = mysqli_fetch_all($result, MYSQLI_ASSOC);
+
 
 ?>
 
@@ -49,7 +55,7 @@ $material_list = mysqli_fetch_all($result, MYSQLI_ASSOC);
 </head>
 
 <body>
-    <?php include_once("../Common/drower.php"); ?>
+    <?php include_once("../Common/drower.php"); ?><!--header-->
 
     <div class="main-container">
         <div class="pd-ltr-20 xs-pd-20-10">
@@ -59,9 +65,9 @@ $material_list = mysqli_fetch_all($result, MYSQLI_ASSOC);
                         <div class="col-md-6 col-sm-12">
                             <div class="title">
                                 <h4><i class="micon fa fa-cogs"> </i>Repair List</h4>
-                                <pre>
-                                    <?php print_r($material_list); ?>
-                                </pre>
+                              <!-- <pre>
+                                    <?php print_r($customer_list); ?>
+                                </pre>-->
                             </div>
                             <nav aria-label="breadcrumb" role="navigation">
                                 <ol class="breadcrumb">
@@ -108,6 +114,7 @@ $material_list = mysqli_fetch_all($result, MYSQLI_ASSOC);
                 <!-- Simple Datatable End -->
             </div>
         </div>
+        <!--invoice creation starts-->
         <div class="col-md-12 col-sm-12 mb-30">
             <div class="modal fade" id="add_technician" tabindex="-1" role="dialog" aria-labelledby="myLargeModalLabel" aria-hidden="true">
                 <div class="content py-3">
@@ -122,8 +129,12 @@ $material_list = mysqli_fetch_all($result, MYSQLI_ASSOC);
                                         <fieldset>
                                             <div class="row">
                                                 <div class="form-group col-md-8">
-                                                    <select name="client_id" id="client_id" class="form-control form-control-sm form-control-border select2" data-placeholder="Please Select Client Here">
-                                                        <option value="" disabled></option>
+                                                    <select name="customer_id" id="cutomer_id" class="form-control form-control-sm form-control-border select2" data-placeholder="Please Select Client Here">
+                                                         <?php
+                                                            foreach ($customer_list as $customer) {
+                                                                 echo '<option value="' . $customer["nic"] . '" selected>' . $customer["name"] . '</option>';
+                                                            }
+                                                        ?>
                                                     </select>
                                                     <small class="text-muted px-4">Client Name</small>
                                                 </div>
@@ -172,25 +183,33 @@ $material_list = mysqli_fetch_all($result, MYSQLI_ASSOC);
                                                     </fieldset>
                                                 </div>
                                                 <div class="col-md-6">
-                                                    <fieldset>
-                                                        <legend class="text-muted border-bottom">Materials</legend>
+                                                    <fieldset style="padding:0%;">
+                                                        <legend class="text-muted border-bottom" >Materials</legend>
                                                         <div class="row">
-                                                            <div class="form-group col-md-9">
-                                                                <select id="material" class="form-control form-control-sm form-control-border select2" data-placeholder="Please Select Service Here">
+                                                        <div class="form-row">
+                                                            <div class="form-row">
+                                                                <div class="form-group col-md-7">
+                                                                    <select id="material" class="form-control form-control-sm form-control-border select2" data-placeholder="Please Select Service Here">
                                                                     <?php
                                                                     foreach ($material_list as $item) {
                                                                         echo '<option value="' . $item["itemCode"] . '" selected>' . $item["name"] . '</option>';
                                                                     }
                                                                     ?>
+                                                                    </select>
+                                                                    <small class="text-muted">  Materials</small>
+                                                                </div>
 
-                                                                </select>
-                                                                <small class="text-muted px-4">materials</small>
-                                                            </div>
+                                                                <div class="form-group col-md-3">
+                                                                    <input type="text" id="mcost" class="form-control form-control-sm form-control-border text-right" value="0" style="padding: 10px;" disabled>
+                                                                    <small class="text-muted">Quantity</small>
+                                                                </div>
 
-                                                            <div class="col-md-3">
-                                                                <input type="text" id="mcost" class="form-control form-control-sm form-control-border text-right" value="0.00" disabled>
-                                                                <small class="text-muted px-4">Fee</small>
+                                                                <div class="form-group col-md-2">
+                                                                    <input type="text" id="mcost" class="form-control form-control-sm form-control-border text-right" value="0.00" disabled>
+                                                                    <small class="text-muted">Fee</small>
+                                                                </div>
                                                             </div>
+                                                        </div>
                                                         </div>
                                                         <div class="row">
                                                             <div class="form-group col-md-4">
