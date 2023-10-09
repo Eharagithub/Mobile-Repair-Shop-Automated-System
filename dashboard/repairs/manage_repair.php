@@ -1,25 +1,7 @@
 
 
                           
-                                               
-                            </div>
-                        </fieldset>
-                        
-                        <hr class="bg-navy">
-                        <center>
-                            <button class="btn btn-sm bg-primary btn-flat mx-2 col-3">Save</button>
-                            <?php if(isset($id)): ?>
-                                <a class="btn btn-sm btn-light border btn-flat mx-2 col-3" href="./?page=repairs/view_details&id=<?= $id ?>">Cancel</a>
-                            <?php else: ?>
-                                <a class="btn btn-sm btn-light border btn-flat mx-2 col-3" href="./?page=repairs">Cancel</a>
-                            <?php endif; ?>
-                        </center>
-                    </form>
-                </div>
-            </div>
-        </div>
-    </div>
-</div>
+                           
 <script>
     var service_list  = $.parseJSON('<?= json_encode(isset($service_list) ? $service_list : []) ?>')
     var material_list  = $.parseJSON('<?= json_encode(isset($material_list) ? $material_list : []) ?>')
