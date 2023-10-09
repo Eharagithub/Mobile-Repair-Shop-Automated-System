@@ -1,20 +1,4 @@
-<?php 
-if(isset($_GET['id'])){
-    $qry = $conn->query("SELECT * FROM `repair_list` where id = '{$_GET['id']}'");
-    if($qry->num_rows > 0){
-        $res = $qry->fetch_array();
-        foreach($res as $k => $v){
-            if(!is_numeric($k)){
-                $$k = $v;
-            }
-        }
-    
-    $service_list = $conn->query("SELECT rs.*,s.service FROM `repair_services` rs inner join service_list s on rs.service_id = s.id where rs.repair_id = '{$id}' ")->fetch_all(MYSQLI_ASSOC);
-    $material_list = $conn->query("SELECT * FROM `repair_materials` where repair_id = '{$id}' ")->fetch_all(MYSQLI_ASSOC);
-        
-    }
-}
-?>
+
 <div class="content py-3">
     <div class="container-fluid">
         <div class="card card-outline card-info rounded-0 shadow">
