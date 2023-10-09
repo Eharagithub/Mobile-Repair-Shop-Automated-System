@@ -1,21 +1,4 @@
-<?php 
-if(isset($_GET['id'])){
-    $qry = $conn->query("SELECT r.*,CONCAT(c.lastname,', ',c.firstname,' ',c.middlename) as client from `repair_list` r inner join client_list c on r.client_id = c.id where r.id = '{$_GET['id']}'");
-    if($qry->num_rows > 0){
-        $res = $qry->fetch_array();
-        foreach($res as $k => $v){
-            if(!is_numeric($k)){
-                $$k = $v;
-            }
-        }
-    }else{
-    echo "<script>alert('Unknown Repair ID'); location.replace('./?page=repairs');</script>";
-    }
-}
-else{
-    echo "<script>alert('Repair ID is required'); location.replace('./?page=repairs');</script>";
-}
-?>
+
 <style>
     @media screen {
         .show-print{
