@@ -1,30 +1,5 @@
 
-<div class="content py-3">
-    <div class="container-fluid">
-        <div class="card card-outline card-info rounded-0 shadow">
-            <div class="card-header rounded-0">
-                <h4 class="card-title"><?= isset($code) ? "Update Repair Details" : "Add New Repair" ?></h4>
-            </div>
-            <div class="card-body rounded-0">
-                <div class="container-fluid">
-                    <form action="" id="entry-form">
-                        <input type="hidden" name="id" value="<?= isset($id) ? $id : '' ?>">
-                        <fieldset>
-                            <div class="row">
-                                <div class="form-group col-md-8">
-                                   <select name="client_id" id="client_id" class="form-control form-control-sm form-control-border select2" data-placeholder="Please Select Client Here">
-                                       <option value="" disabled <?= !isset($client_id) ? "selected" : "" ?>></option>
-                                       <?php 
-                                       $clients = $conn->query("SELECT *,CONCAT(lastname,', ',firstname,' ', middlename) as `name` FROM `client_list` order by CONCAT(lastname,', ',firstname,' ', middlename) asc");
-                                       while($row = $clients->fetch_assoc()):
-                                        if($row['delete_flag'] == 1 && (!isset($client_id) || (isset($client_id) && $client_id != $row['id'])))
-                                            continue;
-                                       ?>
-                                       <option value="<?= $row['id'] ?>" <?= isset($client_id) && $client_id == $row['id'] ? "selected" : "" ?>><?= $row['name'] ?></option>
-                                       <?php endwhile; ?>
-                                   </select>
-                                    <small class="text-muted px-4">Client Name</small>
-                                </div>
+
                             </div>
                             <div class="row">
                                 <div class="col-md-6">
