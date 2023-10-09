@@ -1,39 +1,6 @@
 
 
-                            </div>
-                            <div class="row">
-                                <div class="col-md-6">
-                                    <fieldset>
-                                        <legend class="text-muted border-bottom">Services</legend>
-                                        <div class="row">
-                                            <div class="form-group col-md-9">
-                                                <select  id="service" class="form-control form-control-sm form-control-border select2" data-placeholder="Please Select Service Here">
-                                            <option value="" disabled selected></option>
-                                                <?php 
-                                                $service_arr = [];
-                                                $services = $conn->query("SELECT * FROM `service_list`  order by `service` asc");
-                                                while($row = $services->fetch_assoc()):
-                                                    $service_arr[$row['id']] = $row;
-                                                    if($row['delete_flag'] == 1)
-                                                        continue;
-                                                ?>
-                                                <option value="<?= $row['id'] ?>" <?= isset($service_id) && $service_id == $row['id'] ? "selected" : "" ?>><?= $row['service'] ?></option>
-                                                <?php endwhile; ?>
-                                                </select>
-                                                <small class="text-muted px-4">Service</small>
-                                            </div>
-                                            <div class="col-md-3">
-                                                <input type="text" id="cost" class="form-control form-control-sm form-control-border text-right" value="0.00" disabled>
-                                                <small class="text-muted px-4">Fee</small>
-                                            </div>
-                                        </div>
-                                        <div class="row">
-                                            <div class="form-group col-md-4">
-                                                <button class="btn btn-flat btn-primary btn-sm" type="button" id="add_service"><i class="fa fa-plus"></i> Add to List</button>
-                                            </div>
-                                        </div>
-                                        <table class="table table-stripped table-bordered" data-placeholder='true' id="service_list">
-                                            <colgroup>
+                          
                                                 <col width="10%">
                                                 <col width="65%">
                                                 <col width="25%">
