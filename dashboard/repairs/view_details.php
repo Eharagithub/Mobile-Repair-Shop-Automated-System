@@ -1,20 +1,5 @@
 
-<style>
-    @media screen {
-        .show-print{
-            display:none;
-        }
-    }
-    img#repair-banner{
-		height: 45vh;
-		width: 20vw;
-		object-fit: scale-down;
-		object-position: center center;
-	}
-    .table.border-info tr, .table.border-info th, .table.border-info td{
-        border-color:var(--dark);
-    }
-</style>
+
 <div class="content py-3">
     <div class="card card-outline card-dark rounded-0">
         <div class="card-header rounded-0">
