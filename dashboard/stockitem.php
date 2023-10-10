@@ -179,7 +179,7 @@ if (isset($_GET['itemCode'])) {
 							<thead>
 								<tr>
 									<th>Item Code</th>
-									<th>Mterial Name</th>
+									<th>Material Name</th>
 									<th>In Stock</th>
 									<th>Cost</th>
 									<th>Unit</th>
