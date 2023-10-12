@@ -315,6 +315,7 @@ $material_list = mysqli_fetch_all($result, MYSQLI_ASSOC);
 
 
                 <script>
+                    //remove services & materials
                     function removeService(id) {
                         $("#service-" + id).remove();
                         calc_total();
@@ -326,7 +327,7 @@ $material_list = mysqli_fetch_all($result, MYSQLI_ASSOC);
                     }
 
 
-
+                    //calculate the total payble amount
                     function calc_total() {
                         var total = 0;
                         $("#service_list tbody tr").each(function() {
@@ -351,6 +352,25 @@ $material_list = mysqli_fetch_all($result, MYSQLI_ASSOC);
                         $('input[name="total_amount"]').val(parseFloat(total))
                     }
 
+                    //fee will display when service drop down selected
+                    $(function() {
+                        // Attach an event listener to the service dropdown
+                        $('#service').change(function() {
+                            var id = $(this).val();
+                            var serviceName = $('#service option:selected').text();
+
+                            if (id && serviceName) {
+                                var service_list = <?php echo json_encode($service_list); ?>;
+                                var service = service_list.find(e => e['sid'] == id);
+                                var fee = service["cost"];
+
+                                // Update the "Fee" input field with the selected service's fee
+                                $('#cost').val(fee);
+                            }
+                        });
+                    });
+
+                    //add services
                     function add_service(id, name, fee = '') {
 
                         var tr = $('<tr id="service-' + id + '">')
@@ -363,17 +383,16 @@ $material_list = mysqli_fetch_all($result, MYSQLI_ASSOC);
                         fee = service["cost"];
                         tr.append("<td class='px-2 py-1 text-right'>" + (parseFloat(fee).toLocaleString('en-US', {
                             style: 'decimal',
-                            maximumFractionFigits: 2,
+                            maximumFractionDigits: 2,
                             minimumFractionDigits: 2
                         })) + "</td>")
-
 
                         $('#service_list tbody').append(tr)
                         calc_total()
 
                     }
 
-                    //remove  added materials
+                    //added materials
                     function add_material(id,name, cost='') {
                         var tr = $('<tr id="material-' + id + '">')
                         tr.append('<td class="px-2 py-1 text-center"><button class="btn btn-remove btn-rounded btn-sm btn-danger" onclick="removeMaterial(' + id + ')"><i class="fa fa-trash"></i></button></td>')
