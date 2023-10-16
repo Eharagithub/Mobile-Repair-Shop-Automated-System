@@ -224,7 +224,7 @@ $material_list = mysqli_fetch_all($result, MYSQLI_ASSOC);
 
                                                                 <div class="form-group col-md-2">
                                                                      <!--The amount of the items-->
-                                                                    <input type="text" id="mcost" class="form-control form-control-sm form-control-border text-right" value="0.00" disabled>
+                                                                    <input type="text" id="price" class="form-control form-control-sm form-control-border text-right" value="0.00" disabled>
                                                                     <small class="text-muted px-4">Price</small>
                                                                 </div>
                                                             </div>
@@ -414,28 +414,73 @@ $material_list = mysqli_fetch_all($result, MYSQLI_ASSOC);
                         calc_total()
 
                     }
-          
-         
+                    
 
+                    // Add an event listener to the "unit" input field for quantity changes.
+                        $('#unit').on('input', function() {
+                            updateMaterialPrice();
+                        });
+         
+                    // Function to update the material price based on quantity.
+                        function updateMaterialPrice() {
+                            var id = $('#material').val();
+                            var material_list = <?php echo json_encode($material_list); ?>;
+                            var selectedMaterial = material_list.find(e => e['itemCode'] == id);
+                            var quantity = parseFloat($('#unit').val());
+
+                            if (selectedMaterial && !isNaN(quantity)) {
+                                var price = selectedMaterial["sellingPrice"];
+                                var totalPrice = price * quantity;
+
+                                // Update the "Price" input field with the calculated total price.
+                                $('#price').val(totalPrice);
+                            } else {
+                                // If the selected material is not found or the quantity is not a number, clear the price input field.
+                                $('#price').val('');
+                            }
+                        }
+
+                    // Attach the "updateMaterialPrice" function to the "unit" input field on page load.
+                        $(function() {
+                            updateMaterialPrice();
+                        });
+
+                    // Add an event listener to the "material" dropdown for material changes.
+                        $(function() {
+                            $('#material').change(function() {
+                                updateMaterialPrice();
+                            });
+                        });
+
+                   
                     //added materials
                     function add_material(id,name, cost='') {
+                        // Create a new row for the material in the material list table.
                         var tr = $('<tr id="material-' + id + '">')
+                        // Add a button to remove the material from the list.
                         tr.append('<td class="px-2 py-1 text-center"><button class="btn btn-remove btn-rounded btn-sm btn-danger" onclick="removeMaterial(' + id + ')"><i class="fa fa-trash"></i></button></td>')
+                        // Set the data-id attribute to the material's ID.
                         tr.attr('data-id', id)
+                        // Add the material name to the row.
                         tr.append("<td class='px-2 py-1'>" + name + "</td>")
 
                         var material_list = <?php echo json_encode($material_list); ?>;
                         var material = material_list.find(e => e['itemCode'] == id)
-                        fee = material["sellingPrice"];
+                       
+                        // Calculate the material price based on the quantity (unit).
+                        var unit = parseFloat($('#unit').val());
+                        var price = material["sellingPrice"] * unit;
 
-
-                        tr.append("<td class='px-2 py-1 text-right'>" + (parseFloat(fee).toLocaleString('en-US', {
+                         // Add the calculated price to the row and format it.
+                        tr.append("<td class='px-2 py-1 text-right'>" + (parseFloat(price).toLocaleString('en-US', {
                             style: 'decimal',
                             maximumFractionFigits: 2,
                             minimumFractionDigits: 2
-                        })) + "</td>")
+                        })) + "</td>");
+                        
                         $('#material_list tbody').append(tr)
                         calc_total()
+                        updateMaterialPrice();
                     }
 
 
