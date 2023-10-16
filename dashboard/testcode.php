@@ -186,8 +186,8 @@ $material_list = mysqli_fetch_all($result, MYSQLI_ASSOC);
                                                             <thead>
                                                                 <tr class='bg-gradient-dark text-light'>
                                                                     <th class="text-center py-1"></th>
-                                                                    <th class="text-center py-1">Service</th>
-                                                                    <th class="text-center py-1">Fee</th>
+                                                                    <th class="text-center py-1" style="color: black;">Service</th>
+                                                                    <th class="text-center py-1" style="color: black;">Fee</th>
                                                                 </tr>
                                                             </thead>
                                                             <tbody></tbody>
@@ -224,7 +224,7 @@ $material_list = mysqli_fetch_all($result, MYSQLI_ASSOC);
 
                                                                 <div class="form-group col-md-2">
                                                                      <!--The amount of the items-->
-                                                                    <input type="text" id="price" class="form-control form-control-sm form-control-border text-right" value="0.00" disabled>
+                                                                    <input type="text" id="price" class="form-control form-control-sm form-control-border text-right" value="0.00" style="padding: 10px;" disabled>
                                                                     <small class="text-muted px-4">Price</small>
                                                                 </div>
                                                             </div>
@@ -247,9 +247,9 @@ $material_list = mysqli_fetch_all($result, MYSQLI_ASSOC);
                                                             <thead>
                                                                 <tr class='bg-gradient-dark text-light'>
                                                                     <th class="text-center py-1"></th>
-                                                                    <th class="text-center py-1">Material</th>
-                                                                    <th class="text-center py-1">Quantity</th>
-                                                                    <th class="text-center py-1">Cost</th>
+                                                                    <th class="text-center py-1" style="color: black;">Material</th>
+                                                                    <th class="text-center py-1" style="color: black;">Quantity</th>
+                                                                    <th class="text-center py-1" style="color: black;">Cost</th>
                                                                 </tr>
                                                             </thead>
                                                             <tbody>
@@ -455,6 +455,12 @@ $material_list = mysqli_fetch_all($result, MYSQLI_ASSOC);
                    
                     //added materials
                     function add_material(id,name, cost='') {
+                        var unit = parseFloat($('#unit').val()); // Get the quantity entered by the user.
+
+                            if (isNaN(unit) || unit <= 0) {
+                                alert('Please enter a valid quantity greater than 0.');
+                                return;
+                            }
                         // Create a new row for the material in the material list table.
                         var tr = $('<tr id="material-' + id + '">')
                         // Add a button to remove the material from the list.
@@ -471,14 +477,18 @@ $material_list = mysqli_fetch_all($result, MYSQLI_ASSOC);
                         var unit = parseFloat($('#unit').val());
                         var price = material["sellingPrice"] * unit;
 
+                         // Add the quantity and calculated price to the row and format it.
+                        tr.append("<td class='px-2 py-1'>" + unit + "</td>");
                          // Add the calculated price to the row and format it.
                         tr.append("<td class='px-2 py-1 text-right'>" + (parseFloat(price).toLocaleString('en-US', {
                             style: 'decimal',
                             maximumFractionFigits: 2,
                             minimumFractionDigits: 2
                         })) + "</td>");
-                        
+
+                        // Append the row to the material list table.
                         $('#material_list tbody').append(tr)
+                          // Calculate the total amount after adding the material.
                         calc_total()
                         updateMaterialPrice();
                     }
