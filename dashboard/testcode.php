@@ -56,26 +56,29 @@ $material_list = mysqli_fetch_all($result, MYSQLI_ASSOC);
     <?php include_once("../Common/drower.php"); ?><!--header-->
 
     <div class="main-container">
-        <div class="pd-ltr-20 xs-pd-20-10">
-            <div class="min-height-200px">
+        <div class="pd-ltr-20 xs-pd-20-10"> <!-- This div element has two classes applied to it for styling: "pd-ltr-20" and "xs-pd-20-10" -->
+            <div class="min-height-200px"> <!-- This div element has a minimum height of 200 pixels. -->
                 <div class="page-header">
                     <div class="row">
-                        <div class="col-md-6 col-sm-12">
+                        <div class="col-md-6 col-sm-12"> <!-- This div element is a responsive column with a width of 6 columns on medium screens (col-md-6) and 12 columns on small screens (col-sm-12). -->
                             <div class="title">
-                                <h4><i class="micon fa fa-cogs"> </i>Repair List</h4>
+                                <h4><i class="micon fa fa-cogs"> </i>Repair List</h4> <!--icon for Rpair List-->
                               <!-- <pre>
                                     <?php print_r($customer_list); ?>
                                 </pre>-->
                             </div>
                             <nav aria-label="breadcrumb" role="navigation">
                                 <ol class="breadcrumb">
-                                    <li class="breadcrumb-item"><a href="index.html">Home</a></li>
+                                    <li class="breadcrumb-item"><a href="index.php">Home</a></li>
                                     <li class="breadcrumb-item active" aria-current="page">Repair List</li>
                                 </ol>
                             </nav>
                         </div>
-                        <div class="col-md-6 col-sm-12 text-right">
+                        <div class="col-md-6 col-sm-12 text-right"> <!-- This div is a responsive column with a width of 6 columns on medium screens (col-md-6) and 12 columns on small screens (col-sm-12). The content is aligned to the right (text-right). Inside this column, there is a dropdown element. -->
                             <div class="dropdown">
+
+                                <!-- This anchor element serves as a button with a primary style (btn-primary). It triggers a modal (popup)
+                                 with the id "add_technician" and prevents the modal from being closed when clicking outside it (data-backdrop="static"). -->
                                 <a href="#" class="btn btn-primary" data-backdrop="static" data-toggle="modal" data-target="#add_technician">
                                     Add New
                                 </a>
@@ -87,13 +90,13 @@ $material_list = mysqli_fetch_all($result, MYSQLI_ASSOC);
 
                 <div class="card-box mb-30">
                     <div class="pd-20">
-                        <h4 class="text-blue h4">Repair List</h4>
+                        <h4 class="text-blue h4">Repair List</h4> <!-- H4 with blue color text-->
                     </div>
                     <div class="pb-20">
                         <table class="data-table table responsive">
                             <thead>
                                 <tr>
-                                    <th>#</th>
+                                    <th>No:</th>
                                     <th>Date Created</th>
                                     <th>Code</th>
                                     <th>Client</th>
@@ -130,11 +133,14 @@ $material_list = mysqli_fetch_all($result, MYSQLI_ASSOC);
                                             <div class="row">
                                                 <div class="form-group col-md-8">
                                                     <select name="customer_id" id="cutomer_id" class="form-control form-control-sm form-control-border select2" data-placeholder="Please Select Client Here">
-                                                         <?php
+                                                        
+                                                        <?php
+                                                          // Loop through the $customer_list array and create an <option> element for each customer.
                                                             foreach ($customer_list as $customer) {
                                                                  echo '<option value="' . $customer["nic"] . '" selected>' . $customer["name"] . '</option>';
                                                             }
                                                         ?>
+                                                        
                                                     </select>
                                                     <small class="text-muted px-4">Client Name</small>
                                                 </div>
@@ -148,7 +154,9 @@ $material_list = mysqli_fetch_all($result, MYSQLI_ASSOC);
                                                         <div class="row">
                                                             <div class="form-group col-md-9">
                                                                 <select id="service" class="form-control form-control-sm form-control-border select2" data-placeholder="Please Select Service Here">
+                                                                    
                                                                     <?php
+                                                                     // Loop through the $Service_list array and create an <option> element for each service.
                                                                     foreach ($service_list as $service) {
                                                                         echo '<option value="' . $service["sid"] . '" selected>' . $service["service"] . '</option>';
                                                                     }
@@ -158,10 +166,12 @@ $material_list = mysqli_fetch_all($result, MYSQLI_ASSOC);
                                                                 <small class="text-muted px-4">Service</small>
                                                             </div>
                                                             <div class="col-md-3">
+                                                                <!--The amount of the service-->
                                                                 <input type="text" id="cost" class="form-control form-control-sm form-control-border text-right" value="0.00" disabled>
                                                                 <small class="text-muted px-4">Fee</small>
                                                             </div>
                                                         </div>
+                                                        <!--add services to the list in invoice-->
                                                         <div class="row">
                                                             <div class="form-group col-md-4">
                                                                 <button class="btn btn-flat btn-primary btn-sm" type="button" id="add_service"><i class="fa fa-plus"></i> Add to List</button>
@@ -194,27 +204,33 @@ $material_list = mysqli_fetch_all($result, MYSQLI_ASSOC);
                                                             <div class="form-row">
                                                                 <div class="form-group col-md-7">
                                                                     <select id="material" class="form-control form-control-sm form-control-border select2" data-placeholder="Please Select Service Here">
+                                                                    
                                                                     <?php
+                                                                    // Loop through the $material_list array and create an <option> element for each item.
                                                                     foreach ($material_list as $item) {
                                                                         echo '<option value="' . $item["itemCode"] . '" selected>' . $item["name"] . '</option>';
                                                                     }
                                                                     ?>
+
                                                                     </select>
                                                                     <small class="text-muted px-4">  Materials</small>
                                                                 </div>
 
                                                                 <div class="form-group col-md-3">
-                                                                    <input type="text" id="unit" class="form-control form-control-sm form-control-border text-right" value="0.00" style="padding: 10px;" disabled>
+                                                                     <!--The quantity of items used-->
+                                                                    <input type="text" id="unit" class="form-control form-control-sm form-control-border text-right" value="0" style="padding: 10px;" >
                                                                     <small class="text-muted px-4">Quantity</small>
                                                                 </div>
 
                                                                 <div class="form-group col-md-2">
+                                                                     <!--The amount of the items-->
                                                                     <input type="text" id="mcost" class="form-control form-control-sm form-control-border text-right" value="0.00" disabled>
-                                                                    <small class="text-muted px-4">Fee</small>
+                                                                    <small class="text-muted px-4">Price</small>
                                                                 </div>
                                                             </div>
                                                         </div>
                                                         </div>
+                                                        <!--add materials to the list in invoice-->
                                                         <div class="row">
                                                             <div class="form-group col-md-4">
                                                                 <button class="btn btn-flat btn-primary btn-sm" type="button" id="add_material"><i class="fa fa-plus"></i> Add to List</button>
@@ -224,6 +240,7 @@ $material_list = mysqli_fetch_all($result, MYSQLI_ASSOC);
                                                             <colgroup>
                                                                 <col width="10%">
                                                                 <col width="65%">
+                                                                <col width="25%">
                                                                 <col width="25%">
                                                                 
                                                             </colgroup>
@@ -235,7 +252,9 @@ $material_list = mysqli_fetch_all($result, MYSQLI_ASSOC);
                                                                     <th class="text-center py-1">Cost</th>
                                                                 </tr>
                                                             </thead>
-                                                            <tbody></tbody>
+                                                            <tbody>
+
+                                                            </tbody>
                                                         </table>
                                                     </fieldset>
                                                 </div>
@@ -281,12 +300,12 @@ $material_list = mysqli_fetch_all($result, MYSQLI_ASSOC);
                                         </fieldset>
 
                                         <hr class="bg-navy">
+
+                                        <!--buttond-->
                                         <center>
-                                            <button class="btn btn-sm bg-primary btn-flat mx-2 col-3">Save</button>
+                                            <button class="btn btn-sm bg-primary btn-flat mx-2 col-3" style="color: white;">Save</button>
 
-                                            <button class="btn btn-sm btn-light border btn-flat mx-2 col-3">Cancel</a>
-
-
+                                            <button class="btn btn-sm btn-light border btn-flat mx-2 col-3" >Cancel</a>
 
                                         </center>
                                     </form>
@@ -315,14 +334,18 @@ $material_list = mysqli_fetch_all($result, MYSQLI_ASSOC);
 
 
                 <script>
-                    //remove services & materials
+                    
                     function removeService(id) {
+                        // Remove the element with the ID "service-{id}" from the DOM.
                         $("#service-" + id).remove();
+                        // Calculate the total (presumably for a list of services) after removal.
                         calc_total();
                     }
 
                     function removeMaterial(id) {
+                         // Remove the element with the ID "material-{itemCode}" from the DOM.
                         $("#material-" + id).remove();
+                         // Calculate the total (presumably for a list of materials) after removal.
                         calc_total();
                     }
 
@@ -391,6 +414,8 @@ $material_list = mysqli_fetch_all($result, MYSQLI_ASSOC);
                         calc_total()
 
                     }
+          
+         
 
                     //added materials
                     function add_material(id,name, cost='') {
