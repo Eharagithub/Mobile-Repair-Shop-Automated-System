@@ -61,7 +61,7 @@ if (isset($_REQUEST["createlocation"])) {
 							<nav aria-label="breadcrumb" role="navigation">
 								<ol class="breadcrumb">
 									<li class="breadcrumb-item"><a href="index.php">Home</a></li>
-									<li class="breadcrumb-item active" aria-current="page">Location list</li>
+									<li class="breadcrumb-item active" aria-current="page">Sub Office list</li>
 								</ol>
 							</nav>
 						</div>
@@ -137,7 +137,7 @@ if (isset($_REQUEST["createlocation"])) {
 
 				<div class="card-box mb-30">
 					<div class="pd-20">
-						<h4 class="text-blue h4">Location List</h4>
+						<h4 class="text-blue h4">Sub Office List</h4>
 					</div>
 					<div class="pb-20">
 						<table class="data-table table responsive">
