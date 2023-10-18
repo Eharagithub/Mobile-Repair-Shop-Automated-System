@@ -152,7 +152,7 @@ if (isset($_REQUEST["createClient"])) {
 						<table class="data-table table responsive">
 							<thead>
 								<tr>
-									<th>#</th>
+									<th>Customer NIC</th>
 									<th>Full Name</th>
 									<th>Address</th>
 									<th>Phone 1</th>

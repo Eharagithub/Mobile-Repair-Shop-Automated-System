@@ -9,10 +9,10 @@ CREATE TABLE customer (
 );
 
 INSERT INTO `customer` (`nic`, `name`, `address`, `phone1`, `phone2`, `email`) VALUES
-('199632458123', 'kebuni', 'matara', '0771234567', '0711234567', 'kebuni@gmail.com'),
+('199632458123', 'Kebuni', 'Matara', '0771234567', '0711234567', 'kebuni@gmail.com'),
 ('200012345678', 'Dasuni', 'Kadawatha', '1703633667', '0173633667', 'kebuni@gmail.com'),
-('200041300147', 'kanchana', 'panadura', '0114563698', '0740231478', 'kanchana@gmail.com'),
-('200145821361', 'upani', 'nugegoda', '0774582361', '0712596324', 'upani@gmail.com'),
+('200041300147', 'Kanchana', 'Panadura', '0114563698', '0740231478', 'kanchana@gmail.com'),
+('200145821361', 'Upani', 'Nugegoda', '0774582361', '0712596324', 'upani@gmail.com'),
 ('200176800124', 'Lakna', 'Kurunagala', '0748965321', '0789632258', 'lak@gmail.com');
 
 CREATE TABLE delivery (
@@ -68,10 +68,10 @@ CREATE TABLE services (
 );
 
 INSERT INTO `services` (`sid`, `service`, `description`, `cost`, `date`) VALUES
-(1, 'Diagnosing of Issues', 'Diagnosing of errors for better use', 2500, '2023-10-01'),
+(1, 'Diagnosing of Issues', 'Diagnosing of errors for better use', 1500, '2023-10-01'),
 (2, 'Software Installation', 'Insertion of softwares for all devices', 2500, '2023-10-02'),
-(3, 'Phone Setting', 'Setting up the phone for proper usage', 2500, '2023-10-01'),
-(4, 'Phone Unlock', 'Unlocking of accidentally locked phones', 2500, '2023-10-02');
+(3, 'Phone Setting', 'Setting up the phone for proper usage', 500, '2023-10-01'),
+(4, 'Phone Unlock', 'Unlocking of accidentally locked phones', 400, '2023-10-02');
 
 CREATE TABLE item (
   itemCode varchar(255) NOT NULL,
@@ -84,8 +84,10 @@ CREATE TABLE item (
 );
 
 INSERT INTO `item` (`itemCode`, `name`, `stock`, `cost`, `unit`, `sellingPrice`) VALUES
-('1', 'battery', 50, 500, 'Samsung', 1500),
-('2', 'display', 45, 1000, 'Samsung', 1500);
+('1', 'Battery', 50, 500, 'units', 1500);
+('2', 'Display', 45, 1000, 'units', 1500);
+('3', 'Antena', 50, 400, 'units', 500);
+('4', 'Battery Charger', 25, 550, 'units', 600);
 
 CREATE TABLE technician (
   empNo int NOT NULL,
@@ -132,8 +134,8 @@ CREATE TABLE device (
 );
 
 INSERT INTO `device` (`imiNumber`, `brand`, `model`, `extra`, `nic`) VALUES
-('324567890912', 'Aapple', '7', 'plus', '200176800124'),
-('3524678512', 'samsung', 'A32', 'A series', '200041300147'),
+('324567890912', 'Apple', 'A7', 'plus', '200176800124'),
+('3524678512', 'Samsung', 'A32', 'A series', '200041300147'),
 ('457821345', 'Samsung', 'A21s', 'A series', '199632458123');
 
 CREATE TABLE job (

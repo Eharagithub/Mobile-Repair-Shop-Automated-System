@@ -138,7 +138,7 @@ if (!isset($_SESSION["systemUserID"])) {
                 <?php } ?>
 
 
-                <?php if (($_SESSION["systemUserType"] == "ADMIN") || ($_SESSION["systemUserType"] == "BR")) { ?>
+                <?php if (($_SESSION["systemUserType"] == "ADMIN")) { ?>
                     <li>
                         <a href="delivary.php" class="dropdown-toggle no-arrow">
                             <span class="micon fa fa-truck"></span><span class="mtext">Courier Service</span>
@@ -191,6 +191,15 @@ if (!isset($_SESSION["systemUserID"])) {
                     <li>
                         <a href="settings.php" class="dropdown-toggle no-arrow">
                             <span class="micon dw dw-settings2"></span><span class="mtext"> Settings</span>
+                        </a>
+                    </li>
+                <?php } ?>
+
+                <?php if (($_SESSION["systemUserType"] == "BR") ) { ?>
+                    <li>
+                        <a href="courierservice.php" class="dropdown-toggle no-arrow">
+                            <span class="micon fa fa-truck"></span><span class="mtext">Delivery Details</span>
+
                         </a>
                     </li>
                 <?php } ?>
