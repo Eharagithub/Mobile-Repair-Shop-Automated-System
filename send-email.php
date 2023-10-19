@@ -15,7 +15,7 @@ $message = $_POST["message"];
 
 	//Connection object
 	$conn = new mysqli($servername, $username ,$password, $dbname);
-	$sql="INSERT INTO inquries(fullname,email,Message) VALUES('$name','$email','$message')";
+	$sql="INSERT INTO inquries(fullname,email,Message) VALUES('$fullname','$email','$message')";
 	$result = mysqli_query($conn,$sql);
 
 

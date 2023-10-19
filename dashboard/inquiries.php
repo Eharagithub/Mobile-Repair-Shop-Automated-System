@@ -56,6 +56,42 @@
                         </tr>
                         </thead>
                         <tbody>
+                        <?php
+    // Create a database connection
+    $servername = "localhost";
+    $username = "root";
+    $password = "";
+    $dbname = "mobileshopdb"; // Name of your database
+
+    $conn = new mysqli($servername, $username, $password, $dbname);
+
+    // Check connection
+    if ($conn->connect_error) {
+        die("Connection failed: " . $conn->connect_error);
+    }
+
+    // Fetch data from the "inquiries" table
+    $sql = "SELECT * FROM inquries";
+    $result = $conn->query($sql);
+
+  // Check if there are rows in the result
+  if ($result->num_rows > 0) {
+    while ($row = $result->fetch_assoc()) {
+        echo "<tr>";
+        echo "<td>" . $row["mid"] . "</td>";
+        echo "<td>" . $row["fullname"] . "</td>";
+        echo "<td>" . $row["email"] . "</td>";
+        echo "<td>" . $row["message"] . "</td>";
+       // echo "<td>" . $row["Timestamp"] . "</td>";
+        echo "</tr>";
+    }
+} else {
+    echo "<tr><td colspan='6'>No records found</td></tr>";
+}
+
+// Close the database connection
+$conn->close();
+?>
                         <tr>
                             <td class="text-center"></td>
                             <td>Kanchana Saranga</td>
