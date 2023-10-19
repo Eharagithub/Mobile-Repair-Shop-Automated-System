@@ -193,6 +193,7 @@ if (isset($_REQUEST["createStatus"])) {
 												</div>
 											<form action="" target="" method="POST" onsubmit="return checkpassword ()">
 
+
 												<div class="input-group custom">
 												<div class="col-md-6 col-sm-12">
 													<div class="form-group">
@@ -200,6 +201,9 @@ if (isset($_REQUEST["createStatus"])) {
 																<input class="form-control form-control-lg" type="text" name ="jobserviceid" required>
 															</div>
 												</div>
+
+												<div class="col-sm-6">
+												
 												<div class="col-md-6 col-sm-12">
 													<div class="form-group">
 																<label>Job ID</label>

@@ -99,7 +99,7 @@ if (!isset($_SESSION["systemUserID"])) {
 
                 <?php if (($_SESSION["systemUserType"] == "TECH")) { ?>
                     <li>
-                        <a href="status.php" class="dropdown-toggle no-arrow">
+                        <a href="testcode.php" class="dropdown-toggle no-arrow">
                             <span class="micon dw dw-house"></span><span class="mtext"> Customer Status</span>
                         </a>
                     </li>

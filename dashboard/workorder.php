@@ -112,11 +112,8 @@ if (isset($_REQUEST["createjob"])) {
 						echo "<tr>" .
 							"<td>" . $row["id"] . "</td>";
 						echo "<td>" . $row["jobDate"] . "</td>";
-						echo "<td>" . $row["jobDate"] . "</td>";
-						echo "<td>" . $row["jobDate"] . "</td>";
 						echo "<td>" . $row["systemuserId"] . "</td>";
 						echo "<td>" . $row["deviceId"] . "</td>";
-						echo "<td>" . $row["jobDate"] . "</td>";
 						echo 	'<td>';
 						echo 		'<div class="dropdown" onclick="setSelectedCustomer(' . $row["id"] . ')';
 						echo 			'<a class="btn btn-link font-24 p-0 line-height-1 no-arrow dropdown-toggle" href="#.php?id=<?php echo $row[\'nic\']; ?>" role="button" data-toggle="dropdown">';
@@ -158,11 +155,8 @@ if (isset($_REQUEST["createjob"])) {
 								<tr>
 									<th>Order No</th>
 									<th>Date</th>
-									<th>Customer NIC</th>
-									<th>Delivary ID</th>
 									<th>User ID</th>
 									<th>Device ID</th>
-									<th>Location ID</th>
 									<th>Action</th>
 								</tr>
 

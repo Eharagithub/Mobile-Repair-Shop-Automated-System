@@ -155,7 +155,6 @@ if (isset($_REQUEST["createuser"])) {
 							<th>Address</th>
 							<th>Phone</th>
 							<th>Email</th>
-							<th>Type</th>
 							<th>Password</th>
 							<th>locid</th>
 							<th>Action</th>
@@ -223,12 +222,7 @@ if (isset($_REQUEST["createuser"])) {
 																<input class="form-control form-control-lg" type="text" name ="email" placeholder="abc@gmail.com" Pattern="[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,3}" required>
 															</div>
 												</div>
-												<div class="col-md-12 col-sm-12">
-													<div class="form-group">
-																<label>Type</label>
-																<input class="form-control form-control-lg" type="text" name ="type" placeholder="Type" required>
-															</div>
-												</div>
+						
 												<div class="col-md-12 col-sm-12">
 													<div class="form-group">
 																<label>Password</label>

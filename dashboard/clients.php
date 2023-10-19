@@ -118,14 +118,22 @@ if (isset($_REQUEST["createClient"])) {
 							echo 			'<a class="btn btn-link font-24 p-0 line-height-1 no-arrow dropdown-toggle" href="#.php?id=<?php echo $row[\'nic\']; ?>" role="button" data-toggle="dropdown">';
 							echo 				'<i class="dw dw-more"></i>';
 							echo 			'</a>';
-
+											//Drop down for view the row
 							echo 			'<div class="dropdown-menu dropdown-menu-right dropdown-menu-icon-list">';
-							echo 				'<a class="dropdown-item" href="#" data-toggle="modal" data-target="#view"><i class="dw dw-eye"></i> View</a>';
-							echo 				'<a class="dropdown-item" href="#"><i class="dw dw-edit2"></i> Edit</a>';
-							echo 				'<a class="dropdown-item" href="#" data-toggle="modal" data-target="#delete"><i class="dw dw-delete-3"></i> Delete</a>';
+							echo 				'<a class="dropdown-item" href="#" onclick="viewCustomer(\'' . $row['nic'] . '\', \'' . $row['name'] . '\')">
+													<i class="dw dw-eye"></i> View </a>';
+											//Drop down for edit the row		
+							//echo 		        '<a class="dropdown-item" href="#" onclick="editService(\'' . $row['nic'] . '\', \'' . $row['description'] . '\', \'' . $row['cost'] . '\', \'' . $row['date'] . '\')">
+								//					<i class="dw dw-edit"></i> Edit</a>';
+											//Drop down for delete the row
+							echo 				'<a class="dropdown-item delete-service" href="#" data-service-id="' . $row['nic'] . '">
+													<i class="dw dw-delete-3"></i> Delete</a>';
+						  
+					
 							echo 			'</div>';
 		 							
 							echo"</tr>";
+							
 							
 							
 					}
@@ -243,6 +251,64 @@ if (isset($_REQUEST["createClient"])) {
 					</div>
 				</div>
 			</div>
+			<!-- View Service Modal -->
+			<div class="modal fade" id="view" tabindex="-1" role="dialog" aria-labelledby="viewModalLabel" aria-hidden="true">
+    			<div class="modal-dialog" role="document">
+        			<div class="modal-content">
+            			<div class="modal-header">
+                			<h5 class="modal-title" id="viewModalLabel">Customer Details</h5>
+                			<button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                    			<span aria-hidden="true">&times;</span>
+                			</button>
+            			</div>
+            			<div class="modal-body">
+                		<!-- Display service details here -->
+                			<p><strong>NIC:</strong> <span id="viewNic"></span></p>
+                			<p><strong>Name:</strong> <span id="viewName"></span></p>
+                			<!-- Add more fields as needed -->
+            			</div>
+            			<div class="modal-footer">
+                			<button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+            			</div>
+        			</div>
+    			</div>
+			</div>
+
+			<!-- Edit Service Modal -->
+			<div class="modal fade" id="editServiceModal" tabindex="-1" role="dialog" aria-labelledby="editServiceModalLabel" aria-hidden="true">
+    			<div class="modal-dialog" role="document">
+        			<div class="modal-content">
+            			<div class="modal-header">
+                			<h5 class="modal-title" id="editServiceModalLabel">Edit Service</h5>
+                			<button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                    			<span aria-hidden="true">&times;</span>
+                			</button>
+            			</div>
+            		<div class="modal-body">
+                	<!-- Edit service form fields go here -->
+					<form id="editServiceForm" method="POST" action="services.php">
+
+    					<input type="hidden" id="editServiceId" name="editServiceId" value="">
+    					<div class="form-group">
+        					<label for="editServiceName">Service Name</label>
+       				 		<input type="text" class="form-control" id="editServiceName" name="editServiceName">
+    					</div>
+
+    					<div class="form-group">
+        					<label for="editServiceCost">Service Cost</label>
+        					<input type="text" class="form-control" id="editServiceCost" name="editServiceCost">
+						</div>
+    				
+					</form>
+
+           			</div>
+            		<div class="modal-footer">
+                		<button type="button" class="btn btn-secondary" data-dismiss="modal" >Close</button>
+                		<button type="button" class="btn btn-primary" onclick="submitEditForm()">Save Changes</button>
+			
+           			</div>
+        		</div>
+    		</div>
 			 <!-- Delete modal -->
 			<div class="col-md-4 col-sm-12 mb-30">
 				<div class="modal fade" id="delete" tabindex="-1" role="dialog" aria-labelledby="myLargeModalLabel"
@@ -270,6 +336,59 @@ if (isset($_REQUEST["createClient"])) {
 			<script src="src/plugins/datatables/js/responsive.bootstrap4.min.js"></script>
 			<!-- Datatable Setting js -->
 			<script src="vendors/scripts/datatable-setting.js"></script>
+			
+
+			<!--view function-->
+			<script>
+    			function viewCustomer(nic, name) {
+        		// Set the data in the modal
+        		document.getElementById("viewNic").textContent = nic;
+        		document.getElementById("viewName").textContent = name;
+        
+       			 // Open the modal
+        		$('#view').modal('show');
+    			}
+			</script>
+
+
+			<!--edit function-->
+			<script>
+    			function editCustomer(	nic,name,address,phone1,phone2,email) {
+        		// Populate the edit modal form fields with the data from the selected row
+        		document.getElementById("editCusId").value = nic;
+        		document.getElementById("editCusName").value = name;
+				
+        		// Populate other form fields as needed
+        
+        		// Open the edit modal
+        		$('#editCustomerModal').modal('show');
+    			}
+
+    			
+    			function submitEditForm() {
+        		// Submit the edit form
+        		document.getElementById("editCustomerForm").submit();
+				}
+			</script>
+
+			<!--delete function-->
+			<script>
+    			// Handle delete button click
+    			$(document).on('click', '.delete-service', function(e) {
+        		e.preventDefault();
+
+        		// Get the service ID from the data attribute
+        		var nicToDelete = $(this).data('nic');
+
+        		// Show a confirmation dialog
+        		var confirmDelete = confirm('Are you sure you want to delete this service?');
+
+        		if (confirmDelete) {
+            	// Redirect to the delete page with the service ID as a parameter
+            	window.location.href = 'delete_service.php?serviceId=' + nicIdToDelete;
+       			 }
+    			});
+			</script>
 </body>
 
 </html>

@@ -216,7 +216,7 @@ function getAllFromTableAsOption($name, $value, $html)
 											</select>
 										</div>
 									</div>
-
+   
 									<div class="col-sm-6">
 										<div class="form-group">
 											<label>Location To</label>
