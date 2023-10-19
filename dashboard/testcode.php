@@ -124,6 +124,8 @@ $material_list = mysqli_fetch_all($result, MYSQLI_ASSOC);
                             <div class="card-header rounded-0">
                                 <h4 class="card-title">Add New Repair</h4>
                             </div>
+                            <form action="" target="" method="POST" onsubmit="return checkpassword ()">
+                            
                             <div class="card-body rounded-0">
                                 <div class="container-fluid">
                                     <form action="#" id="entry-form">
@@ -303,10 +305,13 @@ $material_list = mysqli_fetch_all($result, MYSQLI_ASSOC);
 
                                         <!--buttond-->
                                         <center>
-                                            <button class="btn btn-sm bg-primary btn-flat mx-2 col-3" style="color: white;">Save</button>
-
-                                            <button class="btn btn-sm btn-light border btn-flat mx-2 col-3" >Cancel</a>
-
+                                        <div class="col-md-12 col-sm-12">
+											<div class="form-group">
+												<input type="submit" class="btn btn-primary" value="Submit" name="createService">
+												<input type="reset" class="btn btn-danger" value="Cancel" data-backdrop="static" data-toggle="modal" data-target="#add_technician">
+											</div>
+										</div>
+                                     
                                         </center>
                                     </form>
                                 </div>
