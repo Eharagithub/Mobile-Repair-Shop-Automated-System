@@ -7,7 +7,7 @@ $username = "root";
 $password = "";
 $dbname = "mobileshopdb";
 
-$name = $_POST["fullname"];
+$fullname = $_POST["name"];
 $email = $_POST["email"];
 $message = $_POST["message"];
 
