@@ -118,15 +118,21 @@ if (isset($_REQUEST["createStatus"])) {
 							echo"<td>" . $row["remarks"] . "</td>";
                             echo"<td>" . $row["date"] . "</td>";
 							echo 	'<td>';
-							echo 		'<div class="dropdown" onclick="setSelectedCustomer('.$row["jobserviceid"].')';
 							echo 			'<a class="btn btn-link font-24 p-0 line-height-1 no-arrow dropdown-toggle" href="#.php?id=<?php echo $row[\'nic\']; ?>" role="button" data-toggle="dropdown">';
 							echo 				'<i class="dw dw-more"></i>';
 							echo 			'</a>';
-
+											//Drop down for view the row
 							echo 			'<div class="dropdown-menu dropdown-menu-right dropdown-menu-icon-list">';
-							echo 				'<a class="dropdown-item" href="#" data-toggle="modal" data-target="#view"><i class="dw dw-eye"></i> View</a>';
-							echo 				'<a class="dropdown-item" href="#"><i class="dw dw-edit2"></i> Edit</a>';
-							echo 				'<a class="dropdown-item" href="#" data-toggle="modal" data-target="#delete"><i class="dw dw-delete-3"></i> Delete</a>';
+							echo 				'<a class="dropdown-item" href="#" onclick="viewstatus(\'' . $row['jobid'] . '\', \'' . $row['jobserviceid'] . '\', \'' . $row['amount'] . '\',\'' . $row['nic'] . '\')">
+													<i class="dw dw-eye"></i> View </a>';
+											//Drop down for edit the row		
+							//echo 		        '<a class="dropdown-item" href="#" onclick="editCustomer(\'' . $row['nic'] . '\', \'' . $row['name'] . '\', \'' . $row['address'] . '\', \'' . $row['phone1'] . '\')">
+								//					<i class="dw dw-edit"></i> Edit</a>';
+											//Drop down for delete the row
+							echo 				'<a class="dropdown-item delete-service" href="#" data-service-id="' . $row['jobid'] . '">
+													<i class="dw dw-delete-3"></i> Delete</a>';
+						  
+					
 							echo 			'</div>';
 		 							
 							echo"</tr>";
@@ -264,6 +270,30 @@ if (isset($_REQUEST["createStatus"])) {
 					</div>
 				</div>
 			</div>
+				<!-- View CorierService Modal -->
+		<div class="modal fade" id="view" tabindex="-1" role="dialog" aria-labelledby="viewModalLabel" aria-hidden="true">
+    			<div class="modal-dialog" role="document">
+        			<div class="modal-content">
+            			<div class="modal-header">
+                			<h5 class="modal-title" id="viewModalLabel">Courier Service Details</h5>
+                			<button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                    			<span aria-hidden="true">&times;</span>
+                			</button>
+            			</div>
+            			<div class="modal-body">
+                		<!-- Display service details here -->
+                			<p><strong>ID:</strong> <span id="viewJobid"></span></p>
+                			<p><strong>Job Service Id:</strong> <span id="viewJobservice"></span></p>
+							<p><strong>Amount:</strong> <span id="viewAmount"></span></p>
+							<p><strong>NIC:</strong> <span id="viewNic"></span></p>
+                			<!-- Add more fields as needed -->
+            			</div>
+            			<div class="modal-footer">
+                			<button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+            			</div>
+        			</div>
+    			</div>
+			</div>
 			<!-- Delete modal -->
 			<div class="col-md-4 col-sm-12 mb-30">
 				<div class="modal fade" id="delete" tabindex="-1" role="dialog" aria-labelledby="myLargeModalLabel"
@@ -291,6 +321,18 @@ if (isset($_REQUEST["createStatus"])) {
 			<script src="src/plugins/datatables/js/responsive.bootstrap4.min.js"></script>
 			<!-- Datatable Setting js -->
 			<script src="vendors/scripts/datatable-setting.js"></script>
-</body>
 
+<script>
+    			function viewstatus(jobid, jobserviceid, amount,nic) {
+        		// Set the data in the modal
+        		document.getElementById("viewJobid").textContent = jobid;
+        		document.getElementById("viewJobservice").textContent = jobserviceid;
+				document.getElementById("viewAmount").textContent = amount;
+				document.getElementById("viewNic").textContent = nic;
+        
+       			 // Open the modal
+        		$('#view').modal('show');
+    			}
+			</script>
+</body>
 </html>

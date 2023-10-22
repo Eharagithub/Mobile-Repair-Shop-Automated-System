@@ -123,7 +123,7 @@ if (isset($_REQUEST["createClient"])) {
 							echo 				'<a class="dropdown-item" href="#" onclick="viewCustomer(\'' . $row['nic'] . '\', \'' . $row['name'] . '\')">
 													<i class="dw dw-eye"></i> View </a>';
 											//Drop down for edit the row		
-							//echo 		        '<a class="dropdown-item" href="#" onclick="editService(\'' . $row['nic'] . '\', \'' . $row['description'] . '\', \'' . $row['cost'] . '\', \'' . $row['date'] . '\')">
+							//echo 		        '<a class="dropdown-item" href="#" onclick="editCustomer(\'' . $row['nic'] . '\', \'' . $row['name'] . '\', \'' . $row['address'] . '\', \'' . $row['phone1'] . '\')">
 								//					<i class="dw dw-edit"></i> Edit</a>';
 											//Drop down for delete the row
 							echo 				'<a class="dropdown-item delete-service" href="#" data-service-id="' . $row['nic'] . '">
