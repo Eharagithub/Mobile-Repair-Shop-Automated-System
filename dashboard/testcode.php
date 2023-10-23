@@ -34,6 +34,8 @@ $result = mysqli_query($data, $sql);
 $material_list = mysqli_fetch_all($result, MYSQLI_ASSOC);
 
 
+
+
 ?>
 
 <!DOCTYPE html>
@@ -117,9 +119,10 @@ $material_list = mysqli_fetch_all($result, MYSQLI_ASSOC);
                         </table>
                     </div>
                 </div>
-                <!-- Simple Datatable End -->
             </div>
+                <!-- Simple Datatable End -->
         </div>
+    </div>
         <!--invoice creation starts-->
         <div class="col-md-12 col-sm-12 mb-30">
             <div class="modal fade" id="add_technician" tabindex="-1" role="dialog" aria-labelledby="myLargeModalLabel" aria-hidden="true">
@@ -128,7 +131,7 @@ $material_list = mysqli_fetch_all($result, MYSQLI_ASSOC);
                         <div class="card card-outline card-info rounded-0 shadow">
                             <div class="card-header rounded-0">
                                 <!-- Add an empty input field for invoice number with a readonly attribute -->
-                                <input type="text" id="invoiceNo" readonly>
+                                <input type="text" id="invoiceNo" value="<?php echo $invoiceNo; ?>" readonly>
 
                                 <h4 class="card-title">Add New Repair</h4>
                             </div>
@@ -328,7 +331,7 @@ $material_list = mysqli_fetch_all($result, MYSQLI_ASSOC);
                     </div>
                 </div>
             </div>
-
+        </div>
 
 
 
@@ -537,7 +540,7 @@ $material_list = mysqli_fetch_all($result, MYSQLI_ASSOC);
 
 
                     })
-                </script>
+             </script>
 </body>
 
 </html>
