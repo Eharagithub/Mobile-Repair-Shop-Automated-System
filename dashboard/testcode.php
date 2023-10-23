@@ -1,4 +1,6 @@
+<?php session_start(); ?>
 <?php
+$invoice=[];
 $customer_list=[];
 $service_list = [];
 $material_list = [];
@@ -15,6 +17,10 @@ $data = mysqli_connect($host, $user, $password, $db);
 if ($data === false) {
     die("connection error");
 }
+$sql = "SELECT invoiceNo FROM invoice";
+$result = mysqli_query($data, $sql);
+$invoice = mysqli_fetch_all($result, MYSQLI_ASSOC);
+
 $sql = "SELECT * FROM customer";
 $result = mysqli_query($data, $sql);
 $customer_list = mysqli_fetch_all($result, MYSQLI_ASSOC);
@@ -97,9 +103,8 @@ $material_list = mysqli_fetch_all($result, MYSQLI_ASSOC);
                             <thead>
                                 <tr>
                                     <th>No:</th>
-                                    <th>Date Created</th>
-                                    <th>Code</th>
-                                    <th>Client</th>
+                                    <th>Customer Name</th>
+                                    <th>Amount</th>
                                     <th>Status</th>
                                     <th>Action</th>
                                 </tr>
@@ -122,6 +127,9 @@ $material_list = mysqli_fetch_all($result, MYSQLI_ASSOC);
                     <div class="container-fluid">
                         <div class="card card-outline card-info rounded-0 shadow">
                             <div class="card-header rounded-0">
+                                <!-- Add an empty input field for invoice number with a readonly attribute -->
+                                <input type="text" id="invoiceNo" readonly>
+
                                 <h4 class="card-title">Add New Repair</h4>
                             </div>
                             <form action="" target="" method="POST" onsubmit="return checkpassword ()">
@@ -319,7 +327,7 @@ $material_list = mysqli_fetch_all($result, MYSQLI_ASSOC);
                         </div>
                     </div>
                 </div>
-
+            </div>
 
 
 
