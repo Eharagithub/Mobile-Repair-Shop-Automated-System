@@ -1,12 +1,12 @@
-<?php session_start(); ?>
 <?php
-$invoice=[];
-$customer_list=[];
+session_start();
+
+$invoice = [];
+$customer_list = [];
 $service_list = [];
 $material_list = [];
 
-
-//made database connection
+// Create a database connection
 $host = "localhost";
 $user = "root";
 $password = "";
@@ -15,8 +15,10 @@ $db = "mobileshopdb";
 $data = mysqli_connect($host, $user, $password, $db);
 
 if ($data === false) {
-    die("connection error");
+    die("Connection error: " . mysqli_connect_error());
 }
+
+// Fetch data from the database
 $sql = "SELECT invoiceNo FROM invoice";
 $result = mysqli_query($data, $sql);
 $invoice = mysqli_fetch_all($result, MYSQLI_ASSOC);
@@ -33,10 +35,49 @@ $sql = "SELECT * FROM item";
 $result = mysqli_query($data, $sql);
 $material_list = mysqli_fetch_all($result, MYSQLI_ASSOC);
 
+//database cretion to invoice
+
+// Define an array to map status values to their text representations
+$statusMap = [
+    0 => "Pending",
+    1 => "Approved",
+    2 => "In-progress",
+    3 => "Checking",
+    4 => "Done",
+    5 => "Cancelled",
+];
+
+// Handle form submission
+if (isset($_POST["createinvoice"])) {
+    $cusName = $_POST['customer_id']; // Get the customer name
+    $amount = $_POST['total_amount'];  // Get the total amount
+    $status = $statusMap[$_POST['status']];        // Get the status
+    $date = date("Y-m-d");             // Get the current date
+
+ 
+
+    $insertQuery = "INSERT INTO invoice (cusName, amount, status, date) VALUES (?, ?, ?, ?)";
+    $stmt = mysqli_prepare($data, $insertQuery);
+
+    // Bind parameters and execute the statement
+    mysqli_stmt_bind_param($stmt, "siss", $cusName, $amount, $status, $date);
+
+    if (mysqli_stmt_execute($stmt)) {
+        //echo "Invoice inserted successfully!";
+        // Redirect to a success page to avoid form resubmission
+        header("Location: testcode.php");
+        exit(); // Terminate the script
+    } else {
+        echo "Error: " . mysqli_error($data);
+    }
+}
 
 
-
+// Close the database connection
+mysqli_close($data);
 ?>
+
+
 
 <!DOCTYPE html>
 <html>
@@ -107,12 +148,42 @@ $material_list = mysqli_fetch_all($result, MYSQLI_ASSOC);
                                     <th>No:</th>
                                     <th>Customer Name</th>
                                     <th>Amount</th>
-                                    <th>Status</th>
+                                    <th>Payment Status</th>
+                                    <th>Date created</th>
                                     <th>Action</th>
                                 </tr>
 
                             </thead>
                             <tbody>
+
+                            <?php
+                            // Fetch invoice data from the database and populate the table
+                            $data = mysqli_connect($host, $user, $password, $db);
+
+                            if ($data === false) {
+                                die("Connection error: " . mysqli_connect_error());
+                            }
+
+                            $sql = "SELECT * FROM invoice";
+                            $result = mysqli_query($data, $sql);
+
+                            if ($result) {
+                                $counter = 1;
+                                while ($row = mysqli_fetch_assoc($result)) {
+                                    echo "<tr>";
+                                    echo "<td>" . $counter . "</td>";
+                                    echo "<td>" . $row['cusName'] . "</td>";
+                                    echo "<td>" . $row['amount'] . "</td>";
+                                    echo "<td>" . $row['status'] . "</td>";
+                                    echo "<td>" . $row['date'] . "</td>";
+                                    echo "<td>Action Button</td>"; // You can add an action button here
+                                    echo "</tr>";
+                                    $counter++;
+                                }
+                            }
+
+                            mysqli_close($data);
+                            ?>
 
                             </tbody>
 
@@ -120,7 +191,6 @@ $material_list = mysqli_fetch_all($result, MYSQLI_ASSOC);
                     </div>
                 </div>
             </div>
-                <!-- Simple Datatable End -->
         </div>
     </div>
         <!--invoice creation starts-->
@@ -130,12 +200,31 @@ $material_list = mysqli_fetch_all($result, MYSQLI_ASSOC);
                     <div class="container-fluid">
                         <div class="card card-outline card-info rounded-0 shadow">
                             <div class="card-header rounded-0">
-                                <!-- Add an empty input field for invoice number with a readonly attribute -->
-                                <input type="text" id="invoiceNo" value="<?php echo $invoiceNo; ?>" readonly>
 
+                                    <?php
+                                // Connect to the database
+                                $data = mysqli_connect($host, $user, $password, $db);
+
+                                if ($data === false) {
+                                    die("Connection error: " . mysqli_connect_error());
+                                }
+
+                                // Retrieve the latest invoiceNo from the database
+                                $sql = "SELECT MAX(invoiceNo) AS maxInvoiceNo FROM invoice";
+                                $result = mysqli_query($data, $sql);
+                                $row = mysqli_fetch_assoc($result);
+                                $latestInvoiceNo = $row['maxInvoiceNo'];
+
+                                // Close the database connection
+                                mysqli_close($data);
+                                ?>
+
+                                 <!-- Add an input field for invoice number with a readonly attribute -->
+                                <input type="text" id="invoiceNo" value="<?php echo $latestInvoiceNo + 1; ?>" readonly>
                                 <h4 class="card-title">Add New Repair</h4>
                             </div>
-                            <form action="" target="" method="POST" onsubmit="return checkpassword ()">
+                            <form method="post" action="testcode.php"> <!-- Replace "process_invoice.php" with the actual PHP script handling form submission -->
+                            <!--<form action="" target="" method="POST" onsubmit="return checkpassword ()">-->
                             
                             <div class="card-body rounded-0">
                                 <div class="container-fluid">
@@ -150,7 +239,7 @@ $material_list = mysqli_fetch_all($result, MYSQLI_ASSOC);
                                                         <?php
                                                           // Loop through the $customer_list array and create an <option> element for each customer.
                                                             foreach ($customer_list as $customer) {
-                                                                 echo '<option value="' . $customer["nic"] . '" selected>' . $customer["name"] . '</option>';
+                                                                 echo '<option value="' . $customer["name"] . '" selected>' . $customer["name"] . '</option>';
                                                             }
                                                         ?>
                                                         
@@ -316,12 +405,20 @@ $material_list = mysqli_fetch_all($result, MYSQLI_ASSOC);
 
                                         <!--buttond-->
                                         <center>
+
+                                        <div class="col-md-12 col-sm-12">
+                                            <div class="form-group">
+                                                <input type="submit" class="btn btn-primary" value="Submit" name="createinvoice">
+                                                <input type="reset" class="btn btn-danger" value="Cancel" data-backdrop="static" data-toggle="modal" data-target="#add_technician">
+                                            </div>
+                                        </div>
+                                        <!--
                                         <div class="col-md-12 col-sm-12">
 											<div class="form-group">
 												<input type="submit" class="btn btn-primary" value="Submit" name="createService">
 												<input type="reset" class="btn btn-danger" value="Cancel" data-backdrop="static" data-toggle="modal" data-target="#add_technician">
 											</div>
-										</div>
+										</div>-->
                                      
                                         </center>
                                     </form>
