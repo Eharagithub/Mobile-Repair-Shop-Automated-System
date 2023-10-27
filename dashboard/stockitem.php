@@ -269,7 +269,7 @@ if (isset($_GET['itemCode'])) {
 				</div> 
 			
 
-			<!-- View Service Modal -->
+			<!-- View stock Modal -->
 			<div class="modal fade" id="view" tabindex="-1" role="dialog" aria-labelledby="viewModalLabel" aria-hidden="true">
     			<div class="modal-dialog" role="document">
         			<div class="modal-content">
