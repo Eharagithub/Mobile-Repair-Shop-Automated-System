@@ -1,6 +1,17 @@
+<?php
+session_start();
+// Check if the invoiceNo is set in the session
+if (isset($_SESSION['invoiceNo'])) {
+    $invoiceNo = $_SESSION['invoiceNo'];
+} else {
+    $invoiceNo = 'N/A';
+}
+?>
+
 <!DOCTYPE html>
 <html>
 <head>
+    
   <style>
     body {
       font-family: Arial, sans-serif;
@@ -143,7 +154,8 @@
       <p><i class="fas fa-phone"></i> +94116 245 8365</p>
     </div>
     <div class="invoice-details">
-      <p>Invoice ID:</p>
+    <p>Invoice ID:</p>
+    <?php echo $invoiceNo; ?>  <!-- Invoice number will be displayed here -->
       <p>Creation Date:</p>
       <p>Status: <span class="status"></span></p>
     </div>

@@ -70,16 +70,18 @@ if (isset($_POST["createinvoice"])) {
     } else {
         echo "Error: " . mysqli_error($data);
     }
-
-  
-    
+}
+    // Your database query and loop
+while ($row = mysqli_fetch_assoc($result)) {
+    // ...
+    echo '<a class="dropdown-item" href="invoice.php?invoiceNo=' . $row['invoiceNo'] . '"><i class="dw dw-eye"></i> View</a>';
+    // Store the invoiceNo in a session variable
+    $_SESSION['invoiceNo'] = $row['invoiceNo'];
+    // ...
 }
 
 
-// Close the database connection
-mysqli_close($data);
 ?>
-
 
 
 <!DOCTYPE html>
@@ -652,6 +654,14 @@ mysqli_close($data);
 
                             add_material(id, name); // Add the material name to the list
                         });
+
+                       // Add this script in testcode.php /
+                       
+                        function viewInvoice(invoiceNo) {
+                            // Redirect to invoice.php with the selected invoiceNo
+                            window.location.href = 'invoice.php?invoiceNo=' + invoiceNo;
+                        }
+                       
 
 
                     })
