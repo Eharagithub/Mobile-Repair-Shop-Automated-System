@@ -92,7 +92,7 @@
 // Close the database connection
 $conn->close();
 ?>
-                        <tr>
+  <!--                      <tr>
                             <td class="text-center"></td>
                             <td>Kanchana Saranga</td>
                             <td>kanchanasaranga11@gmail.com</td>
@@ -117,7 +117,7 @@ $conn->close();
                         </tbody>
                     </table>
                 </div>
-            </div>
+            </div> -->
             <!-- Simple Datatable End -->
         </div>
     </div>
@@ -147,7 +147,7 @@ $conn->close();
             <div class="modal-footer">
                 <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
             </div>
-        </div>
+        </div>  
     </div>
 </div>
 
@@ -162,11 +162,11 @@ $conn->close();
 <script src="src/plugins/datatables/js/responsive.bootstrap4.min.js"></script>
 <script>
     // JavaScript code to handle the "View" button click
-    $('.view_details').click(function () {
-        // Assuming you have data for inquirer, email, and message
-        var inquirer = "John Doe"; // Replace with actual inquirer data
-        var email = "john@example.com"; // Replace with actual email data
-        var message = "This is the inquiry message."; // Replace with actual message data
+    $('.view_details').click(function () { 
+      // Assuming you have data for inquirer, email, and message
+        var inquirer = "  "; // Replace with actual inquirer data
+        var email = " "; // Replace with actual email data
+        var message = "This is the inquiry message."; // Replace with actual message data  
 
         // Populate the modal content
         $('#inquirerDetails').text(inquirer);

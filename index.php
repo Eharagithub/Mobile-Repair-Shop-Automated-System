@@ -176,11 +176,9 @@
 
     </div>
   </section>
- 
-   
   
 
-
+ 
   <footer id="Contact" class="page-footer p-5 text-md-left">
     
     <div class="container py-5">
@@ -239,7 +237,7 @@
   </footer>
 
 
-  <!-- stert footer bottom -->
+      
   <footer class="p-3 bg-dark text-white text-center position-relative">
     <div class="container">
       <p class="mb-0">
@@ -252,13 +250,13 @@
 
     </div>
 
-  </footer>
+  </footer> 
 
-  <!-- end footer bottom -->
+
+ 
 
 
   
-       
     </body>
 
 </html>
