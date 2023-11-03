@@ -71,12 +71,17 @@ if (isset($_POST["createinvoice"])) {
         echo "Error: " . mysqli_error($data);
     }
 }
+    // Your database query and loop
+while ($row = mysqli_fetch_assoc($result)) {
+    // ...
+    echo '<a class="dropdown-item" href="invoice.php?invoiceNo=' . $row['invoiceNo'] . '"><i class="dw dw-eye"></i> View</a>';
+    // Store the invoiceNo in a session variable
+    $_SESSION['invoiceNo'] = $row['invoiceNo'];
+    // ...
+}
 
 
-// Close the database connection
-mysqli_close($data);
 ?>
-
 
 
 <!DOCTYPE html>
@@ -102,8 +107,10 @@ mysqli_close($data);
 </head>
 
 <body>
+    <!--drawer-->
     <?php include_once("../Common/drower.php"); ?><!--header-->
 
+    <!--top tab-->
     <div class="main-container">
         <div class="pd-ltr-20 xs-pd-20-10"> <!-- This div element has two classes applied to it for styling: "pd-ltr-20" and "xs-pd-20-10" -->
             <div class="min-height-200px"> <!-- This div element has a minimum height of 200 pixels. -->
@@ -176,9 +183,25 @@ mysqli_close($data);
                                     echo "<td>" . $row['amount'] . "</td>";
                                     echo "<td>" . $row['status'] . "</td>";
                                     echo "<td>" . $row['date'] . "</td>";
-                                    echo "<td>Action Button</td>"; // You can add an action button here
+                                    echo '<td>';
+                                    echo 		'<div class="dropdown">';// onclick="setSelectedInvoice('.$row["invoiceNo"].')>';
+                                    echo 			'<a class="btn btn-link font-24 p-0 line-height-1 no-arrow dropdown-toggle" href="#" role="button" data-toggle="dropdown">';
+                                    echo 				'<i class="dw dw-more"></i>';
+                                    echo 			'</a>';
+                                                    //Drop down for view the row
+                                    echo 			'<div class="dropdown-menu dropdown-menu-right dropdown-menu-icon-list">';
+                                    echo 				'<a class="dropdown-item" href="invoice.php"> 
+                                                            <i class="dw dw-eye"></i> View </a>';
+                                                    '</div>';
+                                                '<div>';
+                                            '</td>';
                                     echo "</tr>";
                                     $counter++;
+                                }
+
+                                function setSelectedInvoice($invoiceNo){
+                                    global $selectedInvoice;
+                                    $selectedInvoice = $invoiceNo;
                                 }
                             }
 
@@ -430,9 +453,6 @@ mysqli_close($data);
             </div>
         </div>
 
-
-
-
                 <!-- js -->
                 <script src="vendors/scripts/core.js"></script>
                 <script src="vendors/scripts/script.min.js"></script>
@@ -634,6 +654,14 @@ mysqli_close($data);
 
                             add_material(id, name); // Add the material name to the list
                         });
+
+                       // Add this script in testcode.php /
+                       
+                        function viewInvoice(invoiceNo) {
+                            // Redirect to invoice.php with the selected invoiceNo
+                            window.location.href = 'invoice.php?invoiceNo=' + invoiceNo;
+                        }
+                       
 
 
                     })
