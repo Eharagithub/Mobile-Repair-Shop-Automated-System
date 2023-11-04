@@ -71,14 +71,6 @@ if (isset($_POST["createinvoice"])) {
         echo "Error: " . mysqli_error($data);
     }
 }
-    // Your database query and loop
-while ($row = mysqli_fetch_assoc($result)) {
-    // ...
-    echo '<a class="dropdown-item" href="invoice.php?invoiceNo=' . $row['invoiceNo'] . '"><i class="dw dw-eye"></i> View</a>';
-    // Store the invoiceNo in a session variable
-    $_SESSION['invoiceNo'] = $row['invoiceNo'];
-    // ...
-}
 
 
 ?>

@@ -70,6 +70,8 @@ CREATE TABLE inquries (
   PRIMARY KEY (mid)
 ); 
 
+
+
 CREATE TABLE item (
   itemCode varchar(255) NOT NULL,
   name varchar(255) NOT NULL,
