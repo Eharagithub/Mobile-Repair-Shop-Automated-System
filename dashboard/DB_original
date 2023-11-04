@@ -1,0 +1,143 @@
+CREATE TABLE customer (
+  nic varchar(20) NOT NULL,
+  name varchar(100) NOT NULL,
+  address varchar(250) NOT NULL,
+  phone1 varchar(100) NOT NULL,
+  phone2 varchar(100) DEFAULT NULL,
+  email varchar(100) DEFAULT NULL,
+  PRIMARY KEY (nic)
+);
+CREATE TABLE delivery (
+  empNo int NOT NULL,
+  nic varchar(20) NOT NULL,
+  dname varchar(100) NOT NULL,
+  daddress varchar(250) NOT NULL,
+  phone varchar(100) NOT NULL,
+  email varchar(100) DEFAULT NULL,
+  PRIMARY KEY (empNo)
+);
+CREATE TABLE inquries (
+  mid int NOT NULL AUTO_INCREMENT,
+  fullname varchar(255) NOT NULL,
+  contact int NOT NULL,
+  email varchar(255) NOT NULL,
+  message varchar(255) NOT NULL,
+  status int NOT NULL,
+  date date NOT NULL,
+  isOpened char(1) NOT NULL,
+  PRIMARY KEY (mid)
+); 
+CREATE TABLE location (
+  locid int NOT NULL AUTO_INCREMENT,
+  lname varchar(100) NOT NULL,
+  laddress varchar(250) NOT NULL,
+  phone1 varchar(100) NOT NULL,
+  phone2 varchar(100) DEFAULT NULL,
+  email varchar(100) NOT NULL,
+  PRIMARY KEY (locid)
+);
+CREATE TABLE services (
+  sid int NOT NULL AUTO_INCREMENT,
+  service varchar(255) NOT NULL,
+  description varchar(255) NOT NULL,
+  cost float(10) NOT NULL,
+  date date NOT NULL,
+  PRIMARY KEY (sid)
+);
+CREATE TABLE item (
+  itemCode varchar(255) NOT NULL,
+  name varchar(255) NOT NULL,
+  stock int NOT NULL,
+  cost float(10) NOT NULL,
+  unit varchar(255) NOT NULL,
+  sellingPrice float(10) DEFAULT NULL,
+  PRIMARY KEY (itemCode)
+);
+CREATE TABLE technician (
+  empNo int NOT NULL,
+  nic varchar(20) NOT NULL,
+  tname varchar(100) NOT NULL,
+  taddress varchar(250) NOT NULL,
+  phone varchar(100) NOT NULL,
+  email varchar(100) DEFAULT NULL,
+  PRIMARY KEY (empNo)
+) ;
+CREATE TABLE systemuser (
+  empNo int NOT NULL,
+  nic varchar(20) NOT NULL,
+  uname varchar(100) NOT NULL,
+  uaddress varchar(250) NOT NULL,
+  phone varchar(100) NOT NULL,
+  email varchar(100) NOT NULL,
+  password varchar(100) NOT NULL,
+  locid int NOT NULL,
+  type varchar(255) NOT NULL,
+  PRIMARY KEY (empNo),
+  FOREIGN KEY (locid) REFERENCES location (locid)
+);
+CREATE TABLE device (
+  imiNumber varchar(100) NOT NULL,
+  brand varchar(100) NOT NULL,
+  model varchar(100) NOT NULL,
+  extra varchar(250) DEFAULT NULL,
+  nic varchar(20) NOT NULL,
+  PRIMARY KEY (imiNumber),
+  FOREIGN KEY (nic) REFERENCES customer (nic)
+);
+CREATE TABLE job (
+  id int NOT NULL AUTO_INCREMENT,
+  jobDate date NOT NULL,
+  systemuserId int NOT NULL,
+  deviceId varchar(100) NOT NULL,
+  isPaid char(1) NOT NULL,
+  PRIMARY KEY (id),
+  FOREIGN KEY (systemuserId) REFERENCES systemuser (empNo),
+  FOREIGN KEY (deviceId) REFERENCES device (imiNumber)
+);
+CREATE TABLE jobservice (
+  jobserviceid int NOT NULL AUTO_INCREMENT,
+  jobid int NOT NULL,
+  serviceid int NOT NULL,
+  amount int NOT NULL,
+  status int NOT NULL,
+  remarks varchar(255) NOT NULL,
+  date date NOT NULL,
+  PRIMARY KEY (jobserviceid),
+  FOREIGN KEY (jobid) REFERENCES job (id),
+  FOREIGN KEY (serviceid) REFERENCES services (sid)
+);
+CREATE TABLE jobserviceitem (
+  jobserviceitemid int NOT NULL AUTO_INCREMENT,
+  jobservicesId int NOT NULL,
+  itemId varchar(255) NOT NULL,
+  qty int NOT NULL,
+  price float(10) NOT NULL,
+  PRIMARY KEY (jobserviceitemid),
+  FOREIGN KEY (jobservicesId) REFERENCES jobservice (jobserviceid),
+  FOREIGN KEY (itemId) REFERENCES item (itemCode)
+);
+CREATE TABLE jobdelelivery (
+  id int NOT NULL AUTO_INCREMENT,
+  jobid int NOT NULL,
+  deliid int NOT NULL,
+  date date NOT NULL,
+  locFromId int NOT NULL,
+  locToId int NOT NULL,
+  note varchar(255) NOT NULL,
+  PRIMARY KEY (id),
+  FOREIGN KEY (jobid) REFERENCES job(id),
+  FOREIGN KEY (deliid) REFERENCES delivery (empNo),
+    FOREIGN KEY (locFromId) REFERENCES location (locid),
+  FOREIGN KEY (locToId) REFERENCES location (locid)
+);
+CREATE TABLE history (
+  id int NOT NULL AUTO_INCREMENT,
+  htype varchar(100) DEFAULT NULL,
+  note varchar(500) DEFAULT NULL,
+  noteDate datetime DEFAULT NULL,
+  systemuserId int NOT NULL,
+  jobid int NOT NULL,
+  PRIMARY KEY (id),
+  FOREIGN KEY (jobid) REFERENCES job (id),
+  FOREIGN KEY (systemuserId) REFERENCES systemuser (empNo)
+)
