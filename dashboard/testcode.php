@@ -449,7 +449,6 @@ $statusMap = [
     <script src="src/plugins/datatables/js/responsive.bootstrap4.min.js"></script>
     <!-- Datatable Setting js -->
     <script src="vendors/scripts/datatable-setting.js"></script>
-    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
     
 
 
