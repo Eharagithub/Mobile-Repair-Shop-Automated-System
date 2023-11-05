@@ -16,10 +16,10 @@ if ($data === false) {
     die("Connection error: " . mysqli_connect_error());
 }
 
-// Fetch data from the database
-$sql = "SELECT invoiceNo FROM invoice";
-$result = mysqli_query($data, $sql);
-$invoice = mysqli_fetch_all($result, MYSQLI_ASSOC);
+//Fetch data from the database
+//$sql = "SELECT invoiceNo FROM invoice";
+//$result = mysqli_query($data, $sql);
+//$invoice = mysqli_fetch_all($result, MYSQLI_ASSOC);
 
 $sql = "SELECT * FROM job";
 $result = mysqli_query($data, $sql);
@@ -117,11 +117,11 @@ $statusMap = [
                         <table class="data-table table responsive">
                             <thead>
                                 <tr>
-                                    <th>No:</th>
-                                    <th>Customer Name</th>
+                                    <th>Invoice No:</th>
                                     <th>Amount</th>
                                     <th>Payment Status</th>
                                     <th>Date created</th>
+                                    <th>Remarks</th>
                                     <th>Action</th>
                                 </tr>
 
@@ -136,7 +136,7 @@ $statusMap = [
                                     die("Connection error: " . mysqli_connect_error());
                                 }
 
-                                $sql = "SELECT * FROM invoice";
+                                $sql = "SELECT * FROM job where isInvoiced = 1";
                                 $result = mysqli_query($data, $sql);
 
 
@@ -146,10 +146,10 @@ $statusMap = [
                                     while ($row = mysqli_fetch_assoc($result)) {
                                         echo "<tr>";
                                         echo "<td>" . $counter . "</td>";
-                                        echo "<td>" . $row['cusName'] . "</td>";
                                         echo "<td>" . $row['amount'] . "</td>";
-                                        echo "<td>" . $row['status'] . "</td>";
-                                        echo "<td>" . $row['date'] . "</td>";
+                                        echo "<td>" . $row['paymentStatus'] . "</td>";
+                                        echo "<td>" . $row['jobDate'] . "</td>";
+                                        echo "<td>" . $row['remark'] . "</td>";
                                         echo '<td>';
                                         echo         '<div class="dropdown">'; // onclick="setSelectedInvoice('.$row["invoiceNo"].')>';
                                         echo             '<a class="btn btn-link font-24 p-0 line-height-1 no-arrow dropdown-toggle" href="#" role="button" data-toggle="dropdown">';
@@ -190,37 +190,37 @@ $statusMap = [
             <div class="content py-3">
                 <div class="container-fluid">
                     <div class="card card-outline card-info rounded-0 shadow">
-                        <div class="card-header rounded-0">
-
+                       <!-- <div class="card-header rounded-0">
+                                
                             <?php
                             // Connect to the database
-                            $data = mysqli_connect($host, $user, $password, $db);
+                            //$data = mysqli_connect($host, $user, $password, $db);
 
-                            if ($data === false) {
+                            /*if ($data === false) {
                                 die("Connection error: " . mysqli_connect_error());
-                            }
+                            }*/
 
                             // Retrieve the latest invoiceNo from the database
-                            $sql = "SELECT MAX(invoiceNo) AS maxInvoiceNo FROM invoice";
-                            $result = mysqli_query($data, $sql);
-                            $row = mysqli_fetch_assoc($result);
-                            $latestInvoiceNo = $row['maxInvoiceNo'];
+                            //$sql = "SELECT MAX(invoiceNo) AS maxInvoiceNo FROM invoice";
+                            //$result = mysqli_query($data, $sql);
+                            //$row = mysqli_fetch_assoc($result);
+                            //$latestInvoiceNo = $row['maxInvoiceNo'];
 
                             // Close the database connection
-                            mysqli_close($data);
+                            //mysqli_close($data);
                             ?>
 
-                            <!-- Add an input field for invoice number with a readonly attribute -->
+                            Add an input field for invoice number with a readonly attribute 
                             <input type="text" id="invoiceNo" value="<?php echo $latestInvoiceNo + 1; ?>" readonly>
                             <h4 class="card-title">Add New Repair</h4>
-                        </div>
+                        </div>-->
 
                         <div class="card-body rounded-0">
                             <div class="container-fluid">
 
                                 <fieldset>
 
-                                    <!--Client list-->
+                                    <!--work order list-->
                                     <div class="row">
                                         <div class="form-group col-md-8">
                                             <select name="work_id" id="work_id" class="form-control form-control-sm form-control-border select2" data-placeholder="Please Select Client Here">
@@ -299,7 +299,7 @@ $statusMap = [
                                                                     <?php
                                                                     // Loop through the $material_list array and create an <option> element for each item.
                                                                     foreach ($material_list as $item) {
-                                                                        echo '<option value="' . $item["itemCode"] . '" selected>' . $item["name"] . '</option>';
+                                                                        echo '<option value="' . $item["itemCode"] . '" selected stock="' . $item["stock"] . '">' . $item["name"] . '</option>';
                                                                     }
                                                                     ?>
 
@@ -321,7 +321,7 @@ $statusMap = [
                                                         </div>
                                                     </div>
                                                 </div>
-                                                <!--add materials to the list in invoice-->
+                                                <!--add materials to the list-->
                                                 <div class="row">
                                                     <div class="form-group col-md-4">
                                                         <button class="btn btn-flat btn-primary btn-sm" type="button" id="add_material"><i class="fa fa-plus"></i> Add to List</button>
@@ -376,7 +376,7 @@ $statusMap = [
                                             </select>
                                             <small class="text-muted px-4">Payment Status</small>
                                         </div>
-                                        <div class="form-group col-md-4">
+                                        <!--<div class="form-group col-md-4">
                                             <select name="status" id="status" class="form-control form-control-sm form-control-border" required>
                                                 <option value="0">Pending</option>
                                                 <option value="1">Approved</option>
@@ -386,40 +386,39 @@ $statusMap = [
                                                 <option value="5">Cancelled</option>
                                             </select>
                                             <small class="text-muted px-4">Status</small>
-                                        </div>
+                                        </div>-->
                                     </div>
                                 </fieldset>
 
-                                   
-                                     <center>
-                                            <!--buttond-->
-                                            <div class="col-md-12 col-sm-12">
-                                                <div class="form-group">
-                                                    <button type="button" class="btn btn-danger" data-dismiss="modal" >Close</button>
-                                                    <button class="btn btn-primary" onclick="submitForm()" data-bs-dismiss="add_technician"> Submit </button>
-                                                </div>
-                                            </div>                 
-                                    </center>
 
-			                                             <!-- Delete modal -->
-                                                    <div class="col-md-4 col-sm-12 mb-30">
-                                                        <div class="modal fade" id="delete" tabindex="-1" role="dialog" aria-labelledby="myLargeModalLabel"
-                                                            aria-hidden="true">
-                                                            <div class="modal-dialog modal-sm modal-dialog-centered">
-                                                                <div class="modal-content bg-danger text-white">
-                                                                    <div class="modal-body text-center">
-                                                                        <h3 class="text-white mb-15"><i class="fa fa-exclamation-triangle"></i> Alert</h3>
-                                                                        <p>Are you sure you want to delete this customer?</p>
-                                                                        <button type="button" class="btn btn-light" data-dismiss="modal">Yes</button>
-                                                                        <button type="button" class="btn btn-light" data-dismiss="modal">Cancel</button>
-                                                                    </div>
-                                                                </div>
-                                                            </div>    
-                                                          </div>
-                                                     </div>      
-       
-    </div>
-   <!-- <center>
+                                <center>
+                                    <!--buttond-->
+                                    <div class="col-md-12 col-sm-12">
+                                        <div class="form-group">
+                                            <button type="button" class="btn btn-danger" data-dismiss="modal">Close</button>
+                                            <button class="btn btn-primary" onclick="submitForm()" data-bs-dismiss="add_technician"> Submit </button>
+                                        </div>
+                                    </div>
+                                </center>
+
+                                <!-- Delete modal -->
+                                <div class="col-md-4 col-sm-12 mb-30">
+                                    <div class="modal fade" id="delete" tabindex="-1" role="dialog" aria-labelledby="myLargeModalLabel" aria-hidden="true">
+                                        <div class="modal-dialog modal-sm modal-dialog-centered">
+                                            <div class="modal-content bg-danger text-white">
+                                                <div class="modal-body text-center">
+                                                    <h3 class="text-white mb-15"><i class="fa fa-exclamation-triangle"></i> Alert</h3>
+                                                    <p>Are you sure you want to delete this customer?</p>
+                                                    <button type="button" class="btn btn-light" data-dismiss="modal">Yes</button>
+                                                    <button type="button" class="btn btn-light" data-dismiss="modal">Cancel</button>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+
+                            </div>
+                            <!-- <center>
                                     <div class="col-md-12 col-sm-12">
                                         <div class="form-group">
                                             <button class="btn btn-primary" onclick="submitForm()" data-bs-dismiss="add_technician"> Submit </button>
@@ -432,273 +431,283 @@ $statusMap = [
 												<input type="reset" class="btn btn-danger" value="Cancel" data-backdrop="static" data-toggle="modal" data-target="#add_technician">
 											</div>
 										</div> -->
-                                
-
-    <!-- js -->
-    <script src="vendors/scripts/core.js"></script>
-    <script src="vendors/scripts/script.min.js"></script>
-    <script src="vendors/scripts/process.js"></script>
-    <script src="vendors/scripts/layout-settings.js"></script>
-    <script src="src/plugins/datatables/js/jquery.dataTables.min.js"></script>
-    <script src="src/plugins/datatables/js/dataTables.bootstrap4.min.js"></script>
-    <script src="src/plugins/datatables/js/dataTables.responsive.min.js"></script>
-    <script src="src/plugins/datatables/js/responsive.bootstrap4.min.js"></script>
-    <!-- Datatable Setting js -->
-    <script src="vendors/scripts/datatable-setting.js"></script>
-    
 
 
-    <script>
-        function removeService(id) {
-            // Remove the element with the ID "service-{id}" from the DOM.
-            $("#service-" + id).remove();
-            // Calculate the total (presumably for a list of services) after removal.
-            calc_total();
-        }
-
-        function removeMaterial(id) {
-            // Remove the element with the ID "material-{itemCode}" from the DOM.
-            $("#material-" + id).remove();
-            // Calculate the total (presumably for a list of materials) after removal.
-            calc_total();
-        }
-
-
-        //calculate the total payble amount
-        function calc_total() {
-            var total = 0;
-            $("#service_list tbody tr").each(function() {
-                var feeText = $(this).find("td:last").text().trim();
-                // Remove commas and parse as a float
-                var fee = parseFloat(feeText.replace(/,/g, ""));
-                // Add to the total
-                total += fee;
-            });
-            $("#material_list tbody tr").each(function() {
-                var feeText = $(this).find("td:last").text().trim();
-                // Remove commas and parse as a float
-                var fee = parseFloat(feeText.replace(/,/g, ""));
-                // Add to the total
-                total += fee;
-            });
-            $('#total_amount').text(parseFloat(total).toLocaleString('en-US', {
-                style: "decimal",
-                maximumFractionDigits: 2,
-                minimumFractionDigits: 2
-            }))
-            $('input[name="total_amount"]').val(parseFloat(total))
-        }
+                            <!-- js -->
+                            <script src="vendors/scripts/core.js"></script>
+                            <script src="vendors/scripts/script.min.js"></script>
+                            <script src="vendors/scripts/process.js"></script>
+                            <script src="vendors/scripts/layout-settings.js"></script>
+                            <script src="src/plugins/datatables/js/jquery.dataTables.min.js"></script>
+                            <script src="src/plugins/datatables/js/dataTables.bootstrap4.min.js"></script>
+                            <script src="src/plugins/datatables/js/dataTables.responsive.min.js"></script>
+                            <script src="src/plugins/datatables/js/responsive.bootstrap4.min.js"></script>
+                            <!-- Datatable Setting js -->
+                            <script src="vendors/scripts/datatable-setting.js"></script>
 
 
 
-        $('#service').change(function() {
-            var id = $(this).val();
-            var serviceName = $('#service option:selected').text();
+                            <script>
+                                function removeService(id) {
+                                    // Remove the element with the ID "service-{id}" from the DOM.
+                                    $("#service-" + id).remove();
+                                    // Calculate the total (presumably for a list of services) after removal.
+                                    calc_total();
+                                }
 
-            if (id && serviceName) {
-                var service_list = <?php echo json_encode($service_list); ?>;
-                var service = service_list.find(e => e['sid'] == id);
-                var fee = service["cost"];
-
-                // Update the "Fee" input field with the selected service's fee
-                $('#cost').val(fee);
-            }
-        });
-
-
-        // Add an event listener to the "unit" input field for quantity changes.
-        $('#unit').change(function() {
-            updateMaterialPrice();
-        });
-
-        $('#material').change(function() {
-            $('#price').val('');
-            var id = $('#material').val();
-            var material_list = <?php echo json_encode($material_list); ?>;
-            var selectedMaterial = material_list.find(e => e['itemCode'] == id);
-            $('#unit').attr("max", selectedMaterial["stock"])
-
-        });
-
-        // Function to update the material price based on quantity.
-        function updateMaterialPrice() {
-            var id = $('#material').val();
-            var material_list = <?php echo json_encode($material_list); ?>;
-            var selectedMaterial = material_list.find(e => e['itemCode'] == id);
-            var quantity = parseFloat($('#unit').val());
+                                function removeMaterial(id) {
+                                    // Remove the element with the ID "material-{itemCode}" from the DOM.
+                                    $("#material-" + id).remove();
+                                    // Calculate the total (presumably for a list of materials) after removal.
+                                    calc_total();
+                                }
 
 
-            var price = selectedMaterial["sellingPrice"];
-            var totalPrice = price * quantity;
-
-            // Update the "Price" input field with the calculated total price.
-            $('#price').val(totalPrice);
-
-
-        }
-
-
-        //add services
-        function add_service(id, name, fee = '') {
-
-            var tr = $('<tr id="service-' + id + '">')
-            tr.append('<td class="px-2 py-1 text-center"><button class="btn btn-remove btn-rounded btn-sm btn-danger" onclick="removeService(' + id + ')"><i class="fa fa-trash"></i></button></td>')
-            tr.attr('data-id', id)
-            tr.append("<td class='px-2 py-1'>" + name + "</td>")
-
-            var service_list = <?php echo json_encode($service_list); ?>;
-            var service = service_list.find(e => e['sid'] == id)
-            fee = service["cost"];
-            tr.append("<td class='px-2 py-1 text-right'>" + (parseFloat(fee).toLocaleString('en-US', {
-                style: 'decimal',
-                maximumFractionDigits: 2,
-                minimumFractionDigits: 2
-            })) + "</td>")
-
-            $('#service_list tbody').append(tr)
-            calc_total()
-
-        }
-
-
-        $('#add_service').click(function() {
-            var id = $('#service').val();
-            var serviceName = $('#service option:selected').text(); // Get the selected option's text (service name)
-
-            if ($('#service_list tbody tr[data-id="' + id + '"]').length > 0) {
-                alert("Service already listed.", 'warning');
-                return false;
-            }
-
-            add_service(id, serviceName); // Add the service name to the list
-        });
-
-        //added materials
-        function add_material(id, name, cost = '') {
-            var unit = parseFloat($('#unit').val()); // Get the quantity entered by the user.
-
-            if (isNaN(unit) || unit <= 0) {
-                alert('Please enter a valid quantity greater than 0.');
-                return;
-            }
-            // Create a new row for the material in the material list table.
-            var tr = $('<tr id="material-' + id + '">')
-            // Add a button to remove the material from the list.
-            tr.append('<td class="px-2 py-1 text-center"><button class="btn btn-remove btn-rounded btn-sm btn-danger" onclick="removeMaterial(' + id + ')"><i class="fa fa-trash"></i></button></td>')
-            // Set the data-id attribute to the material's ID.
-            tr.attr('data-id', id)
-            // Add the material name to the row.
-            tr.append("<td class='px-2 py-1'>" + name + "</td>")
-
-            var material_list = <?php echo json_encode($material_list); ?>;
-            var material = material_list.find(e => e['itemCode'] == id)
-
-            // Calculate the material price based on the quantity (unit).
-            var unit = parseFloat($('#unit').val());
-            var price = material["sellingPrice"] * unit;
-
-            // Add the quantity and calculated price to the row and format it.
-            tr.append("<td class='px-2 py-1'>" + unit + "</td>");
-            // Add the calculated price to the row and format it.
-            tr.append("<td class='px-2 py-1 text-right'>" + (parseFloat(price).toLocaleString('en-US', {
-                style: 'decimal',
-                maximumFractionFigits: 2,
-                minimumFractionDigits: 2
-            })) + "</td>");
-
-            // Append the row to the material list table.
-            $('#material_list tbody').append(tr)
-            // Calculate the total amount after adding the material.
-            calc_total()
-            updateMaterialPrice();
-        }
-
-        //Add materials
-        $('#add_material').click(function() {
-            var id = $('#material').val();
-            var name = $('#material option:selected').text(); // Get the selected option's text (material name)
-            //var cost = $('#mcost').val();
-
-            if ($('#material_list tbody tr[data-id="' + id + '"]').length > 0) {
-                alert("Material already listed.", 'warning');
-                return false;
-            }
-
-            add_material(id, name); // Add the material name to the list
-        });
-
-        // Add this script in testcode.php /
-
-        function viewInvoice(invoiceNo) {
-            // Redirect to invoice.php with the selected invoiceNo
-            window.location.href = 'invoice.php?invoiceNo=' + invoiceNo;
-        }
-
-        $(document).ready(function() {
-            var id = $('#material').val();
-            var material_list = <?php echo json_encode($material_list); ?>;
-            var selectedMaterial = material_list.find(e => e['itemCode'] == id);
-            $('#unit').attr("max", selectedMaterial["stock"])
-            // alert($("#unit").attr("max",selectedMaterial["stock"]))
-            // alert(selectedMaterial["stock"])
-        })
-
-        function submitForm() {
-            let services = []
-            let materials = []
-
-            $("#service_list tbody tr").each(function() {
-                var id = $(this).attr("data-id")
-                var cost = $(this).find("td:last").text().trim();
-                services.push({
-                    id: id,
-                    cost: cost
-                })
-
-            });
-            $("#material_list tbody tr").each(function() {
-                var id = $(this).attr("data-id")
-                var cost = $(this).find("td:last").text().trim();
-                var qty = $(this).find("td:eq(2)").text().trim();
-
-                materials.push({
-                    id: id,
-                    cost: cost,
-                    qty: qty
-                })
-
-            });
-
-            var formData = {
-                workListId: $("#work_id").val(),
-                services: services,
-                materials: materials,
-                total: $("#total_amount").text(),
-                paymentStatus: $("#payment_status").val(),
-                status: $("#status").val()
-            };
-
-            $.ajax({
-                type: "POST",
-                url: "server.php",
-                data: formData,
-                dataType: "json",
-                encode: true,
-            }).done(function(data) {
-                alert(data);
-            });
-
-            event.preventDefault();
-
-        }
-        // $("entry-form").submit(function(event) {
+                                //calculate the total payble amount
+                                function calc_total() {
+                                    var total = 0;
+                                    $("#service_list tbody tr").each(function() {
+                                        var feeText = $(this).find("td:last").text().trim();
+                                        // Remove commas and parse as a float
+                                        var fee = parseFloat(feeText.replace(/,/g, ""));
+                                        // Add to the total
+                                        total += fee;
+                                    });
+                                    $("#material_list tbody tr").each(function() {
+                                        var feeText = $(this).find("td:last").text().trim();
+                                        // Remove commas and parse as a float
+                                        var fee = parseFloat(feeText.replace(/,/g, ""));
+                                        // Add to the total
+                                        total += fee;
+                                    });
+                                    $('#total_amount').text(parseFloat(total).toLocaleString('en-US', {
+                                        style: "decimal",
+                                        maximumFractionDigits: 2,
+                                        minimumFractionDigits: 2
+                                    }))
+                                    $('input[name="total_amount"]').val(parseFloat(total))
+                                }
 
 
 
+                                $('#service').change(function() {
+                                    var id = $(this).val();
+                                    var serviceName = $('#service option:selected').text();
+
+                                    if (id && serviceName) {
+                                        var service_list = <?php echo json_encode($service_list); ?>;
+                                        var service = service_list.find(e => e['sid'] == id);
+                                        var fee = service["cost"];
+
+                                        // Update the "Fee" input field with the selected service's fee
+                                        $('#cost').val(fee);
+                                    }
+                                });
 
 
-        // });
-    </script>
+                                // Add an event listener to the "unit" input field for quantity changes.
+                                $('#unit').change(function() {
+                                    updateMaterialPrice();
+                                });
+
+                                $('#material').change(function() {
+                                    $('#price').val('');
+
+                                });
+
+                                // Function to update the material price based on quantity.
+                                function updateMaterialPrice() {
+                                    var id = $('#material').val();
+                                    var material_list = <?php echo json_encode($material_list); ?>;
+                                    var selectedMaterial = material_list.find(e => e['itemCode'] == id);
+                                    var quantity = parseFloat($('#unit').val());
+
+
+                                    var price = selectedMaterial["sellingPrice"];
+                                    var totalPrice = price * quantity;
+
+                                    // Update the "Price" input field with the calculated total price.
+                                    $('#price').val(totalPrice);
+
+
+                                }
+
+
+                                //add services
+                                function add_service(id, name, fee = '') {
+
+                                    var tr = $('<tr id="service-' + id + '">')
+                                    tr.append('<td class="px-2 py-1 text-center"><button class="btn btn-remove btn-rounded btn-sm btn-danger" onclick="removeService(' + id + ')"><i class="fa fa-trash"></i></button></td>')
+                                    tr.attr('data-id', id)
+                                    tr.append("<td class='px-2 py-1'>" + name + "</td>")
+
+                                    var service_list = <?php echo json_encode($service_list); ?>;
+                                    var service = service_list.find(e => e['sid'] == id)
+                                    fee = service["cost"];
+                                    tr.append("<td class='px-2 py-1 text-right'>" + (parseFloat(fee).toLocaleString('en-US', {
+                                        style: 'decimal',
+                                        maximumFractionDigits: 2,
+                                        minimumFractionDigits: 2
+                                    })) + "</td>")
+
+                                    $('#service_list tbody').append(tr)
+                                    calc_total()
+
+                                }
+
+
+                                $('#add_service').click(function() {
+                                    var id = $('#service').val();
+                                    var serviceName = $('#service option:selected').text(); // Get the selected option's text (service name)
+
+                                    if ($('#service_list tbody tr[data-id="' + id + '"]').length > 0) {
+                                        alert("Service already listed.", 'warning');
+                                        return false;
+                                    }
+
+                                    add_service(id, serviceName); // Add the service name to the list
+                                });
+
+                                //added materials
+                                function add_material(id, name, cost = '') {
+                                    var unit = parseFloat($('#unit').val()); // Get the quantity entered by the user.
+
+                                    if (isNaN(unit) || unit <= 0) {
+                                        alert('Please enter a valid quantity greater than 0.');
+                                        return;
+                                    }
+                                    // Create a new row for the material in the material list table.
+                                    var tr = $('<tr id="material-' + id + '">')
+                                    // Add a button to remove the material from the list.
+                                    tr.append('<td class="px-2 py-1 text-center"><button class="btn btn-remove btn-rounded btn-sm btn-danger" onclick="removeMaterial(' + id + ')"><i class="fa fa-trash"></i></button></td>')
+                                    // Set the data-id attribute to the material's ID.
+                                    tr.attr('data-id', id)
+                                    // Add the material name to the row.
+                                    tr.append("<td class='px-2 py-1'>" + name + "</td>")
+
+                                    var material_list = <?php echo json_encode($material_list); ?>;
+                                    var material = material_list.find(e => e['itemCode'] == id)
+
+                                    // Calculate the material price based on the quantity (unit).
+                                    var unit = parseFloat($('#unit').val());
+                                    var price = material["sellingPrice"] * unit;
+
+                                    // Add the quantity and calculated price to the row and format it.
+                                    tr.append("<td class='px-2 py-1'>" + unit + "</td>");
+                                    // Add the calculated price to the row and format it.
+                                    tr.append("<td class='px-2 py-1 text-right'>" + (parseFloat(price).toLocaleString('en-US', {
+                                        style: 'decimal',
+                                        maximumFractionFigits: 2,
+                                        minimumFractionDigits: 2
+                                    })) + "</td>");
+
+                                    // Append the row to the material list table.
+                                    $('#material_list tbody').append(tr)
+                                    // Calculate the total amount after adding the material.
+                                    calc_total()
+                                    updateMaterialPrice();
+                                }
+
+                                //Add materials
+                                $('#add_material').click(function() {
+                                    var stock = parseInt($('#material option:selected').attr("stock"));
+                                    var enterdQty = parseInt($('#unit').val())
+
+                                    if (stock < enterdQty) {
+                                        alert("Available stock for " + $('#material option:selected').text() + " is "  + stock);
+                                    } else {
+                                        var id = $('#material').val();
+                                        var name = $('#material option:selected').text(); // Get the selected option's text (material name)
+                                        //var cost = $('#mcost').val();
+
+                                        if ($('#material_list tbody tr[data-id="' + id + '"]').length > 0) {
+                                            alert("Material already listed.", 'warning');
+                                            return false;
+                                        }
+
+                                        add_material(id, name); // Add the material name to the list
+                                    }
+
+                                });
+
+                                // Add this script in testcode.php /
+
+                                function viewInvoice(invoiceNo) {
+                                    // Redirect to invoice.php with the selected invoiceNo
+                                    window.location.href = 'invoice.php?invoiceNo=' + invoiceNo;
+                                }
+
+                                $(document).ready(function() {
+                                    var id = $('#material').val();
+                                    var material_list = <?php echo json_encode($material_list); ?>;
+                                    var selectedMaterial = material_list.find(e => e['itemCode'] == id);
+                                    $('#unit').attr("max", selectedMaterial["stock"])
+                                    // alert($("#unit").attr("max",selectedMaterial["stock"]))
+                                    // alert(selectedMaterial["stock"])
+                                })
+
+                                function submitForm() {
+                                    let services = []
+                                    let materials = []
+
+                                    $("#service_list tbody tr").each(function() {
+                                        var id = $(this).attr("data-id")
+                                        var cost = $(this).find("td:last").text().trim();
+                                        services.push({
+                                            id: id,
+                                            cost: cost
+                                        })
+
+                                    });
+                                    $("#material_list tbody tr").each(function() {
+                                        var id = $(this).attr("data-id")
+                                        var cost = $(this).find("td:last").text().trim();
+                                        var qty = $(this).find("td:eq(2)").text().trim();
+
+                                        materials.push({
+                                            id: id,
+                                            cost: cost,
+                                            qty: qty
+                                        })
+
+                                    });
+
+                                    var formData = {
+                                        workListId: $("#work_id").val(),
+                                        services: services,
+                                        materials: materials,
+                                        total: $("#total_amount").text(),
+                                        paymentStatus: $("#payment_status").val(),
+                                        status: $("#status").val(),
+                                        remarks:$("#remarks").val(),
+                                    };
+
+                                    $.ajax({
+                                        type: "POST",
+                                        url: "requests/invoice.php",
+                                        data: formData,
+                                        encode: true,
+                                        success: function(response) {
+                                            console.log(response);
+                                            window.location.href = "testcode.php";
+
+                                        },
+                                        error: function(xhr) {
+                                            console.log(xhr);
+                                        }
+                                    })
+
+                                    event.preventDefault();
+
+                                }
+                                // $("entry-form").submit(function(event) {
+
+
+
+
+
+                                // });
+                            </script>
 </body>
 
 </html>
