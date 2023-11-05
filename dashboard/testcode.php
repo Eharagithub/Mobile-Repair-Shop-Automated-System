@@ -391,33 +391,52 @@ $statusMap = [
                                 </fieldset>
 
                                 <hr class="bg-navy">
-
+                            <center>
                                 <!--buttond-->
-                                <center>
+                                <div class="col-md-12 col-sm-12">
+                                        <div class="form-group">
+                		                    <button type="button" class="btn btn-danger" data-dismiss="modal" >Close</button>
+                		                    <button type="submit" class="btn btn-primary">Submit</button>
+    </form>
 
+                                        </div> 
+                                </div>                                   
+           			</div> 
+        		</div>
+    		</div>   </center>
+
+			 <!-- Delete modal -->
+			<div class="col-md-4 col-sm-12 mb-30">
+				<div class="modal fade" id="delete" tabindex="-1" role="dialog" aria-labelledby="myLargeModalLabel"
+					aria-hidden="true">
+					<div class="modal-dialog modal-sm modal-dialog-centered">
+						<div class="modal-content bg-danger text-white">
+							<div class="modal-body text-center">
+								<h3 class="text-white mb-15"><i class="fa fa-exclamation-triangle"></i> Alert</h3>
+								<p>Are you sure you want to delete this customer?</p>
+								<button type="button" class="btn btn-light" data-dismiss="modal">Yes</button>
+								<button type="button" class="btn btn-light" data-dismiss="modal">Cancel</button>
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+        </div>
+    </div>
+   <!-- <center>
                                     <div class="col-md-12 col-sm-12">
                                         <div class="form-group">
                                             <button class="btn btn-primary" onclick="submitForm()" data-bs-dismiss="add_technician"> Submit </button>
                                             <input type="reset" class="btn btn-danger" value="Cancel" data-backdrop="static" data-bs-dismiss="add_technician">
                                         </div>
                                     </div>
-
                                     <!-- <div class="col-md-12 col-sm-12">
 											<div class="form-group">
 												<input type="submit" class="btn btn-primary" value="Submit" name="createService">
 												<input type="reset" class="btn btn-danger" value="Cancel" data-backdrop="static" data-toggle="modal" data-target="#add_technician">
 											</div>
 										</div> -->
-
-                                </center>
-
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </div>
+                                
 
     <!-- js -->
     <script src="vendors/scripts/core.js"></script>
@@ -430,6 +449,8 @@ $statusMap = [
     <script src="src/plugins/datatables/js/responsive.bootstrap4.min.js"></script>
     <!-- Datatable Setting js -->
     <script src="vendors/scripts/datatable-setting.js"></script>
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    
 
 
     <script>
