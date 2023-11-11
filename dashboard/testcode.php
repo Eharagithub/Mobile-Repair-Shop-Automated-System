@@ -681,7 +681,7 @@ $statusMap = [
                                         status: $("#status").val(),
                                         remarks:$("#remarks").val(),
                                     };
-
+                                    //passing the request to the form
                                     $.ajax({
                                         type: "POST",
                                         url: "requests/invoice.php",

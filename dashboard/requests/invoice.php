@@ -12,6 +12,7 @@
     $materials = $_POST["materials"];
     $paymentStatus = $_POST["paymentStatus"];
     $status = $_POST["status"];
+    $total = $_POST["total"];
 
     print_r($_POST);
 
@@ -40,7 +41,7 @@
 
     
 
-    $sql = "UPDATE `job` SET isInvoiced = '1', remark = '".$_POST['remarks']."' WHERE id =" . $workListId;
+    $sql = "UPDATE `job` SET isInvoiced = '1', remark = '".$_POST['remarks']."' , amount = '".$total."' WHERE id =" . $workListId;
     echo $sql;
     mysqli_query($conn, $sql);
 

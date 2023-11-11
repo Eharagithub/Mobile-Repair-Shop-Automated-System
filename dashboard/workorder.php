@@ -14,7 +14,7 @@ if (isset($_REQUEST["createjob"])) {
 		die('Connection Failed : ' . $conn->connect_error);
 	} else {
 
-		$sql = "INSERT INTO `job` (`id`, `jobDate`, `systemuserId`, `deviceId`, `paymentStatus`,`amount`, `isInvoiced`, `remark`) VALUES (NULL,'" . $jobDate . "'," . $systemuserId . "," . $deviceId . ",0," . $amount . ",0,'')";
+		$sql = "INSERT INTO `job` (`id`, `jobDate`, `systemuserId`, `deviceId`, `paymentStatus`,`amount`, `isInvoiced`, `remark`) VALUES (NULL,'" . $jobDate . "'," . $systemuserId . "," . $deviceId . ",0,0,0,'')";
 		echo $sql;
 		$result = mysqli_query($conn, $sql);
 
