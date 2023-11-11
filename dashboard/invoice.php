@@ -1,17 +1,37 @@
 <?php
 session_start();
 // Check if the invoiceNo is set in the session
-if (isset($_SESSION['invoiceNo'])) {
-    $invoiceNo = $_SESSION['invoiceNo'];
-} else {
-    $invoiceNo = 'N/A';
+if (!isset($_REQUEST['id'])) {
+  header("Location: testcode.php");
 }
+
+$servername = "localhost";
+$username = "root";
+$password = "";
+$dbname = "mobileshopdb";
+$conn = new mysqli($servername, $username, $password, $dbname);
+
+$id = $_REQUEST['id'];
+
+$sql = "SELECT * FROM job where id = " . $id;
+$result = mysqli_query($conn, $sql);
+$job = mysqli_fetch_all($result, MYSQLI_ASSOC);
+
+$sql = "SELECT * FROM jobservice where jobid = " . $id;
+$result = mysqli_query($conn, $sql);
+$jobservices = mysqli_fetch_all($result, MYSQLI_ASSOC);
+
+$sql = "SELECT * FROM jobitem where jobid = " . $id;
+$result = mysqli_query($conn, $sql);
+$jobitems = mysqli_fetch_all($result, MYSQLI_ASSOC);
+
 ?>
 
 <!DOCTYPE html>
 <html>
+
 <head>
-    
+
   <style>
     body {
       font-family: Arial, sans-serif;
@@ -85,7 +105,8 @@ if (isset($_SESSION['invoiceNo'])) {
       margin-top: 20px;
     }
 
-    table th, table td {
+    table th,
+    table td {
       padding: 10px;
       text-align: left;
       border-bottom: 1px solid #ddd;
@@ -142,52 +163,81 @@ if (isset($_SESSION['invoiceNo'])) {
 </head>
 
 <body>
-<div class="invoice">
-  <div class="header">
-    <img src="../new.jpg" alt="Your Logo">
-    <h1>Invoice</h1>
-  </div>
-  <div class="info">
-    <div class="company-info">
-      <h2>Kasthuri Mobile Solutions</h2>
-      <p>Highlevel road, Nugegoda<br>Colombo, Sri Lanka.</p>
-      <p><i class="fas fa-phone"></i> +94116 245 8365</p>
+  <div class="invoice">
+    <div class="header">
+      <img src="../new.jpg" alt="Your Logo">
+      <h1>Invoice</h1>
     </div>
-    <div class="invoice-details">
-    <p>Invoice ID:</p>
-    <?php echo $invoiceNo; ?>  <!-- Invoice number will be displayed here -->
-      <p>Creation Date:</p>
-      <p>Status: <span class="status"></span></p>
+    <div class="info">
+      <div class="company-info">
+        <h2>Kasthuri Mobile Solutions</h2>
+        <p>Highlevel road, Nugegoda<br>Colombo, Sri Lanka.</p>
+        <p><i class="fas fa-phone"></i> +94116 245 8365</p>
+      </div>
+      <div class="invoice-details">
+        <p>Invoice ID: <?php echo $job[0]["id"]; ?></p>
+         <!-- Invoice number will be displayed here -->
+        <p>Creation Date: <?php echo date_format(date_create($job[0]["jobDate"]),"Y/m/d") ?></p>
+        <p>Status: PAID<span class="status"></span></p>
+      </div>
     </div>
-  </div>
-  <table>
-    <thead>
-      <tr>
-        <th></th>
-        <th>Description</th>
-        <th>Qty</th>
-        <th>Unit Price</th>
-        <th>Amount</th>
-      </tr>
-    </thead>
-    <tbody>
-      
-    </tbody>
-  </table>
-  <div class="notes">
-    <p>remarks :</p>
-  </div>
-  <div class="totals">
-    <p>Subtotal: </p>
-    <p>Tax (15%): </p>
-    <p class="total-amount">Total Amount: </p>
-  </div>
-  <div class="footer">
-    <p>Thank you for your purchase</p>
+    <table>
+      <thead>
+        <tr>
+          <th>Description</th>
+          <th>Qty</th>
+          <th>Unit Price</th>
+          <th>Amount</th>
+        </tr>
+      </thead>
+      <tbody>
+        <?php
+        foreach ($jobservices as $jobservice) {
+
+          $sql = "SELECT * FROM services where sid = " . $jobservice["serviceid"];
+          $result = mysqli_query($conn, $sql);
+          $services = mysqli_fetch_all($result, MYSQLI_ASSOC);
+
+          foreach ($services as $service) {
+            echo "<tr>";
+            echo "<td>" . $service["service"]  . "</td>";
+            echo "<td>-</td>";
+            echo "<td>-</td>";
+            echo "<td>" . $service["cost"] . "</td>";
+          }
+        }
+
+        foreach ($jobitems as $jobitem) {
+
+          $sql = "SELECT * FROM item where itemCode = " . $jobitem["itemId"];
+          $result = mysqli_query($conn, $sql);
+          $items = mysqli_fetch_all($result, MYSQLI_ASSOC);
+
+          foreach ($items as $item) {
+            echo "<tr>";
+            echo "<td>" . $item["name"]  . "</td>";
+            echo "<td>" . $jobitem["qty"]  . "</td>";
+            echo "<td>" . $jobitem["price"]  . "</td>";
+            echo "<td>" . floatval($jobitem["qty"]) * floatval($jobitem["price"]) . "</td>";
+          }
+        }
+
+        ?>
+
+      </tbody>
+    </table>
+    <div class="notes">
     
+      <p>Remarks :<?php echo $job[0]["remark"]; ?></p>
+    </div>
+    <div class="totals">
+      <p class="total-amount">Total Amount: <?php echo $job[0]["amount"]; ?></p>
+    </div>
+    <div class="footer">
+      <p>Thank you for your purchase</p>
+
+    </div>
   </div>
-</div>
 </body>
+
 </html>
-
-

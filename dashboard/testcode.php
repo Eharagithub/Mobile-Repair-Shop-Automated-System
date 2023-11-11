@@ -21,7 +21,7 @@ if ($data === false) {
 //$result = mysqli_query($data, $sql);
 //$invoice = mysqli_fetch_all($result, MYSQLI_ASSOC);
 
-$sql = "SELECT * FROM job";
+$sql = "SELECT * FROM job where isInvoiced <> 1";
 $result = mysqli_query($data, $sql);
 $job_list = mysqli_fetch_all($result, MYSQLI_ASSOC);
 
@@ -86,7 +86,6 @@ $statusMap = [
                         <div class="col-md-6 col-sm-12"> <!-- This div element is a responsive column with a width of 6 columns on medium screens (col-md-6) and 12 columns on small screens (col-sm-12). -->
                             <div class="title">
                                 <h4><i class="micon fa fa-cogs"> </i>Repair List</h4> <!--icon for Rpair List-->
-                                <?php print_r($_POST); ?>
                             </div>
                             <nav aria-label="breadcrumb" role="navigation">
                                 <ol class="breadcrumb">
@@ -117,7 +116,7 @@ $statusMap = [
                         <table class="data-table table responsive">
                             <thead>
                                 <tr>
-                                    <th>Invoice No:</th>
+                                    <th>Job No:</th>
                                     <th>Amount</th>
                                     <th>Payment Status</th>
                                     <th>Date created</th>
@@ -142,10 +141,10 @@ $statusMap = [
 
 
                                 if ($result) {
-                                    $counter = 1;
+                 
                                     while ($row = mysqli_fetch_assoc($result)) {
                                         echo "<tr>";
-                                        echo "<td>" . $counter . "</td>";
+                                        echo "<td>" . $row['id']  . "</td>";
                                         echo "<td>" . $row['amount'] . "</td>";
                                         echo "<td>" . $row['paymentStatus'] . "</td>";
                                         echo "<td>" . $row['jobDate'] . "</td>";
@@ -157,13 +156,12 @@ $statusMap = [
                                         echo             '</a>';
                                         //Drop down for view the row
                                         echo             '<div class="dropdown-menu dropdown-menu-right dropdown-menu-icon-list">';
-                                        echo                 '<a class="dropdown-item" href="invoice.php"> 
-                                                            <i class="dw dw-eye"></i> View </a>';
+                                        echo                 '<a class="dropdown-item" href="invoice.php?id='.$row["id"].'"><i class="dw dw-eye"></i> View </a>';
                                         '</div>';
                                         '<div>';
                                         '</td>';
                                         echo "</tr>";
-                                        $counter++;
+                                      
                                     }
 
                                     function setSelectedInvoice($invoiceNo)
@@ -655,7 +653,7 @@ $statusMap = [
                                         var cost = $(this).find("td:last").text().trim();
                                         services.push({
                                             id: id,
-                                            cost: cost
+                                            cost: cost.replace(/,/g,''),
                                         })
 
                                     });
@@ -666,7 +664,7 @@ $statusMap = [
 
                                         materials.push({
                                             id: id,
-                                            cost: cost,
+                                            cost: cost.replace(/,/g,''),
                                             qty: qty
                                         })
 
@@ -676,7 +674,7 @@ $statusMap = [
                                         workListId: $("#work_id").val(),
                                         services: services,
                                         materials: materials,
-                                        total: $("#total_amount").text(),
+                                        total: $("#total_amount").text().replace(/,/g,''),
                                         paymentStatus: $("#payment_status").val(),
                                         status: $("#status").val(),
                                         remarks:$("#remarks").val(),
