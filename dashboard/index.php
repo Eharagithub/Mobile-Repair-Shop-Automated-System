@@ -132,7 +132,7 @@ $conn = new mysqli('localhost', 'root', '', 'mobileshopdb');
 							<div class="widget-data">
 								<div class="weight-700 font-24 text-dark">
 								<?php
-									echo $conn->query("SELECT * FROM jobservice")->num_rows;
+									echo $conn->query("SELECT * FROM job where isInvoiced = 1")->num_rows;
 									?>
 								</div>
 								<div class="font-14 text-secondary weight-500">Done Repairs</div>
