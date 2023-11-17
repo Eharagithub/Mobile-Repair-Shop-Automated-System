@@ -126,8 +126,8 @@ if (isset($_REQUEST["createClient"])) {
 							//echo 		        '<a class="dropdown-item" href="#" onclick="editCustomer(\'' . $row['nic'] . '\', \'' . $row['name'] . '\', \'' . $row['address'] . '\', \'' . $row['phone1'] . '\')">
 								//					<i class="dw dw-edit"></i> Edit</a>';
 											//Drop down for delete the row
-							echo 				'<a class="dropdown-item delete-service" href="#" data-service-id="' . $row['nic'] . '">
-													<i class="dw dw-delete-3"></i> Delete</a>';
+							//echo 				'<a class="dropdown-item delete-service" href="#" data-service-id="' . $row['nic'] . '">
+							//						<i class="dw dw-delete-3"></i> Delete</a>';
 						  
 					
 							echo 			'</div>';
