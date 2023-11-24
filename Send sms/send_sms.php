@@ -53,7 +53,7 @@
             </div>
             <div class="form-group">
                 <label for="message">Message:</label>
-                <textarea id="message" name="message" rows="4" placeholder="Enter your message" required></textarea>
+                <textarea id="message" name="message" rows="4" placeholder="Enter your message" required>hgthfh</textarea>
             </div>
             <button type="submit">Send SMS</button>
         </form>
