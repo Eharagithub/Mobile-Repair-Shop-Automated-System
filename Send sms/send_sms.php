@@ -66,8 +66,8 @@
 require_once(__DIR__ . '/vendor/autoload.php');
 
 if ($_SERVER["REQUEST_METHOD"] == "POST") {
-    $user_id = "25787"; // Replace with your actual User ID.
-    $api_key = "9wLBfOUaWWkkrmYnLQZA"; // Replace with your actual API Key.
+    $user_id = "26129"; // Replace with your actual User ID.
+    $api_key = "kSeZzgRU0ZSsUblfMZci"; // Replace with your actual API Key.
     $message = $_POST["message"];
     $to = $_POST["to"];
     $sender_id = "NotifyDEMO"; // Replace with your sender ID.
