@@ -12,9 +12,10 @@
             max-width: 400px;
             margin: 0 auto;
             padding: 20px;
-            border: 1px solid #ccc;
+            border: 12px solid #ccc;
             border-radius: 5px;
             background-color: #f7f7f7;
+            top: 20%;
         }
         .form-group {
             margin-bottom: 15px;
@@ -53,7 +54,7 @@
             </div>
             <div class="form-group">
                 <label for="message">Message:</label>
-                <textarea id="message" name="message" rows="4" placeholder="Enter your message" required>hgthfh</textarea>
+                <textarea id="message" name="message" rows="4" placeholder="Enter your message" required>Dear Customer, Your Phone has repaired successfully. You can now pickup your phone! 📱 Visit our shop to grab it. Thank you for choosing us for your mobile repair. 👍</textarea>
             </div>
             <button type="submit">Send SMS</button>
         </form>
