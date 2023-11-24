@@ -51,73 +51,53 @@
                             <th>Inquirer</th>
                             <th>Email</th>
                             <th>Message</th>
-                            <th>Status</th>
                             <th>Action</th>
                         </tr>
                         </thead>
                         <tbody>
                         <?php
-    // Create a database connection
-    $servername = "localhost";
-    $username = "root";
-    $password = "";
-    $dbname = "mobileshopdb"; // Name of your database
+                        // Create a database connection
+                        $servername = "localhost";
+                        $username = "root";
+                        $password = "";
+                        $dbname = "mobileshopdb"; // Name of your database
 
-    $conn = new mysqli($servername, $username, $password, $dbname);
+                        $conn = new mysqli($servername, $username, $password, $dbname);
 
-    // Check connection
-    if ($conn->connect_error) {
-        die("Connection failed: " . $conn->connect_error);
-    }
+                        // Check connection
+                        if ($conn->connect_error) {
+                            die("Connection failed: " . $conn->connect_error);
+                        }
 
-    // Fetch data from the "inquiries" table
-    $sql = "SELECT * FROM inquries";
-    $result = $conn->query($sql);
+                        // Fetch data from the "inquiries" table
+                        $sql = "SELECT * FROM inquries";
+                        $result = $conn->query($sql);
 
-  // Check if there are rows in the result
-  if ($result->num_rows > 0) {
-    while ($row = $result->fetch_assoc()) {
-        echo "<tr>";
-        echo "<td>" . $row["mid"] . "</td>";
-        echo "<td>" . $row["fullname"] . "</td>";
-        echo "<td>" . $row["email"] . "</td>";
-        echo "<td>" . $row["message"] . "</td>";
-       // echo "<td>" . $row["Timestamp"] . "</td>";
-        echo "</tr>";
-    }
-} else {
-    echo "<tr><td colspan='6'>No records found</td></tr>";
-}
+                        // Check if there are rows in the result
+                        if ($result->num_rows > 0) {
+                            while ($row = $result->fetch_assoc()) {
+                                echo "<tr>";
+                                echo "<td>" . $row["mid"] . "</td>";
+                                echo "<td>" . $row["fullname"] . "</td>";
+                                echo "<td>" . $row["email"] . "</td>";
+                                echo "<td>" . $row["message"] . "</td>";
+                                echo "<td>";
+                                echo "<button class='btn btn-success btn-sm read-btn'>Read</button>";
+                                echo "<button class='btn btn-danger btn-sm delete-btn'>Delete</button>";
+                                echo "</td>";
+                                echo "</tr>";
+                            }
+                        } else {
+                            echo "<tr><td colspan='5'>No records found</td></tr>";
+                        }
 
-// Close the database connection
-$conn->close();
-?>
-  <!--                      <tr>
-                            <td class="text-center"></td>
-                            <td>Kanchana Saranga</td>
-                            <td>kanchanasaranga11@gmail.com</td>
-                            <td>This is the inquiry message.</td>
-                            <td class="text-center">
-                                <span class="badge badge-pill badge-success">Read</span>
-                                <span class="badge badge-pill badge-primary">Unread</span>
-                            </td>
-                            <td align="center">
-                                <div class="dropdown">
-                                    <button type="button" class="btn btn-flat btn-default btn-sm dropdown-toggle dropdown-icon"
-                                        data-toggle="dropdown">Action
-                                        <span class="sr-only">Toggle Dropdown</span>
-                                    </button>
-                                    <div class="dropdown-menu" role="menu">
-                                        <a class="dropdown-item view_details" href="javascript:void(0)">View</a>
-                                        <a class="dropdown-item delete_data" href="javascript:void(0)">Delete</a>
-                                    </div>
-                                </div>
-                            </td>
-                        </tr>
+                        // Close the database connection
+                        $conn->close();
+                        ?>
                         </tbody>
                     </table>
                 </div>
-            </div> -->
+            </div>
             <!-- Simple Datatable End -->
         </div>
     </div>
@@ -161,20 +141,26 @@ $conn->close();
 <script src="src/plugins/datatables/js/dataTables.responsive.min.js"></script>
 <script src="src/plugins/datatables/js/responsive.bootstrap4.min.js"></script>
 <script>
-    // JavaScript code to handle the "View" button click
-    $('.view_details').click(function () { 
-      // Assuming you have data for inquirer, email, and message
-        var inquirer = "  "; // Replace with actual inquirer data
-        var email = " "; // Replace with actual email data
-        var message = "This is the inquiry message."; // Replace with actual message data  
+    $(document).ready(function () {
+        // JavaScript code to handle the "Read" button click
+        $('.read-btn').click(function () {
+            // You can handle the "Read" button click as shown in the previous response
+            var inquirer = $(this).closest('tr').find('td:eq(1)').text();
+            var email = $(this).closest('tr').find('td:eq(2)').text();
+            var message = $(this).closest('tr').find('td:eq(3)').text();
+            $('#inquirerDetails').text(inquirer);
+            $('#emailDetails').text(email);
+            $('#messageDetails').text(message);
+            $('#viewDetailsModal').modal('show');
+        });
 
-        // Populate the modal content
-        $('#inquirerDetails').text(inquirer);
-        $('#emailDetails').text(email);
-        $('#messageDetails').text(message);
-
-        // Show the modal
-        $('#viewDetailsModal').modal('show');
+        // JavaScript code to handle the "Delete" button click
+        $('.delete-btn').click(function () {
+            // Handle the "Delete" button click here
+            // You can use $(this) to access the specific row's data and perform delete operation
+            // For example, you can make an AJAX request to delete the record from the database
+            // After successfully deleting, you can remove the row from the table using $(this).closest('tr').remove();
+        });
     });
 </script>
 <!-- End JavaScript -->
