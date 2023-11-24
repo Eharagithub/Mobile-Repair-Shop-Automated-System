@@ -156,7 +156,12 @@ $statusMap = [
                                         echo             '</a>';
                                         //Drop down for view the row
                                         echo             '<div class="dropdown-menu dropdown-menu-right dropdown-menu-icon-list">';
-                                        echo                 '<a class="dropdown-item" href="invoice.php?id='.$row["id"].'"><i class="dw dw-eye"></i> View </a>';
+                                        echo                 '<a class="dropdown-item" href="invoice.php?id='.$row["id"].'">
+                                                                <i class="dw dw-eye"></i> View </a>';
+                                         //Drop down for send notification 
+                                    
+                                         echo                 '<a class="dropdown-item" href="invoice.php?id='.$row["id"].'">
+                                                                    <i class="dw dw-eye"></i> Job Done </a>';
                                         '</div>';
                                         '<div>';
                                         '</td>';
