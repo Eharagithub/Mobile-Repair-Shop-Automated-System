@@ -34,6 +34,7 @@
             We are Specialized for following Software Repairs & Hardware Repairs.</p>
     </section>
 
+    <br><br>
     <h4>We are Specialized for following Software Repairs</h4>
     <div class="container mt-5">
         <div class="row">
@@ -44,7 +45,7 @@
                         </div>
                         <div class="service-text">
                             <P>Diagnosing of errors for better use</p>
-                            <H6>The cost associate is 2500LKR</H6>
+                            <H6>The cost associate is 1500LKR</H6>
                             <a href="" class="btn-area">Read More</a>
                         </div>
                     </div>
@@ -68,7 +69,7 @@
                         </div>
                         <div class="service-text">
                             <p>Setting up the phone for proper usage</p>
-                            <H6>The cost associate is 2500LKR</H6>
+                            <H6>The cost associate is 500LKR</H6>
                             <a href="" class="btn-area">Read More</a>
                         </div>
                     </div>
@@ -80,7 +81,19 @@
                         </div>
                         <div class="service-text">
                             <p>Unlocking of accidentally locked phones</p>
-                            <H6>The cost associate is 2500LKR</H6>
+                            <H6>The cost associate is 400LKR</H6>
+                            <a href="" class="btn-area">Read More</a>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-4">
+                    <div class="single-service" >
+                        <div class="service-bg service-bg-8">
+                            <h2>Virus Clearing</h2>
+                        </div>
+                        <div class="service-text">
+                            <p>Is your phone attacked with Virus? We will cleaning it for you</p>
+                            <H6>The cost associate is 3450LKR</H6>
                             <a href="" class="btn-area">Read More</a>
                         </div>
                     </div>
@@ -92,7 +105,7 @@
                         </div>
                         <div class="service-text">
                             <p>Installing of Apps for anyone in requirement</p>
-                            <H6>The cost associate is 2500LKR</H6>
+                            <H6>The cost associate is 800LKR</H6>
                             <a href="" class="btn-area">Read More</a>
                         </div>
                     </div>
@@ -115,74 +128,104 @@
                             <h2>Software updations</h2>
                         </div>
                         <div class="service-text">
-                            <p>Updating of software for better use</p>
-                            <H6>The cost associate is 2500LKR</H6>
+                            <p>Do you need to update your phone? We will update the software for better use</p>
+                            <H6>The cost associate is 1500LKR</H6>
                             <a href="" class="btn-area">Read More</a>
                         </div>
                     </div>
                 </div>
-                <div class="col-md-4">
-                    <div class="single-service" >
-                        <div class="service-bg service-bg-8">
-                            <h2>Virus Clearing</h2>
-                        </div>
-                        <div class="service-text">
-                            <p>Cleaning of phone virus</p>
-                            <H6>The cost associate is 2500LKR</H6>
-                            <a href="" class="btn-area">Read More</a>
-                        </div>
-                    </div>
-                </div>
+                
                 <div class="col-md-4">
                     <div class="single-service" >
                         <div class="service-bg service-bg-9">
                             <h2>Data Backup</h2>
                         </div>
                         <div class="service-text">
-                            <p>Backing up or transfers</p>
+                            <p>Need a backup? Backing up or transfers</p>
                             <H6>The cost associate is 2500LKR</H6>
                             <a href="" class="btn-area">Read More</a>
                         </div>
                     </div>
                 </div>
-                <div class="col-md-4">
-                    <div class="single-service" >
-                        <div class="service-bg service-bg-10">
-                            <h2>Phone Slow Issues</h2>
-                        </div>
-                        <div class="service-text">
-                            <p>Rectifying the issues or re-installations</p>
-                            <H6>The cost associate is 2500LKR</H6>
-                            <a href="" class="btn-area">Read More</a>
-                        </div>
-                    </div>
-                </div>
-                <div class="col-md-4">
-                    <div class="single-service" >
-                        <div class="service-bg service-bg-11">
-                            <h2>Apps Crashing Issues</h2>
-                        </div>
-                        <div class="service-text">
-                            <p>Rectifying the crash issues or re-install</p>
-                            <H6>The cost associate is 2500LKR</H6>
-                            <a href="" class="btn-area">Read More</a>
-                        </div>
-                    </div>
-                </div>
-                <div class="col-md-4">
-                    <div class="single-service" >
-                        <div class="service-bg service-bg-12">
-                            <h2>Other Issues</h2>
-                        </div>
-                        <div class="service-text">
-                            <p>All other software issues to be rectified</p>
-                            <H6>The cost associate is 2500LKR</H6>
-                            <a href="" class="btn-area">Read More</a>
-                        </div>
-                    </div>
-                </div>
+               
         </div>
     </div>
+    <br><br>
+    <h4>We are Specialized for following Hardware Repairs</h4>
+    <div class="container mt-5">
+        <div class="row">
+        <div class="col-md-4">
+                    <div class="single-service" >
+                        <div class="service-bg hard-bg-1">
+                            <h2>Battery Replacement</h2>
+                        </div>
+                        <div class="service-text">
+                            <P>Have a short battery life or perhaps a bloated battery? We provide replacements hassle free with 6 months warranty.</p>
+                            <H6>The cost associate is 500LKR</H6>
+                            <a href="" class="btn-area">Read More</a>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-4">
+                    <div class="single-service" >
+                        <div class="service-bg hard-bg-2">
+                            <h2>Motherboard Repair</h2>
+                        </div>
+                        <div class="service-text">
+                            <p>Logic board level repairs arises due to many complications. We provide repairs as our technicians are highly experienced in logic-level repairs</p>
+                            <H6>The cost associate is 2500LKR</H6>
+                            <a href="" class="btn-area">Read More</a>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-4">
+                    <div class="single-service" >
+                        <div class="service-bg hard-bg-3">
+                            <h2>Camera Repair</h2>
+                        </div>
+                        <div class="service-text">
+                            <p>Any complications that arise with your camera or if it has been damaged. We provide replacements to any Apple device.</p>
+                            <H6>The cost associate is 4500LKR</H6>
+                            <a href="" class="btn-area">Read More</a>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-4">
+                    <div class="single-service" >
+                        <div class="service-bg hard-bg-4">
+                            <h2>Home Button Repair</h2>
+                        </div>
+                        <div class="service-text">
+                            <p>Is your phones home button is not working? We provide home button repairs for any.</p>
+                            <H6>The cost associate is 2400LKR</H6>
+                            <a href="" class="btn-area">Read More</a>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-4">
+                    <div class="single-service" >
+                        <div class="service-bg hard-bg-5">
+                            <h2>Screen Repair</h2>
+                        </div>
+                        <div class="service-text">
+                            <p>Dropped your phone or damaged display in an irreparable way? We provide original repairs to any.</p>
+                            <H6>The cost associate is 5400LKR</H6>
+                            <a href="" class="btn-area">Read More</a>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-4">
+                    <div class="single-service" >
+                        <div class="service-bg hard-bg-6">
+                            <h2>Water Damaged Repair</h2>
+                        </div>
+                        <div class="service-text">
+                            <p>Dropped your phone in water? We can repair your phone as long as it is brought to us as soon as possible.</p>
+                            <H6>The cost associate is 2400LKR</H6>
+                            <a href="" class="btn-area">Read More</a>
+                        </div>
+                    </div>
+                </div>
 
 
 </body>

@@ -162,7 +162,42 @@ h4{
     background-size: cover;
     background-position:center;
 }
-
+.hard-bg-1{
+    background: url("https://iphonetechnologies.lk/wp-content/uploads/2020/12/Battery-Replacement-200x200.png");
+    -webkit-background-size:cover ;
+    background-size: cover;
+    background-position:center;
+}
+.hard-bg-2{
+    background: url("https://iphonetechnologies.lk/wp-content/uploads/2020/12/Speaker-Repair-200x200.png");
+    -webkit-background-size:cover ;
+    background-size: cover;
+    background-position:center;
+}
+.hard-bg-3{
+    background: url("https://iphonetechnologies.lk/wp-content/uploads/2020/12/Camera-Repair-200x200.png");
+    -webkit-background-size:cover ;
+    background-size: cover;
+    background-position:center;
+}
+.hard-bg-4{
+    background: url("https://iphonetechnologies.lk/wp-content/uploads/2020/12/Home-Button-Repair-200x200.png");
+    -webkit-background-size:cover ;
+    background-size: cover;
+    background-position:center;
+}
+.hard-bg-5{
+    background: url("https://iphonetechnologies.lk/wp-content/uploads/2020/12/Screen-Repair-200x200.png");
+    -webkit-background-size:cover ;
+    background-size: cover;
+    background-position:center;
+}
+.hard-bg-6{
+    background: url("https://iphonetechnologies.lk/wp-content/uploads/2020/12/Water-Damage-200x200.png");
+    -webkit-background-size:cover ;
+    background-size: cover;
+    background-position:center;
+}
 .service-bg h2{
     color: #fff;
     background: tomato;
