@@ -192,7 +192,7 @@
 <!-- end instruction section -->
 
 
-
+<?php include_once("./Common/footer.php") ?> 
  
 </html>
 

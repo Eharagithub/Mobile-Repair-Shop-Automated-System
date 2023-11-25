@@ -35,10 +35,11 @@
     </section>
 
     <br><br>
+<section>
     <h4>We are Specialized for following Software Repairs</h4>
     <div class="container mt-5">
         <div class="row">
-        <div class="col-md-4">
+                <div class="col-md-4">
                     <div class="single-service" >
                         <div class="service-bg service-bg-1">
                             <h2>Diagnosing Of Issues</h2>
@@ -147,14 +148,13 @@
                         </div>
                     </div>
                 </div>
-               
-        </div>
+       </div>
     </div>
     <br><br>
     <h4>We are Specialized for following Hardware Repairs</h4>
     <div class="container mt-5">
         <div class="row">
-        <div class="col-md-4">
+                <div class="col-md-4">
                     <div class="single-service" >
                         <div class="service-bg hard-bg-1">
                             <h2>Battery Replacement</h2>
@@ -226,6 +226,12 @@
                         </div>
                     </div>
                 </div>
+        </div>
+    </div>
+</section>
+
+    <br><br>
+<?php include_once("./Common/footer.php") ?> 
 
 
 </body>

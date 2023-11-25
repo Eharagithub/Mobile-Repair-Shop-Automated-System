@@ -11,6 +11,7 @@
     <header>
         
         <?php include_once("./Common/header.php") ?> 
+       
     </header>
     
             <div class ="title">
@@ -176,87 +177,8 @@
 
     </div>
   </section>
-  
-
- 
-  <footer id="Contact" class="page-footer p-5 text-md-left">
-    
-    <div class="container py-5">
-      <div class="row g-4">
-        <div class="col-lg-3 col-md-6">
-          <h5 class="text-uppercase font-weight-bold mb-4">About</h5>
-          <p>We have been stationed & repairing on our location for 23 years. We have the repairing experience of more than thousands of phones from our inception.</p>
-          <a href="#"><i class="bi bi-facebook text-dark mx-1 lead"></i></a>
-              <a href="#"><i class="bi bi-twitter text-dark mx-1 lead"></i></a>
-              <a href="#"><i class="bi bi-linkedin text-dark mx-1 lead"></i></a>
-              <a href="#"><i class="bi bi-instagram text-dark mx-1 lead "></i></a> 
-        </div>
-        <div class="col-lg-2 col-md-2 mx-auto">
-          <h5 class="text-uppercase font-weight-bold mb-4">Services</h5>
-          <ul class="list-unstyled">
-            <li class="mb-1"><a href="#">Hardware Repaires</a></li>
-            <li class="mb-1"><a href="#">Software Repaires</a></li>
-            <li class="mb-1"><a href="#">Accessories</a></li>
-            <li class="mb-1"><a href="#">Other</a></li>
-             
-          </ul>
-
-        </div>
-        <div class="col-lg-2 col-md-2 mx-auto">
-          <h5 class="text-uppercase font-weight-bold mb-4">Page Links</h5>
-          <ul class="list-styled">
-            <li class="mb-1"><a href="#">Home</a></li>
-            <li class="mb-1"><a href="#">About</a></li>
-            <li class="mb-1"><a href="#">Services</a></li>
-            <li class="mb-1"><a href="#">Contact</a></li>
-          </ul>
-
-        </div>
-        <div class="col-lg-3 col-xs-12 location">
-          <h5 class="text-uppercase font-weight-bold mb-4">Location</h5>
-          
-          <p class="d-flex align-item-center">
-            <i class="bi bi-phone text-primary mx-2 lead"></i>0755714430
-
-          </p>
-          <p class="d-flex align-item-center">
-            <i class="bi bi-envelope text-primary mx-2 lead"></i>Kasthurimobile@gmail.com
-
-          </p>  
-          
-
-        </div>
-
-       
-
-      </div>
-  
-    </div>
-  
-
-  </footer>
-
-
-      
-  <footer class="p-3 bg-dark text-white text-center position-relative">
-    <div class="container">
-      <p class="mb-0">
-        Team &copy; No 1
-
-      </p>
-      <a href="#" class="position-absolute bottom-0 end-0 p-5">
-        <i class="bi bi-arrow-up-circle h1"></i>
-      </a>
-
-    </div>
-
-  </footer> 
-
-
- 
-
-
-  
-    </body>
+  <br><br>
+  <?php include_once("./Common/footer.php") ?> 
+</body>
 
 </html>
