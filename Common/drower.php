@@ -167,7 +167,7 @@ if (!isset($_SESSION["systemUserID"])) {
 
 
 
-                <?php if (($_SESSION["systemUserType"] == "ADMIN")) { ?>
+                <!--<?php if (($_SESSION["systemUserType"] == "ADMIN")) { ?>
                     <li class="dropdown">
                         <a href="javascript:;" class="dropdown-toggle">
                             <span class="micon dw dw-bar-chart"></span><span class="mtext"> reports</span>
@@ -177,7 +177,7 @@ if (!isset($_SESSION["systemUserID"])) {
                             <li><a href="pie.php">Pie Chart</a></li>
                         </ul>
                     </li>
-                <?php } ?>
+                <?php } ?>-->
 
                 <?php if (($_SESSION["systemUserType"] == "ADMIN")) { ?>
                     <li>
@@ -187,13 +187,6 @@ if (!isset($_SESSION["systemUserID"])) {
                     </li>
                 <?php } ?>
 
-                <?php if (($_SESSION["systemUserType"] == "ADMIN")) { ?>
-                    <li>
-                        <a href="settings.php" class="dropdown-toggle no-arrow">
-                            <span class="micon dw dw-settings2"></span><span class="mtext"> Settings</span>
-                        </a>
-                    </li>
-                <?php } ?>
 
                 <?php if (($_SESSION["systemUserType"] == "BR") ) { ?>
                     <li>

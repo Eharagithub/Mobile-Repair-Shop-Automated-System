@@ -35,7 +35,7 @@
     </section>
 
     <br><br>
-<section>
+<section class="p-5" id="services">
     <h4>We are Specialized for following Software Repairs</h4>
     <div class="container mt-5">
         <div class="row">
