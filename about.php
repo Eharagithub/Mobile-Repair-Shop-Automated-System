@@ -61,8 +61,9 @@
     background: #fff;
     transition: .9s;
     color:tomato;
-
   }
+  
+
   /* Apply the hover effect to the Facebook icon */
     a[href="https://www.facebook.com/Kasthuri mobile solutions"] i.bi-facebook {
     color: #000; /* Default color (e.g., black) */
@@ -126,7 +127,7 @@
       <div class="col-md-6 col-lg-3">
         <div class="card" style="background-color: #e3e2e1;">
           <div class="card-body text-center p-51">
-            <img src="im5.jpg" class="card-img-top rounded-circle mb-3" alt="John Doe">
+            <img src="suresh.jpg" class="card-img-top rounded-circle mb-3" style="border: 5px solid grey ; max-width: 137px; height: 150px;" alt="John Doe">
             <h3 class="card-title mb-3">Owner Of the Shop</h3>
             <p class="card-text"style="color:black;">
               Suresh Ariyawansha
@@ -143,7 +144,7 @@
       <div class="col-md-6 col-lg-3">
         <div class="card" style="background-color: #e3e2e1;">
           <div class="card-body text-center p-51">
-            <img src="im5.jpg" class="card-img-top rounded-circle mb-3" alt="John Doe">
+            <img src="hard.jpg" class="card-img-top rounded-circle mb-3" style="border: 5px solid grey; max-width: 137px; height: 150px;" alt="John Doe">
             <h3 class="card-title mb-3">Hardware Specialist</h3>
             <p class="card-text" style="color:black;">
                Kanchana Saranga
@@ -158,7 +159,7 @@
       <div class="col-md-6 col-lg-3">
         <div class="card" style="background-color: #e3e2e1;">
           <div class="card-body text-center p-51">
-            <img src="im5.jpg" class="card-img-top rounded-circle mb-3" alt="John Doe">
+            <img src="soft.jpg" class="card-img-top rounded-circle mb-3" style="border: 5px solid grey; max-width: 137px; height: 150px;" alt="John Doe">
             <h3 class="card-title mb-3">Software Specialist</h3>
             <p class="card-text"style="color:black;">
               Lakna Ekanayeka
@@ -173,7 +174,7 @@
       <div class="col-md-6 col-lg-3">
         <div class="card" style="background-color: #e3e2e1;">
           <div class="card-body text-center p-51">
-            <img src="im5.jpg" class="card-img-top rounded-circle mb-3" alt="John Doe">
+            <img src="delivery.jpg" class="card-img-top rounded-circle mb-3" style="border: 5px solid grey; max-width: 137px; height: 150px;" alt="John Doe">
             <h3 class="card-title mb-3">Our Delivery Partner </h3>
             <p class="card-text"style="color:black;">
                 PickUp Point
