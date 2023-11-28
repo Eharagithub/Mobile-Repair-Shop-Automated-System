@@ -116,8 +116,8 @@ if (isset($_REQUEST["createlocation"])) {
 							echo 		        '<a class="dropdown-item" href="#" onclick="editCustomer(\'' . $row['locid'] . '\', \'' . $row['lname'] . '\', \'' . $row['laddress'] . '\', \'' . $row['phone1'] . '\')">
 													<i class="dw dw-edit"></i> Edit</a>';
 											//Drop down for delete the row
-							echo 				'<a class="dropdown-item delete-service" href="#" data-service-id="' . $row['locid'] . '">
-													<i class="dw dw-delete-3"></i> Delete</a>';
+							//echo 				'<a class="dropdown-item delete-service" href="#" data-service-id="' . $row['locid'] . '">
+												//	<i class="dw dw-delete-3"></i> Delete</a>';
 						  
 					
 							echo 			'</div>';
@@ -289,7 +289,47 @@ if (isset($_REQUEST["createlocation"])) {
        			 // Open the modal
         		$('#view').modal('show');
     			}
+				
 			</script>
+			<!--edit function-->
+			<script>
+    			function editService(serviceId, serviceName, description, cost, date) {
+        		// Populate the edit modal form fields with the data from the selected row
+        		document.getElementById("editServiceId").value = serviceId;
+        		document.getElementById("editServiceName").value = serviceName;
+				
+        		// Populate other form fields as needed
+        
+        		// Open the edit modal
+        		$('#editServiceModal').modal('show');
+    			}
+
+    			
+    			function submitEditForm() {
+        		// Submit the edit form
+        		document.getElementById("editServiceForm").submit();
+				}
+			</script>
+
+			<!--delete function-->
+			<script>
+    			// Handle delete button click
+    			$(document).on('click', '.delete-service', function(e) {
+        		e.preventDefault();
+
+        		// Get the service ID from the data attribute
+        		var serviceIdToDelete = $(this).data('service-id');
+
+        		// Show a confirmation dialog
+        		var confirmDelete = confirm('Are you sure you want to delete this service?');
+
+        		if (confirmDelete) {
+            	// Redirect to the delete page with the service ID as a parameter
+            	window.location.href = 'delete_service.php?serviceId=' + serviceIdToDelete;
+       			 }
+    			});
+			</script>
+
 
 </body>
 
