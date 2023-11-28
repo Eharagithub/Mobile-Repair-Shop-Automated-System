@@ -160,7 +160,7 @@ $statusMap = [
                                                                 <i class="dw dw-eye"></i> View </a>';
                                          //Drop down for send notification 
                                     
-                                         echo                 '<a class="dropdown-item" href="invoice.php?id='.$row["id"].'">
+                                         echo                 '<a class="dropdown-item" href="../Send sms/send_sms.php">
                                                                     <i class="dw dw-eye"></i> Job Done </a>';
                                         '</div>';
                                         '<div>';

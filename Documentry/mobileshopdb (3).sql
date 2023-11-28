@@ -224,7 +224,8 @@ CREATE TABLE `jobdelivery` (
 --
 
 CREATE TABLE `jobitem` (
-  `jobserviceitemid` int(11) NOT NULL,
+  `jobitemid` int(11) NOT NULL,
+  `jobid` int(11) NOT NULL ,
   `itemId` varchar(255) NOT NULL,
   `qty` int(11) NOT NULL,
   `price` float NOT NULL

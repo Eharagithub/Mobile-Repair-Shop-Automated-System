@@ -3,18 +3,30 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Send SMS</title>
+    <title>Send Notification</title>
     <style>
         body {
-            font-family: Arial, sans-serif;
+            font-family: century;
+            background-image: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)), url(pexels-pixabay-356056.jpg);
+            background-size: cover;
+            background-position: center;
+            
         }
         .container {
-            max-width: 400px;
+            max-width: 540px;
             margin: 0 auto;
-            padding: 20px;
-            border: 1px solid #ccc;
+            padding: 44px;
+            border: 12px solid #ccc;
             border-radius: 5px;
             background-color: #f7f7f7;
+            transform: translateY(50px); /* Move down by 30px */
+        }
+        h2{
+            position:absolute;
+            top:5%;
+            left:25%;
+            transform: translate(-50%,-50%);
+            font-size: 30px;
         }
         .form-group {
             margin-bottom: 15px;
@@ -45,7 +57,8 @@
 </head>
 <body>
     <div class="container">
-        <h2>Send SMS</h2>
+        <h2>Send Notification</h2>
+        <br> <br> 
         <form action="send_sms.php" method="POST">
             <div class="form-group">
                 <label for="to">Recipient's Phone Number:</label>
@@ -53,7 +66,7 @@
             </div>
             <div class="form-group">
                 <label for="message">Message:</label>
-                <textarea id="message" name="message" rows="4" placeholder="Enter your message" required></textarea>
+                <textarea id="message" name="message" rows="4" placeholder="Enter your message" required>Dear Customer, Your Phone has repaired successfully. You can now pickup your phone! Visit our shop to grab it. Thank you for choosing us for your mobile repair.</textarea>
             </div>
             <button type="submit">Send SMS</button>
         </form>
@@ -66,8 +79,8 @@
 require_once(__DIR__ . '/vendor/autoload.php');
 
 if ($_SERVER["REQUEST_METHOD"] == "POST") {
-    $user_id = "25787"; // Replace with your actual User ID.
-    $api_key = "9wLBfOUaWWkkrmYnLQZA"; // Replace with your actual API Key.
+    $user_id = "26129"; // Replace with your actual User ID.
+    $api_key = "kSeZzgRU0ZSsUblfMZci"; // Replace with your actual API Key.
     $message = $_POST["message"];
     $to = $_POST["to"];
     $sender_id = "NotifyDEMO"; // Replace with your sender ID.

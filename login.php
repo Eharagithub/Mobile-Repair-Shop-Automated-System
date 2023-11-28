@@ -41,7 +41,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
             header("Location: dashboard/index.php"); // Redirect to a welcome page or dashboard
         } else {
             // Invalid login, display an error message
-            echo "Invalid username or password.";
+            echo "<script>alert('Oh sorry Invalid username or password');</script>";
         }
     } else {
         echo "Please enter username and password";
@@ -57,17 +57,12 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
     <title>Transparent Login</title>
     <link rel="stylesheet" type="text/css" href="login.css">
 
-    <script type="text/javascript">
-        /*function msg(){
-            alert("Enter the correct username or Password");
-        }*/
-        function forget(){
-            alert("Please reset your password");
-        }
-    </script>
+ 
 </head>
 
 <body>
+    
+    
     <div class="login-box">
         <h1>Login..</h1>
         <form action="" method="POST">
@@ -75,8 +70,9 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
             <input type="text" name="username" required>
             <p>Password</p>
             <input type="password" name="password" required>
-            <input type="submit" name="click" onclick="msg()" value="Login">
-            <a href="#"  onclick="forget()">Forgot Password</a>
+            <br><br>
+            <input type="submit" name="click" value="Login">
+           
         </form>
     </div>
 </body>

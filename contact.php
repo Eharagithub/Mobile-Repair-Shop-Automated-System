@@ -43,7 +43,8 @@
           </p>
         </div>
     </section>
-      
+    <br><br>
+<?php include_once("./Common/footer.php") ?> 
   
 </body>
 </html>

@@ -133,16 +133,19 @@ $jobitems = mysqli_fetch_all($result, MYSQLI_ASSOC);
       justify-content: space-between;
       align-items: center;
       margin-top: 20px;
+      
     }
 
     .totals p {
       font-size: 20px;
       margin: 5px 0;
+     
     }
 
     .total-amount {
       font-size: 18px;
       color: #007BFF;
+     
     }
 
     .footer {
