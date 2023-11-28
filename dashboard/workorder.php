@@ -197,7 +197,6 @@ if (isset($_REQUEST["createjob"])) {
 												<input class="form-control form-control-lg" type="text" id="nic" name="nic" placeholder="Order Id" required>
 											</div>
 										</div>
-
 										<div class="col-md-6 col-sm-12">
 											<div class="form-group">
 												<label>Device</label>
