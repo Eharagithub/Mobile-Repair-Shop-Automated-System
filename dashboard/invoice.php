@@ -145,6 +145,7 @@ $jobitems = mysqli_fetch_all($result, MYSQLI_ASSOC);
     .total-amount {
       font-size: 18px;
       color: #007BFF;
+      text-align: left;
      
     }
 
