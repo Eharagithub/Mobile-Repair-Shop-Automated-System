@@ -121,13 +121,13 @@ if (!isset($_SESSION["systemUserID"])) {
                     </li>
                 <?php } ?>
 
-                <?php if (($_SESSION["systemUserType"] == "ADMIN")) { ?>
+              <!--  <?php if (($_SESSION["systemUserType"] == "ADMIN")) { ?>
                     <li>
                         <a href="technician.php" class="dropdown-toggle no-arrow">
                             <span class="micon fa fa-wrench"></span><span class="mtext">Technicians</span>
                         </a>
                     </li>
-                <?php } ?>
+                <?php } ?>-->
 
                 <?php if (($_SESSION["systemUserType"] == "ADMIN")) { ?>
                     <li>
