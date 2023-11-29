@@ -11,7 +11,6 @@
     <link rel="stylesheet" href="about.css">
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@4.6.2/dist/css/bootstrap.min.css" rel="stylesheet">
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@6.2.1/css/fontawesome.min.css">
-    <link href="services.css" rel="stylesheet">
 
 
 </head>
@@ -150,7 +149,10 @@
                 </div>
        </div>
     </div>
+</section>
     <br><br>
+
+<section class="p-5" id="services">
     <h4>We are Specialized for following Hardware Repairs</h4>
     <div class="container mt-5">
         <div class="row">

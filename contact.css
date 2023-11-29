@@ -17,6 +17,13 @@
 	left: 1100px;
     margin-top: 40px;
 }
+/* styles.css */
+.map-container {
+    width: 100%;
+    margin: 0;
+  }
+  
+
 
 .contact-title {
     color: white;
@@ -25,8 +32,11 @@
     position: absolute; /* Position the "Contact" text absolutely within the header */
     top: 50%; /* Adjust the top value as needed to position it correctly */
     font-size: 36px; /* Adjust font size as needed */
-    left: 50px;
-}
+ 
+    left: 80px;
+ 
+    left: 262px;
+ }
 
 .contact-form label {
     color: white;
