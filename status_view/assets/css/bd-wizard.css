@@ -137,7 +137,7 @@ body {
   .wizard .actions li a {
     display: inline-block;
     border-radius: 6px;
-    background-color: #00d69f;
+    background-color: tomato;
     padding: 16px 30px;
     color: #fff;
     font-style: 15px;
