@@ -24,9 +24,12 @@ if (isset($_REQUEST["createstockitem"])) {
 		$stmt->close();
 	}
 }
+?>
 
+
+<?php
 	// Code for updating an existing stock item
-if (isset($_POST["editstockform"])) {
+if (isset($_POST["editstockitem"])) {
     $edititemCode = $_POST['edititemCode'];
     $editStockName = $_POST['editStockName'];
     $editStockCost = $_POST['editStockCost'];
@@ -54,7 +57,6 @@ if (isset($_POST["editstockform"])) {
         $stmt->close();
     }
 }
-
 
 ?>
 
@@ -329,7 +331,7 @@ if (isset($_GET['itemCode'])) {
     <div class="modal-dialog" role="document">
         <div class="modal-content">
             <!-- ... (other modal content) ... -->
-            <form id="editstockform" method="POST" action="stockitem.php">
+            <form id="editstockitem" method="POST" action="stockitem.php">
                 <input type="hidden" id="edititemCode" name="edititemCode" value="">
                 <div class="form-group">
                     <label for="editStockName">Material Type</label>
@@ -370,7 +372,7 @@ if (isset($_GET['itemCode'])) {
 
     function submitEditForm() {
         // Submit the edit form
-        document.getElementById("editstockform").submit();
+        document.getElementById("editstockitem").submit();
     }
 </script>
 

@@ -198,7 +198,7 @@ if (isset($_POST["editLocation"])) {
 			</div>
 		</div>
 
-		<!-- Add Technician Modal -->
+		<!-- Add location Modal -->
 		<div class="col-md-12 col-sm-12 mb-30">
 			<div class="modal fade" id="add_technician" tabindex="-1" role="dialog" aria-labelledby="myLargeModalLabel" aria-hidden="true">
 				<div class="modal-dialog modal-dialog-centered">
