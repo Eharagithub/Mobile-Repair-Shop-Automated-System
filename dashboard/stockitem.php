@@ -23,8 +23,39 @@ if (isset($_REQUEST["createstockitem"])) {
 
 		$stmt->close();
 	}
-
 }
+
+	// Code for updating an existing stock item
+if (isset($_POST["editstockform"])) {
+    $edititemCode = $_POST['edititemCode'];
+    $editStockName = $_POST['editStockName'];
+    $editStockCost = $_POST['editStockCost'];
+    $editStockSellingPrice = $_POST['editStockSellingPrice'];
+
+    // Database connection
+    $conn = new mysqli('localhost', 'root', '', 'mobileshopdb');
+    if ($conn->connect_error) {
+        die('Connection Failed : ' . $conn->connect_error);
+    } else {
+        // Update query
+        $stmt = $conn->prepare("UPDATE item SET name=?, cost=?, sellingPrice=? WHERE itemCode=?");
+        $stmt->bind_param("sssi", $editStockName, $editStockCost, $editStockSellingPrice, $edititemCode);
+    
+        
+
+
+		if ($stmt->execute()) {
+			echo "Stock Item Updated Successfully";
+		} else {
+			echo "Error updating stock item: " . $stmt->error;
+		}
+		
+
+        $stmt->close();
+    }
+}
+
+
 ?>
 
 <!--delete php-->
@@ -36,7 +67,7 @@ if (isset($_GET['itemCode'])) {
 
     // After deleting, you can redirect back to the services list page or perform other actions
     // For example:
-    header('Location: services.php');
+    header('Location: stockitem.php');
     exit;
 }
 ?>
@@ -292,68 +323,59 @@ if (isset($_GET['itemCode'])) {
     			</div>
 			</div>
 
+
 			<!-- Edit Service Modal -->
-			<div class="modal fade" id="editstockitem" tabindex="-1" role="dialog" aria-labelledby="editServiceModalLabel" aria-hidden="true">
-    			<div class="modal-dialog" role="document">
-        			<div class="modal-content">
-            			<div class="modal-header">
-                			<h5 class="modal-title" id="editServiceModalLabel">Edit Stock Item</h5>
-                			<button type="button" class="close" data-dismiss="modal" aria-label="Close">
-                    			<span aria-hidden="true">&times;</span>
-                			</button>
-            			</div>
-            		<div class="modal-body">
-                	<!-- Edit service form fields go here -->
-					<form id="editstockform" method="POST" action="stockitem.php">
+<div class="modal fade" id="editstockitem" tabindex="-1" role="dialog" aria-labelledby="editServiceModalLabel" aria-hidden="true">
+    <div class="modal-dialog" role="document">
+        <div class="modal-content">
+            <!-- ... (other modal content) ... -->
+            <form id="editstockform" method="POST" action="stockitem.php">
+                <input type="hidden" id="edititemCode" name="edititemCode" value="">
+                <div class="form-group">
+                    <label for="editStockName">Material Type</label>
+                    <input type="text" class="form-control" id="editStockName" name="editStockName">
+                </div>
+                <div class="form-group">
+                    <label for="editStockCost">Cost</label>
+                    <input type="text" class="form-control" id="editStockCost" name="editStockCost">
+                </div>
+                <div class="form-group">
+                    <label for="editStockSellingPrice">Selling Price</label>
+                    <input type="text" class="form-control" id="editStockSellingPrice" name="editStockSellingPrice">
+                </div>
+            </form>
 
-    					<input type="hidden" id="edititemCode" name="edititemCode" value="">
-    					<div class="form-group">
-        					<label for="editStockName">Material Type</label>
-       				 		<input type="text" class="form-control" id="editStockName" name="editStockName">
-    					</div>
-
-    					<div class="form-group">
-        					<label for="editStockCost">Cost</label>
-        					<input type="text" class="form-control" id="editStockCost" name="editStockCost">
-						</div>
-
-						<div class="form-group">
-        					<label for="editStockCost">Selling Price</label>
-        					<input type="text" class="form-control" id="editStockCost" name="editStockCost">
-						</div>
-    				
-						</form>
-
-           			</div>
-            		<div class="modal-footer">
+			<div class="modal-footer">
                 		<button type="button" class="btn btn-secondary" data-dismiss="modal" >Close</button>
                 		<button type="button" class="btn btn-primary" onclick="submitEditForm()">Save Changes</button>
 			
            			</div>
-        		</div>
-    		</div>
+            <!-- ... (other modal content) ... -->
+        </div>
+    </div>
+</div>
+
+<!-- edit function -->
+<script>
+    function editstockitem(itemCode,name,stock,cost,sellingPrice) {
+        // Populate the edit modal form fields with the data from the selected row
+        document.getElementById("edititemCode").value = itemCode;
+        document.getElementById("editStockName").value = name;
+        document.getElementById("editStockCost").value = cost;
+        document.getElementById("editStockSellingPrice").value = sellingPrice;
+
+        // Open the edit modal
+        $('#editstockitem').modal('show');
+    }
+
+    function submitEditForm() {
+        // Submit the edit form
+        document.getElementById("editstockform").submit();
+    }
+</script>
 
 
-
-
-
-			<!-- Delete modal 
-			<div class="col-md-4 col-sm-12 mb-30">
-				<div class="modal fade" id="delete" tabindex="-1" role="dialog" aria-labelledby="myLargeModalLabel"
-					aria-hidden="true">
-					<div class="modal-dialog modal-sm modal-dialog-centered">
-						<div class="modal-content bg-danger text-white">
-							<div class="modal-body text-center">
-								<h3 class="text-white mb-15"><i class="fa fa-exclamation-triangle"></i> Alert</h3>
-								<p>Are you sure you want to delete this service?</p>
-								<button type="button" class="btn btn-light" data-dismiss="modal">Yes</button>
-								<button type="button" class="btn btn-light" data-dismiss="modal">Cancel</button>
-							</div>
-						</div>
-					</div>
-				</div>
-			</div>-->
-				
+			
 		
 </div>
 
@@ -382,26 +404,6 @@ if (isset($_GET['itemCode'])) {
     			}
 			</script>
 
-
-			<!--edit function-->
-			<script>
-    			function editstockitem(itemCode, name, stock, cost, sellingPrice) {
-        		// Populate the edit modal form fields with the data from the selected row
-        		document.getElementById("edititemCode").value = itemCode;
-        		document.getElementById("editname").value = name;
-				
-        		// Populate other form fields as needed
-        
-        		// Open the edit modal
-        		$('#editServiceModal').modal('show');
-    			}
-
-    			
-    			function submitEditForm() {
-        		// Submit the edit form
-        		document.getElementById("editServiceForm").submit();
-				}
-			</script>
 
 			<!--delete function-->
 			<script>
