@@ -81,52 +81,7 @@ $resultForInvoice = mysqli_query($data, $sqlForInvoice);
         </h3>
         <section>
         
-    <?php
-    while ($row = mysqli_fetch_array($resultForDelivery)) {
-        // Check if "jobid" key exists in the $row array
-        if (isset($row["jobid"])) {
-            $jobid = $row["jobid"];
-
-            $sqlForJob = "SELECT * FROM job WHERE id=" . $jobid;
-            $resultForJob = mysqli_query($data, $sqlForJob);
-
-            // Check if the query was successful
-            if ($resultForJob) {
-                // Fetch the data only if the query was successful
-                $resultForJob = mysqli_fetch_array($resultForJob);
-
-                if ($resultForJob) {
-                    $locFromId = $resultForJob["locFromId"];
-                    $locToId = $resultForJob["locToId"];
-
-                    // Fetch location names based on locFromId and locToId
-                    $sqlForLocFrom = "SELECT lname FROM location WHERE locid = $locFromId";
-                    $resultForLocFrom = mysqli_query($data, $sqlForLocFrom);
-                    $locFromName = mysqli_fetch_array($resultForLocFrom)["lname"];
-
-                    $sqlForLocTo = "SELECT lname FROM location WHERE locid = $locToId";
-                    $resultForLocTo = mysqli_query($data, $sqlForLocTo);
-                    $locToName = mysqli_fetch_array($resultForLocTo)["lname"];
-
-                    ?>
-                    JOB DELIVERY DATE: <?php echo $row["date"]; ?> <br>
-                    FROM: <?php echo $locFromName; ?> <br>
-                    TO: <?php echo $locToName; ?> <br>
-                    NOTE: <?php echo $row["note"]; ?> <br>
-                <?php
-                } else {
-                    echo "Error fetching data for job with ID " . $jobid;
-                }
-            } else {
-                echo "Error executing SQL query: " . mysqli_error($data);
-            }
-        } else {
-            echo "Error: Key 'jobid' not found in the row array.";
-        }
-    }
-    ?>
-
-
+      
 
 </section>
 

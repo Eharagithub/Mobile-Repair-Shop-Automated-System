@@ -1,3 +1,4 @@
+<!DOCTYPE html>
 <html lang="en" dir="ltr">
   <head>
     <meta charset="utf-8">
@@ -8,30 +9,23 @@
     <link rel="stylesheet" href="statusview.css">
   </head>
   <body>
-  <?php include_once("./Common/header.php") ?>
-  <div class="center">
+    <?php include_once("./Common/header.php") ?>
+    <div class="center">
       <h1> View status of your Phone Repaired</h1>
 
-      <form method="post">
+      <form method="post" action="check_status.php">
         <div class="txt_field">
-          <input type="text" required>
-        
+          <input type="text" name="client_code" required>
           <label>Client code</label>
         </div>
-      
-        <input type="submit" value="OK" class="custom-button">
-        <div class="signup_link">
-   
-        </div>
+        <input type="submit" value="OK" class="custom-button" onclick="redirectToStatusView()">
       </form>
     </div>
+
     <script>
-    $(function(){
-        $('#check_status').submit(function(e){
-            e.preventDefault()
-            location.href="./?page=view_status&"+$(this).serialize();
-        })
-    })
+function redirectToStatusView() {
+    window.location.href = "Status_view/index.php";
+}
 </script>
 
   </body>
