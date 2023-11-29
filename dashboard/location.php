@@ -24,6 +24,33 @@ if (isset($_REQUEST["createlocation"])) {
 	}
 }
 ?>
+
+
+<?php
+// Add this code at the top of your PHP file, after the session_start() line
+if (isset($_POST["editLocation"])) {
+    $editLocId = $_POST['editLocId'];
+    $editLName = $_POST['editLName'];
+    $editLAddress = $_POST['editLAddress'];
+    $editPhone1 = $_POST['editPhone1'];
+    $editPhone2 = $_POST['editPhone2'];
+    $editEmail = $_POST['editEmail'];
+
+    $conn = new mysqli('localhost', 'root', '', 'mobileshopdb');
+    if ($conn->connect_error) {
+        die('Connection Failed : ' . $conn->connect_error);
+    } else {
+        $stmt = $conn->prepare("UPDATE location SET lname=?, laddress=?, phone1=?, phone2=?, email=? WHERE locid=?");
+        $stmt->bind_param("sssssi", $editLName, $editLAddress, $editPhone1, $editPhone2, $editEmail, $editLocId);
+        $stmt->execute();
+        echo "Location Updated Successfully.";
+
+        $stmt->close();
+    }
+}
+?>
+
+
 <!DOCTYPE html>
 <html>
 
@@ -113,7 +140,7 @@ if (isset($_REQUEST["createlocation"])) {
 							echo 				'<a class="dropdown-item" href="#" onclick="viewLocation(\'' . $row['locid'] . '\', \'' . $row['lname'] . '\', \'' . $row['phone1'] . '\')">
 													<i class="dw dw-eye"></i> View </a>';
 											//Drop down for edit the row		
-							echo 		        '<a class="dropdown-item" href="#" onclick="editCustomer(\'' . $row['locid'] . '\', \'' . $row['lname'] . '\', \'' . $row['laddress'] . '\', \'' . $row['phone1'] . '\')">
+							echo 		        '<a class="dropdown-item" href="#" onclick="editLocation(' . $row['locid'] . ', \'' . $row['lname'] . '\', \'' . $row['laddress'] . '\', \'' . $row['phone1'] . '\', \'' . $row['phone2'] . '\', \'' . $row['email'] . '\')">
 													<i class="dw dw-edit"></i> Edit</a>';
 											//Drop down for delete the row
 							//echo 				'<a class="dropdown-item delete-service" href="#" data-service-id="' . $row['locid'] . '">
@@ -124,6 +151,7 @@ if (isset($_REQUEST["createlocation"])) {
 		 							
 							echo"</tr>";
 					}
+
 					function deleteClientById()
 					{
 						global $conn;
@@ -170,7 +198,7 @@ if (isset($_REQUEST["createlocation"])) {
 			</div>
 		</div>
 
-		<!-- Add Technician Modal -->
+		<!-- Add location Modal -->
 		<div class="col-md-12 col-sm-12 mb-30">
 			<div class="modal fade" id="add_technician" tabindex="-1" role="dialog" aria-labelledby="myLargeModalLabel" aria-hidden="true">
 				<div class="modal-dialog modal-dialog-centered">
@@ -230,6 +258,67 @@ if (isset($_REQUEST["createlocation"])) {
 					</div>
 				</div>
 			</div>
+
+
+
+			<div class="modal fade" id="edit_location" tabindex="-1" role="dialog" aria-labelledby="editLocationModalLabel" aria-hidden="true">
+    <div class="modal-dialog modal-dialog-centered">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h5 class="modal-title" id="editLocationModalLabel">Edit Location</h5>
+                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                    <span aria-hidden="true">&times;</span>
+                </button>
+            </div>
+            <div class="modal-body">
+                <!-- Edit location form -->
+                <form action="" method="POST">
+                    <input type="hidden" id="editLocId" name="editLocId">
+                    <div class="form-group">
+                        <label>Name</label>
+                        <input class="form-control form-control-lg" type="text" id="editLName" name="editLName" required>
+                    </div>
+                    <div class="form-group">
+                        <label>Address</label>
+                        <input class="form-control form-control-lg" type="text" id="editLAddress" name="editLAddress" required>
+                    </div>
+                    <div class="form-group">
+                        <label>Phone 01</label>
+                        <input class="form-control form-control-lg" type="text" id="editPhone1" name="editPhone1" pattern="[0-9]{10}" required>
+                    </div>
+                    <div class="form-group">
+                        <label>Phone 02</label>
+                        <input class="form-control form-control-lg" type="text" id="editPhone2" name="editPhone2" pattern="[0-9]{10}" required>
+                    </div>
+                    <div class="form-group">
+                        <label>Email</label>
+                        <input class="form-control form-control-lg" type="text" id="editEmail" name="editEmail" pattern="[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,3}" required>
+                    </div>
+                    <div class="form-group">
+                        <input type="submit" class="btn btn-primary" value="Save Changes" name="editLocation">
+                    </div>
+                </form>
+            </div>
+        </div>
+    </div>
+</div>
+
+<script>
+    function editLocation(locid, lname, laddress, phone1, phone2, email) {
+        // Set the data in the edit modal
+        document.getElementById("editLocId").value = locid;
+        document.getElementById("editLName").value = lname;
+        document.getElementById("editLAddress").value = laddress;
+        document.getElementById("editPhone1").value = phone1;
+        document.getElementById("editPhone2").value = phone2;
+        document.getElementById("editEmail").value = email;
+
+        // Open the edit modal
+        $('#edit_location').modal('show');
+    }
+</script>
+
+
 				<!-- View CorierService Modal -->
 		<div class="modal fade" id="view" tabindex="-1" role="dialog" aria-labelledby="viewModalLabel" aria-hidden="true">
     			<div class="modal-dialog" role="document">
@@ -291,26 +380,7 @@ if (isset($_REQUEST["createlocation"])) {
     			}
 				
 			</script>
-			<!--edit function-->
-			<script>
-    			function editService(serviceId, serviceName, description, cost, date) {
-        		// Populate the edit modal form fields with the data from the selected row
-        		document.getElementById("editServiceId").value = serviceId;
-        		document.getElementById("editServiceName").value = serviceName;
-				
-        		// Populate other form fields as needed
-        
-        		// Open the edit modal
-        		$('#editServiceModal').modal('show');
-    			}
-
-    			
-    			function submitEditForm() {
-        		// Submit the edit form
-        		document.getElementById("editServiceForm").submit();
-				}
-			</script>
-
+			
 			<!--delete function-->
 			<script>
     			// Handle delete button click
