@@ -77,7 +77,7 @@
           <div class="col-lg-4 col-md-15 mb-4 mb-md-0">
        
           <h5 class="text-uppercase mb-4">Services</h5>
-            <ul class="fa-ul" style="margin-left: 1.65em;">
+            <ul class="fa-ul" style="margin-left: 1.55em;">
               <li class="mb-2">Hardware Repaires</li>
               <li class="mb-2">Software Repaires</li>
               <li class="mb-2">Accessories</li>
