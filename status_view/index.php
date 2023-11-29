@@ -50,7 +50,8 @@ $resultForInvoice = mysqli_query($data, $sqlForInvoice);
           </div>
         </h3>
         <section>
-
+          <h1>Your Job Created !</h1>
+          <br>
           <?php
           while ($row = mysqli_fetch_array($resultForJob)) {
 
@@ -80,10 +81,10 @@ $resultForInvoice = mysqli_query($data, $sqlForInvoice);
           </div>
         </h3>
         <section>
-        
-      
 
-</section>
+
+
+        </section>
 
 
         <h3>
