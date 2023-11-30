@@ -489,8 +489,8 @@ $statusMap = [
                                         maximumFractionDigits: 2,
                                         minimumFractionDigits: 2
                                     }))
-                                    $
-                                }('input[name="total_amount"]').val(parseFloat(total))
+                                    $('input[name="total_amount"]').val(parseFloat(total))
+                                }
 
 
 
