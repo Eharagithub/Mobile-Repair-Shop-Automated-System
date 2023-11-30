@@ -50,7 +50,7 @@ $resultForInvoice = mysqli_query($data, $sqlForInvoice);
           </div>
         </h3>
         <section>
-
+          <h3> Your job has been created ! </h3> <br>
           <?php
           while ($row = mysqli_fetch_array($resultForJob)) {
 
@@ -58,17 +58,19 @@ $resultForInvoice = mysqli_query($data, $sqlForInvoice);
             $resultForJobCreatedUser = mysqli_query($data, $sqlForJobCreatedUser);
             $resultForJobCreatedUser = mysqli_fetch_array($resultForJobCreatedUser)
               ?>
-            JOB CREATED ON :
+            JOB CREATED ON    :
             <?php echo $row["jobDate"]; ?> <br>
-            JOB CREATED BY :
+            JOB CREATED BY    :
             <?php echo $resultForJobCreatedUser["uname"]; ?> <br>
-            BRANCH :
+            BRANCH     :
             <?php echo $resultForJobCreatedUser["uaddress"]; ?> <br>
-            NOTE :
+            NOTE     :
             <?php echo $row["remark"]; ?> <br>
             <?php
           }
           ?>
+          <br>
+          <h4> Thank You For Choosing Us .... </h3>
         </section>
         <h3>
           <div class="media">
@@ -80,9 +82,17 @@ $resultForInvoice = mysqli_query($data, $sqlForInvoice);
           </div>
         </h3>
         <section>
-        
-      
+          <pre>
+          <h4>Dear Customer , </h4>
 
+
+          Your phone deliverd from - Sub Office Panadura 
+                              To   - Head Office Colombo
+
+          We will repair it as soon as possible. 
+
+          Thank You !
+        </pre>
         </section>
 
 
@@ -109,7 +119,9 @@ $resultForInvoice = mysqli_query($data, $sqlForInvoice);
         </h3>
         <section>
           <div class="content-wrapper">
-            <h4 class="section-heading mb-5"> Dear Customer, </h4>
+            <h5 class="section-heading mb-5"> Dear Customer, </h5>
+          
+            <h4> Your Job Is Done ! </h4> <br>
             Your Phone has repaired successfully. <br>
             You can now pickup your phone! <br>
             Thank you for choosing us for your mobile repair.
