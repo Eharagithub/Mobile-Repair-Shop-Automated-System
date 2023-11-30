@@ -217,18 +217,19 @@ function getAllFromTableAsOption($name, $value, $html)
 
 									<div class="col-sm-6">
 										<div class="form-group">
-											<label>Location From</label>
+											<label>Location To</label>
 											<select name="from" class="selectpicker form-control form-control-lg" data-style="btn-outline-secondary btn-lg" title="Not Chosen">
-												<option value="<?php echo $_SESSION["systemUserLocId"]; ?>"><?php echo $_SESSION["systemUserLocName"]; ?></option> ;
+											<?php getAllFromTableAsOption("location", "locid", "lname"); ?>	
+											
 											</select>
 										</div>
 									</div>
    
 									<div class="col-sm-6">
 										<div class="form-group">
-											<label>Location To</label>
+											<label>Location From</label>
 											<select name="to" class="selectlpicker form-control form-control-lg" data-style="btn-outline-secondary btn-lg" title="Not Chosen">
-												<?php getAllFromTableAsOption("location", "locid", "lname"); ?>
+											<option value="<?php echo $_SESSION["systemUserLocId"]; ?>"><?php echo $_SESSION["systemUserLocName"]; ?></option> ;
 											</select>
 										</div>
 									</div>
