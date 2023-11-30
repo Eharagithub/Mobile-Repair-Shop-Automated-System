@@ -38,7 +38,8 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
             $_SESSION["systemUserLocName"] = $row["lname"];
 
 
-            header("Location: dashboard/index.php"); // Redirect to a welcome page or dashboard
+            header("Location: dashboard/index.php");
+             // Redirect to a welcome page or dashboard
         } else {
             // Invalid login, display an error message
             echo "<script>alert('Oh sorry Invalid username or password');</script>";

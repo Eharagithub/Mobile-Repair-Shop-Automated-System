@@ -91,7 +91,7 @@
 
         <!--Grid column-->
         <div class="col-lg-4 col-md-6 mb-4 mb-md-0">
-          <h5 class="text-uppercase mb-4 pb-1">Search something</h5>
+          <h5 class="text-uppercase mb-4 pb-1">Search Something</h5>
 
           <div class="form-outline form-white mb-4">
             <input type="text" id="formControlLg" class="form-control form-control-lg">

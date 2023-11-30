@@ -127,6 +127,7 @@ $statusMap = [
                             </thead>
                             <tbody>
 
+                            <!--add new--->
                                 <?php
                                 // Fetch invoice data from the database and populate the table
                                 $data = mysqli_connect($host, $user, $password, $db);
@@ -488,8 +489,8 @@ $statusMap = [
                                         maximumFractionDigits: 2,
                                         minimumFractionDigits: 2
                                     }))
-                                    $('input[name="total_amount"]').val(parseFloat(total))
-                                }
+                                    $
+                                }('input[name="total_amount"]').val(parseFloat(total))
 
 
 

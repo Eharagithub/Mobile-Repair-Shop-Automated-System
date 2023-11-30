@@ -83,7 +83,7 @@ $resultForInvoice = mysqli_query($data, $sqlForInvoice);
         
       
 
-</section>
+        </section>
 
 
         <h3>
@@ -96,18 +96,7 @@ $resultForInvoice = mysqli_query($data, $sqlForInvoice);
           </div>
         </h3>
         <section>
-          <div class="content-wrapper">
-            <h4 class="section-heading mb-5">Review your Details</h4>
-            <h6 class="font-weight-bold">Personal Details</h6>
-            <p class="mb-4"><span id="enteredFirstName">Cha</span> <span id="enteredLastName">Ji-Hun C</span> <br>
-              Phone: <span id="enteredPhoneNumber">+230-582-6609</span> <br>
-              Email: <span id="enteredEmailAddress">willms_abby@gmail.com</span></p>
-            <h6 class="font-weight-bold">Employment Details</h6>
-            <p class="mb-0"><span id="enteredDesignation">Junior Developer</span> - <span id="enteredDepartment">UI
-                Development</span> <br>
-              Phone: <span id="enteredEmployeeNumber">JDUI36849</span> <br>
-              Email: <span id="enteredWorkEmailAddress">willms_abby@company.com</span></p>
-          </div>
+  <?php include_once("invoice.php") ?> 
         </section>
         <h3>
           <div class="media">
