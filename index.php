@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html lang="en">
   <head>
-        <title>Sample</title>
+        <title>Kasthuri Mobile Solutions|Home Page</title>
         <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet" >
         <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.5/font/bootstrap-icons.css">
         <link rel="stylesheet" href="style.css" >
@@ -21,7 +21,7 @@
             <div class ="button">
                 <a href="Servicess.php" class="btn">View services</a>
                 <a href="about.php" class="btn">Catch our Specialists</a>
-                <a href="statusview.php" class="btn">View Status</a>
+                <!--<a href="statusview.php" class="btn">View Status</a>-->
             </div>
          
           

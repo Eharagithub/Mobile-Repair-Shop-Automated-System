@@ -9,12 +9,12 @@
                     <img src="new.jpg" alt="Kasthuri Mobile solutions" style="max-width: 100%; max-height: 100%;">
                 </div>
 
-                <div class="navbar__toggle" id="mobile-menu">
+                <!--<div class="navbar__toggle" id="mobile-menu">
                     <span class="bar"></span>
                     <span class="bar"></span>
                     <span class="bar"></span>
                     <span class="bar"></span>
-                </div>
+                </div>-->
                 <ul class="navbar__menu">
                     <li class="navbar__item">
                         <a href="index.php" class="navbar__links" >Home </a> 

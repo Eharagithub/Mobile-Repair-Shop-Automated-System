@@ -5,14 +5,27 @@
     font-family: century;
 }
 
+
 /*header styles*/
 header {
-    background-image: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)), url(pexels-pixabay-356056.jpg);
+    background-image: linear-gradient(rgba(0, 0, 0, 0.7), rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)), url(pexels-pixabay-356056.jpg);
     height: 100vh;
     background-size: cover;
     background-position: center;
     min-height: 100px;
     position: relative; /* Add this */
+    animation: fadeInUp 1s ease-out;
+    
+}
+@keyframes fadeInUp {
+    from {
+        opacity: 0;
+        transform: translateY(-20px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
 }
 
 /* Add styles for the service content */
@@ -40,30 +53,40 @@ form {
     left: 50%; /* Center horizontally */
     transform: translate(-50%, -50%); /* Center the form */
 }
-
+/* Center form and service content for smaller screens */
+form, .service-content {
+    width: 80%; /* Adjust width */
+    left: 50%;
+    transform: translateX(-50%);
+}
 
    
 /*Navigation bar styles*/
 
-.navbar__toggle {
-    position: absolute;
-    right: 0;
-    top: 0;
-    z-index: 10;
-    cursor: pointer;
-  }
-  
-  .navbar__toggle .bar {
-    background-color: #fff;
-    height: 2px;
-    width: 25%;
-    display: block;
-    margin: 0 5px;
-  }
-  
-  .navbar__toggle:hover .bar {
-    background-color: #000;
-  }
+/* Navbar styles */
+.navbar {
+    height: auto; /* Adjust height for smaller screens */
+    flex-direction: column; /* Stack items vertically for smaller screens */
+}
+
+.navbar__logo {
+    margin-top: 20px; /* Adjust logo margin for smaller screens */
+}
+
+.navbar__menu {
+    margin-right: 0; /* Remove right margin for smaller screens */
+}
+
+.navbar__links {
+    padding: 1rem; /* Increase padding for better touch interaction on smaller screens */
+}
+
+/* Adjust mobile menu styles */
+#mobile-menu {
+    top: 10%;
+}
+
+
 
 .navbar{
    /* background: linear-gradient(rgba(20,48,95)25%,#143051 100%);*/
@@ -88,18 +111,21 @@ form {
     padding: 0 50px;
     align-items: center;
 }
+/* Navbar logo styles */
 .navbar__logo {
     display: flex;
     align-items: center;
-    margin-right: 20px;
-    margin-top: 60px;
-    width: 500px;
+    margin-right: 2%; /* Use relative margin */
+    margin-top: 3vh; /* Use relative margin */
+    width: 100%;
 }
 
 .navbar__logo img {
-    width: 500px;
+    max-width: 100%;
     height: auto;
+    margin-left: 2%; /* Use relative margin */
 }
+
 .navbar__menu{
     list-style:none;
     margin-top: 0;
@@ -119,6 +145,8 @@ form {
     list-style: none;
     height: 100px;
 }
+/* Navbar link hover effect */
+
 .navbar__links{
     text-decoration: none;
     justify-content: center;
@@ -131,6 +159,7 @@ form {
     text-decoration: none;
     height: 100%;
     white-space: nowrap;
+    transition: color 0.3s, transform 0.3s;
 }
 .navbar__links:hover{
     color: #f77062;
@@ -268,9 +297,14 @@ form {
         height: 50vh;
         font-size: 1.6rem;
     }
-    .navbar__logo{
-        padding-left: 25px;
-    }
+        .navbar__logo {
+            margin-top: 1vh; /* Adjust for smaller screens */
+        }
+    
+        .navbar__logo img {
+            margin-left: 1%; /* Adjust for smaller screens */
+        }
+   
     .navbar__toggle.bar{
         width: 25px;
         height: 3px;
