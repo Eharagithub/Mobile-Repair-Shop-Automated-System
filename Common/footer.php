@@ -44,9 +44,30 @@
     color: tomato !important; /* New color on hover  */
   }
 
+  footer {
+    background: linear-gradient(to right, #23242a, #14151a);
+    color: #fff;
+    border-top: 1px solid #444;
+    padding: 20px 0;
+}
+
+#backToTop {
+    transition: opacity 0.3s;
+    opacity: 0;
+}
+
+#backToTop:hover {
+    opacity: 1;
+}
+@media (max-width: 768px) {
+    footer {
+        text-align: center;
+    }
+}
   .custom-bg-color{
     background-color: white;
   }
+  
 </style>
 <footer class="text-white text-center text-lg-start" style="background-color: #23242a;">
     <!-- Grid container -->
@@ -54,7 +75,7 @@
       <!--Grid row-->
       <div class="row mt-4">
         <!--Grid column-->
-        <div class="col-lg-4 col-md-12 mb-4 mb-md-0">
+        <div class="col-lg-4 col-md-8 mb-1 mb-md-0">
           <h5 class="text-uppercase mb-4">About company</h5>
 
           <p>We have been stationed & repairing on our location for 23 years. We have the repairing experience of more than thousands of phones from our inception.
@@ -74,17 +95,16 @@
           
           <br><br>
           
-          <div class="col-lg-4 col-md-15 mb-4 mb-md-0">
+          <div class="mt-4 col-lg-1 col-md-15 mb-4 mb-md-0">
        
           <h5 class="text-uppercase mb-4">Services</h5>
-            <ul class="fa-ul" style="margin-left: 1.55em;">
-              <li class="mb-2">Hardware Repaires</li>
-              <li class="mb-2">Software Repaires</li>
-              <li class="mb-2">Accessories</li>
-              <li class="mb-2">Other</li>
+            <ul class="list" >
+              <li class="aa" style="margin-right: 10px;">Hardware Repaires</li>
+              <li class="mb">Software Repaires</li>
+              <li class="mb">Accessories</li>
+              <li class="mb">Other</li>
               
             </ul>
-
           </div>
         </div>
         <!--Grid column-->
@@ -160,10 +180,17 @@
   <footer class="p-3 bg-dark text-white text-center position-relative">
     <div class="container">
       <p class="mb-0">Team &copy; No 1</p>
-      <a href="#" class="position-absolute bottom-0 end-0 p-5">
+      <a href="#" class="position-absolute bottom-0 end-0 p-5" id="backToTop">
         <i class="bi bi-arrow-up-circle h1"></i>
       </a>
 
     </div>
+<script>
+    // Add smooth scroll functionality
+document.getElementById('backToTop').addEventListener('click', function () {
+    window.scrollTo({ top: 0, behavior: 'smooth' });
+});
+</script>
 
   </footer> 
+ 
