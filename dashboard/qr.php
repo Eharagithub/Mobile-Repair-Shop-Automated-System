@@ -19,7 +19,7 @@ $id = $_REQUEST["id"];
 </head>
 <body>
      <?php echo "<img src=\"https://chart.googleapis.com/chart?chs=300x300&cht=qr&chl=http://localhost/Mobile-Repair-Shop/dashboard/testcode.php?id=" . $id . "\" title=\"Link to Google.com\" />" ?> 
-    <h1>This Your QR Code </h2>
+    <h1>        This Your QR Code </h2>
      
 
 </body>
