@@ -56,9 +56,9 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
 <html>
 
 <head>
-    <title>Transparent Login</title>
+    <title> Login</title>
     <link rel="stylesheet" type="text/css" href="login.css">
-
+    <link href='https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css' rel='stylesheet'>
  
 </head>
 
@@ -67,14 +67,21 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
     
     <div class="login-box">
         <h1>Login..</h1>
+        
         <form action="" method="POST">
             <p>Username</p>
+            <box-icon type='solid' name='user'></box-icon>
             <input type="text" name="username" required>
+            
             <p>Password</p>
+            <box-icon name='lock-alt' type='solid' ></box-icon>
             <input type="password" name="password" required>
+           
+            <lable><input type="checkbox">Remember me</lable>
+            
             <br><br>
             <input type="submit" name="click" value="Login">
-           
+            
         </form>
     </div>
 </body>
