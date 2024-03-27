@@ -22,7 +22,8 @@ if (isset($_REQUEST["createdevice"])) {
 
 		$stmt->close();
 	}
-
+	
+	
 }
 ?>
 <!DOCTYPE html>

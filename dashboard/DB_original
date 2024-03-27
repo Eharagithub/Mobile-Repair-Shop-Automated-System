@@ -141,3 +141,144 @@ CREATE TABLE history (
   FOREIGN KEY (jobid) REFERENCES job (id),
   FOREIGN KEY (systemuserId) REFERENCES systemuser (empNo)
 )
+
+-- Table for storing customer information
+CREATE TABLE customer (
+  nic varchar(20) NOT NULL,           -- National Identity Card
+  name varchar(100) NOT NULL,         -- Customer name
+  address varchar(250) NOT NULL,      -- Customer address
+  phone1 varchar(100) NOT NULL,       -- Primary phone number
+  phone2 varchar(100) DEFAULT NULL,   -- Secondary phone number (optional)
+  email varchar(100) DEFAULT NULL,    -- Customer email (optional)
+  PRIMARY KEY (nic)
+);
+
+-- Table for storing delivery personnel information
+CREATE TABLE delivery (
+  empNo int NOT NULL,                 -- Employee number
+  nic varchar(20) NOT NULL,           -- National Identity Card
+  dname varchar(100) NOT NULL,        -- Delivery personnel name
+  daddress varchar(250) NOT NULL,     -- Delivery personnel address
+  phone varchar(100) NOT NULL,        -- Delivery personnel phone number
+  email varchar(100) DEFAULT NULL,    -- Delivery personnel email (optional)
+  PRIMARY KEY (empNo)
+);
+
+-- Table for storing inquiries
+CREATE TABLE inquries (
+  mid int NOT NULL AUTO_INCREMENT,   -- Inquiry ID (auto-incremented)
+  fullname varchar(255) NOT NULL,     -- Full name of the inquirer
+  contact int NOT NULL,               -- Contact number of the inquirer
+  email varchar(255) NOT NULL,        -- Email of the inquirer
+  message varchar(255) NOT NULL,      -- Inquiry message
+  status int NOT NULL,                -- Inquiry status
+  date date NOT NULL,                 -- Date of the inquiry
+  isOpened char(1) NOT NULL,          -- Flag indicating whether the inquiry is opened
+  PRIMARY KEY (mid)
+);
+
+-- Table for storing location information
+CREATE TABLE location (
+  locid int NOT NULL AUTO_INCREMENT, -- Location ID (auto-incremented)
+  lname varchar(100) NOT NULL,        -- Location name
+  laddress varchar(250) NOT NULL,     -- Location address
+  phone1 varchar(100) NOT NULL,       -- Primary phone number for the location
+  phone2 varchar(100) DEFAULT NULL,   -- Secondary phone number for the location (optional)
+  email varchar(100) NOT NULL,        -- Email for the location
+  PRIMARY KEY (locid)
+);
+
+-- Table for storing services offered
+CREATE TABLE services (
+  sid int NOT NULL AUTO_INCREMENT,   -- Service ID (auto-incremented)
+  service varchar(255) NOT NULL,      -- Service name
+  description varchar(255) NOT NULL,  -- Service description
+  cost float(10) NOT NULL,            -- Service cost
+  date date NOT NULL,                 -- Date of the service
+  PRIMARY KEY (sid)
+);
+
+-- Table for storing item information
+CREATE TABLE item (
+  itemCode varchar(255) NOT NULL,     -- Item code
+  name varchar(255) NOT NULL,         -- Item name
+  stock int NOT NULL,                 -- Item stock
+  cost float(10) NOT NULL,            -- Item cost
+  unit varchar(255) NOT NULL,         -- Unit of the item
+  sellingPrice float(10) DEFAULT NULL,-- Selling price of the item (optional)
+  PRIMARY KEY (itemCode)
+);
+
+-- Table for storing technician information
+CREATE TABLE technician (
+  empNo int NOT NULL,                 -- Employee number
+  nic varchar(20) NOT NULL,           -- National Identity Card
+  tname varchar(100) NOT NULL,        -- Technician name
+  taddress varchar(250) NOT NULL,     -- Technician address
+  phone varchar(100) NOT NULL,        -- Technician phone number
+  email varchar(100) DEFAULT NULL,    -- Technician email (optional)
+  PRIMARY KEY (empNo)
+);
+
+-- Table for storing system user information
+CREATE TABLE systemuser (
+  empNo int NOT NULL,                 -- Employee number
+  nic varchar(20) NOT NULL,           -- National Identity Card
+  uname varchar(100) NOT NULL,        -- Username
+  uaddress varchar(250) NOT NULL,     -- User address
+  phone varchar(100) NOT NULL,        -- User phone number
+  email varchar(100) NOT NULL,        -- User email
+  password varchar(100) NOT NULL,     -- User password
+  locid int NOT NULL,                 -- Location ID
+  type varchar(255) NOT NULL,         -- User type
+  PRIMARY KEY (empNo),
+  FOREIGN KEY (locid) REFERENCES location (locid)  -- Foreign key referencing location table
+);
+
+-- Table for storing device information
+CREATE TABLE device (
+  imiNumber varchar(100) NOT NULL,    -- IMI (International Mobile Equipment Identity) number
+  brand varchar(100) NOT NULL,         -- Device brand
+  model varchar(100) NOT NULL,         -- Device model
+  extra varchar(250) DEFAULT NULL,    -- Additional information about the device (optional)
+  nic varchar(20) NOT NULL,           -- National Identity Card of the customer
+  PRIMARY KEY (imiNumber),
+  FOREIGN KEY (nic) REFERENCES customer (nic)  -- Foreign key referencing customer table
+);
+
+-- Table for storing job information
+CREATE TABLE job (
+  id int NOT NULL AUTO_INCREMENT,     -- Job ID (auto-incremented)
+  jobDate date NOT NULL,              -- Date of the job
+  systemuserId int NOT NULL,          -- System user ID
+  deviceId varchar(100) NOT NULL,     -- Device ID
+  isPaid char(1) NOT NULL,            -- Flag indicating whether the job is paid
+  PRIMARY KEY (id),
+  FOREIGN KEY (systemuserId) REFERENCES systemuser (empNo),  -- Foreign key referencing systemuser table
+  FOREIGN KEY (deviceId) REFERENCES device (imiNumber)        -- Foreign key referencing device table
+);
+
+-- Table for storing job service information
+CREATE TABLE jobservice (
+  jobserviceid int NOT NULL AUTO_INCREMENT,  -- Job service ID (auto-incremented)
+  jobid int NOT NULL,                        -- Job ID
+  serviceid int NOT NULL,                    -- Service ID
+  amount int NOT NULL,                       -- Amount of the service
+  status int NOT NULL,                       -- Status of the service
+  remarks varchar(255) NOT NULL,             -- Remarks about the service
+  date date NOT NULL,                        -- Date of the service
+  PRIMARY KEY (jobserviceid),
+  FOREIGN KEY (jobid) REFERENCES job (id),   -- Foreign key referencing job table
+  FOREIGN KEY (serviceid) REFERENCES services (sid)  -- Foreign key referencing services table
+);
+
+-- Table for storing job service item information
+CREATE TABLE jobserviceitem (
+  jobserviceitemid int NOT NULL AUTO_INCREMENT,  -- Job service item ID (auto-incremented)
+  jobservicesId int NOT NULL,                    -- Job service ID
+  itemId varchar(255) NOT NULL,                  -- Item ID
+  qty int NOT NULL,                              -- Quantity of the item
+  price float(10) NOT NULL,                      -- Price of the item
+  PRIMARY KEY (jobserviceitemid),
+  FOREIGN KEY (jobservicesId) REFERENCES jobservice (jobserviceid),  -- Foreign key referencing jobservice table
+ 
